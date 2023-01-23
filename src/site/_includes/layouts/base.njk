@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no,user-scalable=0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://fonts.cdnfonts.com/css/itc-avant-garde-gothic-std-book" rel="stylesheet">
+    {% seo "" %}
+    <meta name="keywords" content="sembeacon">
+    
+    {% favicon './src/site/images/logo_square.svg' %}
+    <meta name="theme-color" content="#363795">
+    {% if bodyClass and bodyClass == "home" %}
+    <script type="text/javascript" src="/js/nodes.js"></script>
+    <script type="text/javascript">
+        var nodesjs = new NodesJs({
+            id: 'nodes',
+            width: window.innerWidth,
+            height: window.innerHeight,
+            particleSize: 10,
+            lineSize: 2,
+            particleColor: [255, 255, 255, 0.1],
+            lineColor: [100, 100, 230],
+            backgroundFrom: [50, 50, 140],
+            backgroundTo: [78, 81, 160],
+            backgroundDuration: 60000,
+            nobg: false,
+            number: window.hasOwnProperty('orientation') ? 30 : 70,
+            speed: 15,
+            pointerCircleRadius: 100
+        });
+        window.addEventListener('resize', function (event) {
+            nodesjs.setHeight(window.innerHeight);
+            nodesjs.setWidth(window.innerWidth);
+        });
+    </script>
+    {% endif %}
+  </head>
+  <body {% if bodyClass %}class="{{ bodyClass }}"{% endif %}>
+    {% if bodyClass and bodyClass == "home" %}
+    <div class="background">
+      <canvas id="nodes"></canvas>
+    </div>
+    {% endif %}
+
+    <div class="container">
+      {% include "header.njk" %}
+      {{ content | safe }}
+      {% include "footer.njk" %}
+    </div>
+
+  </body>
+</html>
+
+
+

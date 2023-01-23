@@ -1,0 +1,44 @@
+{
+  "name": "@sembeacon/website",
+  "version": "1.0.0",
+  "description": "A project bootstrap for Eleventy sites. With pipelines for PostCSS, JavaScript, and serverless functions",
+  "contributors": [
+    "Beat Signer",
+    "Phil Hawksworth"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "cross-env ELEVENTY_ENV=dev eleventy --serve",
+    "build": "cross-env ELEVENTY_ENV=prod eleventy",
+    "seed": "cross-env ELEVENTY_ENV=seed eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SemBeacon/website"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "2.0.0-canary.16",
+    "@quasibit/eleventy-plugin-sitemap": "^2.2.0",
+    "autoprefixer": "^10.4.13",
+    "axios": "^1.2.1",
+    "dotenv": "^16.0.3",
+    "eleventy-favicon": "^1.1.3",
+    "eleventy-plugin-seo": "^0.5.2",
+    "eleventy-sass": "^2.1.3",
+    "html-minifier": "^4.0.0",
+    "luxon": "^3.1.1",
+    "markdown-it": "^13.0.1",
+    "markdown-it-anchor": "^8.6.5",
+    "markdown-it-attrs": "^4.1.6",
+    "markdown-it-shiki": "^0.7.2",
+    "node-fetch": "^3.3.0",
+    "nunjucks": "^3.2.3",
+    "nunjucks-markdown": "^2.0.1",
+    "uglify-js": "^3.17.4",
+    "xml2js": "^0.4.23"
+  },
+  "devDependencies": {
+    "cross-env": "7.0.3"
+  }
+}

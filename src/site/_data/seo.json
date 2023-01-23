@@ -1,0 +1,14 @@
+{
+    "title": "SemBeacon",
+    "url": "https://sembeacon.org",
+    "description": "",
+    "author": "Maxim Van de Wynckel",
+    "twitter": "SemBeacon",
+    "image": "/images/social/summary-large.png",
+    "reply_to": "sembeacon@openhps.org",
+    "options": {
+      "titleDivider": "|",
+      "imageWithBaseUrl": true,
+      "twitterCardType": "summary_large_image"
+    }
+}
