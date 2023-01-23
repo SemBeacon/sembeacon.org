@@ -1,0 +1,101 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  build:
+    name: 'Build Website'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+        with:
+          lfs: true
+      - name: Load dependency cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            **/node_modules
+          key: ${{ runner.os }}-dependencies-v1-${{ hashFiles('package.json') }}
+      - name: Load site cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            **/dist
+          key: ${{ runner.os }}-site-v1-${{ hashFiles('package.json') }}-${{ github.run_number }}
+      - name: Install fonts
+        run: |
+          sudo apt update
+          echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
+          sudo apt-get install ttf-mscorefonts-installer
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Installing Dependencies
+        run: |
+          npm install
+      - name: Build site
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm run clean
+          npm run build
+
+  build_documentation:
+    needs: build
+    name: 'Build Documentation'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+      - name: Load dependency cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            **/node_modules
+          key: ${{ runner.os }}-dependencies-v1-${{ hashFiles('package.json') }}
+      - name: Load site cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            **/dist
+            _presentations.jso
+          key: ${{ runner.os }}-site-v1-${{ hashFiles('package.json') }}-${{ github.run_number }}
+    
+  deploy_github:
+    needs:
+      - build
+    name: 'Deploy to Github Pages'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+      - name: Load dependency cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            **/node_modules
+          key: ${{ runner.os }}-dependencies-v1-${{ hashFiles('package.json') }}
+      - name: Load site cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            **/dist
+            _presentations.json
+          key: ${{ runner.os }}-site-v1-${{ hashFiles('package.json') }}-${{ github.run_number }}
+      - name: Deploy site to GitHub
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+      - name: Status check
+        uses: Sibz/github-status-action@v1
+        with:
+          authToken: ${{ secrets.GITHUB_TOKEN }}
+          context: Github Pages preview
+          state: success
+          target_url: https://sembeacon.github.io/sembeacon.org/
