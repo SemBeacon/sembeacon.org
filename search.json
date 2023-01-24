@@ -1,0 +1,37 @@
+[
+  {
+    "url": "/about/",
+    "title": "About",
+    "index": "SemBeacon designed by PhD candidate Maxim Van de Wynckel Web Information Systems Engineering (WISE) Lab under supervision Prof Dr Beat Signer semantic beacon specification Bluetooth Low Energy that broadcasts resource URI containing full description beacon its location any other related information built top AltBeacon adds EddystoneURL compatible scan responsethat includes describes beacon details specification check documentationContactAddressVrije Universiteit Brussel DINFMaxim WynckelPleinlaan 2B1050 ElseneBelgiumGeneral: sembeacon@openhpsorgMaxim Wynckel: mvdewync@vub"
+  }
+  ,
+  {
+    "url": "/docs/",
+    "title": "Documentation",
+    "index": "Bluetooth AdvertisementSemantic Description"
+  }
+  ,
+  {
+    "url": "/docs/logo/",
+    "title": "Documentation",
+    "index": "StyleSemBeacon uses logo with color #363795 represents combination Eddystone (square) AltBeacon Vrije Universiteit Brusselwhere specification originally designed"
+  }
+  ,
+  {
+    "url": "/docs/vocabulary/",
+    "title": "Documentation",
+    "index": " vocabulary describing SemBeacon based Positioning System Ontology (POSO) ontology that helps describe positioning system documentation can found here"
+  }
+  ,
+  {
+    "url": "/",
+    "title": "",
+    "index": " semantic Bluetooth Low Energy beacon specification that helps describe itself its deployment positioning system used withinFeaturesInteroperable backwards compatibleRealtime processing systemsMultiple use cases"
+  }
+  ,
+  {
+    "url": "/tools/",
+    "title": "Tools",
+    "index": "ESP32 provide library that can used create scan SemBeacon&#39;s with ArduinoESP32 libraryAndroidSemBeacon provides extension top androidbeaconlibrary by AltBeacon which adds ability SemBeacons broadcast dataWhile this tool enables SemBeacons does necesarry tools extracting semantic data from public URITwo example applications using are available based existing open source apps:iOSCurrently iOS exist demonstrate SemBeacon capabilities"
+  }
+  ]

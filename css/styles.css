@@ -1,0 +1,336 @@
+/* breakpoints for media queries */
+/* colours */
+/**
+ * GHColors theme by Avi Aryan (http://aviaryan.in)
+ * Inspired by Github syntax coloring
+ */
+code[class*=language-],
+pre[class*=language-] {
+  color: rgb(42, 65, 77);
+  font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  font-size: 0.9em;
+  line-height: 1.2em;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+pre[class*=language-]::-moz-selection, pre[class*=language-] ::-moz-selection,
+code[class*=language-]::-moz-selection, code[class*=language-] ::-moz-selection {
+  background: #b3d4fc;
+}
+
+pre[class*=language-]::selection, pre[class*=language-] ::selection,
+code[class*=language-]::selection, code[class*=language-] ::selection {
+  background: #b3d4fc;
+}
+
+/* Code blocks */
+pre[class*=language-] {
+  padding: 1em;
+  margin: 2em 0;
+  overflow: auto;
+  background-color: #dcdef2;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #7e94ac;
+  font-style: italic;
+}
+
+.token.namespace {
+  opacity: 0.7;
+}
+
+.token.string,
+.token.attr-value {
+  color: #e3116c;
+}
+
+.token.punctuation,
+.token.operator {
+  color: #393A34; /* no highlight */
+}
+
+.token.entity,
+.token.url,
+.token.symbol,
+.token.number,
+.token.boolean,
+.token.variable,
+.token.constant,
+.token.property,
+.token.regex,
+.token.inserted {
+  color: #36acaa;
+}
+
+.token.atrule,
+.token.keyword,
+.token.attr-name,
+.language-autohotkey .token.selector {
+  color: #00a4db;
+}
+
+.token.tag,
+.token.selector,
+.language-autohotkey .token.keyword {
+  color: #00009f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+::-moz-selection {
+  background-color: #fff;
+  color: #363795;
+}
+
+::selection {
+  background-color: #fff;
+  color: #363795;
+}
+
+html {
+  background-color: rgb(78, 91, 190);
+}
+
+body {
+  text-align: center;
+  color: #ebebf4;
+  font-family: "ITC Avant Garde Gothic Std Book", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.8;
+  min-height: 100vh;
+}
+@media (min-width: 400px) {
+  body {
+    font-size: 18px;
+  }
+}
+body:not(.home) {
+  background-color: #363795;
+  background: #363795;
+  background: url(/images/bg-grid.png), linear-gradient(320deg, #363795 0%, rgb(78, 91, 190) 100%);
+}
+
+img.logo {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  text-align: left;
+}
+@media (min-width: 740px) {
+  .container {
+    width: 650px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 750px;
+  }
+}
+
+h1, h2, h3 {
+  color: #fff;
+  font-weight: 400;
+  margin-top: 2em;
+  margin-bottom: 0.2em;
+  line-height: 1;
+}
+
+h1 {
+  font-size: 2em;
+  margin-top: 0.4em;
+  margin-bottom: 0.2em;
+  line-height: 1;
+}
+@media (min-width: 740px) {
+  h1 {
+    font-size: 3em;
+  }
+}
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 4em;
+  }
+}
+
+p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  margin-top: 1em;
+  margin-bottom: 2.5em;
+}
+
+ul, ol {
+  padding-left: 1em;
+}
+
+a:link,
+a:visited {
+  color: #fff;
+  text-decoration: none;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #717ccb;
+}
+
+a:hover,
+a:focus {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+.nakedLink a:link,
+.nakedLink a:visited,
+.nakedLink a:hover,
+.nakedLink a:focus {
+  border-bottom-style: none;
+}
+
+nav ul {
+  padding-top: 3em;
+}
+nav ul li {
+  display: inline;
+}
+nav ul a:link,
+nav ul a:visited {
+  display: inline-block;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #959dd8;
+  border-bottom-style: none;
+  padding-top: 0.8em;
+  padding-bottom: 2em;
+  margin-left: 0;
+  margin-right: 0.7em;
+  width: 7em;
+  text-align: left;
+  color: #dcdef2;
+  text-decoration: none;
+}
+nav ul a:hover,
+nav ul a:focus {
+  color: #fff;
+  border-top-color: #fff;
+  border-bottom-style: none;
+}
+nav ul small {
+  display: block;
+  font-size: 0.7em;
+  color: #b8bde5;
+}
+
+code {
+  font-size: 0.8em;
+  background-color: #dcdef2;
+  color: rgb(42, 65, 77);
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 6px;
+  padding-right: 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.date {
+  font-size: 0.8em;
+  font-style: italic;
+}
+
+main {
+  margin-top: 4em;
+}
+
+pre {
+  overflow: auto;
+  border-radius: 6px;
+}
+pre code {
+  border-style: none;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+footer {
+  display: flex;
+  margin-top: 6em;
+  padding-top: 4em;
+  padding-bottom: 6em;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: #606bc5;
+  font-size: 0.7em;
+  color: #a7addf;
+}
+footer div.col {
+  float: left;
+}
+footer div.col p:nth-child(1) {
+  margin-top: 0;
+}
+footer a:link,
+footer a:visited {
+  color: #edeff9;
+  border-bottom: solid 1px #4750b2;
+}
+footer a:hover,
+footer a:focus {
+  color: #fff;
+  border-bottom: solid 1px #fff;
+}
+footer div.logo {
+  width: 64px;
+  height: 64px;
+  margin-right: 1.5em;
+  background-color: #a7addf;
+  -webkit-mask: url(/images/logo_square_alpha.svg) no-repeat center;
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  mask: url(/images/logo_square_alpha.svg) no-repeat center;
+}
+footer div.logo:hover {
+  background-color: #dcdef2;
+}
+
+div.background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: #363795;
+  overflow: hidden;
+}
+/*# sourceMappingURL=styles.css.map */
