@@ -42,7 +42,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          npm run clean
           npm run build
 
   build_documentation:
@@ -63,7 +62,6 @@ jobs:
         with:
           path: |
             **/dist
-            _presentations.jso
           key: ${{ runner.os }}-site-v1-${{ hashFiles('package.json') }}-${{ github.run_number }}
     
   deploy_github:
@@ -85,7 +83,6 @@ jobs:
         with:
           path: |
             **/dist
-            _presentations.json
           key: ${{ runner.os }}-site-v1-${{ hashFiles('package.json') }}-${{ github.run_number }}
       - name: Deploy site to GitHub
         uses: peaceiris/actions-gh-pages@v3
