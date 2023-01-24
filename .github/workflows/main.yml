@@ -63,7 +63,11 @@ jobs:
           path: |
             **/dist
           key: ${{ runner.os }}-site-v1-${{ hashFiles('package.json') }}-${{ github.run_number }}
-    
+      - name: Build site
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          run: |
+            npm run build:docs
   deploy_github:
     needs:
       - build

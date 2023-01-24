@@ -12,4 +12,9 @@ A semantic Bluetooth Low Energy beacon specification that helps to describe the 
 ## Features
 - Interoperable and backwards compatible
 - Real-time processing in positioning systems
-- Multiple use cases
+- Extensible vocabularies and use cases
+- Extended advertisement support
+
+## Getting Started
+If you want to create a positioning system or navigation application that supports SemBeacon, you
+can start by implementing the hardware.
