@@ -43,31 +43,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npm run build
+          npm run build:docs
 
-  build_documentation:
-    needs: build
-    name: 'Build Documentation'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v3
-      - name: Load dependency cache
-        uses: actions/cache@v2
-        with:
-          path: |
-            **/node_modules
-          key: ${{ runner.os }}-dependencies-v1-${{ hashFiles('package.json') }}
-      - name: Load site cache
-        uses: actions/cache@v2
-        with:
-          path: |
-            **/dist
-          key: ${{ runner.os }}-site-v1-${{ hashFiles('package.json') }}-${{ github.run_number }}
-      - name: Build site
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          run: |
-            npm run build:docs
   deploy_github:
     needs:
       - build
