@@ -5,8 +5,10 @@ const markdownItShiki = require("markdown-it-shiki").default;
 const markdownItAnchor = require("markdown-it-anchor");
 const markdownItAttrs = require("markdown-it-attrs");
 const sass = require("eleventy-sass");
+const sassCompile = require("eleventy-sass/lib/compile");
 const favicon = require("eleventy-favicon");
 const toc = require("eleventy-plugin-toc");
+const fs = require("fs-extra");
 
 const baseUrl = new URL("/w/sembeacon-website/", "https://anonymous.4open.science");
 //const baseUrl = new URL("/sembeacon.org/", "https://sembeacon.github.io"); 
@@ -46,7 +48,7 @@ module.exports = function(config) {
       return url;
     }
     try {
-      return new URL(baseUrl.pathname + url, baseUrl).href;
+      return new URL(String(baseUrl.pathname + url).replace("//", "/"), baseUrl).href;
     } catch (err) {
       console.error(err);
       return url;
@@ -82,12 +84,13 @@ module.exports = function(config) {
 
   config.addPlugin(sass, [
     {
+      rev: false,
       compileOptions: {
         permalink: function(permalinkString, inputPath) {
           return (data) => {
             return data.page.filePathStem.replace(/^\/_scss\//, "/css/") + ".css";
           };
-        }
+        },
       },
       sass: {
         style: "expanded",
@@ -105,6 +108,19 @@ module.exports = function(config) {
       when: [ { ELEVENTY_ENV: "production" }, { ELEVENTY_ENV: false } ]
     }
   ]);
+
+  config.on('eleventy.before', async () => {
+    const scssExtension = Array.from(config.extensionMap.values())[1];
+    config.extensionMap.delete(scssExtension);
+    config.addExtension("scss", {
+      version: 2,
+      ...scssExtension,
+      compile: async function(inputContent, inputPath) {
+        inputContent = inputContent.replaceAll("{{ baseUrl }}", baseUrl.href.substring(0, baseUrl.href.length - 1));
+        return await scssExtension.compile.bind(this)(inputContent, inputPath);
+      },
+    });
+  });
 
   // pass some assets right through
   config.addPassthroughCopy("./src/site/images");

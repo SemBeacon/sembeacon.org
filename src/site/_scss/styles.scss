@@ -36,7 +36,7 @@ body {
   &:not(.home) {
     background-color: $page-color;
     background: $page-color;
-    background: url(/images/bg-grid.png), linear-gradient(320deg, $page-color 0%, $accent-color 100%);
+    background: url("{{ baseUrl }}/images/bg-grid.png"), linear-gradient(320deg, $page-color 0%, $accent-color 100%);
   }
 }
 
@@ -225,10 +225,10 @@ footer {
     height: 64px;
     margin-right: 1.5em;
     background-color: mix($text-color, $accent-color, 50%);
-    -webkit-mask: url(/images/logo_square_alpha.svg) no-repeat center;
+    -webkit-mask: url("{{ baseUrl }}/images/logo_square_alpha.svg") no-repeat center;
     mask-size: contain;
     -webkit-mask-size: contain;
-    mask: url(/images/logo_square_alpha.svg) no-repeat center;
+    mask: url("{{ baseUrl }}/images/logo_square_alpha.svg") no-repeat center;
 
     &:hover {
       background-color: mix($text-color, $accent-color, 80%);
