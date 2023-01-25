@@ -1,6 +1,6 @@
 ---
 title: About
-layout: layouts/base.njk
+layout: layouts/default.njk
 subtitle: About the SemBeacon specification and its maintainers
 ---
 

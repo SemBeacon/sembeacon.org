@@ -6,12 +6,20 @@ const markdownItAnchor = require("markdown-it-anchor");
 const markdownItAttrs = require("markdown-it-attrs");
 const sass = require("eleventy-sass");
 const favicon = require("eleventy-favicon");
+const toc = require("eleventy-plugin-toc");
 
-const baseUrl = "https://sembeacon.github.io/sembeacon.org"; //"https://sembeacon.org";
+const baseUrl = "https://anonymous.4open.science/w/sembeacon-website/";
+//const baseUrl = "https://sembeacon.github.io/sembeacon.org/"; 
+//const baseUrl = "https://sembeacon.org";
 module.exports = function(config) {
   config.addPassthroughCopy({
     "./src/site/example.ttl": "example.ttl",
   });
+  config.addPlugin(toc, {
+    tags: ['h2'],
+    ul: true
+  });
+
 
   // A useful way to reference the context we are runing eleventy in
   let env = process.env.ELEVENTY_ENV;
@@ -34,6 +42,9 @@ module.exports = function(config) {
     destination: "dist"
   });
   config.addFilter("absoluteUrl", function (url="") {
+    if (env === "dev") {
+      return url;
+    }
     try {
       return new URL(url, baseUrl).href;
     } catch (err) {
@@ -67,6 +78,7 @@ module.exports = function(config) {
   md.use(markdownItShiki, { 
     theme: "nord"
   });
+  config.setLibrary("md", md);
 
   config.addPlugin(sass, [
     {
@@ -97,6 +109,13 @@ module.exports = function(config) {
   // pass some assets right through
   config.addPassthroughCopy("./src/site/images");
 
+  // Collections
+  config.addCollection("sorted_docs", (collection) => {
+    const items = collection.getFilteredByTag("docs");
+    items.sort((a, b) => a.data.menuOrder - b.data.menuOrder);
+    return items;
+  });
+
   // make the seed target act like prod
   env = (env=="seed") ? "prod" : env;
   return {
@@ -117,7 +136,7 @@ module.exports = function(config) {
       'js'
     ],
     htmlTemplateEngine : "njk",
-    markdownTemplateEngine : "njk",
+    markdownTemplateEngine : "liquid",
     passthroughFileCopy: true
   };
 

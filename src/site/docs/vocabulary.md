@@ -1,7 +1,8 @@
 ---
-title: Documentation
-layout: layouts/base.njk
+title: Ontology
+layout: layouts/docs.njk
 subtitle: Specification Documentation
+tags: docs
 ---
 
 The vocabulary for describing a SemBeacon is based on the [Positioning System Ontology (POSO)](https://github.com/OpenHPS/POSO), an ontology that helps to describe a positioning system.

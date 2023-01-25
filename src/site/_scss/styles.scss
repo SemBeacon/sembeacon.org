@@ -1,5 +1,7 @@
 @import '_variables';
 @import '_syntax';
+@import 'components/navigation';
+@import 'includes/grid';
 
 * {
   margin: 0;
@@ -116,7 +118,7 @@ a:focus {
   border-bottom-style:none;
 }
 
-nav ul {
+header nav ul {
   padding-top: 3em;
 
   li {
@@ -243,4 +245,16 @@ div.background {
   height: 100%;
   background-color: $page-color;
   overflow: hidden;
+}
+
+.logo-example img {
+  background: white;
+  max-height: 250px;
+  max-width: 100%;
+  border-radius: 1em;
+  padding: 1em;
+}
+
+.logo-example.alpha img {
+  background: rgb(29, 29, 29);
 }

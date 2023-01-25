@@ -1,9 +1,14 @@
 ---
 layout: layouts/base.njk
 ---
-<div class="container">
-
-</div>
-<div class="container">
-{{ content | safe }}
+<div>
+  <div class="row">
+    <div class="col-sm-3">
+      {% include "docs_menu.njk" %}
+    </div>
+    <div class="col-sm-9">
+      <h1>{{ title }}</h1>
+      {{ content | safe }}
+    </div>
+  </div>
 </div>

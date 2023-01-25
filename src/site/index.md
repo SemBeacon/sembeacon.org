@@ -1,7 +1,6 @@
 ---
 meta-title: SemBeacon
-layout: layouts/base.njk
-bodyClass: home
+layout: layouts/default.njk
 ---
 
 <img alt="SemBeacon logo" src="{{ '/images/logo_alpha.svg' | absoluteUrl }}" class="logo">

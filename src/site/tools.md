@@ -1,6 +1,6 @@
 ---
 title: Tools
-layout: layouts/base.njk
+layout: layouts/default.njk
 subtitle: SemBeacon Tools and Examples
 ---
 
