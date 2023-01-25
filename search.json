@@ -7,19 +7,19 @@
   ,
   {
     "url": "/docs/",
-    "title": "Documentation",
+    "title": "Specification",
     "index": "Bluetooth AdvertisementSemantic Description"
   }
   ,
   {
     "url": "/docs/logo/",
-    "title": "Documentation",
-    "index": "StyleSemBeacon uses logo with color #363795 represents combination Eddystone (square) AltBeacon Vrije Universiteit Brusselwhere specification originally designed"
+    "title": "Logo",
+    "index": "Style GuidelinesSemBeacon uses logo with color #363795 dark backgrounds displayed white can displayedwith without SemBeacon name However should always include pentagonshaped logoWhenever possible using vector graphicsDownload hereDownload hereMeaning represents combination Eddystone (square) AltBeacon Vrije Universiteit Brussel where specification designed"
   }
   ,
   {
     "url": "/docs/vocabulary/",
-    "title": "Documentation",
+    "title": "Ontology",
     "index": " vocabulary describing SemBeacon based Positioning System Ontology (POSO) ontology that helps describe positioning system documentation can found here"
   }
   ,
