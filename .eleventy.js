@@ -8,8 +8,8 @@ const sass = require("eleventy-sass");
 const favicon = require("eleventy-favicon");
 const toc = require("eleventy-plugin-toc");
 
-const baseUrl = "https://anonymous.4open.science/w/sembeacon-website/";
-//const baseUrl = "https://sembeacon.github.io/sembeacon.org/"; 
+const baseUrl = new URL("/w/sembeacon-website/", "https://anonymous.4open.science");
+//const baseUrl = new URL("/sembeacon.org/", "https://sembeacon.github.io"); 
 //const baseUrl = "https://sembeacon.org";
 module.exports = function(config) {
   config.addPassthroughCopy({
@@ -46,7 +46,7 @@ module.exports = function(config) {
       return url;
     }
     try {
-      return new URL(url, baseUrl).href;
+      return new URL(baseUrl.pathname + url, baseUrl).href;
     } catch (err) {
       console.error(err);
       return url;
