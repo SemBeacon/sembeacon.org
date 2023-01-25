@@ -116,7 +116,7 @@ module.exports = function(config) {
       version: 2,
       ...scssExtension,
       compile: async function(inputContent, inputPath) {
-        inputContent = inputContent.replaceAll("{{ baseUrl }}", baseUrl.href.substring(0, baseUrl.href.length - 1));
+        inputContent = inputContent.replace(/{{ baseUrl }}/g, baseUrl.href.substring(0, baseUrl.href.length - 1));
         return await scssExtension.compile.bind(this)(inputContent, inputPath);
       },
     });
