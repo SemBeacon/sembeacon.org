@@ -4,7 +4,7 @@ layout: layouts/base.njk
 bodyClass: home
 ---
 
-<img alt="SemBeacon logo" src="/images/logo_alpha.svg" class="logo">
+<img alt="SemBeacon logo" src="{{ '/images/logo_alpha.svg' | absoluteUrl }}" class="logo">
 <p class="subtitle">
 A semantic Bluetooth Low Energy beacon specification that helps to describe the beacon itself, its deployment and the positioning system used within.
 </p>

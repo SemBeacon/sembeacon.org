@@ -7,6 +7,7 @@ const markdownItAttrs = require("markdown-it-attrs");
 const sass = require("eleventy-sass");
 const favicon = require("eleventy-favicon");
 
+const baseUrl = "https://sembeacon.github.io/sembeacon.org"; //"https://sembeacon.org";
 module.exports = function(config) {
   config.addPassthroughCopy({
     "./src/site/example.ttl": "example.ttl",
@@ -26,11 +27,19 @@ module.exports = function(config) {
   config.addPlugin(seo, require("./src/site/_data/seo.json"));
   config.addPlugin(sitemap, {
     sitemap: {
-      hostname: "https://sembeacon.org",
+      hostname: baseUrl,
     },
   });
   config.addPlugin(favicon, {
     destination: "dist"
+  });
+  config.addFilter("absoluteUrl", function (url="") {
+    try {
+      return new URL(url, baseUrl).href;
+    } catch (err) {
+      console.error(err);
+      return url;
+    }
   });
 
   // minify the html output
