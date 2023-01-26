@@ -7,7 +7,7 @@ const token = process.env.GITHUB_TOKEN;
 
 async function downloadBranch(user, repo, branch) {
     return new Promise((resolve, reject) => {
-        const url = `https://github.com/${user}/${repo}/archive/refs/heads/${branch}.zip`;
+        const url = `https://api.github.com/repos/${user}/${repo}/zipball/${branch}`;
         axios.get(url, {
             responseType: "stream",
             headers: {
