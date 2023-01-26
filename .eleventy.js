@@ -13,6 +13,7 @@ const fs = require("fs-extra");
 const baseUrl = new URL("/w/sembeacon-website/", "https://anonymous.4open.science");
 //const baseUrl = new URL("/sembeacon.org/", "https://sembeacon.github.io"); 
 //const baseUrl = "https://sembeacon.org";
+
 module.exports = function(config) {
   config.addPassthroughCopy({
     "./src/site/example.ttl": "example.ttl",
@@ -113,7 +114,6 @@ module.exports = function(config) {
     const scssExtension = Array.from(config.extensionMap.values())[1];
     config.extensionMap.delete(scssExtension);
     config.addExtension("scss", {
-      version: 2,
       ...scssExtension,
       compile: async function(inputContent, inputPath) {
         inputContent = inputContent.replace(/{{ baseUrl }}/g, baseUrl.href.substring(0, baseUrl.href.length - 1));
