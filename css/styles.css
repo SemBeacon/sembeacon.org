@@ -161,7 +161,6 @@ li.title {
   margin: 0 -10px;
   padding: 0;
   list-style: none;
-  font-size: 0;
 }
 
 .col-1, .col-sm-1 {
@@ -876,15 +875,35 @@ div.background {
   overflow: hidden;
 }
 
-.logo-example img {
+img.logo-example {
   background: white;
-  max-height: 250px;
+  max-height: 150px;
   max-width: 100%;
   border-radius: 1em;
   padding: 1em;
+  display: block;
+}
+img.logo-example:not(:first-child) {
+  margin-top: 1.5em;
 }
 
-.logo-example.alpha img {
+img.logo-example.alpha {
   background: rgb(29, 29, 29);
+}
+
+a.logo-download {
+  font-size: 0.6em;
+  padding: 0.4em;
+  padding-left: 0.8em;
+  padding-right: 0.8em;
+  color: black;
+  background-color: #dcdef2;
+  border-radius: 0.5em;
+  text-decoration: none;
+  margin-top: 0.5em;
+  margin-bottom: 2em;
+}
+a.logo-download:hover {
+  background-color: #b8bde5;
 }
 /*# sourceMappingURL=styles.css.map */
