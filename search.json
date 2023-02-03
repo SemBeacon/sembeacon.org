@@ -32,6 +32,6 @@
   {
     "url": "/tools/",
     "title": "Tools",
-    "index": "ESP32 provide library that can used create scan SemBeacon&#39;s with ArduinoESP32 libraryAndroidSemBeacon provides extension top androidbeaconlibrary by AltBeacon which adds ability SemBeacons broadcast dataWhile this tool enables SemBeacons does necesarry tools extracting semantic data from public URITwo example applications using are available based existing open source apps:iOSCurrently iOS exist demonstrate SemBeacon capabilities"
+    "index": "ESP32 provide library that can used create scan SemBeacon&#39;s with ArduinoESP32 library// Create SemBeaconBLESemBeacon beacon = BLESemBeacon();beaconsetManufacturerId(0x4c00); // Manufacturer beaconbeaconsetSignalPower(56); RSSI 1m distancebeaconsetNamespaceId(BLEUUID(BEACON_UUID)); Namespace UUIDbeaconsetInstanceId(0xBEACBEAC); Instance IdentifierbeaconsetResourceURI(https://tinyurlcom/3u9tpt7k); URI resource// Start advertisingBLESemBeaconAdvertising* advertising new BLESemBeaconAdvertising();advertisingsetBeacon(beacon);advertisingstart();AndroidSemBeacon provides extension top androidbeaconlibrary by AltBeacon which adds ability SemBeacons broadcast dataWhile this tool enables SemBeacons does necesarry tools extracting semantic data from public URIiOSCurrently iOS exist demonstrate SemBeacon capabilities"
   }
   ]

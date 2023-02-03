@@ -147,6 +147,27 @@ li.title {
   margin: 1em 0 0.5em 0;
 }
 
+div.alert {
+  display: block;
+  border-radius: 1em;
+  border-style: solid;
+  border-width: 1px;
+  padding: 20px;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  color: black;
+  text-align: justify;
+}
+div.alert h1, div.alert h2, div.alert h3 {
+  padding: 0;
+  margin: 0;
+  color: black;
+}
+div.alert.alert-warn {
+  background-color: rgb(241, 241, 128);
+  border-color: rgb(175, 175, 80);
+}
+
 .container {
   margin: 0 auto;
   padding: 0 40px;
@@ -631,6 +652,44 @@ li.title {
     margin-bottom: 0;
   }
 }
+@font-face {
+  font-family: Cascadia Mono-SemiLight;
+  src: url(/fonts/CascadiaMono.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: Cascadia Code-SemiLight;
+  src: url(/fonts/CascadiaCode.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+pre .line {
+  display: block;
+}
+
+code,
+pre {
+  font-family: "Cascadia Mono-SemiLight", Menlo, Monaco, Consolas, monospace;
+  padding: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  white-space: pre-wrap;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+pre {
+  padding: 15px;
+  border-radius: 4px;
+}
+
+pre code {
+  padding: 0;
+  font-size: 100%;
+  background-color: transparent;
+  text-align: left;
+}
+
 * {
   margin: 0;
   padding: 0;
