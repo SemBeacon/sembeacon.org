@@ -1,7 +1,9 @@
 @import '_variables';
 @import '_syntax';
 @import 'components/navigation';
+@import 'components/alert';
 @import 'includes/grid';
+@import 'includes/code';
 
 * {
   margin: 0;

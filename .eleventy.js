@@ -78,7 +78,7 @@ module.exports = function(config) {
     allowedAttributes: []
   });
   md.use(markdownItShiki, { 
-    theme: "nord"
+    theme: "dark-plus"
   });
   config.setLibrary("md", md);
 
@@ -97,14 +97,11 @@ module.exports = function(config) {
         sourceMap: true
       }
     }, {
-      rev: true,
-      when: { ELEVENTY_ENV: "stage" }
-    }, {
       sass: {
         style: "compressed",
         sourceMap: false
       },
-      rev: true,
+      rev: false,
       when: [ { ELEVENTY_ENV: "production" }, { ELEVENTY_ENV: false } ]
     }
   ]);

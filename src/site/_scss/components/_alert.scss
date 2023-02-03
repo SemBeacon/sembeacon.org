@@ -1,0 +1,22 @@
+div.alert {
+    display: block;
+    border-radius: 1em;
+    border-style: solid;
+    border-width: 1px;
+    padding: 20px;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    color: black;
+    text-align: justify;
+
+    h1, h2, h3 {
+        padding: 0;
+        margin: 0;
+        color: black;
+    }
+
+    &.alert-warn {
+        background-color: rgb(241, 241, 128);
+        border-color: rgb(175, 175, 80);
+    }
+}
