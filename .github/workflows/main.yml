@@ -3,8 +3,6 @@ name: CI
 on:
   push:
     branches: [ main ]
-  schedule:
-    - cron: '0 0 * * *'
 
 jobs:
   build:
@@ -40,7 +38,7 @@ jobs:
           npm install
       - name: Build site
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_GLOBAL }}
         run: |
           npm run build
           npm run build:docs

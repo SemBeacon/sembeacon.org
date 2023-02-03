@@ -6,6 +6,7 @@ const {
     rmdir, 
     downloadBranch 
 } = require("./utils");
+const fs = require('fs');
 
 async function buildDocs() {
     if (!isGitHubAvailable()) {
@@ -17,7 +18,9 @@ async function buildDocs() {
         const stream = await download("specification");
         console.log(chalk.white(`\tExtracting documentation for specification`));
         await extractZip(`dist/terms/specification`, stream);
-        copySync(`dist/terms/specification/specification-gh-pages`, `dist/terms/`, { overwrite: true });
+        const directories = fs.readdirSync(`dist/terms/specification/`);
+
+        copySync(`dist/terms/specification/${directories[0]}`, `dist/terms/`, { overwrite: true });
         await rmdir(`dist/terms/specification`);
     } catch(ex) {
         console.error(chalk.red(`\tUnable to get documentation for specification`));

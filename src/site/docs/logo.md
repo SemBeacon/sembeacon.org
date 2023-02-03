@@ -3,6 +3,7 @@ title: Logo
 layout: layouts/docs.njk
 subtitle: Specification Documentation
 tags: docs
+menuOrder: 999
 ---
 
 ## Style and Guidelines
@@ -12,21 +13,22 @@ with or without the SemBeacon name. However, the logo should always include the 
 
 Whenever possible, the logo should be displayed using vector graphics.
 
-![]({{ '/images/logo_square.svg' | absoluteUrl }}) { .logo-example }
+<div class="row">
+    <div class="col-sm-6">
+        <img src="{{ '/images/logo_square.svg' | absoluteUrl }}" class="logo-example" alt="SemBeacon square logo">
+        <a href="{{ '/images/logo_square.svg' | absoluteUrl }}" class="logo-download" download>Download *.SVG</a>
+    </div>
+    <div class="col-sm-6">
+        <img src="{{ '/images/logo_square_alpha.svg' | absoluteUrl }}" class="logo-example alpha" alt="SemBeacon square logo">
+        <a href="{{ '/images/logo_square_alpha.svg' | absoluteUrl }}" class="logo-download" download>Download *.SVG</a>
+    </div>
+</div>
 
-<a href="{{ '/images/logo_square.svg' | absoluteUrl }}" download>Download here</a>
+<img src="{{ '/images/logo.svg' | absoluteUrl }}" class="logo-example" alt="SemBeacon logo">
+<a href="{{ '/images/logo.svg' | absoluteUrl }}" class="logo-download" download>Download *.SVG</a>
 
-![]({{ '/images/logo_square_alpha.svg' | absoluteUrl }}) { .logo-example .alpha }
-
-<a href="{{ '/images/logo_square_alpha.svg' | absoluteUrl }}" download>Download here</a>
-
-![]({{ '/images/logo.svg' | absoluteUrl }}) { .logo-example }
-
-<a href="{{ '/images/logo.svg' | absoluteUrl }}" download>Download here</a>
-
-![]({{ '/images/logo_alpha.svg' | absoluteUrl }}) { .logo-example .alpha }
-
-<a href="{{ '/images/logo_alpha.svg' | absoluteUrl }}" download>Download here</a>
+<img src="{{ '/images/logo_alpha.svg' | absoluteUrl }}" class="logo-example alpha" alt="SemBeacon logo">
+<a href="{{ '/images/logo_alpha.svg' | absoluteUrl }}" class="logo-download" download>Download *.SVG</a>
 
 ## Meaning
-The logo represents a combination of the Eddystone logo (square), the [AltBeacon](https://altbeacon.org) logo and the logo of the [Vrije Universiteit Brussel](https://vub.be/) where the specification was designed.
+The logo represents a combination of the Eddystone logo (square with a cut out "Epsilon"), the [AltBeacon](https://altbeacon.org) logo with its hexagon shape and the logo of the [Vrije Universiteit Brussel](https://vub.be/) where the specification was designed.
