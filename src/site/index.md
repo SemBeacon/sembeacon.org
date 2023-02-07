@@ -16,4 +16,4 @@ A semantic Bluetooth Low Energy beacon specification that helps to describe the 
 
 ## Getting Started
 If you want to create a positioning system or navigation application that supports SemBeacon, you
-can start by implementing the hardware.
+can start by implementing the protocol in hardware. Check out the [tools]({{ '/tools/' | absoluteUrl }}) page for more information.

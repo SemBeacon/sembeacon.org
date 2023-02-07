@@ -1,0 +1,1100 @@
+@prefix : <https://sembeacon.org/examples/kennedy2019/beacons2.ttl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix sosa: <http://www.w3.org/ns/sosa/>.
+@prefix ogc: <http://www.opengis.net/ont/geosparql#>.
+@prefix poso: <http://purl.org/poso/>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix dcmi: <http://purl.org/dc/terms/>.
+@prefix qudt: <http://qudt.org/schema/qudt/>.
+@prefix unit: <http://qudt.org/vocab/unit/>.
+@prefix schema: <http://schema.org/>.
+@prefix seas: <https://w3id.org/seas/>.
+@prefix ssn: <http://www.w3.org/ns/ssn/>.
+@prefix hardware: <http://w3id.org/devops-infra/hardware#>.
+
+:A1 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "A1";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "1.214"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "1.773"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label A1"@en.
+:B1 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "B1";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "2.172"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "1.746"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label B1"@en.
+<https://sembeacon.org/examples/kennedy2019/beacons2.ttl#A1.5> a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "A1.5";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "1.094"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "2.419"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label A1.5"@en.
+:A2 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "A2";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "1.135"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "2.715"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label A2"@en.
+<https://sembeacon.org/examples/kennedy2019/beacons2.ttl#B1.5> a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "B1.5";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "2.166"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "2.37"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label B1.5"@en.
+:B2 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "B2";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "2.166"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "2.892"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label B2"@en.
+:A3 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "A3";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "1.14"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "3.824"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label A3"@en.
+:B3 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "B3";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "2.149"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "3.935"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label B3"@en.
+:A4 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "A4";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "1.17"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "5.194"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label A4"@en.
+:A5 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "A5";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "1.22"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "6.672"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label A5"@en.
+:A6 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "A6";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "1.08"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "8.2"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label A6"@en.
+:A7 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "A7";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "1.075"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "9.37"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label A7"@en.
+:B4 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "B4";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "2.13"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "5.459"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label B4"@en.
+:B5 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "B5";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "2.193"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "6.742"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label B5"@en.
+:C4 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "C4";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "3.184"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "5.396"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label C4"@en.
+:C5 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "C5";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "3.216"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "6.692"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label C5"@en.
+:C1 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "C1";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "3.326"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "1.673"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label C1"@en.
+:C2 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "C2";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "3.422"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "3.07"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label C2"@en.
+<https://sembeacon.org/examples/kennedy2019/beacons2.ttl#C1.5> a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "C1.5";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "3.356"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "2.423"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label C1.5"@en.
+:D1 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "D1";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "4.424"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "1.577"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label D1"@en.
+:D2 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "D2";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "4.468"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "3.073"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label D2"@en.
+<https://sembeacon.org/examples/kennedy2019/beacons2.ttl#D1.5> a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "D1.5";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "4.385"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "2.288"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label D1.5"@en.
+:E1 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "E1";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "5.286"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "1.522"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label E1"@en.
+:E2 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "E2";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "5.282"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "3.139"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label E2"@en.
+<https://sembeacon.org/examples/kennedy2019/beacons2.ttl#E1.5> a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "E1.5";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "5.246"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "2.281"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label E1.5"@en.
+:F1 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "F1";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "6.141"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "1.518"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label F1"@en.
+:F2 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "F2";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "6.184"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "2.281"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label F2"@en.
+:G1 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "G1";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "7.301"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "1.434"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label G1"@en.
+:G2 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "G2";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "7.336"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "2.255"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label G2"@en.
+:G3 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "G3";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "7.331"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "3.162"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label G3"@en.
+:F5 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "F5";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "6.224"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "5.568"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label F5"@en.
+:F6 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "F6";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "6.271"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "6.671"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label F6"@en.
+:G5 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "G5";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "7.235"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "5.475"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label G5"@en.
+:G6 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "G6";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "7.221"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "6.746"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label G6"@en.
+:H1 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "H1";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "8.428"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "1.377"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label H1"@en.
+:H2 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "H2";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "8.424"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "2.306"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label H2"@en.
+:H3 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "H3";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "8.422"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "3.182"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label H3"@en.
+:H4 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "H4";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "8.413"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "4.24"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label H4"@en.
+:H5 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "H5";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "8.345"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "5.283"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label H5"@en.
+:H6 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "H6";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "8.379"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "6.74"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label H6"@en.
+:H7 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "H7";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "8.78"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "7.97"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label H7"@en.
+:H8 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "H8";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "8.78"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "9.143"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label H8"@en.
+:I1 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "I1";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "9.58"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "1.436"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label I1"@en.
+:I2 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "I2";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "9.549"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "2.257"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label I2"@en.
+:I3 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "I3";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "9.599"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "3.218"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label I3"@en.
+:I4 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "I4";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "9.566"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "4.227"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label I4"@en.
+:I5 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "I5";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "9.506"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "5.29"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label I5"@en.
+:I6 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:Landmark;
+    rdfs:label "I6";
+    dcmi:created "2023-02-07T17:12:38.985Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:38.985Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "10.271"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "6.381"^^xsd:double
+]
+];
+    rdfs:comment "This is a room landmark with label I6"@en.
+:ea7612f7-d2f7-4648-bd85-71d26b361423 a sosa:FeatureOfInterest, ogc:SpatialObject, schema:Room, seas:Room, ssn:Deployment;
+    rdfs:label "Office";
+    dcmi:created "2023-02-07T17:12:38.984Z"^^xsd:dateTime;
+    ogc:hasGeometry [
+  a ogc:Geometry;
+  ogc:asWKT "POLYGON Z((0 0 0, 0 25 0, 11 25 0, 11 0 0))"^^ogc:wktLiteral;
+  ogc:coordinateDimension 3;
+  ogc:spatialDimension 3;
+  ogc:dimension 3
+];
+    schema:accommodationFloorPlan [
+  a schema:FloorPlan;
+  schema:layoutImage "https://github.com/co60ca/BBIL/blob/master/assets/room-2.png?raw=true"^^xsd:anyURI
+].
+:edge_50 a sosa:FeatureOfInterest, ogc:SpatialObject, <http://purl.org/sembeacon/SemBeacon>, poso:RFLandmark, poso:BluetoothBeacon;
+    rdfs:label "Edge 50";
+    dcmi:created "2023-02-07T17:12:39.010Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:39.010Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "0.579"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "7.88"^^xsd:double
+];
+  poso:zAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "1.6"^^xsd:double
+]
+];
+    hardware:macAddress [], [].
+:edge_51 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:RFLandmark, poso:BluetoothBeacon, poso:BluetoothReceiver;
+    rdfs:label "Edge 51";
+    dcmi:created "2023-02-07T17:12:39.010Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:39.010Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "0"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "3.431"^^xsd:double
+];
+  poso:zAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "1.6"^^xsd:double
+]
+];
+    hardware:macAddress [], [].
+:edge_52 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:RFLandmark, poso:BluetoothBeacon, poso:BluetoothReceiver;
+    rdfs:label "Edge 52";
+    dcmi:created "2023-02-07T17:12:39.010Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:39.010Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "1.942"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "0"^^xsd:double
+];
+  poso:zAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "1.6"^^xsd:double
+]
+];
+    hardware:macAddress [], [].
+:edge_53 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:RFLandmark, poso:BluetoothBeacon, poso:BluetoothReceiver;
+    rdfs:label "Edge 53";
+    dcmi:created "2023-02-07T17:12:39.010Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:39.010Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "4.908"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "0"^^xsd:double
+];
+  poso:zAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "1.6"^^xsd:double
+]
+];
+    hardware:macAddress [], [].
+:edge_54 a sosa:FeatureOfInterest, ogc:SpatialObject, <http://purl.org/sembeacon/SemBeacon>, poso:RFLandmark, poso:BluetoothBeacon;
+    rdfs:label "Edge 54";
+    dcmi:created "2023-02-07T17:12:39.010Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:39.010Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "10.091000000000001"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "0"^^xsd:double
+];
+  poso:zAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "1.6"^^xsd:double
+]
+];
+    hardware:macAddress [], [].
+:edge_55 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:RFLandmark, poso:BluetoothBeacon, poso:BluetoothReceiver;
+    rdfs:label "Edge 55";
+    dcmi:created "2023-02-07T17:12:39.010Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:39.010Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "9.978"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "3.89"^^xsd:double
+];
+  poso:zAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "1.6"^^xsd:double
+]
+];
+    hardware:macAddress [], [].
+:edge_56 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:RFLandmark, poso:BluetoothBeacon, poso:BluetoothReceiver;
+    rdfs:label "Edge 56";
+    dcmi:created "2023-02-07T17:12:39.010Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:39.010Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "8.017000000000001"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "7.9270000000000005"^^xsd:double
+];
+  poso:zAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "1.6"^^xsd:double
+]
+];
+    hardware:macAddress [], [].
+:edge_57 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:RFLandmark, poso:BluetoothBeacon, poso:BluetoothReceiver;
+    rdfs:label "Edge 57";
+    dcmi:created "2023-02-07T17:12:39.010Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:39.010Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "5.114"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "7.16"^^xsd:double
+];
+  poso:zAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "1.6"^^xsd:double
+]
+];
+    hardware:macAddress [], [].
+:edge_58 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:RFLandmark, poso:BluetoothBeacon, poso:BluetoothReceiver;
+    rdfs:label "Edge 58";
+    dcmi:created "2023-02-07T17:12:39.010Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-02-07T17:12:39.010Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "4.95"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "4.239"^^xsd:double
+];
+  poso:zAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "1.6"^^xsd:double
+]
+];
+    hardware:macAddress [], [].
