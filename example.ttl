@@ -28,10 +28,10 @@
     poso:hasDistance [ unit:Meter ; qudt:value "1.0"^^xsd:double ] .
   ] ;
   poso:hasPosition [ a poso:AbsolutePosition ;
-    poso:hasAccuracy [ ... ] ;
-    poso:xAxisValue [ ... ] ;
-    poso:yAxisValue [ ... ] ;
-    poso:zAxisValue [ ... ] ] .
+    poso:hasAccuracy [ ] ;
+    poso:xAxisValue [ ] ;
+    poso:yAxisValue [ ] ;
+    poso:zAxisValue [ ] ] .
 
 :room_a1_3 a posoc:iBeacon ;
   rdfs:label "iBeacon Room A1.3"@en ;
@@ -40,5 +40,5 @@
   hardware:mac "00:55:44:33:22:11" ;
   posoc:major 11115 ;
   posoc:minor 12015 ;
-  posoc:referenceRSSI [ ... ] ;
-  poso:hasPosition [ ... ] .
+  posoc:referenceRSSI [ ] ;
+  poso:hasPosition [ ] .
