@@ -167,10 +167,14 @@ div.alert.alert-warn {
   background-color: rgb(241, 241, 128);
   border-color: rgb(175, 175, 80);
 }
+@media (max-width: 740px) {
+  div.alert {
+    border-radius: 0.5em;
+  }
+}
 
 .container {
   margin: 0 auto;
-  padding: 0 40px;
   max-width: 1200px;
 }
 .container.main {
@@ -848,7 +852,6 @@ header nav ul small {
   font-size: 0.7em;
   color: #b8bde5;
 }
-
 code {
   font-size: 0.8em;
   background-color: #dcdef2;
@@ -964,5 +967,10 @@ a.logo-download {
 }
 a.logo-download:hover {
   background-color: #b8bde5;
+}
+
+table th, td {
+  border: solid 1px #b8bde5;
+  padding: 0.5em;
 }
 /*# sourceMappingURL=styles.css.map */
