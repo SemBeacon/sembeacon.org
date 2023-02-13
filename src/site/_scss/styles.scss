@@ -155,6 +155,10 @@ header nav ul {
     font-size: 0.7em;
     color: mix($text-color,$accent-color, 60%);
   }
+
+  @media (max-width: $mid) {
+
+  };
 }
 
 
@@ -280,4 +284,9 @@ a.logo-download {
   &:hover {
     background-color: mix($text-color, $accent-color, 60%);
   }
+}
+
+table th, td {
+  border: solid 1px mix($text-color, $accent-color, 60%);
+  padding: 0.5em;
 }

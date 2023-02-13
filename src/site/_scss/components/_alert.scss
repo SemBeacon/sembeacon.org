@@ -19,4 +19,8 @@ div.alert {
         background-color: rgb(241, 241, 128);
         border-color: rgb(175, 175, 80);
     }
+
+    @media (max-width: $mid) {
+        border-radius: 0.5em;
+    };
 }

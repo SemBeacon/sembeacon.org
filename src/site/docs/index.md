@@ -33,7 +33,7 @@ needs to be shortened to fit in the advertisement data.
 - bitly.com
 
 ## BLE 4.x Specification
-![SemBeacon Bluetooth 4.x specification]({{ '/images/specification/sembeacon_specification_v4_2.svg' | absoluteUrl }})
+![SemBeacon Bluetooth 4.x specification]({{ '/images/specification/sembeacon_specification_v4_2_alpha.svg' | absoluteUrl }})
 
 ## BLE 5.x Specification
-![SemBeacon Bluetooth 5.x specification]({{ '/images/specification/sembeacon_specification_v5_0.svg' | absoluteUrl }})
+![SemBeacon Bluetooth 5.x specification]({{ '/images/specification/sembeacon_specification_v5_0_alpha.svg' | absoluteUrl }})
