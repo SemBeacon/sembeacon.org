@@ -17,6 +17,7 @@ const baseUrl = new URL("/w/sembeacon-website/", "https://anonymous.4open.scienc
 module.exports = function(config) {
   config.addPassthroughCopy({
     "./src/site/example.ttl": "example.ttl",
+    "./src/site/examples": "examples"
   });
   config.addPlugin(toc, {
     tags: ['h2'],
