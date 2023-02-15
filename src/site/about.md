@@ -9,7 +9,7 @@ SemBeacon was designed by Ph.D candidate [Maxim Van de Wynckel](https://wise.vub
 The specification is built on top of [AltBeacon](https://altbeacon.org) and adds an [Eddystone-URL]() compatible scan response
 that includes an URI that describes the beacon.
 
-For full details on the specification, check the [documentation](/docs/).
+For full details on the specification, check the [documentation]({{ '/docs/' | absoluteUrl }}).
 
 ## Contact
 
