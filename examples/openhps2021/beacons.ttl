@@ -25,7 +25,7 @@
   ogc:dimension 3
 ];
     rdfs:label "Lobby #1";
-    dcmi:created "2023-06-12T07:54:29.826Z"^^xsd:dateTime.
+    dcmi:created "2023-06-14T16:39:47.068Z"^^xsd:dateTime.
 :pl9_3_lobby_2 a ssn:Deployment, sosa:FeatureOfInterest, ogc:SpatialObject;
     ogc:hasGeometry [
   a ogc:Geometry;
@@ -35,7 +35,7 @@
   ogc:dimension 3
 ];
     rdfs:label "Lobby #2";
-    dcmi:created "2023-06-12T07:54:29.827Z"^^xsd:dateTime.
+    dcmi:created "2023-06-14T16:39:47.068Z"^^xsd:dateTime.
 :pl9_3_corridor a ssn:Deployment, sosa:FeatureOfInterest, ogc:SpatialObject, seas:Corridor;
     ogc:hasGeometry [
   a ogc:Geometry;
@@ -45,7 +45,7 @@
   ogc:dimension 3
 ];
     rdfs:label "Corridor";
-    dcmi:created "2023-06-12T07:54:29.827Z"^^xsd:dateTime.
+    dcmi:created "2023-06-14T16:39:47.069Z"^^xsd:dateTime.
 :pl9_3_62 a ssn:Deployment, sosa:FeatureOfInterest, ogc:SpatialObject, schema:Room, seas:Room;
     ogc:hasGeometry [
   a ogc:Geometry;
@@ -55,7 +55,7 @@
   ogc:dimension 3
 ];
     rdfs:label "PL9.3.62";
-    dcmi:created "2023-06-12T07:54:29.827Z"^^xsd:dateTime.
+    dcmi:created "2023-06-14T16:39:47.069Z"^^xsd:dateTime.
 :pl9_3_60 a ssn:Deployment, sosa:FeatureOfInterest, ogc:SpatialObject, schema:Room, seas:Room;
     ogc:hasGeometry [
   a ogc:Geometry;
@@ -65,7 +65,7 @@
   ogc:dimension 3
 ];
     rdfs:label "PL9.3.60";
-    dcmi:created "2023-06-12T07:54:29.827Z"^^xsd:dateTime.
+    dcmi:created "2023-06-14T16:39:47.069Z"^^xsd:dateTime.
 :pl9_3_58 a ssn:Deployment, sosa:FeatureOfInterest, ogc:SpatialObject, schema:Room, seas:Room;
     ogc:hasGeometry [
   a ogc:Geometry;
@@ -75,7 +75,7 @@
   ogc:dimension 3
 ];
     rdfs:label "PL9.3.58";
-    dcmi:created "2023-06-12T07:54:29.827Z"^^xsd:dateTime.
+    dcmi:created "2023-06-14T16:39:47.069Z"^^xsd:dateTime.
 :pl9_3_56 a ssn:Deployment, sosa:FeatureOfInterest, ogc:SpatialObject, schema:Room, seas:Room;
     ogc:hasGeometry [
   a ogc:Geometry;
@@ -85,7 +85,7 @@
   ogc:dimension 3
 ];
     rdfs:label "PL9.3.56";
-    dcmi:created "2023-06-12T07:54:29.827Z"^^xsd:dateTime.
+    dcmi:created "2023-06-14T16:39:47.069Z"^^xsd:dateTime.
 :pl9_3_32 a ssn:Deployment, sosa:FeatureOfInterest, ogc:SpatialObject, schema:Room, seas:Room;
     ogc:hasGeometry [
   a ogc:Geometry;
@@ -95,7 +95,7 @@
   ogc:dimension 3
 ];
     rdfs:label "PL9.3.32";
-    dcmi:created "2023-06-12T07:54:29.827Z"^^xsd:dateTime.
+    dcmi:created "2023-06-14T16:39:47.069Z"^^xsd:dateTime.
 :pl9_3_54 a ssn:Deployment, sosa:FeatureOfInterest, ogc:SpatialObject, schema:Room, seas:Room;
     ogc:hasGeometry [
   a ogc:Geometry;
@@ -105,7 +105,7 @@
   ogc:dimension 3
 ];
     rdfs:label "PL9.3.54";
-    dcmi:created "2023-06-12T07:54:29.827Z"^^xsd:dateTime.
+    dcmi:created "2023-06-14T16:39:47.069Z"^^xsd:dateTime.
 :pl9 a ssn:Deployment, sosa:FeatureOfInterest, ogc:SpatialObject, schema:Accommodation, seas:Building;
     ogc:hasGeometry [
   a ogc:Geometry;
@@ -115,7 +115,7 @@
   ogc:dimension 3
 ];
     rdfs:label "PL9";
-    dcmi:created "2023-06-12T07:54:29.827Z"^^xsd:dateTime.
+    dcmi:created "2023-06-14T16:39:47.069Z"^^xsd:dateTime.
 :pl9_3 a ssn:Deployment, sosa:FeatureOfInterest, ogc:SpatialObject, schema:Accommodation, seas:Floor;
     ogc:hasGeometry [
   a ogc:Geometry;
@@ -125,7 +125,7 @@
   ogc:dimension 3
 ];
     rdfs:label "PL9.3";
-    dcmi:created "2023-06-12T07:54:29.828Z"^^xsd:dateTime;
+    dcmi:created "2023-06-14T16:39:47.070Z"^^xsd:dateTime;
     sembeacon:namespaceId "77f340dbac0d20e8aa3af656a29f236c"^^xsd:hexBinary.
 :pl9_3_elevators a ssn:Deployment, sosa:FeatureOfInterest, ogc:SpatialObject, seas:Corridor;
     ogc:hasGeometry [
@@ -136,7 +136,7 @@
   ogc:dimension 3
 ];
     rdfs:label "Elevators";
-    dcmi:created "2023-06-12T07:54:29.828Z"^^xsd:dateTime.
+    dcmi:created "2023-06-14T16:39:47.070Z"^^xsd:dateTime.
 :pl9_3_staircase a ssn:Deployment, sosa:FeatureOfInterest, ogc:SpatialObject, seas:Corridor;
     ogc:hasGeometry [
   a ogc:Geometry;
@@ -146,7 +146,7 @@
   ogc:dimension 3
 ];
     rdfs:label "Staircase";
-    dcmi:created "2023-06-12T07:54:29.828Z"^^xsd:dateTime.
+    dcmi:created "2023-06-14T16:39:47.070Z"^^xsd:dateTime.
 :pl9_3_toilets_1 a ssn:Deployment, sosa:FeatureOfInterest, ogc:SpatialObject;
     ogc:hasGeometry [
   a ogc:Geometry;
@@ -156,7 +156,7 @@
   ogc:dimension 3
 ];
     rdfs:label "Toilets #1";
-    dcmi:created "2023-06-12T07:54:29.828Z"^^xsd:dateTime.
+    dcmi:created "2023-06-14T16:39:47.070Z"^^xsd:dateTime.
 :pl9_3_toilets_2 a ssn:Deployment, sosa:FeatureOfInterest, ogc:SpatialObject;
     ogc:hasGeometry [
   a ogc:Geometry;
@@ -166,17 +166,17 @@
   ogc:dimension 3
 ];
     rdfs:label "Toilets #2";
-    dcmi:created "2023-06-12T07:54:29.828Z"^^xsd:dateTime.
+    dcmi:created "2023-06-14T16:39:47.070Z"^^xsd:dateTime.
 :BEACON_01 a sosa:FeatureOfInterest, ogc:SpatialObject, posoc:iBeacon, poso:RFLandmark, poso:BluetoothBeacon;
     rdfs:label "BEACON_01";
-    dcmi:created "2023-06-12T07:54:29.907Z"^^xsd:dateTime;
+    dcmi:created "2023-06-14T16:39:47.143Z"^^xsd:dateTime;
     poso:hasPosition [
   a geo:Point, poso:AbsolutePosition;
   ogc:asWKT "POINT Z(4.392236804870133 50.82067812447541 93.5999999962747)"^^ogc:wktLiteral;
   ogc:coordinateDimension 3;
   ogc:spatialDimension 3;
   ogc:dimension 3;
-  dcmi:created "2023-06-12T07:54:29.907Z"^^xsd:dateTime;
+  dcmi:created "2023-06-14T16:39:47.143Z"^^xsd:dateTime;
   poso:xAxisValue [
   a qudt:QuantityValue;
   qudt:unit unit:M;
@@ -209,21 +209,21 @@
   qudt:numericValue 1
 ]
 ];
-    hardware:macAddress "a1:60:c0:c6:1a:a4";
-    posoc:major 50035;
-    posoc:minor 51624;
+    hardware:macAddress "50:7f:6b:52:82:08";
+    posoc:major 12772;
+    posoc:minor 9595;
     ogc:sfWithin :pl9;
     sembeacon:namespace :pl9_3.
 :BEACON_02 a sosa:FeatureOfInterest, ogc:SpatialObject, posoc:iBeacon, poso:RFLandmark, poso:BluetoothBeacon;
     rdfs:label "BEACON_02";
-    dcmi:created "2023-06-12T07:54:29.907Z"^^xsd:dateTime;
+    dcmi:created "2023-06-14T16:39:47.143Z"^^xsd:dateTime;
     poso:hasPosition [
   a geo:Point, poso:AbsolutePosition;
   ogc:asWKT "POINT Z(4.392258157161845 50.820766257950545 93.5999999962747)"^^ogc:wktLiteral;
   ogc:coordinateDimension 3;
   ogc:spatialDimension 3;
   ogc:dimension 3;
-  dcmi:created "2023-06-12T07:54:29.907Z"^^xsd:dateTime;
+  dcmi:created "2023-06-14T16:39:47.143Z"^^xsd:dateTime;
   poso:xAxisValue [
   a qudt:QuantityValue;
   qudt:unit unit:M;
@@ -256,21 +256,21 @@
   qudt:numericValue 1
 ]
 ];
-    hardware:macAddress "f7:99:66:5c:37:91";
-    posoc:major 41183;
-    posoc:minor 42613;
+    hardware:macAddress "0a:17:60:cd:99:be";
+    posoc:major 40310;
+    posoc:minor 34852;
     ogc:sfWithin :pl9_3;
     sembeacon:namespace :pl9_3.
 :BEACON_03 a sosa:FeatureOfInterest, ogc:SpatialObject, posoc:iBeacon, poso:RFLandmark, poso:BluetoothBeacon;
     rdfs:label "BEACON_03";
-    dcmi:created "2023-06-12T07:54:29.907Z"^^xsd:dateTime;
+    dcmi:created "2023-06-14T16:39:47.143Z"^^xsd:dateTime;
     poso:hasPosition [
   a geo:Point, poso:AbsolutePosition;
   ogc:asWKT "POINT Z(4.392236803193541 50.82085439126748 93.5999999962747)"^^ogc:wktLiteral;
   ogc:coordinateDimension 3;
   ogc:spatialDimension 3;
   ogc:dimension 3;
-  dcmi:created "2023-06-12T07:54:29.907Z"^^xsd:dateTime;
+  dcmi:created "2023-06-14T16:39:47.143Z"^^xsd:dateTime;
   poso:xAxisValue [
   a qudt:QuantityValue;
   qudt:unit unit:M;
@@ -303,21 +303,21 @@
   qudt:numericValue 1
 ]
 ];
-    hardware:macAddress "23:b0:bc:46:10:a9";
-    posoc:major 36580;
-    posoc:minor 36170;
+    hardware:macAddress "0a:7d:f3:eb:85:8e";
+    posoc:major 628;
+    posoc:minor 329;
     ogc:sfWithin :pl9;
     sembeacon:namespace :pl9_3.
 :BEACON_04 a sosa:FeatureOfInterest, ogc:SpatialObject, posoc:iBeacon, poso:RFLandmark, poso:BluetoothBeacon;
     rdfs:label "BEACON_04";
-    dcmi:created "2023-06-12T07:54:29.907Z"^^xsd:dateTime;
+    dcmi:created "2023-06-14T16:39:47.143Z"^^xsd:dateTime;
     poso:hasPosition [
   a geo:Point, poso:AbsolutePosition;
   ogc:asWKT "POINT Z(4.392592689698541 50.820678125285134 93.5999999962747)"^^ogc:wktLiteral;
   ogc:coordinateDimension 3;
   ogc:spatialDimension 3;
   ogc:dimension 3;
-  dcmi:created "2023-06-12T07:54:29.908Z"^^xsd:dateTime;
+  dcmi:created "2023-06-14T16:39:47.144Z"^^xsd:dateTime;
   poso:xAxisValue [
   a qudt:QuantityValue;
   qudt:unit unit:M;
@@ -350,20 +350,20 @@
   qudt:numericValue 1
 ]
 ];
-    hardware:macAddress "fa:84:32:26:55:f6";
-    posoc:major 24817;
-    posoc:minor 47243;
+    hardware:macAddress "0b:30:18:ce:5a:bc";
+    posoc:major 52521;
+    posoc:minor 29038;
     sembeacon:namespace :pl9_3.
 :BEACON_05 a sosa:FeatureOfInterest, ogc:SpatialObject, posoc:iBeacon, poso:RFLandmark, poso:BluetoothBeacon;
     rdfs:label "BEACON_05";
-    dcmi:created "2023-06-12T07:54:29.908Z"^^xsd:dateTime;
+    dcmi:created "2023-06-14T16:39:47.144Z"^^xsd:dateTime;
     poso:hasPosition [
   a geo:Point, poso:AbsolutePosition;
   ogc:asWKT "POINT Z(4.39257133640195 50.82076625866313 93.5999999962747)"^^ogc:wktLiteral;
   ogc:coordinateDimension 3;
   ogc:spatialDimension 3;
   ogc:dimension 3;
-  dcmi:created "2023-06-12T07:54:29.908Z"^^xsd:dateTime;
+  dcmi:created "2023-06-14T16:39:47.144Z"^^xsd:dateTime;
   poso:xAxisValue [
   a qudt:QuantityValue;
   qudt:unit unit:M;
@@ -396,20 +396,20 @@
   qudt:numericValue 1
 ]
 ];
-    hardware:macAddress "16:4b:4e:92:ea:12";
-    posoc:major 25605;
-    posoc:minor 28601;
+    hardware:macAddress "5e:0b:37:80:50:fd";
+    posoc:major 50685;
+    posoc:minor 44055;
     sembeacon:namespace :pl9_3.
 :BEACON_06 a sosa:FeatureOfInterest, ogc:SpatialObject, posoc:iBeacon, poso:RFLandmark, poso:BluetoothBeacon;
     rdfs:label "BEACON_06";
-    dcmi:created "2023-06-12T07:54:29.908Z"^^xsd:dateTime;
+    dcmi:created "2023-06-14T16:39:47.144Z"^^xsd:dateTime;
     poso:hasPosition [
   a geo:Point, poso:AbsolutePosition;
   ogc:asWKT "POINT Z(4.3925926893500735 50.82086248596053 93.5999999962747)"^^ogc:wktLiteral;
   ogc:coordinateDimension 3;
   ogc:spatialDimension 3;
   ogc:dimension 3;
-  dcmi:created "2023-06-12T07:54:29.908Z"^^xsd:dateTime;
+  dcmi:created "2023-06-14T16:39:47.144Z"^^xsd:dateTime;
   poso:xAxisValue [
   a qudt:QuantityValue;
   qudt:unit unit:M;
@@ -442,20 +442,20 @@
   qudt:numericValue 1
 ]
 ];
-    hardware:macAddress "bc:ef:26:47:ea:49";
-    posoc:major 22627;
-    posoc:minor 58525;
+    hardware:macAddress "d2:dd:83:9f:fa:14";
+    posoc:major 8081;
+    posoc:minor 18013;
     sembeacon:namespace :pl9_3.
 :BEACON_07 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:RFLandmark, poso:BluetoothBeacon, sembeacon:SemBeacon;
     rdfs:label "BEACON_07";
-    dcmi:created "2023-06-12T07:54:29.908Z"^^xsd:dateTime;
+    dcmi:created "2023-06-14T16:39:47.144Z"^^xsd:dateTime;
     poso:hasPosition [
   a geo:Point, poso:AbsolutePosition;
   ogc:asWKT "POINT Z(4.392485923983336 50.820741976901985 93.5999999962747)"^^ogc:wktLiteral;
   ogc:coordinateDimension 3;
   ogc:spatialDimension 3;
   ogc:dimension 3;
-  dcmi:created "2023-06-12T07:54:29.908Z"^^xsd:dateTime;
+  dcmi:created "2023-06-14T16:39:47.144Z"^^xsd:dateTime;
   poso:xAxisValue [
   a qudt:QuantityValue;
   qudt:unit unit:M;
@@ -488,20 +488,20 @@
   qudt:numericValue 1
 ]
 ];
-    hardware:macAddress "95:47:a5:65:d8:7b";
+    hardware:macAddress "d3:df:d6:0c:40:8f";
     ogc:sfWithin :pl9_3;
     sembeacon:namespace :pl9_3;
-    sembeacon:instanceId "8d960663"^^xsd:hexBinary.
+    sembeacon:instanceId "0e1e466a"^^xsd:hexBinary.
 :BEACON_08 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:RFLandmark, poso:BluetoothBeacon, sembeacon:SemBeacon;
     rdfs:label "BEACON_08";
-    dcmi:created "2023-06-12T07:54:29.908Z"^^xsd:dateTime;
+    dcmi:created "2023-06-14T16:39:47.144Z"^^xsd:dateTime;
     poso:hasPosition [
   a geo:Point, poso:AbsolutePosition;
   ogc:asWKT "POINT Z(4.392340722905845 50.8207239901625 93.5999999962747)"^^ogc:wktLiteral;
   ogc:coordinateDimension 3;
   ogc:spatialDimension 3;
   ogc:dimension 3;
-  dcmi:created "2023-06-12T07:54:29.908Z"^^xsd:dateTime;
+  dcmi:created "2023-06-14T16:39:47.144Z"^^xsd:dateTime;
   poso:xAxisValue [
   a qudt:QuantityValue;
   qudt:unit unit:M;
@@ -534,20 +534,20 @@
   qudt:numericValue 1
 ]
 ];
-    hardware:macAddress "fb:d8:ea:43:6a:86";
+    hardware:macAddress "97:eb:9c:cc:75:b0";
     ogc:sfWithin :pl9_3;
     sembeacon:namespace :pl9_3;
-    sembeacon:instanceId "de49f0b7"^^xsd:hexBinary.
+    sembeacon:instanceId "200ec582"^^xsd:hexBinary.
 :BEACON_09 a sosa:FeatureOfInterest, ogc:SpatialObject, posoc:iBeacon, poso:RFLandmark, poso:BluetoothBeacon;
     rdfs:label "BEACON_09";
-    dcmi:created "2023-06-12T07:54:29.908Z"^^xsd:dateTime;
+    dcmi:created "2023-06-14T16:39:47.144Z"^^xsd:dateTime;
     poso:hasPosition [
   a geo:Point, poso:AbsolutePosition;
   ogc:asWKT "POINT Z(4.392205486519903 50.820725788331806 93.5999999962747)"^^ogc:wktLiteral;
   ogc:coordinateDimension 3;
   ogc:spatialDimension 3;
   ogc:dimension 3;
-  dcmi:created "2023-06-12T07:54:29.908Z"^^xsd:dateTime;
+  dcmi:created "2023-06-14T16:39:47.144Z"^^xsd:dateTime;
   poso:xAxisValue [
   a qudt:QuantityValue;
   qudt:unit unit:M;
@@ -580,21 +580,21 @@
   qudt:numericValue 1
 ]
 ];
-    hardware:macAddress "63:55:27:63:f8:d2";
-    posoc:major 41561;
-    posoc:minor 12018;
+    hardware:macAddress "0e:80:d6:df:1a:c8";
+    posoc:major 50993;
+    posoc:minor 47076;
     ogc:sfWithin :pl9;
     sembeacon:namespace :pl9_3.
 :BEACON_10 a sosa:FeatureOfInterest, ogc:SpatialObject, posoc:iBeacon, poso:RFLandmark, poso:BluetoothBeacon;
     rdfs:label "BEACON_10";
-    dcmi:created "2023-06-12T07:54:29.908Z"^^xsd:dateTime;
+    dcmi:created "2023-06-14T16:39:47.144Z"^^xsd:dateTime;
     poso:hasPosition [
   a geo:Point, poso:AbsolutePosition;
   ogc:asWKT "POINT Z(4.392319368576487 50.820881371162805 93.5999999962747)"^^ogc:wktLiteral;
   ogc:coordinateDimension 3;
   ogc:spatialDimension 3;
   ogc:dimension 3;
-  dcmi:created "2023-06-12T07:54:29.908Z"^^xsd:dateTime;
+  dcmi:created "2023-06-14T16:39:47.144Z"^^xsd:dateTime;
   poso:xAxisValue [
   a qudt:QuantityValue;
   qudt:unit unit:M;
@@ -627,21 +627,21 @@
   qudt:numericValue 1
 ]
 ];
-    hardware:macAddress "7d:0a:b6:60:1d:ee";
-    posoc:major 15301;
-    posoc:minor 54881;
+    hardware:macAddress "17:78:58:1b:9e:dd";
+    posoc:major 24774;
+    posoc:minor 37587;
     ogc:sfWithin :pl9_3;
     sembeacon:namespace :pl9_3.
 :BEACON_11 a sosa:FeatureOfInterest, ogc:SpatialObject, posoc:iBeacon, poso:RFLandmark, poso:BluetoothBeacon;
     rdfs:label "BEACON_11";
-    dcmi:created "2023-06-12T07:54:29.908Z"^^xsd:dateTime;
+    dcmi:created "2023-06-14T16:39:47.144Z"^^xsd:dateTime;
     poso:hasPosition [
   a geo:Point, poso:AbsolutePosition;
   ogc:asWKT "POINT Z(4.39217416995044 50.82060348063034 93.5999999962747)"^^ogc:wktLiteral;
   ogc:coordinateDimension 3;
   ogc:spatialDimension 3;
   ogc:dimension 3;
-  dcmi:created "2023-06-12T07:54:29.908Z"^^xsd:dateTime;
+  dcmi:created "2023-06-14T16:39:47.144Z"^^xsd:dateTime;
   poso:xAxisValue [
   a qudt:QuantityValue;
   qudt:unit unit:M;
@@ -674,8 +674,8 @@
   qudt:numericValue 1
 ]
 ];
-    hardware:macAddress "a4:97:a3:08:bd:24";
-    posoc:major 57092;
-    posoc:minor 58144;
+    hardware:macAddress "e4:21:e1:fa:5b:aa";
+    posoc:major 28230;
+    posoc:minor 15120;
     ogc:sfWithin :pl9_3_lobby_1;
     sembeacon:namespace :pl9_3.
