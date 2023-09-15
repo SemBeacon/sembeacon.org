@@ -10,9 +10,9 @@ const favicon = require("eleventy-favicon");
 const toc = require("eleventy-plugin-toc");
 const fs = require("fs-extra");
 
-const baseUrl = new URL("/w/sembeacon-website/", "https://anonymous.4open.science");
+//const baseUrl = new URL("/w/sembeacon-website/", "https://anonymous.4open.science");
 //const baseUrl = new URL("/sembeacon.org/", "https://sembeacon.github.io"); 
-//const baseUrl = "https://sembeacon.org";
+const baseUrl = new URL("https://sembeacon.org");
 
 module.exports = function(config) {
   config.addPassthroughCopy({
