@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include "head.njk" %}
+
+  <body>
+    <link rel="stylesheet" href="/vendor/reveal.js/reset.css">
+    <link rel="stylesheet" href="/vendor/reveal.js/reveal.css">
+    <link rel="stylesheet" href="/vendor/reveal.js/plugin/pointer/pointer.css">
+    <link href="https://fonts.cdnfonts.com/css/itc-avant-garde-gothic-std-book" rel="stylesheet">
+    <link rel="stylesheet" href="/css/presentation.css" id="theme">
+
+    <div id="hidden" style="display:none;">
+      <div id="header">
+        <div class="header-right-bottom">
+          <div class="header-logo"></div>
+          <div class="corner-cut"></div>
+          <div class="corner"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+        <div class="slides">
+          {% if not hide_title_slide %}
+          <section class="title-slide center" data-timing="15">
+              <div class="slide-wrapper">
+                {% if logo %}
+                <div class="logos">
+                  <div id="vub-logo"></div>
+                  <div id="wise-logo"></div>
+                  <div id="sembeacon-logo"></div>
+                </div>
+                {% endif %}
+                <h2 id="label-title">
+                {% if presentation_title %}
+                  {{ presentation_title | safe }}
+                {% else %}
+                  {{ title }}
+                {% endif %}
+                  <small id="label-subtitle">{{ subtitle }}</small>
+                </h2>
+                <h5 class="author">{{ author | safe }}</h5>
+                <h5 class="affiliation">{{ affiliation | safe }}</h5>
+              </div>
+          </section>
+          {% endif %}
+          {{ content | safe }}
+        </div>
+    </div>
+
+    <script type="module">
+      import Reveal from '/vendor/reveal.js/reveal.esm.js';
+      import Notes from '/vendor/reveal.js/plugin/notes/notes.esm.js';
+      import Pointer from '/vendor/reveal.js/plugin/pointer/pointer.esm.js';
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const plugins = [ Notes ];
+
+      if (!urlParams.has("disablepointer")) {
+        plugins.push(Pointer);
+      }
+
+      const options = {
+        hash: true,
+        margin: .08,
+        width: urlParams.get("width") ?? {{ width if width else 960 }} ,
+        height: urlParams.get("height") ?? {{ height if height else 700 }},
+        plugins,
+        controlsTutorial: true,
+        pdfMaxPagesPerSlide: 1,
+        slideNumber: true,
+        center: false,
+        pointer: {
+          key: "q",
+          color: "red",
+          pointerSize: 25,
+          alwaysVisible: false,
+          tailLength: 10,
+        },
+        controls: false,
+        totalTime: 15 * 60,
+        progress: {{ not hide_progress }},
+        showSlideNumber: {{ "'speaker'" | safe if hide_slide_numbers else "'all'" | safe }}
+      };
+
+      const header = document.querySelector("#header").children;
+      document.querySelector('.header-logo').setAttribute("style", `background-image: url('/images/logo_square_alpha.svg')`);
+      const className = window.location.search.indexOf("print-pdf") > -1 ? ".pdf-page" : ".slides";
+      const slides = document.querySelectorAll(`${className} section:not([class^="stack"],[class^="title-slide"])`);
+      for (let i = 0 ; i < header.length ; i++) {
+        slides.forEach(slide => {
+          slide.append(header[i].cloneNode(true));
+        });
+      }
+
+      window.Reveal = Reveal;
+      if (window.location.search.indexOf("presenter") > -1) {
+        console.log("Starting in presenter mode");
+        Reveal.initialize({
+          ...options,
+          navigationMode: 'linear',
+          slideNumber: 'c',
+        });
+        Reveal.on('pdf-ready', () => {
+          document.querySelectorAll(`.pdf-page section[data-visibility="uncounted"]`).forEach(e => e.closest('.pdf-page').remove());
+        });
+        Reveal.on('slidechanged', (event) => {
+          if (event.currentSlide.hasAttribute("data-visibility") && !Reveal.isOverview()) {
+            const prevIndices = Reveal.getIndices(event.previousSlide);
+            const currentIndices = Reveal.getIndices(event.currentSlide);
+            if (prevIndices.h < currentIndices.h || (prevIndices.h === currentIndices.h && prevIndices.v < currentIndices.v)) {
+              Reveal.next();
+            } else if (prevIndices.h > currentIndices.h || (prevIndices.h === currentIndices.h && prevIndices.v > currentIndices.v)) {
+              Reveal.prev();
+            }
+          }
+        });
+        let lastMovement = 0;
+        let idle = false;
+        if (!urlParams.has("disablepointer")) {
+          document.addEventListener('mousemove', (event) => {
+            lastMovement = Date.now();
+            if (idle) {
+              document.querySelector('.cursor-dot').classList.remove("inactive");
+              idle = false;
+            }
+          }, false);
+          setInterval(() => {
+            if (!idle && lastMovement < Date.now() - 3000) {
+              idle = true;
+              document.querySelector('.cursor-dot').classList.add("inactive");
+            }
+          }, 2000);
+        }
+      } else {
+        Reveal.initialize(options);
+      }
+    </script>
+  </body>
+</html>

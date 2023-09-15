@@ -8,17 +8,27 @@ const sass = require("eleventy-sass");
 const sassCompile = require("eleventy-sass/lib/compile");
 const favicon = require("eleventy-favicon");
 const toc = require("eleventy-plugin-toc");
-const fs = require("fs-extra");
+const { decktape } = require("./src/utils/decktape");
+const nunjucks = require("nunjucks");
+const markdown = require('nunjucks-markdown');
 
-const baseUrl = new URL("/w/sembeacon-website/", "https://anonymous.4open.science");
+//const baseUrl = new URL("/w/sembeacon-website/", "https://anonymous.4open.science");
 //const baseUrl = new URL("/sembeacon.org/", "https://sembeacon.github.io"); 
-//const baseUrl = "https://sembeacon.org";
+const baseUrl = new URL("https://sembeacon.org");
 
 module.exports = function(config) {
   config.addPassthroughCopy({
     "./src/site/example.ttl": "example.ttl",
     "./src/site/examples": "examples",
     "./src/site/assetlinks.json": "assetlinks.json",
+  });
+  config.addPassthroughCopy({
+    "node_modules/reveal.js/dist/reveal.css": "vendor/reveal.js/reveal.css",
+    "node_modules/reveal.js/dist/reset.css": "vendor/reveal.js/reset.css",
+    "node_modules/reveal.js/dist/reveal.esm.js": "vendor/reveal.js/reveal.esm.js",
+    "node_modules/reveal.js/plugin/notes/notes.esm.js": "vendor/reveal.js/plugin/notes/notes.esm.js",
+    "node_modules/reveal.js-pointer/dist/pointer.esm.js": "vendor/reveal.js/plugin/pointer/pointer.esm.js",
+    "node_modules/reveal.js-pointer/dist/pointer.css": "vendor/reveal.js/plugin/pointer/pointer.css",
   });
   config.addPlugin(toc, {
     tags: ['h2'],
@@ -85,6 +95,8 @@ module.exports = function(config) {
   });
   config.setLibrary("md", md);
 
+  config.addPlugin(decktape);
+
   config.addPlugin(sass, [
     {
       rev: false,
@@ -131,6 +143,16 @@ module.exports = function(config) {
     return items;
   });
 
+  /* Nunjucks */
+  let njkEnv = new nunjucks.Environment(
+    new nunjucks.FileSystemLoader("src/site/_includes")
+  );
+  markdown.register(njkEnv, (src, _) => {
+    return md.render(src);
+  });
+  config.setLibrary("njk", njkEnv);
+
+    
   // make the seed target act like prod
   env = (env=="seed") ? "prod" : env;
   return {

@@ -13,3 +13,6 @@
 .DS_Store
 .AppleDouble
 .LSOverride
+
+_presentations.json
+_presentations_generated.json
