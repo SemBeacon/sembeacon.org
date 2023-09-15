@@ -730,7 +730,7 @@ body {
 body:not(.home) {
   background-color: #363795;
   background: #363795;
-  background: url("https://anonymous.4open.science/w/sembeacon-website/images/bg-grid.png"), linear-gradient(320deg, #363795 0%, rgb(78, 91, 190) 100%);
+  background: url("https://sembeacon.org/images/bg-grid.png"), linear-gradient(320deg, #363795 0%, rgb(78, 91, 190) 100%);
 }
 
 img.logo {
@@ -917,10 +917,10 @@ footer div.logo {
   height: 64px;
   margin-right: 1.5em;
   background-color: #a7addf;
-  -webkit-mask: url("https://anonymous.4open.science/w/sembeacon-website/images/logo_square_alpha.svg") no-repeat center;
+  -webkit-mask: url("https://sembeacon.org/images/logo_square_alpha.svg") no-repeat center;
   mask-size: contain;
   -webkit-mask-size: contain;
-  mask: url("https://anonymous.4open.science/w/sembeacon-website/images/logo_square_alpha.svg") no-repeat center;
+  mask: url("https://sembeacon.org/images/logo_square_alpha.svg") no-repeat center;
 }
 footer div.logo:hover {
   background-color: #dcdef2;
