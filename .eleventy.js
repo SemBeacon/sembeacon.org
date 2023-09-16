@@ -30,6 +30,7 @@ module.exports = function(config) {
     "node_modules/reveal.js-pointer/dist/pointer.esm.js": "vendor/reveal.js/plugin/pointer/pointer.esm.js",
     "node_modules/reveal.js-pointer/dist/pointer.css": "vendor/reveal.js/plugin/pointer/pointer.css",
   });
+  config.addPassthroughCopy({ "./src/site/CNAME": "CNAME" });
   config.addPlugin(toc, {
     tags: ['h2'],
     ul: true
