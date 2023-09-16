@@ -30,6 +30,12 @@
   }
   ,
   {
+    "url": "/slides/iot2023/",
+    "title": "SemBeacon: A Semantic Proximity Beacon Solution for Discovering and Detecting the Position of Physical Things",
+    "index": " Physical Things ProtocolBLE 4X Protocol BLE 5X"
+  }
+  ,
+  {
     "url": "/tools/",
     "title": "Tools",
     "index": "ESP32 provide library that can used create scan SemBeacon&#39;s with ArduinoESP32 library found this repository// Create SemBeaconBLESemBeacon beacon = BLESemBeacon();beaconsetManufacturerId(0x4c00); // Manufacturer beaconbeaconsetSignalPower(56); RSSI 1m distancebeaconsetNamespaceId(BLEUUID(BEACON_UUID)); Namespace UUIDbeaconsetInstanceId(0xBEACBEAC); Instance IdentifierbeaconsetResourceURI(https://tinyurlcom/3u9tpt7k); URI resource// Start advertisingBLESemBeaconAdvertising* advertising new BLESemBeaconAdvertising();advertisingsetBeacon(beacon);advertisingstart();AndroidSemBeacon provides extension top androidbeaconlibrary by AltBeacon which adds ability SemBeacons broadcast data repositoryBeaconManager beaconManager BeaconManagergetInstanceForApplication(thisgetApplicationContext());// Clear from added parsers prevent having higher prioritybeaconManagergetBeaconParsers()clear();// Detect SemBeaconbeaconManagergetBeaconParsers()add(new SemBeaconParser());// Add againbeaconManagergetBeaconParsers()add(new BeaconParser() setBeaconLayout(BeaconParserALTBEACON_LAYOUT));While tool enables SemBeacons does necesarry tools extracting semantic data public URI example implementation hereiOSCurrently iOS exist demonstrate SemBeacon capabilities"
