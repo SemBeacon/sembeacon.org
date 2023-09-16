@@ -211,26 +211,27 @@ h1, h2, h3, h4, h5 {
     right: 0%;
 }
 
-.header-right-bottom {
+.header-right-top {
     position: absolute;
     display: inline-block;
-    bottom: -4.4%;
+    top: -4.4%;
     right: -4.4%;
 }
 
 .corner {
     width: 0px;
     height: 0px;
-    border-bottom: 230px solid $page-color;
-    border-left: 230px solid transparent;
+    border-top: 200px solid $page-color;
+    border-left: 200px solid transparent;
 }
 
 .corner-cut {
+    display: inline;
     background-color: white;
-    top: 0;
+    bottom: 0;
     right: -1px;
     position: absolute;
-    height: 110px;
+    height: 80px;
     width: 100%;
 }
 
@@ -251,7 +252,7 @@ h1, h2, h3, h4, h5 {
     background-position: right;
     background-size: contain;
     position: absolute;
-    bottom: 20px;
+    top: 20px;
     right: 20px;
 }
 
