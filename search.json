@@ -32,7 +32,7 @@
   {
     "url": "/slides/iot2023/",
     "title": "SemBeacon: A Semantic Proximity Beacon Solution for Discovering and Detecting the Position of Physical Things",
-    "index": " Physical Things ProtocolBLE 4X Protocol BLE 5X"
+    "index": " Physical Things ProtocolBLE 4X Protocol BLE 5X Example@prefix : http://sembeaconorg/examplettl# @prefix hardware: http://w3idorg/devopsinfra/hardware# poso: http://purlorg/poso/ posoc: http://purlorg/poso/common/ sembeacon: http://purlorg/sembeacon/ qudt: http://qudtorg/schema/qudt/ unit: http://qudtorg/vocab/unit/ :building_a ssn:Deployment ;rdfs:label Building ;sembeacon:namespaceId e19c5e1ed6a14d^^xsd:hexBinary :room_a1_2 sembeacon:SemBeacon SemBeacon Room A12@en ;rdfs:isDefinedBy ;sembeacon:namespace :building_a ;sembeacon:instanceId beac0101^^xsd:hexBinary ;hardware:mac 00:11:22:33:44:55 ;posoc:referenceRSSI [ # Reference RSSI factory calibrated signal strength poso:hasRSS qudt:unit unit:DeciB_M ; qudt:numericValue 56 ] ; measured specific distance poso:hasRelativeDistance unit:Meter qudt:value 10^^xsd:double ] ;poso:hasPosition poso:AbsolutePosition poso:hasAccuracy poso:xAxisValue poso:yAxisValue poso:zAxisValue "
   }
   ,
   {
