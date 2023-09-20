@@ -6,6 +6,12 @@
   }
   ,
   {
+    "url": "/docs/implementation/",
+    "title": "Implementation",
+    "index": "Work progressSpatial Grouping Environment AnalysisSemantic EnvironmentAfter analyzing environment semantic description environment should createdBeacon Implementation Deployment beacon implementation similar existing Eddystone iBeacon AltBeacon implementations our GitHub page offer ESP32 library creating beaconScanning Application"
+  }
+  ,
+  {
     "url": "/docs/",
     "title": "Specification",
     "index": "Definition SemBeacon Bluetooth Low Energy transmitter that advertises namespace instance identifier Uniform Resource Indicator (URI) linking RDF resource web describing beacon&#39;s location other information relevant this locationBluetooth SpecificationSemBeacon Flags specification provisions 1byte flags These flags provide more context installation beacon applications scanning beacon can decide wether they want retrieve semantic data these beaconsBit (MSB)DescriptionExample0Indicates position0 = Unsure 1 Yes1Indicates private0 Public Private2Indicates attached moving object0 Yes3Indicates positioning system0 Yes4Indicates telemetry data0 Yes5 7Reserved future useResource URI URI should resolve description beacon Depending BLE version URIneeds shortened fit advertisement dataURI ShortenerstinyurlcombitlycomBLE 4x SpecificationBLE 5x Specification"
@@ -18,9 +24,15 @@
   }
   ,
   {
+    "url": "/docs/tools/",
+    "title": "Tools",
+    "index": "ESP32 provide library that can used create scan SemBeacon&#39;s with ArduinoESP32 library found this repository// Create SemBeaconBLESemBeacon beacon = BLESemBeacon();beaconsetManufacturerId(0x4c00); // Manufacturer beaconbeaconsetSignalPower(56); RSSI 1m distancebeaconsetNamespaceId(BLEUUID(BEACON_UUID)); Namespace UUIDbeaconsetInstanceId(0xBEACBEAC); Instance IdentifierbeaconsetResourceURI(https://tinyurlcom/3u9tpt7k); URI resource// Start advertisingBLESemBeaconAdvertising* advertising new BLESemBeaconAdvertising();advertisingsetBeacon(beacon);advertisingstart();AndroidSemBeacon provides extension top androidbeaconlibrary by AltBeacon which adds ability SemBeacons broadcast data repositoryBeaconManager beaconManager BeaconManagergetInstanceForApplication(thisgetApplicationContext());// Clear from added parsers prevent having higher prioritybeaconManagergetBeaconParsers()clear();// Detect SemBeaconbeaconManagergetBeaconParsers()add(new SemBeaconParser());// Add againbeaconManagergetBeaconParsers()add(new BeaconParser() setBeaconLayout(BeaconParserALTBEACON_LAYOUT));While tool enables SemBeacons does necesarry tools extracting semantic data public URI example implementation hereiOSCurrently iOS exist demonstrate SemBeacon capabilities"
+  }
+  ,
+  {
     "url": "/docs/vocabulary/",
     "title": "Ontology",
-    "index": " vocabulary describing SemBeacon based Positioning System Ontology (POSO) ontology that helps describe positioning system documentation can found hereClassessembeacon:SemBeacon sosa:FeatureOfInterest subclass poso:BluetoothBeaconData Propertiessembeacon:instanceId 4byte instance ID hexadecimal representation using xsd:hexBinary This property should added sembeacon:SemBeaconsembeacon:namespaceId 16byte namespace sembeacon:SemBeacon ssn:Deployment linked object sembeacon:namespacesembeacon:shortResourceURI short resource URI xsd:anyURI shortened availableObject Propertiessembeacon:namespace optional link deployment sembeacon:namespaceIdSemantic Flags semantic flags specified advertisement data need indicate available onlineBitAxiom0poso:hasPosition min 1 poso:AbsolutePosition1N2N3poso:inDeployment ssn:Deployment4sosa:observes sosa:ObservableProperty5 7Reserved future use"
+    "index": " vocabulary describing SemBeacon based Positioning System Ontology (POSO) ontology that helps describe positioning system documentation can found hereClassessembeacon:SemBeacon sosa:FeatureOfInterest subclass poso:BluetoothBeaconData Propertiessembeacon:instanceId 4byte instance ID hexadecimal representation using xsd:hexBinary This property should added sembeacon:SemBeaconsembeacon:namespaceId 16byte namespace sembeacon:SemBeacon ssn:Deployment linked object sembeacon:namespacesembeacon:shortResourceURI short resource URI xsd:anyURI shortened availableObject Propertiessembeacon:namespace optional link deployment sembeacon:namespaceIdSemantic Flags semantic flags specified advertisement data need indicate available onlineBitAxiom0poso:hasPosition min 1 poso:AbsolutePosition1N2N3poso:inDeployment ssn:Deployment4sosa:observes sosa:ObservableProperty5 7Reserved future useExample@prefix : http://sembeaconorg/examplettl# @prefix rdf: http://wwww3org/1999/02/22rdfsyntaxns# rdfs: http://wwww3org/2000/01/rdfschema# xsd: http://wwww3org/2001/XMLSchema# ssn: http://wwww3org/ns/ssn/ ogc: http://wwwopengisnet/ont/geosparql# hardware: http://w3idorg/devopsinfra/hardware# poso: http://purlorg/poso/ posoc: http://purlorg/poso/common/ sembeacon: http://purlorg/sembeacon/ qudt: http://qudtorg/schema/qudt/ unit: http://qudtorg/vocab/unit/ :building_a ; rdfs:label Building sembeacon:namespaceId e19c5e1ed6a14d698b3115451c3add71^^xsd:hexBinary :room_a1_2 Room A12@en rdfs:isDefinedBy sembeacon:namespace :building_a sembeacon:instanceId beac0101^^xsd:hexBinary hardware:mac 00:11:22:33:44:55 posoc:referenceRSSI [ # Reference RSSI factory calibrated signal strength poso:hasRSS qudt:unit unit:DeciB_M ; qudt:numericValue 56 ] measured specific distance poso:hasRelativeDistance unit:Meter qudt:value 10^^xsd:double poso:hasPosition poso:AbsolutePosition poso:hasAccuracy poso:xAxisValue poso:yAxisValue poso:zAxisValue :room_a1_3 posoc:iBeacon iBeacon A13@en 00:55:44:33:22:11 posoc:major 11115 posoc:minor 12015 "
   }
   ,
   {
@@ -33,11 +45,5 @@
     "url": "/slides/iot2023/",
     "title": "SemBeacon: A Semantic Proximity Beacon Solution for Discovering and Detecting the Position of Physical Things",
     "index": " Physical Things ProtocolBLE 4X Protocol BLE 5X Example@prefix : http://sembeaconorg/examplettl# @prefix hardware: http://w3idorg/devopsinfra/hardware# poso: http://purlorg/poso/ posoc: http://purlorg/poso/common/ sembeacon: http://purlorg/sembeacon/ qudt: http://qudtorg/schema/qudt/ unit: http://qudtorg/vocab/unit/ :building_a ssn:Deployment ;rdfs:label Building ;sembeacon:namespaceId e19c5e1ed6a14d^^xsd:hexBinary :room_a1_2 sembeacon:SemBeacon SemBeacon Room A12@en ;rdfs:isDefinedBy ;sembeacon:namespace :building_a ;sembeacon:instanceId beac0101^^xsd:hexBinary ;hardware:mac 00:11:22:33:44:55 ;posoc:referenceRSSI [ # Reference RSSI factory calibrated signal strength poso:hasRSS qudt:unit unit:DeciB_M ; qudt:numericValue 56 ] ; measured specific distance poso:hasRelativeDistance unit:Meter qudt:value 10^^xsd:double ] ;poso:hasPosition poso:AbsolutePosition poso:hasAccuracy poso:xAxisValue poso:yAxisValue poso:zAxisValue "
-  }
-  ,
-  {
-    "url": "/tools/",
-    "title": "Tools",
-    "index": "ESP32 provide library that can used create scan SemBeacon&#39;s with ArduinoESP32 library found this repository// Create SemBeaconBLESemBeacon beacon = BLESemBeacon();beaconsetManufacturerId(0x4c00); // Manufacturer beaconbeaconsetSignalPower(56); RSSI 1m distancebeaconsetNamespaceId(BLEUUID(BEACON_UUID)); Namespace UUIDbeaconsetInstanceId(0xBEACBEAC); Instance IdentifierbeaconsetResourceURI(https://tinyurlcom/3u9tpt7k); URI resource// Start advertisingBLESemBeaconAdvertising* advertising new BLESemBeaconAdvertising();advertisingsetBeacon(beacon);advertisingstart();AndroidSemBeacon provides extension top androidbeaconlibrary by AltBeacon which adds ability SemBeacons broadcast data repositoryBeaconManager beaconManager BeaconManagergetInstanceForApplication(thisgetApplicationContext());// Clear from added parsers prevent having higher prioritybeaconManagergetBeaconParsers()clear();// Detect SemBeaconbeaconManagergetBeaconParsers()add(new SemBeaconParser());// Add againbeaconManagergetBeaconParsers()add(new BeaconParser() setBeaconLayout(BeaconParserALTBEACON_LAYOUT));While tool enables SemBeacons does necesarry tools extracting semantic data public URI example implementation hereiOSCurrently iOS exist demonstrate SemBeacon capabilities"
   }
   ]
