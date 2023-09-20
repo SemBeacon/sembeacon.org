@@ -1,9 +1,8 @@
 @import '_variables';
-@import '_syntax';
 @import 'components/navigation';
 @import 'components/alert';
 @import 'includes/grid';
-@import 'includes/code';
+@import 'includes/twoslash';
 
 * {
   margin: 0;

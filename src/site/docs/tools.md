@@ -1,7 +1,11 @@
 ---
 title: Tools
-layout: layouts/default.njk
+layout: layouts/docs.njk
 subtitle: SemBeacon Tools and Examples
+tags: docs
+menuOrder: 104
+redirect_from:
+  - /tools/
 ---
 
 ## ESP32

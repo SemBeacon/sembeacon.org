@@ -5,15 +5,12 @@ const markdownItShiki = require("markdown-it-shiki").default;
 const markdownItAnchor = require("markdown-it-anchor");
 const markdownItAttrs = require("markdown-it-attrs");
 const sass = require("eleventy-sass");
-const sassCompile = require("eleventy-sass/lib/compile");
 const favicon = require("eleventy-favicon");
 const toc = require("eleventy-plugin-toc");
 const { decktape } = require("./src/utils/decktape");
 const nunjucks = require("nunjucks");
 const markdown = require('nunjucks-markdown');
 
-//const baseUrl = new URL("/w/sembeacon-website/", "https://anonymous.4open.science");
-//const baseUrl = new URL("/sembeacon.org/", "https://sembeacon.github.io"); 
 const baseUrl = new URL("https://sembeacon.org");
 
 module.exports = function(config) {
