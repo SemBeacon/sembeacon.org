@@ -32,6 +32,12 @@ height: 720
     {% endmarkdown %}
 </section>
 
+<section data-markdown>
+    {% markdown %}
+        ## Demonstrator
+        
+    {% endmarkdown %}
+</section>
 
 <section data-markdown>
     {% markdown %}
@@ -46,26 +52,32 @@ height: 720
         @prefix unit:      <http://qudt.org/vocab/unit/> .
 
         :building_a a ssn:Deployment ;
-        rdfs:label "Building A" ;
-        sembeacon:namespaceId "e19c5e1ed6a14d..."^^xsd:hexBinary .
+            rdfs:label "Building A" ;
+            sembeacon:namespaceId "e19c5e1ed6a14d..."^^xsd:hexBinary .
 
         :room_a1_2 a sembeacon:SemBeacon ;
-        rdfs:label "SemBeacon Room A1.2"@en ;
-        rdfs:isDefinedBy <http://sembeacon.org/example.ttl#> ;
-        sembeacon:namespace :building_a ;
-        sembeacon:instanceId "beac0101"^^xsd:hexBinary ;
-        hardware:mac "00:11:22:33:44:55" ;
-        posoc:referenceRSSI [ # Reference RSSI is a ...
-            # ... factory calibrated signal strength
-            poso:hasRSS [ 
-                qudt:unit unit:DeciB_M ; qudt:numericValue -56 ] ;
-            # ... measured at a specific distance
-            poso:hasRelativeDistance [ 
-                unit:Meter ; qudt:value "1.0"^^xsd:double ] .
-        ] ;
-        poso:hasPosition [ a poso:AbsolutePosition ;
-            poso:hasAccuracy [ ... ] ; poso:xAxisValue [ ... ] ;
-            poso:yAxisValue [ ... ] ; poso:zAxisValue [ ... ] ] .
+            rdfs:label "SemBeacon Room A1.2"@en ;
+            rdfs:isDefinedBy <http://sembeacon.org/example.ttl#> ;
+            sembeacon:namespace :building_a ;
+            sembeacon:instanceId "beac0101"^^xsd:hexBinary ;
+            hardware:mac "00:11:22:33:44:55" ;
+            posoc:referenceRSSI [ # Reference RSSI is a ...
+                # ... factory calibrated signal strength
+                poso:hasRSS [ 
+                    qudt:unit unit:DeciB_M ; qudt:numericValue -56 ] ;
+                # ... measured at a specific distance
+                poso:hasRelativeDistance [ 
+                    unit:Meter ; qudt:value "1.0"^^xsd:double ] .
+            ] ;
+            poso:hasPosition [ a poso:AbsolutePosition ;
+                poso:hasAccuracy [ ... ] ; poso:xAxisValue [ ... ] ;
+                poso:yAxisValue [ ... ] ; poso:zAxisValue [ ... ] ] .
         ```
     {% endmarkdown %}
 </section>
+
+<section data-markdown>
+    {% markdown %}
+    ## Conclusions and Future Work
+    {% endmarkdown %}
+</section>   

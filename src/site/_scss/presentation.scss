@@ -4,7 +4,6 @@
 // ---------------------------------------------
 
 @import "includes/grid";
-@import "includes/twoslash";
 @import '_variables';
 
 // Override theme settings (see ../template/settings.scss)
@@ -35,6 +34,8 @@ $heading4Size: 1.0em;
 // Theme template ------------------------------
 @import "../../../node_modules/reveal.js/css/theme/template/theme";
 // ---------------------------------------------
+
+@import "includes/twoslash";
 
 .reveal small {
     vertical-align: unset;
@@ -214,6 +215,7 @@ h1, h2, h3, h4, h5 {
     display: inline-block;
     top: -4.4%;
     right: -4.4%;
+    z-index: -99;
 }
 
 .corner {
@@ -221,16 +223,20 @@ h1, h2, h3, h4, h5 {
     height: 0px;
     border-top: 200px solid $page-color;
     border-left: 200px solid transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -100;
 }
 
 .corner-cut {
-    display: inline;
     background-color: white;
-    bottom: 0;
+    top: 120px;
     right: -1px;
     position: absolute;
     height: 80px;
-    width: 100%;
+    width: 200px;
+    z-index: -99;
 }
 
 .reveal span.highlight {
