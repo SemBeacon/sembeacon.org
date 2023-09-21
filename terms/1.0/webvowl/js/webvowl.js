@@ -21066,4 +21066,8 @@ webvowl =
 	 * @example
 	 *
 	 * var object = { 'a': 1, 'b': 2 };
-	 * var other =
+	 * var other = { 'c': 3, 'd': 4 };
+	 *
+	 * var values = _.memoize(_.values);
+	 * values(object);
+	 
