@@ -131,9 +131,6 @@ module.exports = function(config) {
     });
   });
 
-  // pass some assets right through
-  config.addPassthroughCopy("./src/site/images");
-
   // Collections
   config.addCollection("sorted_docs", (collection) => {
     const items = collection.getFilteredByTag("docs");
