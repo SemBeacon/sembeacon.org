@@ -67,7 +67,8 @@ height: 720
 <section data-markdown>
     {% markdown %}
         ## Related Work
-
+        ![](images/hpcooltown.jpg){ width=20% }
+        <small>- HP CoolTown Beacon (2000)</small>
     {% endmarkdown %}
     <aside class="notes">
 
@@ -85,6 +86,8 @@ height: 720
         Special interest group has created its own specification for broadcasting a position. It supports both the 
         global WGS84 latitude and longitude along with a local coordinate, transmission power and additional flags of
         data that is available after performing a connection to the bluetooth device.
+
+
     </aside>
 </section>
 
@@ -106,6 +109,7 @@ height: 720
 <section data-markdown>
     {% markdown %}
         ## SemBeacon Solution
+        ![](images/architecture_overview.svg){ width=30% }
     {% endmarkdown %}
     <aside class="notes">
         The basic principle of our semantic beacon solution called SemBeacon is a Bluetooth Low Energy beacon that
@@ -131,7 +135,12 @@ height: 720
     </aside>
 </section>
 
-<section data-markdown>
+<section data-markdown class="flags">
+    <style>
+        section.flags table {
+            font-size: 80%;
+        }
+    </style>
     {% markdown %}
         ## SemBeacon Solution ...
         ### Flags
@@ -163,9 +172,17 @@ height: 720
 <section data-markdown>
     {% markdown %}
         ## SemBeacon Solution ...
-        ### BLE 5.X
+        ### BLE 5.X (Work in Progress)
         ![SemBeacon specification for BLE v5.x](./images/specification_BLE5.svg){ width=80% }
     {% endmarkdown %}
+    <aside class="notes">
+        In addition to our backwards compatible BLE 4 advertisement we also have a work in progress BLE 5 advertisement specification.
+        With the increased payload size for BLE 5 advertisements we can 
+
+        As we no longer have to ensure Eddystone-URL compatibility, we also extended the encoding for the the URI to enable
+        a smaller payload for common linked data URIs, versioning, and a larger URI in general which could negate the need for 
+        URL shorteners.
+    </aside>
 </section>
 
 <section data-markdown>
@@ -185,6 +202,7 @@ height: 720
     {% markdown %}
         ## Demonstrator
         ![](images/coverage_map.svg)
+        <small>- M. Van de Wynckel & B. Signer, OpenHPS Single Floor Dataset (2021)</small>
     {% endmarkdown %}
     <aside class="notes">
         In order to test and demonstrate the capabilities of SemBeacon we tested it in a real world
@@ -193,6 +211,71 @@ height: 720
         beacons required an internal database within the application in order to perform multilateration.
 
         We first converted the dataset to semantic data using the POSO ontology.
+    </aside>
+</section>
+<section data-markdown>
+    {% markdown %}
+        ## Demonstrator ...
+        <code>https://sembeacon.org/examples/openhps2021/beacons.ttl</code>
+        ```turtle
+        :pl9_3_lobby_1 a schema:Place, ssn:Deployment, sosa:FeatureOfInterest, ogc:SpatialObject;
+            ogc:hasGeometry [
+                a ogc:Geometry;
+                ogc:asWKT "POLYGON Z((4.392281317197596 50.82061024217639 92, 4.39223788808538 50.82065085654958 92, 4.392153959019106 50.82061503844629 92, 4.392197388204323 50.8205744240731 91.99999999906868, 4.392281317197596 50.820610242176386 94.99999999906868, 4.392237888085379 50.82065085654958 95, 4.392153959019106 50.82061503844629 95, 4.392197388204322 50.8205744240731 94.99999999906868, 4.392281317197596 50.82061024217639 92))"^^ogc:wktLiteral;
+                ogc:coordinateDimension 3;
+                ogc:spatialDimension 3;
+                ogc:dimension 3
+            ];
+            rdfs:label "Lobby #1";
+            dcmi:created "2023-06-22T21:12:23.585Z"^^xsd:dateTime.
+        :pl9_3_lobby_2 a schema:Place, ssn:Deployment, sosa:FeatureOfInterest, ogc:SpatialObject;
+            ogc:hasGeometry [
+                a ogc:Geometry;
+                ogc:asWKT "POLYGON Z((4.392530671545053 50.820691696024596 92, 4.392512343770305 50.82070883604012 92.00000000093132, 4.392448113920621 50.820681425129145 92, 4.392466441718948 50.820664285113615 91.99999999906868, 4.392530671545053 50.820691696024596 95, 4.3925123437703055 50.82070883604012 95.00000000093132, 4.392448113920621 50.820681425129145 94.99999999906868, 4.392466441718948 50.82066428511362 95.00000000093132, 4.392530671545053 50.820691696024596 92))"^^ogc:wktLiteral;
+                ogc:coordinateDimension 3;
+                ogc:spatialDimension 3;
+                ogc:dimension 3
+            ];
+            rdfs:label "Lobby #2";
+            dcmi:created "2023-06-22T21:12:23.586Z"^^xsd:dateTime.
+
+
+        :BEACON_08 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:RFLandmark, poso:BluetoothBeacon, sembeacon:SemBeacon;
+            rdfs:label "BEACON_08";
+            dcmi:created "2023-06-22T21:12:23.637Z"^^xsd:dateTime;
+            poso:hasPosition [
+                a geo:Point, poso:AbsolutePosition;
+                ogc:asWKT "POINT Z(4.392253994600526 50.82057562786381 93.5999999962747)"^^ogc:wktLiteral;
+                ogc:coordinateDimension 3;
+                ogc:spatialDimension 3;
+                ogc:dimension 3;
+                dcmi:created "2023-06-22T21:12:23.638Z"^^xsd:dateTime;
+                schema:latitude "50.82057562786381"^^xsd:double;
+                schema:longitude "4.392253994600526"^^xsd:double;
+                schema:elevation "93.5999999962747"^^xsd:double
+            ];
+            posoc:hasReferenceRSSI [
+                a poso:RelativeSignalStrength;
+                poso:hasRSS [
+                        a qudt:QuantityValue;
+                        qudt:unit unit:DeciB_M;
+                        qudt:numericValue -56
+                ];
+                poso:hasRelativeDistance [
+                    a qudt:QuantityValue;
+                    qudt:unit unit:M;
+                    qudt:numericValue 1
+                ]
+            ];
+            hardware:macAddress "f7:5c:38:a4:45:ec";
+            ogc:sfWithin :pl9_3_corridor;
+            sembeacon:namespace :pl9_3;
+            sembeacon:shortResourceURI "https://bit.ly/3JsEnF9"^^xsd:anyURI;
+            sembeacon:instanceId "c187d748"^^xsd:hexBinary.
+        ```
+    {% endmarkdown %}
+    <aside class="notes">
+
     </aside>
 </section>
 
@@ -235,6 +318,38 @@ height: 720
 
 <section data-markdown>
     {% markdown %}
-    ## Conclusions and Future Work
+        ## Conclusion and Future Work
+        - We presented SemBeacon
     {% endmarkdown %}
+    {% qr "https://sembeacon.org", "qr-image", "H" %}
+    <ul class="info">
+        <li><i class="fa-brands fa-github"></i> <a href="https://github.com/SemBeacon/">https://github.com/SemBeacon/</a></li>
+        <li><i class="fa-solid fa-book"></i> <a href="https://sembeacon.org/">https://sembeacon.org/</a></li>
+    </ul>
+    <style>
+    .qr-image {
+        position: absolute;
+        left: 0em;
+        bottom: 1em;
+        width: 300px;
+        height: 300px;
+        float: right;
+    }
+    ul.info {
+        font-size: 1.1em;
+        position: absolute;
+        left: 300px;
+        bottom: 125px;
+        list-style-type: none;
+    }
+    ul.info li i {
+        width: 50px;
+    }
+    ul.info li::before {
+        content: none;
+    }
+    </style>
+    <aside class="notes">
+        
+    </aside>
 </section>   

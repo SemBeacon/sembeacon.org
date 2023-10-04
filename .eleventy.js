@@ -8,6 +8,7 @@ const sass = require("eleventy-sass");
 const favicon = require("eleventy-favicon");
 const toc = require("eleventy-plugin-toc");
 const { decktape } = require("./src/utils/decktape");
+const { qr } = require("./src/utils/qr");
 const nunjucks = require("nunjucks");
 const markdown = require('nunjucks-markdown');
 
@@ -94,6 +95,7 @@ module.exports = function(config) {
   config.setLibrary("md", md);
 
   config.addPlugin(decktape);
+  config.addPlugin(qr);
 
   config.addPlugin(sass, [
     {

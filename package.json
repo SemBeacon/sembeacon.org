@@ -37,6 +37,7 @@
     "node-fetch": "^3.3.2",
     "nunjucks": "^3.2.4",
     "nunjucks-markdown": "^2.0.1",
+    "qrcode": "^1.5.3",
     "reveal.js": "^4.6.1",
     "reveal.js-pointer": "^0.1.4",
     "serve-handler": "^6.1.5",
