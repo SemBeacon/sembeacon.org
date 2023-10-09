@@ -16,7 +16,7 @@ height: 720
     'SemBeacon: A semantic proximity beacon solution for discovering and detecting the position of physical things'
 -->
 
-<section data-markdown>
+<section data-markdown data-timing="25">
     {% markdown %}
         ## Overview
         *"A Physical Thing is an abstraction of a **physical** entity that provides **interactions** to and participates in the Web of Things"* \
@@ -31,7 +31,7 @@ height: 720
     </aside>
 </section>
 
-<section data-markdown>
+<section data-markdown data-timing="35">
     {% markdown %}
         ## Problem Statement
         *"How to discover and track Physical Things indoors?"*
@@ -48,7 +48,7 @@ height: 720
     </aside>
 </section>
 
-<section data-markdown>
+<section data-markdown data-timing="20">
     {% markdown %}
         ## Table of Contents
         1.  Related Work and Specifications
@@ -67,28 +67,56 @@ height: 720
 <section data-markdown>
     {% markdown %}
         ## Related Work
-        ![](images/hpcooltown.jpg){ width=20% }
-        <small>- HP CoolTown Beacon (2000)</small>
+        <div class="row">
+            <div class="col-4">
+                <img src="images/hpcooltown.jpg" width="95%">
+                <small>- HP CoolTown Beacon (2000) [26]</small>
+            </div>
+            <div class="col-7">
+                <img src="images/lee2017.jpg" width="100%">
+                <small>- Location-based service using ontology-based semantic queries (2017) [18]</small>
+            </div>
+        </div>
     {% endmarkdown %}
     <aside class="notes">
 
     </aside>
 </section>
+<section data-markdown>
+    {% markdown %}
+        ## Related Work ...
+        <div class="row">
+            <div class="col-12">
+                <img src="images/physicalweb_architecture.png" width="60%">
+                <small>- Manfred Sneps-Sneppe, Dmitry Namiot, "On Physical Web models" (2016)</small>
+            </div>
+        </div>
+    {% endmarkdown %}
+    <aside class="notes">
+        
+    </aside>
+</section>
 
 <section data-markdown>
     {% markdown %}
-        ## BLE Specifications
-        ![](images/bluetooth_ips.svg){ width=100% }
+        ## Related Work ...
+        ### BLE Specifications
         ![](images/uribeacon.svg){ width=100% }
+
+        - Encoded URI to fit within 17 bytes
+        - One flag implemented for *invisible hint*
+        - Discontinued in favor of Eddystone-URL
     {% endmarkdown %}
     <aside class="notes">
-        If we focus on Bluetooth low energy specification that are specifically focused on indoor positioning, the Bluetooth
-        Special interest group has created its own specification for broadcasting a position. It supports both the 
-        global WGS84 latitude and longitude along with a local coordinate, transmission power and additional flags of
-        data that is available after performing a connection to the bluetooth device.
-
-
+        When we
     </aside>
+</section>
+
+<section data-markdown>
+    {% markdown %}
+        ## BLE Specifications ...
+        ![](images/eddystone.svg){ width=100% }
+    {% endmarkdown %}
 </section>
 
 <section data-markdown>
@@ -99,11 +127,33 @@ height: 720
     {% endmarkdown %}
 </section>
 
-<section data-markdown>
+<section data-markdown class="flags">
+    <style>
+        section.flags table {
+            font-size: 80%;
+        }
+    </style>
     {% markdown %}
         ## BLE Specifications ...
-        ![](images/eddystone.svg){ width=100% }
+        ![](images/bluetooth_ips.svg){ width=100% }
+        | **Bit (MSB)** | **Description** |
+        |---|---|
+        | 0 | Presence of coordinates in advertising packet |
+        | 1 | Coordinate system used (WGS84 or *local*) |
+        | 2 | Presence of TX Power field in advertising packet |
+        | 3 | Presence of Altitude field in advertising packet |
+        | 4 | Presence of Floor Number in advertising packet |
+        | 5 | Presence of Uncertainty in advertising packet |
+        | 6 | Location Name avaiable in GATT database |
     {% endmarkdown %}
+    <aside class="notes">
+        If we focus on Bluetooth low energy specification that are specifically focused on indoor positioning, the Bluetooth
+        Special interest group has created its own specification for broadcasting a position. It supports both the 
+        global WGS84 latitude and longitude along with a local coordinate, transmission power and additional flags of
+        data that is available after performing a connection to the bluetooth device.
+
+
+    </aside>
 </section>
 
 <section data-markdown>
@@ -144,6 +194,8 @@ height: 720
     {% markdown %}
         ## SemBeacon Solution ...
         ### Flags
+        Based on UriBeacon, Bluetooth IPS and Eddystone frames
+
         | **Bit (MSB)** | **Description** | **Example** |
         |---|---|---|
         | 0 | Indicates if the beacon has a position. | 0 = Unsure, 1 = Yes |
@@ -177,11 +229,16 @@ height: 720
     {% endmarkdown %}
     <aside class="notes">
         In addition to our backwards compatible BLE 4 advertisement we also have a work in progress BLE 5 advertisement specification.
-        With the increased payload size for BLE 5 advertisements we can 
+        With the increased payload size for BLE 5 advertisements we can include both the namespace and instance identifiers and uri
+        within a single advertisement.
 
         As we no longer have to ensure Eddystone-URL compatibility, we also extended the encoding for the the URI to enable
         a smaller payload for common linked data URIs, versioning, and a larger URI in general which could negate the need for 
         URL shorteners.
+
+        BLE 5 advertisements offer better range compared to legacy BLE 4 advertisements which is useful for positioning. Our arduino
+        library already offers the capabilities to use this new service on newer BLE 5 compatible ESP32 hardware for both scanning
+        and advertising. However, our mobile application currently does not scan for BLE 5 advertisements yet.
     </aside>
 </section>
 
@@ -334,7 +391,7 @@ height: 720
     {% markdown %}
         ## Conclusion and Future Work
         - We presented our semantic beacon solution called SemBeacon
-        - Expanding to non-BLE beacons
+        - Expanding to non-BLE beacons (e.g. Ultrawide-band)
     {% endmarkdown %}
     {% qr "https://sembeacon.org", "qr-image", "H" %}
     <ul class="info">
