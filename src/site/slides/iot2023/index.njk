@@ -79,7 +79,19 @@ height: 720
         </div>
     {% endmarkdown %}
     <aside class="notes">
+        If we look back at the early 2000's, Hewelett Packard started the CoolTown project. Part of this project was the creation of
+        URI beacons which were infrared transmitters of uniform resource identifiers. This URI would then lead to an XML description
+        of the location or place. Despite the hardware limitations back in the day, this solution tries to solve
+        our problem by putting the description online and transmitting this to the user. However, the XML vocabulary
+        was specific to the CoolTown project and only one URI was used to describe the place.
 
+        Other examples that more closely resemble the problem we are trying to solve use an object relational
+        database system on the web that can be accessed by mobile clients. These clients can query the database to retrieve
+        geospatial information about the environment which can be used to offer indoor positioning.
+        While these solutions offer the ability to create interoperable applications, especially when used with common vocabularies --
+        it still requires knowledge on the location of the server. If we would make an open world assumption where these geometry
+        and topology models are decentralised, we would require large semantic queries over unknown multiple servers, which is currently
+        a huge bottleneck in linked data.
     </aside>
 </section>
 <section data-markdown>
@@ -93,14 +105,43 @@ height: 720
         </div>
     {% endmarkdown %}
     <aside class="notes">
-        
+        In 2014, Google introduced the Physical Web. The general idea behind the physical web was that 
+        Bluetooth transmitters could send out an URL that you can access when nearby the beacon.
+        The Physical Web was mainly focused on broadcasting user-browserable and interactable websites
+        and was implemented in Google Chrome as notifications that would appear when near a beacon.
+
+        Use cases ranged from getting notifications for posters and events that you pass by, so that you could
+        open the URL in the notification rather than scanning a QR code on the poster. Interactions with devices
+        such as parking meters or smart lights and even on moveable objects such as pets, so their owners could update
+        the website whenever their pet was missing.
+
+        The project was shortlived and was removed from iOS and Android in 2017 after the concept was use too much
+        for advertising and marketing, rather than providing seamless interactions.
     </aside>
 </section>
 
 <section data-markdown>
     {% markdown %}
-        ## Related Work ...
         ### BLE Specifications
+        ![](images/ble_packet.svg){ width=90% }
+    {% endmarkdown %}
+    <aside class="notes">
+        To quickly jump back a bit to some background information about Bluetooth Low Energy we currently
+        have two major versions. BLE 4 and BLE 5. Bluetooth Low Energy can advertise limited amount of information
+        that can be picked up by passive receivers.
+
+        In BLE 4 we have an advertisement payload size of maximum 31 bytes. In BLE 5 we can have a maximum payload size of 255 bytes
+        which can also be used to contain multiple BLE4 compatible advertisements if needed.
+
+        On top of this, both versions also support active scanning where the receiver sends out a scan requests
+        that will trigger the advertising transmitter to send out another advertising PDU. This scan response
+        can be different from the advertisement data, giving a total adveritsement size of 62 bytes for Bluetooth Low Energy v4.
+    </aside>
+</section>
+
+<section data-markdown>
+    {% markdown %}
+        ### BLE Specifications ...
         ![](images/uribeacon.svg){ width=100% }
 
         - Encoded URI to fit within 17 bytes
@@ -108,7 +149,12 @@ height: 720
         - Discontinued in favor of Eddystone-URL
     {% endmarkdown %}
     <aside class="notes">
-        When we
+        The Physical Web project was backed by the UriBeacon Bluetooth Low Energy Specification which broadcasted
+        useful data such as the URI itself, encoded to be as small as possible. The calibrated signal strength
+        at 0 meters so we can approximate the distance to the beacon and finally a set of flags. However,
+        only one 'invisibility' flag was implemented in order to indicate if a Phsyical item should be visible to the user.
+
+        It was later discontinued in favor of and Eddystone-URL beacon.
     </aside>
 </section>
 
@@ -117,6 +163,14 @@ height: 720
         ## BLE Specifications ...
         ![](images/eddystone.svg){ width=100% }
     {% endmarkdown %}
+    <aside class="notes">
+        Eddystone-URL was the new version that replaced UriBeacon. It was part of the Eddystone lineup
+        of beacon specifications that included different variants based on the needs of the transmitter.
+        It included a specification for telemetry data, encryption of advertisement data, an URL like UriBeacon
+        and finally also a unique identifier that consisted of a 10 byte namespace and 6 byte instance identifier.
+
+        The type of specification is determined by the 'frame type' byte which replaced the flags byte in UriBeacon.
+    </aside>
 </section>
 
 <section data-markdown>
@@ -125,6 +179,22 @@ height: 720
         ![](images/ibeacon.svg){ width=100% }
         ![](images/altbeacon.svg){ width=100% }
     {% endmarkdown %}
+    <aside class="notes">
+        If we look more towards specifications that could be used for positioning and tracking our physical things, iBeacon
+        and AltBeacon are two popular specifications that are commonly used in indoor positioning systems. Instead of advertising a service,
+        the use manufacturer specific data to include the required information. This includes the calibrated signal strength
+        at 1m distance that can be used to determine the distance, a 128 bit proximity unique identifier
+        and major and minor classification.
+
+        Invented by Apple, the iBeacon specification recommends that companies use the same UUID per application and the major
+        minor classification to indicate the spatial region. In iOS it is even impossible to detect iBeacons without providing
+        an UUID, which limits the use of iBeacon to proprietary positioning systems or hardware.
+
+        To solve this particular issue, AltBeacon was created by Radius Networks which does not require to use the Apple manufacturer
+        identifier, has an extra 1 byte that can be implemented by manufacturers for more specific data and
+        officially has a 20 byte beacon identifier. However, due to backwards compatibility this 20 byte identifier
+        is usually implemented similarly to iBeacon with a proximity uuid.
+    </aside>
 </section>
 
 <section data-markdown class="flags">
@@ -147,12 +217,9 @@ height: 720
         | 6 | Location Name avaiable in GATT database |
     {% endmarkdown %}
     <aside class="notes">
-        If we focus on Bluetooth low energy specification that are specifically focused on indoor positioning, the Bluetooth
-        Special interest group has created its own specification for broadcasting a position. It supports both the 
+        T Bluetooth Special interest group has created its own specification for broadcasting a position. It supports both the 
         global WGS84 latitude and longitude along with a local coordinate, transmission power and additional flags of
         data that is available after performing a connection to the bluetooth device.
-
-
     </aside>
 </section>
 
@@ -339,8 +406,8 @@ height: 720
     {% markdown %}
         ## Demonstrator ...
         ### Mobile Application
-        - Scans for iBeacon, AltBeacon, Eddystone and SemBeacon
-        - Downloads, extracts and visualises SemBeacon information
+        - **Scans** for iBeacon, AltBeacon, Eddystone and SemBeacon
+        - **Downloads**, extracts and visualises SemBeacon information
         - Visualises iBeacon, AltBeacon or Eddystone beacons with knowing location
         from previously extracted semantic data
         - Implements HTTP caching and namespace mapping to environments
@@ -389,9 +456,25 @@ height: 720
 
 <section data-markdown>
     {% markdown %}
+        ## Supplemental Material
+        - Android Application to scan and broadcast SemBeacons
+        - Arduino ESP32 Library to advertise SemBeacon
+        - Native Android library extension to identify SemBeacons
+        - TypeScript library to create and detect SemBeacons
+    {% endmarkdown %}
+    <aside class="notes">
+
+    </aside>
+</section>
+
+
+<section data-markdown>
+    {% markdown %}
         ## Conclusion and Future Work
         - We presented our semantic beacon solution called SemBeacon
         - Expanding to non-BLE beacons (e.g. Ultrawide-band)
+        - Expanding the vocabulary to facilitate device interactions
+        - Web Bluetooth Scanning for SemBeacons
     {% endmarkdown %}
     {% qr "https://sembeacon.org", "qr-image", "H" %}
     <ul class="info">
