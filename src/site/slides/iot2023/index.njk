@@ -169,7 +169,10 @@ height: 720
         It included a specification for telemetry data, encryption of advertisement data, an URL like UriBeacon
         and finally also a unique identifier that consisted of a 10 byte namespace and 6 byte instance identifier.
 
-        The type of specification is determined by the 'frame type' byte which replaced the flags byte in UriBeacon.
+        The type of specification is determined by the 'frame type' byte which replaced the flags byte in UriBeacon. In the case 
+        of the UID frame, a Google Cloud Service such as the Beacon API or Place API can be used to link the UID to additional information
+        such as its location. However, this limits the use for the beacon to proprietary applications or requires
+        knowledge on the web server that contains this information and the format it uses.
     </aside>
 </section>
 
