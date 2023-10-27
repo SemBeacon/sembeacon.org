@@ -141,7 +141,7 @@ height: 720
 
 <section data-markdown>
     {% markdown %}
-        ### BLE Specifications ...
+        ### BLE Specifications
         ![](images/uribeacon.svg){ width=100% }
 
         - Encoded URI to fit within 17 bytes
@@ -178,7 +178,7 @@ height: 720
 
 <section data-markdown>
     {% markdown %}
-        ## BLE Specifications ...
+        ## BLE Specifications
         ![](images/ibeacon.svg){ width=100% }
         ![](images/altbeacon.svg){ width=100% }
     {% endmarkdown %}
@@ -207,7 +207,7 @@ height: 720
         }
     </style>
     {% markdown %}
-        ## BLE Specifications ...
+        ## BLE Specifications
         ![](images/bluetooth_ips.svg){ width=100% }
         | **Bit (MSB)** | **Description** |
         |---|---|
@@ -244,7 +244,7 @@ height: 720
 
 <section data-markdown>
     {% markdown %}
-        ## SemBeacon Solution ...
+        ## SemBeacon Solution
         ### BLE 4.X
         ![SemBeacon specification for BLE v4.x](./images/specification_BLE4.svg){ width=80% }
     {% endmarkdown %}
@@ -262,7 +262,7 @@ height: 720
         }
     </style>
     {% markdown %}
-        ## SemBeacon Solution ...
+        ## SemBeacon Solution
         ### Flags
         Based on UriBeacon, Bluetooth IPS and Eddystone frames
 
@@ -286,7 +286,7 @@ height: 720
 
 <section data-markdown>
     {% markdown %}
-        ## SemBeacon Solution ...
+        ## SemBeacon Solution
         ### Namespace and Instance Identifier
         ![](images/identifier_example.svg){ width=100% }
     {% endmarkdown %}
@@ -297,7 +297,7 @@ height: 720
 
 <section data-markdown>
     {% markdown %}
-        ## SemBeacon Solution ...
+        ## SemBeacon Solution
         ### BLE 5.X (Work in Progress)
         ![SemBeacon specification for BLE v5.x](./images/specification_BLE5.svg){ width=80% }
     {% endmarkdown %}
@@ -318,7 +318,7 @@ height: 720
 
 <section data-markdown>
     {% markdown %}
-        ## SemBeacon Solution ...
+        ## SemBeacon Solution
         ### Ontology and POSO Extension
         
     {% endmarkdown %}
@@ -331,7 +331,22 @@ height: 720
 
 <section data-markdown>
     {% markdown %}
+        ## SemBeacon Solution
+        ### Method of Discovery
+        ![](images/example_state.svg){ width=50% }
+    {% endmarkdown %}
+    <aside class="notes">
+        Discovering a SemBeacon is one of the key areas we wanted to focus on. First of all we wanted to
+        make sure that previously seen SemBeacons can be identified without requiring an online fetch of information.
+        Next we also wanted to make sure that it can provide the online information when needed and last but not least, we
+        also wanted to hierarchically group them.
+    </aside>
+</section>
+
+<section data-markdown>
+    {% markdown %}
         ## Demonstrator
+        ### Dataset
         ![](images/coverage_map.svg)
         <small>- M. Van de Wynckel & B. Signer, OpenHPS Single Floor Dataset (2021)</small>
     {% endmarkdown %}
@@ -341,13 +356,25 @@ height: 720
         from 2021 that we recorded in the building of our lab. Back then, indoor positioning using the deployed
         beacons required an internal database within the application in order to perform multilateration.
 
+        The primary focus of our dataset transformation consisted of transforming the geojson descriptors of the environment 
+        as well as the information of beacons. 
+    </aside>
+</section>
+<section data-markdown>
+    {% markdown %}
+        ## Demonstrator
+        ### Transformation
+        ![](images/example_building.svg) { width=70% }
+    {% endmarkdown %}
+    <aside class="notes">
         We first converted the dataset to semantic data using the POSO ontology.
     </aside>
 </section>
 <section data-markdown>
     {% markdown %}
-        ## Demonstrator ...
-        <code>https://sembeacon.org/examples/openhps2021/beacons.ttl</code>
+        ## Demonstrator
+        ### Transformation
+        <small>https://sembeacon.org/examples/openhps2021/beacons.ttl</small>
         ```turtle
         :pl9_3_lobby_1 a schema:Place, ssn:Deployment, sosa:FeatureOfInterest, ogc:SpatialObject;
             ogc:hasGeometry [
@@ -369,8 +396,18 @@ height: 720
             ];
             rdfs:label "Lobby #2";
             dcmi:created "2023-06-22T21:12:23.586Z"^^xsd:dateTime.
+        ```
+    {% endmarkdown %}
+    <aside class="notes">
 
-
+    </aside>
+</section>
+<section data-markdown>
+    {% markdown %}
+        ## Demonstrator
+        ### Transformation
+        <small>https://sembeacon.org/examples/openhps2021/beacons.ttl</small>
+        ```turtle
         :BEACON_08 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:RFLandmark, poso:BluetoothBeacon, sembeacon:SemBeacon;
             rdfs:label "BEACON_08";
             dcmi:created "2023-06-22T21:12:23.637Z"^^xsd:dateTime;
@@ -409,15 +446,17 @@ height: 720
 
     </aside>
 </section>
+
 <section data-markdown>
     {% markdown %}
-        ## Demonstrator ...
+        ## Demonstrator
         ### Mobile Application
         - **Scans** for iBeacon, AltBeacon, Eddystone and SemBeacon
         - **Downloads**, extracts and visualises SemBeacon information
-        - Visualises iBeacon, AltBeacon or Eddystone beacons with knowing location
-        from previously extracted semantic data
-        - Implements HTTP caching and namespace mapping to environments
+        - **Advertises** SemBeacon beacons for testing purposes
+        - Visualises iBeacon, AltBeacon or Eddystone beacons with known location
+        and Geospatial features
+        - Implements HTTP *caching* and namespace mapping to environments
     {% endmarkdown %}
     <aside class="notes">
 
@@ -520,3 +559,13 @@ height: 720
         
     </aside>
 </section>   
+
+<section data-markdown>
+    {% markdown %}
+        ## (Extra) iOS and iBeacon
+        
+    {% endmarkdown %}
+    <aside class="notes">
+        
+    </aside>
+</section>
