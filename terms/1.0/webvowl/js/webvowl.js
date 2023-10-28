@@ -17731,4 +17731,4 @@ webvowl =
 	 * _.difference([2, 1], [2, 3]);
 	 * // => [1]
 	 */
-	var difference = baseRest
+	var 
