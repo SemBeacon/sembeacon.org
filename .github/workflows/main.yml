@@ -61,9 +61,6 @@ jobs:
       - run: |
           echo Installed chromium version: ${{ steps.setup-chrome.outputs.chrome-version }}
           ${{ steps.setup-chrome.outputs.chrome-path }} --version
-      - name: Installing Dependencies
-        run: |
-          node node_modules/decktape/node_modules/puppeteer/install.js
       - name: Check out repository
         uses: actions/checkout@v3
       - name: Load dependency cache
@@ -89,6 +86,9 @@ jobs:
             *.pdf
             _presentations_generated.json
           key: ${{ runner.os }}-site-presentations-v2
+      - name: Installing Dependencies
+        run: |
+          node node_modules/decktape/node_modules/puppeteer/install.js
       - name: Build presentations
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
