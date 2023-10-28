@@ -63,7 +63,7 @@ jobs:
           ${{ steps.setup-chrome.outputs.chrome-path }} --version
       - name: Installing Dependencies
         run: |
-          node node_modules\decktape\node_modules\puppeteer\install.js
+          node node_modules/decktape/node_modules/puppeteer/install.js
       - name: Check out repository
         uses: actions/checkout@v3
       - name: Load dependency cache
