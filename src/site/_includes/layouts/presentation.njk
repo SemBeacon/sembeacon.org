@@ -102,6 +102,7 @@
           slideNumber: 'c',
         });
         Reveal.on('pdf-ready', () => {
+          //document.querySelectorAll(`.pdf-page .fragment[data-autoslide]`).forEach(e => e.classList.remove("fragment"));
           document.querySelectorAll(`.pdf-page section[data-visibility="uncounted"]`).forEach(e => e.closest('.pdf-page').remove());
         });
         Reveal.on('slidechanged', (event) => {
@@ -114,6 +115,13 @@
               Reveal.prev();
             }
           }
+
+          // Auto slide
+          event.currentSlide.querySelectorAll('.fragment[data-autoslide]').forEach(fragment => {
+            setTimeout(() => {
+              fragment.classList.add("visible");
+            }, parseInt(fragment.getAttribute("data-autoslide")));
+          });
         });
         let lastMovement = 0;
         let idle = false;

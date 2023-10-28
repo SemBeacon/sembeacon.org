@@ -109,7 +109,7 @@ height: 720
 
 <section data-markdown>
     {% markdown %}
-        ### BLE Specifications
+        ## Bluetooth Low Energy (BLE)
         ![](images/ble_packet.svg){ width=90% }
     {% endmarkdown %}
     <aside class="notes">
@@ -126,7 +126,7 @@ height: 720
     </aside>
 </section>
 
-<section data-markdown data-visibility="hidden">
+<section data-markdown data-visibility="uncounted">
     {% markdown %}
         ### BLE Specifications
         ![](images/uribeacon.svg){ width=100% }
@@ -147,7 +147,7 @@ height: 720
 
 <section data-markdown>
     {% markdown %}
-        ## BLE Specifications
+        ## BLE Specifications ...
         ![](images/eddystone.svg){ width=100% }
     {% endmarkdown %}
     <aside class="notes">
@@ -165,7 +165,7 @@ height: 720
 
 <section data-markdown>
     {% markdown %}
-        ## BLE Specifications
+        ## BLE Specifications ...
         ![](images/ibeacon.svg){ width=100% }
         ![](images/altbeacon.svg){ width=100% }
     {% endmarkdown %}
@@ -194,7 +194,7 @@ height: 720
         }
     </style>
     {% markdown %}
-        ## BLE Specifications
+        ## BLE Specifications ...
         ![](images/bluetooth_ips.svg){ width=100% }
         | **Bit (MSB)** | **Description** |
         |---|---|
@@ -231,7 +231,7 @@ height: 720
 
 <section data-markdown>
     {% markdown %}
-        ## SemBeacon Solution
+        ## SemBeacon <i class="fa-solid fa-chevron-right"></i> Bluetooth Specification
         ### BLE 4.X
         ![SemBeacon specification for BLE v4.x](./images/specification_BLE4.svg){ width=80% }
     {% endmarkdown %}
@@ -249,7 +249,7 @@ height: 720
         }
     </style>
     {% markdown %}
-        ## SemBeacon Solution
+        ## SemBeacon <i class="fa-solid fa-chevron-right"></i> Bluetooth Specification
         ### Flags
         Based on UriBeacon, Bluetooth IPS and Eddystone frames
 
@@ -271,20 +271,10 @@ height: 720
     </aside>
 </section>
 
-<section data-markdown>
-    {% markdown %}
-        ## SemBeacon Solution
-        ### Namespace and Instance Identifier
-        ![](images/identifier_example.svg){ width=100% }
-    {% endmarkdown %}
-    <aside class="notes">
-        
-    </aside>
-</section>
 
 <section data-markdown>
     {% markdown %}
-        ## SemBeacon Solution
+        ## SemBeacon <i class="fa-solid fa-chevron-right"></i> Bluetooth Specification
         ### BLE 5.X (Work in Progress)
         ![SemBeacon specification for BLE v5.x](./images/specification_BLE5.svg){ width=80% }
     {% endmarkdown %}
@@ -305,9 +295,18 @@ height: 720
 
 <section data-markdown>
     {% markdown %}
-        ## SemBeacon Solution
-        ### Ontology and POSO Extension
+        ## SemBeacon <i class="fa-solid fa-chevron-right"></i> Namespace and Instance
+        ![](images/identifier_example.svg){ width=100% }
+    {% endmarkdown %}
+    <aside class="notes">
         
+    </aside>
+</section>
+
+<section data-markdown>
+    {% markdown %}
+        ## SemBeacon <i class="fa-solid fa-chevron-right"></i> POSO Extension
+        <img src="images/sembeacon_ontology.svg" width="100%" style="margin-top: 2em">
     {% endmarkdown %}
     <aside class="notes">
         In 2022 we released the Generic Positioning System Ontology
@@ -318,9 +317,8 @@ height: 720
 
 <section data-markdown>
     {% markdown %}
-        ## SemBeacon Solution
-        ### Method of Discovery
-        <div class="row">
+        ## SemBeacon <i class="fa-solid fa-chevron-right"></i> Method of Discovery
+        <div class="row" style="margin-top: 2em">
             <div class="col-5">
                 <img src="images/example_state.svg" width="100%">
             </div>
@@ -363,8 +361,7 @@ height: 720
 
 <section data-markdown>
     {% markdown %}
-        ## Demonstrator
-        ### Dataset
+        ## Demonstrator <i class="fa-solid fa-chevron-right"></i> Dataset
         ![](images/coverage_map.svg){ width=45% }
         <small>- M. Van de Wynckel & B. Signer, OpenHPS Single Floor Dataset (2021)</small>
     {% endmarkdown %}
@@ -380,8 +377,7 @@ height: 720
 </section>
 <section data-markdown>
     {% markdown %}
-        ## Demonstrator
-        ### Transformation
+        ## Demonstrator <i class="fa-solid fa-chevron-right"></i> Transformation
         ![](images/example_building.svg) { width=70% }
     {% endmarkdown %}
     <aside class="notes">
@@ -390,8 +386,8 @@ height: 720
 </section>
 <section data-markdown>
     {% markdown %}
-        ## Demonstrator
-        ### Transformation <small>(https://sembeacon.org/examples/openhps2021/beacons.ttl)</small>
+        ## Demonstrator <i class="fa-solid fa-chevron-right"></i> Transformation 
+        ### https://sembeacon.org/examples/openhps2021/beacons.ttl
         ```turtle
         :pl9_3_lobby_1 a schema:Place, ssn:Deployment, sosa:FeatureOfInterest, ogc:SpatialObject;
             ogc:hasGeometry [ a ogc:Geometry;
@@ -421,8 +417,8 @@ height: 720
 </section>
 <section data-markdown>
     {% markdown %}
-        ## Demonstrator
-        ### Transformation <small>(https://sembeacon.org/examples/openhps2021/beacons.ttl)</small>
+        ## Demonstrator <i class="fa-solid fa-chevron-right"></i> Transformation 
+        ### https://sembeacon.org/examples/openhps2021/beacons.ttl
         ```turtle
         :BEACON_08 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:RFLandmark, 
                 poso:BluetoothBeacon, sembeacon:SemBeacon;
@@ -453,32 +449,41 @@ height: 720
 </section>
 
 <section data-markdown>
+    <script>
+
+    </script>
     <style>
         .screenshots {
             margin-top: 1em;
         }
         .screenshots img {
             border-radius: 0.5em;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+        .fragment.fade-up-slow {
+            transform: translate(0,200px);
+        }
+        .fragment.fade-up-slow.visible {
+            transform: translate(0,0);
         }
     </style>
     {% markdown %}
-        ## Demonstrator
-        ### Mobile Application
+        ## Demonstrator <i class="fa-solid fa-chevron-right"></i> Mobile Application
         - **Scans** and **Simulates** SemBeacon, iBeacon, AltBeacon and Eddystone
         - **Extracts** and visualizes SemBeacon encoded information
         - Implements HTTP **caching** and namespace mapping to environments
         <div class="row screenshots">
             <div class="col-3">
-                <img src="/images/android-app/Screenshot_20231027_164519_SemBeacon.jpg" width="100%">
+                <img class="fragment fade-up-slow" data-autoslide="200" src="/images/android-app/Screenshot_20231027_164519_SemBeacon.jpg" width="100%">
             </div>
             <div class="col-3">
-                <img src="/images/android-app/Screenshot_20231027_174719_SemBeacon.jpg" width="100%">
+                <img class="fragment fade-up-slow" data-autoslide="400" src="/images/android-app/Screenshot_20231027_174719_SemBeacon.jpg" width="100%">
             </div>
             <div class="col-3">
-                <img src="/images/android-app/Screenshot_20231027_164555_SemBeacon.jpg" width="100%">
+                <img class="fragment fade-up-slow" data-autoslide="600" src="/images/android-app/Screenshot_20231027_164555_SemBeacon.jpg" width="100%">
             </div>
             <div class="col-3">
-                <img src="/images/android-app/Screenshot_20231027_180046_SemBeacon.jpg" width="100%">
+                <img class="fragment fade-up-slow" data-autoslide="800" src="/images/android-app/Screenshot_20231027_180046_SemBeacon.jpg" width="100%">
             </div>
         </div>
     {% endmarkdown %}
@@ -488,12 +493,23 @@ height: 720
 </section>
 
 <section data-markdown>
+    <style>
+        small.supplemental {
+            font-size: 80%;
+            margin-left: 2em;
+            margin-bottom: 1em;
+        }
+    </style>
     {% markdown %}
         ## Supplemental Material
-        - Android Application to scan and broadcast SemBeacons
-        - Arduino ESP32 Library to advertise SemBeacon
-        - Native Android library extension to identify SemBeacons
-        - TypeScript library to create and detect SemBeacons
+        - Android Application to scan and broadcast SemBeacons\
+            <small class="supplemental">*Created using Ionic Capacitor and @sembeacon/openhps*</small>
+        - Arduino ESP32 Library to advertise SemBeacon\
+            <small class="supplemental">*Available in the Arduino IDE as "ESP32_SemBeacon"*</small>
+        - Android library extension to identify SemBeacons\
+            <small class="supplemental">*Using the AltBeacon Beacon Library*</small>
+        - TypeScript library to create and detect SemBeacons\
+            <small class="supplemental">*Using the OpenHPS framework (@sembeacon/openhps)*</small>
     {% endmarkdown %}
     <aside class="notes">
         In order to test our beacons and also to ensure an easy adoption rate, we
@@ -510,15 +526,17 @@ height: 720
     {% markdown %}
         ## Conclusion and Future Work
         - We presented our semantic beacon solution called SemBeacon
+        - Backwards compatible, offline identification
+        - Expandable with additional vocabularies
         - Expanding to non-BLE beacons (e.g. Ultrawide-band)
         - Expanding the vocabulary to facilitate device interactions
-        - Web Bluetooth Scanning for SemBeacons
     {% endmarkdown %}
     {% qr "https://sembeacon.org", "qr-image", "H" %}
     <ul class="info">
         <li><i class="fa-brands fa-github"></i> <a href="https://github.com/SemBeacon/">https://github.com/SemBeacon/</a></li>
         <li><i class="fa-solid fa-book"></i> <a href="https://sembeacon.org/">https://sembeacon.org/</a></li>
         <li><i class="fa-brands fa-google-play"></i> <a href="https://play.google.com/store/apps/details?id=org.sembeacon">Android App on Google Play Store</a></li>
+        <li><i class="fa-solid fa-person-chalkboard"></i> Slides can be found on the website</li>
     </ul>
     <style>
     .qr-image {
@@ -548,7 +566,7 @@ height: 720
     </aside>
 </section>   
 
-<section data-markdown>
+<section data-markdown data-visibility="uncounted">
     {% markdown %}
         ## (Extra) iOS and iBeacon
         
