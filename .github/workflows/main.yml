@@ -49,7 +49,19 @@ jobs:
     name: 'Build Presentations'
     runs-on: ubuntu-latest
     steps:
+      - name: Install required libraries
+        run: |
+          sudo apt-get update
+          sudo apt-get install -q -y libgconf-2-4 libatk1.0-0 libatk-bridge2.0-0 libgdk-pixbuf2.0-0 libgtk-3-0
+          libgbm-dev libnss3-dev libxss-dev libasound2 xvfb fonts-liberation libu2f-udev xdg-utils
+        shell: bash
       - uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: '115.0.5790.98'
+        id: setup-chrome
+      - run: |
+          echo Installed chromium version: ${{ steps.setup-chrome.outputs.chrome-version }}
+          ${{ steps.setup-chrome.outputs.chrome-path }} --version
       - name: Check out repository
         uses: actions/checkout@v3
       - name: Load dependency cache

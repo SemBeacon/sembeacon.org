@@ -2,6 +2,7 @@
   "name": "@sembeacon/website",
   "version": "1.0.0",
   "description": "A project bootstrap for Eleventy sites. With pipelines for PostCSS, JavaScript, and serverless functions",
+  "author": "Maxim Van de Wynckel <maxim.van.de.wynckel@vub.be>",
   "contributors": [
     "Beat Signer",
     "Phil Hawksworth"
