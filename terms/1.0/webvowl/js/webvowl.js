@@ -15369,16 +15369,4 @@ webvowl =
 	    var bgColor = parentProperty.backgroundColor();
 	    
 	    if ( parentProperty.attributes().indexOf("deprecated") > -1 ) {
-	      bgColor = undefined;
-	      rect.classed("deprecatedproperty", true);
-	    } else {
-	      rect.classed("deprecatedproperty", false);
-	    }
-	    rect.style("fill", bgColor);
-	    
-	    // add Text;
-	    var equivalentsString = parentProperty.equivalentsString();
-	    var suffixForFollowingEquivalents = equivalentsString ? "," : "";
-	    
-	    
-	    var t
+	      bgColor = 
