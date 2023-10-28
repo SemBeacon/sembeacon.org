@@ -15368,5 +15368,4 @@ webvowl =
 	    rect.classed("datatype", false);
 	    var bgColor = parentProperty.backgroundColor();
 	    
-	    if ( parentProperty.attributes().indexOf("deprecated") > -1 ) {
-	      bgColor = 
+	    if ( parentProperty.attributes().indexOf("deprecated") > 
