@@ -21,7 +21,7 @@ height: 720
         ## Overview
         *"A Physical Thing is an abstraction of a **physical** entity that provides **interactions** to and participates in the Web of Things"* \
         <small>- W3C Web of Things (WoT) Thing Description 1.1</small>
-        ![](./images/layers.svg){ width=80% }
+        ![](./images/layers2.svg){ width=35% }
     {% endmarkdown %}
     <aside class="notes">
          To give a brief overview of where we situate physical things within the domain of internet of things. The world wide
@@ -34,7 +34,7 @@ height: 720
 <section data-markdown data-timing="35">
     {% markdown %}
         ## Problem Statement
-        *"How to discover and track Physical Things indoors?"*
+        <h3 style="font-style: italic;">"How to discover and track Physical Things indoors?"</h3>
     {% endmarkdown %}
     <aside class="notes">
         When we strictly talk about physical things that we can interact with, we have one main problem. Mainly,
@@ -48,26 +48,10 @@ height: 720
     </aside>
 </section>
 
-<section data-markdown data-timing="20">
-    {% markdown %}
-        ## Table of Contents
-        1.  Related Work and Specifications
-        2.  SemBeacon Solution
-        3.  Demonstrator and Supplemental Material
-        4.  Conclusions and Future Work
-    {% endmarkdown %}
-    <aside class="notes">
-        For our presentation we will first discuss the related work and Specifications
-        that insipired our SemBeacon solution. Next we will introduce our solution followed by
-        the demonstrator we have used within the paper and an overview of the supplemental materials
-        along its relevancy for future work.
-    </aside>
-</section>
-
 <section data-markdown>
     {% markdown %}
         ## Related Work
-        <div class="row">
+        <div class="row" style="margin-top: 2em">
             <div class="col-4">
                 <img src="images/hpcooltown.jpg" width="95%">
                 <small>- HP CoolTown Beacon (2000) [26]</small>
@@ -97,10 +81,13 @@ height: 720
 <section data-markdown>
     {% markdown %}
         ## Related Work ...
-        <div class="row">
-            <div class="col-12">
-                <img src="images/physicalweb_architecture.png" width="60%">
+        <div class="row" style="margin-top: 2em">
+            <div class="col-8">
+                <img src="images/physicalweb_architecture.png" width="100%">
                 <small>- Manfred Sneps-Sneppe, Dmitry Namiot, "On Physical Web models" (2016)</small>
+            </div>
+            <div class="col-4">
+                <img src="images/physicalweb_examples.png" width="100%">
             </div>
         </div>
     {% endmarkdown %}
@@ -139,7 +126,7 @@ height: 720
     </aside>
 </section>
 
-<section data-markdown>
+<section data-markdown data-visibility="hidden">
     {% markdown %}
         ### BLE Specifications
         ![](images/uribeacon.svg){ width=100% }
@@ -160,7 +147,7 @@ height: 720
 
 <section data-markdown>
     {% markdown %}
-        ## BLE Specifications ...
+        ## BLE Specifications
         ![](images/eddystone.svg){ width=100% }
     {% endmarkdown %}
     <aside class="notes">
@@ -229,7 +216,7 @@ height: 720
 <section data-markdown>
     {% markdown %}
         ## SemBeacon Solution
-        ![](images/architecture_overview.svg){ width=30% }
+        ![](images/sembeacon_architecture_large.svg){ width=90% }
     {% endmarkdown %}
     <aside class="notes">
         The basic principle of our semantic beacon solution called SemBeacon is a Bluetooth Low Energy beacon that
@@ -333,7 +320,38 @@ height: 720
     {% markdown %}
         ## SemBeacon Solution
         ### Method of Discovery
-        ![](images/example_state.svg){ width=50% }
+        <div class="row">
+            <div class="col-5">
+                <img src="images/example_state.svg" width="100%">
+            </div>
+            <div class="col-7">
+                {% markdown %}
+                    ```turtle
+                    :building_a a ssn:Deployment ;
+                        rdfs:label "Building A" ;
+                        sembeacon:namespaceId "e19c5e1ed6a14d..."^^xsd:hexBinary .
+
+                    :room_a1_2 a sembeacon:SemBeacon ;
+                        rdfs:label "SemBeacon Room A1.2"@en ;
+                        rdfs:isDefinedBy <http://sembeacon.org/example.ttl#> ;
+                        sembeacon:namespace :building_a ;
+                        sembeacon:instanceId "beac0101"^^xsd:hexBinary ;
+                        hardware:mac "00:11:22:33:44:55" ;
+                        posoc:referenceRSSI [ # Reference RSSI is a ...
+                            # ... factory calibrated signal strength
+                            poso:hasRSS [ 
+                                qudt:unit unit:DeciB_M ; qudt:numericValue -56 ] ;
+                            # ... measured at a specific distance
+                            poso:hasRelativeDistance [ 
+                                unit:Meter ; qudt:value "1.0"^^xsd:double ] .
+                        ] ;
+                        poso:hasPosition [ a poso:AbsolutePosition ;
+                            poso:hasAccuracy [ ... ] ; poso:xAxisValue [ ... ] ;
+                            poso:yAxisValue [ ... ] ; poso:zAxisValue [ ... ] ] .
+                    ```
+                {% endmarkdown %}
+            </div>
+        </div>
     {% endmarkdown %}
     <aside class="notes">
         Discovering a SemBeacon is one of the key areas we wanted to focus on. First of all we wanted to
@@ -347,7 +365,7 @@ height: 720
     {% markdown %}
         ## Demonstrator
         ### Dataset
-        ![](images/coverage_map.svg)
+        ![](images/coverage_map.svg){ width=45% }
         <small>- M. Van de Wynckel & B. Signer, OpenHPS Single Floor Dataset (2021)</small>
     {% endmarkdown %}
     <aside class="notes">
@@ -373,29 +391,28 @@ height: 720
 <section data-markdown>
     {% markdown %}
         ## Demonstrator
-        ### Transformation
-        <small>https://sembeacon.org/examples/openhps2021/beacons.ttl</small>
+        ### Transformation <small>(https://sembeacon.org/examples/openhps2021/beacons.ttl)</small>
         ```turtle
         :pl9_3_lobby_1 a schema:Place, ssn:Deployment, sosa:FeatureOfInterest, ogc:SpatialObject;
-            ogc:hasGeometry [
-                a ogc:Geometry;
-                ogc:asWKT "POLYGON Z((4.392281317197596 50.82061024217639 92, 4.39223788808538 50.82065085654958 92, 4.392153959019106 50.82061503844629 92, 4.392197388204323 50.8205744240731 91.99999999906868, 4.392281317197596 50.820610242176386 94.99999999906868, 4.392237888085379 50.82065085654958 95, 4.392153959019106 50.82061503844629 95, 4.392197388204322 50.8205744240731 94.99999999906868, 4.392281317197596 50.82061024217639 92))"^^ogc:wktLiteral;
-                ogc:coordinateDimension 3;
-                ogc:spatialDimension 3;
-                ogc:dimension 3
-            ];
-            rdfs:label "Lobby #1";
-            dcmi:created "2023-06-22T21:12:23.585Z"^^xsd:dateTime.
+            ogc:hasGeometry [ a ogc:Geometry;
+                ogc:asWKT "POLYGON Z((4.392281317197596 50.82061024217639 92, 
+                    4.39223788808538 50.82065085654958 92, 4.392153959019106 50.82061503844629 92, 
+                    4.392197388204323 50.8205744240731 92, 4.392281317197596 50.820610242176386 94,
+                    4.392237888085379 50.82065085654958 95, 4.392153959019106 50.82061503844629 95, 
+                    4.392197388204322 50.8205744240731 94, 
+                    4.392281317197596 50.82061024217639 92))"^^ogc:wktLiteral;
+                ogc:coordinateDimension 3; ogc:spatialDimension 3; ogc:dimension 3 ];
+            rdfs:label "Lobby #1" .
         :pl9_3_lobby_2 a schema:Place, ssn:Deployment, sosa:FeatureOfInterest, ogc:SpatialObject;
-            ogc:hasGeometry [
-                a ogc:Geometry;
-                ogc:asWKT "POLYGON Z((4.392530671545053 50.820691696024596 92, 4.392512343770305 50.82070883604012 92.00000000093132, 4.392448113920621 50.820681425129145 92, 4.392466441718948 50.820664285113615 91.99999999906868, 4.392530671545053 50.820691696024596 95, 4.3925123437703055 50.82070883604012 95.00000000093132, 4.392448113920621 50.820681425129145 94.99999999906868, 4.392466441718948 50.82066428511362 95.00000000093132, 4.392530671545053 50.820691696024596 92))"^^ogc:wktLiteral;
-                ogc:coordinateDimension 3;
-                ogc:spatialDimension 3;
-                ogc:dimension 3
-            ];
-            rdfs:label "Lobby #2";
-            dcmi:created "2023-06-22T21:12:23.586Z"^^xsd:dateTime.
+            ogc:hasGeometry [ a ogc:Geometry;
+                ogc:asWKT "POLYGON Z((4.392530671545053 50.820691696024596 92, 
+                    4.392512343770305 50.82070883604012 92, 4.392448113920621 50.820681425129145 92, 
+                    4.392466441718948 50.820664285113615 92, 4.392530671545053 50.820691696024596 95, 
+                    4.3925123437703055 50.82070883604012 95, 4.392448113920621 50.820681425129145 95, 
+                    4.392466441718948 50.82066428511362 95, 
+                    4.392530671545053 50.820691696024596 92))"^^ogc:wktLiteral;
+                ogc:coordinateDimension 3; ogc:spatialDimension 3; ogc:dimension 3 ];
+            rdfs:label "Lobby #2" .
         ```
     {% endmarkdown %}
     <aside class="notes">
@@ -405,36 +422,24 @@ height: 720
 <section data-markdown>
     {% markdown %}
         ## Demonstrator
-        ### Transformation
-        <small>https://sembeacon.org/examples/openhps2021/beacons.ttl</small>
+        ### Transformation <small>(https://sembeacon.org/examples/openhps2021/beacons.ttl)</small>
         ```turtle
-        :BEACON_08 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:RFLandmark, poso:BluetoothBeacon, sembeacon:SemBeacon;
+        :BEACON_08 a sosa:FeatureOfInterest, ogc:SpatialObject, poso:RFLandmark, 
+                poso:BluetoothBeacon, sembeacon:SemBeacon;
             rdfs:label "BEACON_08";
-            dcmi:created "2023-06-22T21:12:23.637Z"^^xsd:dateTime;
-            poso:hasPosition [
-                a geo:Point, poso:AbsolutePosition;
+            poso:hasPosition [ a geo:Point, poso:AbsolutePosition;
                 ogc:asWKT "POINT Z(4.392253994600526 50.82057562786381 93.5999999962747)"^^ogc:wktLiteral;
-                ogc:coordinateDimension 3;
-                ogc:spatialDimension 3;
-                ogc:dimension 3;
+                ogc:coordinateDimension 3; ogc:spatialDimension 3; ogc:dimension 3;
                 dcmi:created "2023-06-22T21:12:23.638Z"^^xsd:dateTime;
-                schema:latitude "50.82057562786381"^^xsd:double;
-                schema:longitude "4.392253994600526"^^xsd:double;
-                schema:elevation "93.5999999962747"^^xsd:double
-            ];
-            posoc:hasReferenceRSSI [
-                a poso:RelativeSignalStrength;
-                poso:hasRSS [
-                        a qudt:QuantityValue;
+                schema:latitude "50.82057562786"^^xsd:double; schema:longitude "4.392253994600"^^xsd:double;
+                schema:elevation "93.5999999962"^^xsd:double ];
+            posoc:hasReferenceRSSI [ a poso:RelativeSignalStrength;
+                poso:hasRSS [ a qudt:QuantityValue;
                         qudt:unit unit:DeciB_M;
-                        qudt:numericValue -56
-                ];
-                poso:hasRelativeDistance [
-                    a qudt:QuantityValue;
+                        qudt:numericValue -56 ];
+                poso:hasRelativeDistance [ a qudt:QuantityValue;
                     qudt:unit unit:M;
-                    qudt:numericValue 1
-                ]
-            ];
+                    qudt:numericValue 1 ]];
             hardware:macAddress "f7:5c:38:a4:45:ec";
             ogc:sfWithin :pl9_3_corridor;
             sembeacon:namespace :pl9_3;
@@ -448,56 +453,38 @@ height: 720
 </section>
 
 <section data-markdown>
+    <style>
+        .screenshots {
+            margin-top: 1em;
+        }
+        .screenshots img {
+            border-radius: 0.5em;
+        }
+    </style>
     {% markdown %}
         ## Demonstrator
         ### Mobile Application
-        - **Scans** for iBeacon, AltBeacon, Eddystone and SemBeacon
-        - **Downloads**, extracts and visualises SemBeacon information
-        - **Advertises** SemBeacon beacons for testing purposes
-        - Visualises iBeacon, AltBeacon or Eddystone beacons with known location
-        and Geospatial features
-        - Implements HTTP *caching* and namespace mapping to environments
+        - **Scans** and **Simulates** SemBeacon, iBeacon, AltBeacon and Eddystone
+        - **Extracts** and visualizes SemBeacon encoded information
+        - Implements HTTP **caching** and namespace mapping to environments
+        <div class="row screenshots">
+            <div class="col-3">
+                <img src="/images/android-app/Screenshot_20231027_164519_SemBeacon.jpg" width="100%">
+            </div>
+            <div class="col-3">
+                <img src="/images/android-app/Screenshot_20231027_174719_SemBeacon.jpg" width="100%">
+            </div>
+            <div class="col-3">
+                <img src="/images/android-app/Screenshot_20231027_164555_SemBeacon.jpg" width="100%">
+            </div>
+            <div class="col-3">
+                <img src="/images/android-app/Screenshot_20231027_180046_SemBeacon.jpg" width="100%">
+            </div>
+        </div>
     {% endmarkdown %}
     <aside class="notes">
 
     </aside>
-</section>
-
-<section data-markdown>
-    {% markdown %}
-        ## Example
-        ```turtle
-        @prefix :          <http://sembeacon.org/example.ttl#> .
-        @prefix hardware:  <http://w3id.org/devops-infra/hardware#> .
-        @prefix poso:      <http://purl.org/poso/> .
-        @prefix posoc:     <http://purl.org/poso/common/> .
-        @prefix sembeacon: <http://purl.org/sembeacon/> .
-        @prefix qudt:      <http://qudt.org/schema/qudt/> .
-        @prefix unit:      <http://qudt.org/vocab/unit/> .
-
-        :building_a a ssn:Deployment ;
-            rdfs:label "Building A" ;
-            sembeacon:namespaceId "e19c5e1ed6a14d..."^^xsd:hexBinary .
-
-        :room_a1_2 a sembeacon:SemBeacon ;
-            rdfs:label "SemBeacon Room A1.2"@en ;
-            rdfs:isDefinedBy <http://sembeacon.org/example.ttl#> ;
-            sembeacon:namespace :building_a ;
-            sembeacon:instanceId "beac0101"^^xsd:hexBinary ;
-            hardware:mac "00:11:22:33:44:55" ;
-            posoc:referenceRSSI [ # Reference RSSI is a ...
-                # ... factory calibrated signal strength
-                poso:hasRSS [ 
-                    qudt:unit unit:DeciB_M ; qudt:numericValue -56 ] ;
-                # ... measured at a specific distance
-                poso:hasRelativeDistance [ 
-                    unit:Meter ; qudt:value "1.0"^^xsd:double ] .
-            ] ;
-            poso:hasPosition [ a poso:AbsolutePosition ;
-                poso:hasAccuracy [ ... ] ; poso:xAxisValue [ ... ] ;
-                poso:yAxisValue [ ... ] ; poso:zAxisValue [ ... ] ] .
-        ```
-    {% endmarkdown %}
 </section>
 
 <section data-markdown>
@@ -531,6 +518,7 @@ height: 720
     <ul class="info">
         <li><i class="fa-brands fa-github"></i> <a href="https://github.com/SemBeacon/">https://github.com/SemBeacon/</a></li>
         <li><i class="fa-solid fa-book"></i> <a href="https://sembeacon.org/">https://sembeacon.org/</a></li>
+        <li><i class="fa-brands fa-google-play"></i> <a href="https://play.google.com/store/apps/details?id=org.sembeacon">Android App on Google Play Store</a></li>
     </ul>
     <style>
     .qr-image {
