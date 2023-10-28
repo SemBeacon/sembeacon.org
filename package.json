@@ -39,14 +39,14 @@
     "nunjucks": "^3.2.4",
     "nunjucks-markdown": "^2.0.1",
     "qrcode": "^1.5.3",
-    "reveal.js": "^4.6.1",
+    "reveal.js": "^5.0.0",
     "reveal.js-pointer": "^0.1.4",
     "serve-handler": "^6.1.5",
     "uglify-js": "^3.17.4",
     "xml2js": "^0.6.2"
   },
   "devDependencies": {
-    "axios": "^1.5.1",
+    "axios": "^1.6.0",
     "chalk": "^4.x",
     "cross-env": "7.0.3",
     "dotenv": "^16.3.1",

@@ -9,6 +9,10 @@ jobs:
     name: 'Build Website'
     runs-on: ubuntu-latest
     steps:
+      - uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: 1198101
+        id: setup-chrome
       - name: Check out repository
         uses: actions/checkout@v3
         with:
