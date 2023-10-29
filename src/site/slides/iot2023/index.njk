@@ -35,6 +35,8 @@ height: 720
     {% markdown %}
         ## Problem Statement
         <h3 style="font-style: italic;">"How to discover and track Physical Things indoors?"</h3>
+
+        <h3 style="font-style: italic;">"How to provide context to places?"</h3>
     {% endmarkdown %}
     <aside class="notes">
         When we strictly talk about physical things that we can interact with, we have one main problem. Mainly,
@@ -80,7 +82,7 @@ height: 720
 </section>
 <section data-markdown>
     {% markdown %}
-        ## Related Work ...
+        ## <span class="light">Related Work <i class="fa-solid fa-chevron-right"></i></span> Physical Web
         <div class="row" style="margin-top: 2em">
             <div class="col-8">
                 <img src="images/physicalweb_architecture.png" width="100%">
@@ -128,7 +130,7 @@ height: 720
 
 <section data-markdown data-visibility="uncounted">
     {% markdown %}
-        ### BLE Specifications
+        ## <span class="light">BLE Specifications <i class="fa-solid fa-chevron-right"></i></span> UriBeacon
         ![](images/uribeacon.svg){ width=100% }
 
         - Encoded URI to fit within 17 bytes
@@ -147,7 +149,7 @@ height: 720
 
 <section data-markdown>
     {% markdown %}
-        ## BLE Specifications ...
+        ## <span class="light">BLE Specifications <i class="fa-solid fa-chevron-right"></i></span> Eddystone
         ![](images/eddystone.svg){ width=100% }
     {% endmarkdown %}
     <aside class="notes">
@@ -165,7 +167,7 @@ height: 720
 
 <section data-markdown>
     {% markdown %}
-        ## BLE Specifications ...
+        ## <span class="light">BLE Specifications <i class="fa-solid fa-chevron-right"></i></span> iBeacon & AltBeacon
         ![](images/ibeacon.svg){ width=100% }
         ![](images/altbeacon.svg){ width=100% }
     {% endmarkdown %}
@@ -194,7 +196,7 @@ height: 720
         }
     </style>
     {% markdown %}
-        ## BLE Specifications ...
+        ## <span class="light">BLE Specifications <i class="fa-solid fa-chevron-right"></i></span> Bluetooth IPS
         ![](images/bluetooth_ips.svg){ width=100% }
         | **Bit (MSB)** | **Description** |
         |---|---|
@@ -215,7 +217,7 @@ height: 720
 
 <section data-markdown>
     {% markdown %}
-        ## SemBeacon Solution
+        ## SemBeacon
         ![](images/sembeacon_architecture_large.svg){ width=90% }
     {% endmarkdown %}
     <aside class="notes">
@@ -361,9 +363,16 @@ height: 720
 
 <section data-markdown>
     {% markdown %}
-        ## <span class="light">Demonstrator <i class="fa-solid fa-chevron-right"></i></span> Dataset
-        ![](images/coverage_map.svg){ width=45% }
-        <small>- M. Van de Wynckel & B. Signer, OpenHPS Single Floor Dataset (2021)</small>
+        ## <span class="light">Demonstrator <i class="fa-solid fa-chevron-right"></i></span> Dataset & Recreation
+        <div class="row" style="margin-top: 2em">
+            <div class="col-5">
+                <img src="images/coverage_map.svg" width="100%">
+                <small>- M. Van de Wynckel & B. Signer, OpenHPS Single Floor Dataset (2021)</small>
+            </div>
+            <div class="col-7">
+                <img src="images/example_building.svg" width="100%">
+            </div>
+        </div>
     {% endmarkdown %}
     <aside class="notes">
         In order to test and demonstrate the capabilities of SemBeacon we tested it in a real world
@@ -373,17 +382,11 @@ height: 720
 
         The primary focus of our dataset transformation consisted of transforming the geojson descriptors of the environment 
         as well as the information of beacons. 
-    </aside>
-</section>
-<section data-markdown>
-    {% markdown %}
-        ## <span class="light">Demonstrator <i class="fa-solid fa-chevron-right"></i></span> Transformation
-        ![](images/example_building.svg) { width=70% }
-    {% endmarkdown %}
-    <aside class="notes">
+
         We first converted the dataset to semantic data using the POSO ontology.
     </aside>
 </section>
+
 <section data-markdown>
     {% markdown %}
         ## <span class="light">Demonstrator <i class="fa-solid fa-chevron-right"></i></span> Transformation 
@@ -521,6 +524,15 @@ height: 720
     </aside>
 </section>
 
+<section data-markdown data-visibility="uncounted">
+    {% markdown %}
+        ## (Extra) iOS and iBeacon
+        
+    {% endmarkdown %}
+    <aside class="notes">
+        
+    </aside>
+</section>
 
 <section data-markdown>
     {% markdown %}
@@ -565,13 +577,3 @@ height: 720
         
     </aside>
 </section>   
-
-<section data-markdown data-visibility="uncounted">
-    {% markdown %}
-        ## (Extra) iOS and iBeacon
-        
-    {% endmarkdown %}
-    <aside class="notes">
-        
-    </aside>
-</section>
