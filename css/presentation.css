@@ -992,8 +992,8 @@ pre.shiki div.highlight {
 
 @media screen and (max-width: 740px) {
   pre.shiki {
-    margin-left: -40px;
-    margin-right: -40px;
+    margin-left: -20px;
+    margin-right: -20px;
     border-radius: 0;
     box-shadow: 5px 5px 18px #3f499f, -5px -5px 18px #3f499f;
     margin-top: 20px;

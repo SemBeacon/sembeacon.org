@@ -83,6 +83,64 @@ div.alert.alert-warn {
   }
 }
 
+/* Posts list */
+.postlist {
+  list-style: none;
+  padding: 0;
+}
+
+.postlist-item {
+  margin-bottom: 1em;
+  display: inline-flex;
+}
+
+.postlist-date,
+.postlist-item:before {
+  font-size: 0.8125em; /* 13px /16 */
+  color: rgb(158, 158, 158);
+  display: block;
+}
+
+.postlist-date {
+  word-spacing: -0.5px;
+}
+
+.postlist-link {
+  padding-bottom: 0.15em;
+  display: inline-block;
+}
+
+.postlist-item-active .postlist-link {
+  font-weight: bold;
+}
+
+.home .postlist-link {
+  font-size: 1.1em; /* 19px /16 */
+  font-weight: 700;
+}
+
+.postlist-description {
+  font-style: italic;
+  font-size: 14px;
+  display: block;
+}
+
+.postlist-content {
+  float: right;
+  display: inline;
+}
+
+img.postlist-image {
+  width: 4em;
+  margin-top: 0.3em;
+  display: inline;
+  height: 4em;
+  border-radius: 0.5em;
+  background-color: transparent;
+  float: left;
+  margin-right: 1em;
+}
+
 .container {
   margin: 0 auto;
   max-width: 1200px;
@@ -721,8 +779,8 @@ pre.shiki div.highlight {
 
 @media screen and (max-width: 740px) {
   pre.shiki {
-    margin-left: -40px;
-    margin-right: -40px;
+    margin-left: -20px;
+    margin-right: -20px;
     border-radius: 0;
     box-shadow: 5px 5px 18px #3f499f, -5px -5px 18px #3f499f;
     margin-top: 20px;
@@ -831,19 +889,19 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 1.5em;
   margin-top: 0.4em;
   margin-bottom: 0.2em;
   line-height: 1;
 }
 @media (min-width: 740px) {
   h1 {
-    font-size: 3em;
+    font-size: 2em;
   }
 }
 @media (min-width: 1200px) {
   h1 {
-    font-size: 4em;
+    font-size: 3em;
   }
 }
 
