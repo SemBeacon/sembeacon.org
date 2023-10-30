@@ -118,6 +118,15 @@ jobs:
             **/dist
             _presentations.json
           key: ${{ runner.os }}-site-v1-${{ hashFiles('package.json') }}-${{ github.run_number }}
+      - name: Load presentations cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            **/dist/slides/**/*.pdf
+            **/dist/slides/**/screenshots
+            *.pdf
+            _presentations_generated.json
+          key: ${{ runner.os }}-site-presentations-v2
       - name: Deploy site to GitHub
         uses: peaceiris/actions-gh-pages@v3
         with:
