@@ -18,14 +18,14 @@ jobs:
         with:
           lfs: true
       - name: Load dependency cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             **/node_modules
             /home/runner/.cache/puppeteer
           key: ${{ runner.os }}-dependencies-v1-${{ hashFiles('package.json') }}
       - name: Load site cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             **/dist
@@ -64,21 +64,21 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v3
       - name: Load dependency cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             **/node_modules
             /home/runner/.cache/puppeteer
           key: ${{ runner.os }}-dependencies-v1-${{ hashFiles('package.json') }}
       - name: Load site cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             **/dist
             _presentations.json
           key: ${{ runner.os }}-site-v1-${{ hashFiles('package.json') }}-${{ github.run_number }}
       - name: Load presentations cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             **/dist/slides/**/*.pdf
@@ -94,6 +94,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npm run build:presentations
+      - name: Enforce cache update for a local NX cache
+        run: |
+          STATE_CACHE_KEY="${{ runner.os }}-site-presentations-v2"
+          echo "STATE_CACHE_KEY=${STATE_CACHE_KEY}" >> $GITHUB_ENV
 
   deploy_github:
     needs:
@@ -105,21 +109,21 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v3
       - name: Load dependency cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             **/node_modules
             /home/runner/.cache/puppeteer
           key: ${{ runner.os }}-dependencies-v1-${{ hashFiles('package.json') }}
       - name: Load site cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             **/dist
             _presentations.json
           key: ${{ runner.os }}-site-v1-${{ hashFiles('package.json') }}-${{ github.run_number }}
       - name: Load presentations cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             **/dist/slides/**/*.pdf
