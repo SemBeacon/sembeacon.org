@@ -11,6 +11,8 @@ const { decktape } = require("./src/utils/decktape");
 const { qr } = require("./src/utils/qr");
 const nunjucks = require("nunjucks");
 const markdown = require('nunjucks-markdown');
+const { DateTime } = require('luxon');
+const _ = require("lodash");
 
 const baseUrl = new URL("https://sembeacon.org");
 
@@ -140,6 +142,22 @@ module.exports = function(config) {
     items.sort((a, b) => a.data.menuOrder - b.data.menuOrder);
     return items;
   });
+  config.addCollection("posts_year", (collection) => {
+    return _.chain(collection.getFilteredByTag("posts").sort((a, b) => a.date - b.date))
+      .groupBy((post) => post.date.getFullYear())
+      .toPairs()
+      .reverse()
+      .value();
+  });
+
+  config.addFilter("readableDate", dateObj => {
+    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("cccc, dd LLL yyyy");
+  });
+
+  // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
+  config.addFilter('htmlDateString', (dateObj) => {
+    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
+  });
 
   /* Nunjucks */
   let njkEnv = new nunjucks.Environment(
@@ -150,7 +168,6 @@ module.exports = function(config) {
   });
   config.setLibrary("njk", njkEnv);
 
-    
   // make the seed target act like prod
   env = (env=="seed") ? "prod" : env;
   return {

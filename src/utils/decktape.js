@@ -15,13 +15,13 @@ async function decktape(el) {
         const hex = hashSum.digest('hex');
 
         const url = `http://localhost:3000${page.url}?disablepointer`;
-        queue.push({
-            title,
-            url: url + "&presenter",
-            pdf: path.join(page.outputPath, `../${page.fileSlug}_presentation.pdf`),
-            widescreen: false,
-            hash: hex
-        });
+        // queue.push({
+        //     title,
+        //     url: url + "&presenter",
+        //     pdf: path.join(page.outputPath, `../${page.fileSlug}_presentation.pdf`),
+        //     widescreen: false,
+        //     hash: hex
+        // });
         queue.push({
             title,
             url: url + "&presenter",
@@ -29,28 +29,28 @@ async function decktape(el) {
             widescreen: true,
             hash: hex
         });
-        queue.push({
-            title: title + " | Author Version",
-            url: url + "&presenter",
-            pdf: path.join(page.outputPath, `../${page.fileSlug}_author_presentation.pdf`),
-            widescreen: false,
-            hash: hex
-        });
-        queue.push({
-            title,
-            url: url + "&presenter",
-            slug: page.fileSlug,
-            widescreen: true,
-            images: path.join(page.outputPath, `../screenshots`),
-            hash: hex
-        });
-        queue.push({
-            title: title + " | Author Version",
-            url: url + "&presenter",
-            pdf: path.join(page.outputPath, `../${page.fileSlug}_author_presentation-16x9.pdf`),
-            widescreen: true,
-            hash: hex
-        });
+        // queue.push({
+        //     title: title + " | Author Version",
+        //     url: url + "&presenter",
+        //     pdf: path.join(page.outputPath, `../${page.fileSlug}_author_presentation.pdf`),
+        //     widescreen: false,
+        //     hash: hex
+        // });
+        // queue.push({
+        //     title,
+        //     url: url + "&presenter",
+        //     slug: page.fileSlug,
+        //     widescreen: true,
+        //     images: path.join(page.outputPath, `../screenshots`),
+        //     hash: hex
+        // });
+        // queue.push({
+        //     title: title + " | Author Version",
+        //     url: url + "&presenter",
+        //     pdf: path.join(page.outputPath, `../${page.fileSlug}_author_presentation-16x9.pdf`),
+        //     widescreen: true,
+        //     hash: hex
+        // });
         // Save queue
         fs.writeFileSync('_presentations.json', JSON.stringify(queue, null, 4), {
             encoding: 'utf-8'

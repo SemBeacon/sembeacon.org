@@ -34,15 +34,19 @@ height: 720
 <section data-markdown data-timing="35">
     {% markdown %}
         ## Problem Statement
-        <h3 style="font-style: italic;">"How to discover and track Physical Things indoors?"</h3>
-
-        <h3 style="font-style: italic;">"How to provide context to places?"</h3>
+        <div style="text-align: center; margin-top: 5em;">
+            <h3 style="font-style: italic;">"How to discover and track Physical Things indoors?"</h3>
+            <h3 style="font-style: italic;">"How to provide context to places?"</h3>
+        </div>
     {% endmarkdown %}
     <aside class="notes">
-        When we strictly talk about physical things that we can interact with, we have one main problem. Mainly,
+        When we strictly talk about physical things that we can interact with, we have two problems. Mainly,
         that we should somehow discover these physical devices and track their location so we can also
         physically interact with them when needed. Discovering a physical device is more than simply knowing
-        that it exist.
+        that it exist. In order to do so we also need a way to provide context to places.
+
+        In general this is an easy problem to solve, simply providing contextual location information to physical objects.
+        But getting this context to the user often requires proprietary applications.
 
         If we look at existing solutions to this problem in the scope of the Web of Things we often found solutions
         that rely on a predefined method of centralisation such as a web service or knowledge database. But even then,
@@ -115,8 +119,8 @@ height: 720
         ![](images/ble_packet.svg){ width=90% }
     {% endmarkdown %}
     <aside class="notes">
-        To quickly jump back a bit to some background information about Bluetooth Low Energy we currently
-        have two major versions. BLE 4 and BLE 5. Bluetooth Low Energy can advertise limited amount of information
+        The technology behind the Physical web as Bluetooth low energy which currently has two major versions. 
+        BLE 4 and BLE 5. Bluetooth Low Energy can advertise limited amount of information
         that can be picked up by passive receivers.
 
         In BLE 4 we have an advertisement payload size of maximum 31 bytes. In BLE 5 we can have a maximum payload size of 255 bytes
@@ -125,6 +129,19 @@ height: 720
         On top of this, both versions also support active scanning where the receiver sends out a scan requests
         that will trigger the advertising transmitter to send out another advertising PDU. This scan response
         can be different from the advertisement data, giving a total adveritsement size of 62 bytes for Bluetooth Low Energy v4.
+    </aside>
+</section>
+
+<section data-markdown>
+    {% markdown %}
+        ## <span class="light">Bluetooth Low Energy (BLE) <i class="fa-solid fa-chevron-right"></i></span> Positioning
+        ![](images/ble_positioning.svg){ width=80% }
+    {% endmarkdown %}
+    <aside class="notes">
+       If we want to solve our use case of tracking our physical things with Bluetooth low energy, we currently can already
+       solve this by uniquely identifying the beacons and mapping these unique beacons to a local or cloud based database
+       that provides more context to the user. However, one of the main issues that this imposes is that this
+       requires a proprietary application that either includes a database or knows which cloud service can provide a location.
     </aside>
 </section>
 
@@ -153,15 +170,14 @@ height: 720
         ![](images/eddystone.svg){ width=100% }
     {% endmarkdown %}
     <aside class="notes">
-        Eddystone-URL was the new version that replaced UriBeacon. It was part of the Eddystone lineup
+        Eddystone-URL was the Bluetooth specification behind the physical web. It was part of the Eddystone lineup
         of beacon specifications that included different variants based on the needs of the transmitter.
         It included a specification for telemetry data, encryption of advertisement data, an URL like UriBeacon
         and finally also a unique identifier that consisted of a 10 byte namespace and 6 byte instance identifier.
 
         The type of specification is determined by the 'frame type' byte which replaced the flags byte in UriBeacon. In the case 
         of the UID frame, a Google Cloud Service such as the Beacon API or Place API can be used to link the UID to additional information
-        such as its location. However, this limits the use for the beacon to proprietary applications or requires
-        knowledge on the web server that contains this information and the format it uses.
+        such as its location.
     </aside>
 </section>
 
@@ -180,12 +196,12 @@ height: 720
 
         Invented by Apple, the iBeacon specification recommends that companies use the same UUID per application and the major
         minor classification to indicate the spatial region. In iOS it is even impossible to detect iBeacons without providing
-        an UUID, which limits the use of iBeacon to proprietary positioning systems or hardware.
+        an UUID, which limits the use of iBeacon to applications that are aware of the used identifier within a building.
 
         To solve this particular issue, AltBeacon was created by Radius Networks which does not require to use the Apple manufacturer
         identifier, has an extra 1 byte that can be implemented by manufacturers for more specific data and
         officially has a 20 byte beacon identifier. However, due to backwards compatibility this 20 byte identifier
-        is usually implemented similarly to iBeacon with a proximity uuid.
+        is usually implemented similarly to iBeacon with a proximity uuid and major and minor classification.
     </aside>
 </section>
 
@@ -209,7 +225,7 @@ height: 720
         | 6 | Location Name avaiable in GATT database |
     {% endmarkdown %}
     <aside class="notes">
-        T Bluetooth Special interest group has created its own specification for broadcasting a position. It supports both the 
+        The Bluetooth Special interest group has created its own specification for broadcasting a position. It supports both the 
         global WGS84 latitude and longitude along with a local coordinate, transmission power and additional flags of
         data that is available after performing a connection to the bluetooth device.
     </aside>
@@ -301,7 +317,10 @@ height: 720
         ![](images/identifier_example.svg){ width=100% }
     {% endmarkdown %}
     <aside class="notes">
-        
+        Identification of SemBeacons is an important aspect to prevent the need to contact a web server every
+        time a new SemBeacon is detected that is already known. We split up the identification in a 16 byte namespace
+        uuid that would be equal to a proximity uuid and we combine the remaining 4 bytes to a single instance identifier.
+        In our specification we recommend that the Base URI of a resource
     </aside>
 </section>
 
@@ -311,9 +330,13 @@ height: 720
         <img src="images/sembeacon_ontology.svg" width="100%" style="margin-top: 2em">
     {% endmarkdown %}
     <aside class="notes">
-        In 2022 we released the Generic Positioning System Ontology
+        In 2022 we released the Generic Positioning System Ontology which uses the Sensors Observations,
+        Systems and Actuators ontology (sosa for short) behind the scene. For our SemBeacon solution we have extended POSO
+        with additional bluetooth beacon "landmarks", reference signal strength and other information which is
+        relevant for beacons.
 
-        Our extension to POSO is 
+        Being built on top of SOSA it allows for a lot of extensions to describe sensor data as well as possible actuations
+        with the physical things.
     </aside>
 </section>
 
@@ -383,7 +406,9 @@ height: 720
         The primary focus of our dataset transformation consisted of transforming the geojson descriptors of the environment 
         as well as the information of beacons. 
 
-        We first converted the dataset to semantic data using the POSO ontology.
+        We first converted the dataset to semantic data using the POSO ontology after which we repositioned the beacons
+        in the same building. However, this time around we also added two SemBeacons near the entrance of the floor that
+        would provide all the contextual information about the floor.
     </aside>
 </section>
 
