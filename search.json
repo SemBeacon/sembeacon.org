@@ -44,7 +44,7 @@
   {
     "url": "/posts/",
     "title": "Posts",
-    "index": " Blog Posts SemBeacon IoT 2023 Wednesday 08 Nov test "
+    "index": " Blog Posts SemBeacon IoT 2023 Friday 03 Nov Our solution will presented 13th International Conference Internet Things "
   }
   ,
   {
@@ -60,8 +60,8 @@
   }
   ,
   {
-    "url": "/posts/2023/11/08/",
+    "url": "/posts/2023/11/03/",
     "title": "SemBeacon at IoT 2023",
-    "index": ""
+    "index": "Exactly one year ago have released first version POSO ontology together with OpenHPS module @openhps/rdf that provides serialization between data models /from RDF Since then continued our work towards interoperable positioning systems by means finding new methods make applications aware about presence within building are proud say solutions this problem called SemBeacon will presented 8th November 13th International Conference Internet Things Nagoya Japan Bluetooth Low Energy specification linked solution advertises namespace instance identifier along semantic resource URI several flags Together ontology allows scanners detect environments beacons used inside addition desription beacons these environments can also describe other smart devices nonSemBeacon aid positioningSlides found here: https://sembeaconorg/slides/iot2023presenter via PDF https://sembeaconorg/slides/iot2023/iot2023_presentation16x9pdfSemBeacon three projects created PhD candidate Maxim Van de Wynckel under supervision Prof Dr Beat Signer Web Information Systems Engineering Lab (Vrije Universiteit Brussel)"
   }
   ]

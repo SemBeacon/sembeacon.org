@@ -97,7 +97,7 @@ div.alert.alert-warn {
 .postlist-date,
 .postlist-item:before {
   font-size: 0.8125em; /* 13px /16 */
-  color: rgb(158, 158, 158);
+  color: rgb(162, 202, 255);
   display: block;
 }
 
@@ -146,7 +146,7 @@ img.postlist-image {
   max-width: 1200px;
 }
 .container.main {
-  padding: 100px 40px;
+  padding: 20px 40px;
 }
 
 .row {
@@ -1095,5 +1095,11 @@ a.logo-download:hover {
 table th, td {
   border: solid 1px #b8bde5;
   padding: 0.5em;
+}
+
+iframe.presentation {
+  width: 100%;
+  height: 300px;
+  border: 0;
 }
 /*# sourceMappingURL=styles.css.map */
