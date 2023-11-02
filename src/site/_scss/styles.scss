@@ -290,3 +290,9 @@ table th, td {
   border: solid 1px mix($text-color, $accent-color, 60%);
   padding: 0.5em;
 }
+
+iframe.presentation {
+  width: 100%;
+  height: 300px;
+  border: 0;
+}

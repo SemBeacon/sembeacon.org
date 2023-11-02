@@ -168,6 +168,18 @@ module.exports = function(config) {
   });
   config.setLibrary("njk", njkEnv);
 
+  // Get the first `n` elements of a collection.
+  config.addFilter("head", (array, n) => {
+    if (n < 0) {
+      return array.slice(n);
+    }
+    return array.slice(0, n);
+  });
+
+  config.addFilter("min", (...numbers) => {
+    return Math.min.apply(null, numbers);
+  });
+
   // make the seed target act like prod
   env = (env=="seed") ? "prod" : env;
   return {
