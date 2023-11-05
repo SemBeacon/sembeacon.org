@@ -365,6 +365,10 @@ height: 720
         <img src="images/iot-lite-instance.png" width="65%">
     {% endmarkdown %}
     <aside class="notes">
+        One of the possible extensions to the vocabulary is the use of the IoT-lite ontology by the
+        University of .... which offers the ability to describe IoT services and endpoints. This way, smart
+        devices are not required to operate on the semantic web but can use the semantic web to describe
+        how applications should interact with the device.
     </aside>
 </section>
 
@@ -454,7 +458,7 @@ height: 720
                 ogc:coordinateDimension 3; ogc:spatialDimension 3; ogc:dimension 3;
                 schema:latitude "50.82057562786"^^xsd:double; schema:longitude "4.392253994600"^^xsd:double;
                 schema:elevation "93.5999999962"^^xsd:double ];
-            posoc:hasReferenceRSSI [ a poso:RelativeSignalStrength;
+            posoc:hasReferenceRSSI [
                 poso:hasRSS [ a qudt:QuantityValue;
                         qudt:unit unit:DeciB_M;
                         qudt:numericValue -56 ];
@@ -469,7 +473,9 @@ height: 720
         ```
     {% endmarkdown %}
     <aside class="notes">
-
+        In the transformed dataset we have an elaborate description of the beacons, including their
+        reference signal at a specified distance, mac address, position, geospatial location within a Deployment
+        and finally the namespace and instance identifiers.
     </aside>
 </section>
 
@@ -546,7 +552,9 @@ height: 720
         </div>
     {% endmarkdown %}
     <aside class="notes">
-
+        Part of our demonstrator included the creation of a demonstrator application that can actually
+        scan for SemBeacons, interpret the data and visualise it. If you want to test how SemBeacon
+        works you can download the demonstrator to simulate a sembeacon.
     </aside>
 </section>
 
@@ -619,6 +627,11 @@ height: 720
     }
     </style>
     <aside class="notes">
-        
+        In this presentation we presented our semantic beacon solution called SemBeacon. It is backwards
+        compatible with other standards and also allows the description of other beacons and devices within
+        the environment.
+
+        For future work we will definitely be expading the vocabulary to facilitate the modelling
+        of device interactions.
     </aside>
 </section>   
