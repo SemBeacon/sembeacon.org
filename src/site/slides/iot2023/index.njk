@@ -16,7 +16,7 @@ height: 720
     'SemBeacon: A semantic proximity beacon solution for discovering and detecting the position of physical things'
 -->
 
-<section data-markdown data-timing="25">
+<section data-markdown data-timing="30">
     {% markdown %}
         ## Overview
         *"A Physical Thing is an abstraction of a **physical** entity that provides **interactions** to and participates in the Web of Things"* \
@@ -31,7 +31,7 @@ height: 720
     </aside>
 </section>
 
-<section data-markdown data-timing="35">
+<section data-markdown data-timing="40">
     {% markdown %}
         ## Problem Statement
         <div style="text-align: center; margin-top: 5em;">
@@ -51,7 +51,7 @@ height: 720
     </aside>
 </section>
 
-<section data-markdown>
+<section data-markdown data-timing="90">
     {% markdown %}
         ## Related Work
         <div class="row" style="margin-top: 2em">
@@ -85,7 +85,7 @@ height: 720
         a huge bottleneck in linked data.
     </aside>
 </section>
-<section data-markdown>
+<section data-markdown data-timing="70">
     {% markdown %}
         ## <span class="light">Related Work <i class="fa-solid fa-chevron-right"></i></span> Physical Web
         <div class="row" style="margin-top: 2em">
@@ -133,7 +133,7 @@ height: 720
     </aside>
 </section>
 
-<section data-markdown>
+<section data-markdown data-timing="40">
     {% markdown %}
         ## <span class="light">Bluetooth Low Energy (BLE) <i class="fa-solid fa-chevron-right"></i></span> Positioning
         ![](images/ble_positioning.svg){ width=80% }
@@ -165,7 +165,7 @@ height: 720
     </aside>
 </section>
 
-<section data-markdown>
+<section data-markdown data-timing="60">
     {% markdown %}
         ## <span class="light">BLE Specifications <i class="fa-solid fa-chevron-right"></i></span> Eddystone
         ![](images/eddystone.svg){ width=100% }
@@ -183,7 +183,7 @@ height: 720
     </aside>
 </section>
 
-<section data-markdown>
+<section data-markdown data-timing="80">
     {% markdown %}
         ## <span class="light">BLE Specifications <i class="fa-solid fa-chevron-right"></i></span> iBeacon & AltBeacon
         ![](images/ibeacon.svg){ width=100% }
@@ -237,7 +237,7 @@ height: 720
     </aside>
 </section>
 
-<section data-markdown>
+<section data-markdown data-timing="70">
     {% markdown %}
         ## SemBeacon
         ![](images/sembeacon_architecture_large.svg){ width=90% }
@@ -256,7 +256,7 @@ height: 720
     </aside>
 </section>
 
-<section data-markdown>
+<section data-markdown data-timing="50">
     {% markdown %}
         ## <span class="light">SemBeacon <i class="fa-solid fa-chevron-right"></i></span> Bluetooth Specification
         ### BLE 4.X
@@ -272,7 +272,7 @@ height: 720
     </aside>
 </section>
 
-<section data-markdown class="flags">
+<section data-markdown class="flags" data-timing="60">
     <style>
         section.flags table {
             font-size: 80%;
@@ -308,7 +308,7 @@ height: 720
 </section>
 
 
-<section data-markdown>
+<section data-markdown data-timing="50">
     {% markdown %}
         ## <span class="light">SemBeacon <i class="fa-solid fa-chevron-right"></i></span> Bluetooth Specification
         ### BLE 5.X (Work in Progress)
@@ -329,7 +329,7 @@ height: 720
     </aside>
 </section>
 
-<section data-markdown>
+<section data-markdown data-timing="60">
     {% markdown %}
         ## <span class="light">SemBeacon <i class="fa-solid fa-chevron-right"></i></span> Namespace and Instance
         ![](images/identifier_example.svg){ width=100% }
@@ -343,7 +343,7 @@ height: 720
     </aside>
 </section>
 
-<section data-markdown>
+<section data-markdown data-timing="60">
     {% markdown %}
         ## <span class="light">SemBeacon <i class="fa-solid fa-chevron-right"></i></span> POSO Extension
         <img src="images/sembeacon_ontology.svg" width="100%" style="margin-top: 2em">
@@ -353,19 +353,19 @@ height: 720
         Systems and Actuators ontology (sosa for short) behind the scene. For our SemBeacon solution we have extended POSO
         with additional bluetooth beacon "landmarks", reference signal strength and other information which is
         relevant for beacons.
-
-        Being built on top of SOSA it allows for a lot of extensions to describe sensor data as well as possible actuations
-        with the physical things.
     </aside>
 </section>
 
-<section data-markdown>
+<section data-markdown data-timing="60">
     {% markdown %}
         ## <span class="light">SemBeacon <i class="fa-solid fa-chevron-right"></i></span> Device Interactions
         #### M. Bermudez-Edo, T. Elsaleh et al. "IoT-Lite Ontology", November 2015
         <img src="images/iot-lite-instance.png" width="65%">
     {% endmarkdown %}
     <aside class="notes">
+        Being built on top of SOSA it allows for a lot of extensions to describe sensor data as well as possible actuations
+        with the physical things.
+
         One of the possible extensions to the vocabulary is the use of the IoT-lite ontology by the
         University of Surrey which offers the ability to describe IoT services and endpoints. This way, smart
         devices are not required to operate on the semantic web but can use the semantic web to describe
@@ -418,7 +418,7 @@ height: 720
     </aside>
 </section>
 
-<section data-markdown>
+<section data-markdown data-timing="90">
     {% markdown %}
         ## <span class="light">Demonstrator <i class="fa-solid fa-chevron-right"></i></span> Dataset & Recreation
         <div class="row" style="margin-top: 2em">
@@ -446,7 +446,7 @@ height: 720
     </aside>
 </section>
 
-<section data-markdown>
+<section data-markdown data-timing="45">
     {% markdown %}
         ## <span class="light">Demonstrator <i class="fa-solid fa-chevron-right"></i></span> Transformation 
         ### https://sembeacon.org/examples/openhps2021/beacons.ttl
@@ -480,7 +480,7 @@ height: 720
     </aside>
 </section>
 
-<section data-markdown>
+<section data-markdown data-timing="45">
     {% markdown %}
         ## <span class="light">Demonstrator <i class="fa-solid fa-chevron-right"></i></span> Transformation 
         ### https://sembeacon.org/examples/openhps2021/beacons.ttl
@@ -513,10 +513,7 @@ height: 720
     </aside>
 </section>
 
-<section data-markdown>
-    <script>
-
-    </script>
+<section data-markdown data-timing="60">
     <style>
         .screenshots {
             margin-top: 1em;
@@ -559,7 +556,7 @@ height: 720
     </aside>
 </section>
 
-<section data-markdown>
+<section data-markdown data-timing="30">
     <style>
         small.supplemental {
             font-size: 80%;
@@ -588,7 +585,7 @@ height: 720
     </aside>
 </section>
 
-<section data-markdown>
+<section data-markdown data-timing="70">
     {% markdown %}
         ## Conclusion and Future Work
         - Semantic beacon solution called SemBeacon
