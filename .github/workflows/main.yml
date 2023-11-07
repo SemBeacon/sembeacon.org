@@ -85,7 +85,7 @@ jobs:
             **/dist/slides/**/screenshots
             *.pdf
             _presentations_generated.json
-          key: ${{ runner.os }}-site-presentations-${{ hashFiles('_presentations_generated.json') }}-v2
+          key: ${{ runner.os }}-site-presentations-v2
       - name: Installing Dependencies
         run: |
           node node_modules/decktape/node_modules/puppeteer/install.js
@@ -94,6 +94,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npm run build:presentations
+      - name: Enforce cache update for a local NX cache
+        run: |
+          STATE_CACHE_KEY="${{ runner.os }}-site-presentations-${{ hashFiles('_presentations_generated.json') }}-v2"
+          echo "STATE_CACHE_KEY=${STATE_CACHE_KEY}" >> $GITHUB_ENV
 
   deploy_github:
     needs:

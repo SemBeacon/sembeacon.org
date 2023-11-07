@@ -35,6 +35,8 @@ body {
     font-size: 18px;
   };
 
+  overflow: none;
+
   &:not(.home) {
     background-color: $page-color;
     background: $page-color;
@@ -97,6 +99,11 @@ p {
 
 ul, ol {
   padding-left: 1em;
+}
+
+.typography {
+  overflow: hidden;
+  text-wrap: pretty;
 }
 
 a:link,

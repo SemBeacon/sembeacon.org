@@ -7,12 +7,10 @@ eleventyNavigation:
 title: 'Posts'
 ---
 
-<div class="container main">
-  <div class="row">
-    <div class="col-sm-7 typography">
-        <h1>Blog Posts</h1>
-        {% set postslist = collections.posts %}
-        {% include "postslist.njk" %}
-    </div>
+<div class="row">
+  <div class="col-sm-7 typography">
+      <h1>Blog Posts</h1>
+      {% set postslist = collections.posts %}
+      {% include "postslist.njk" %}
   </div>
 </div>
