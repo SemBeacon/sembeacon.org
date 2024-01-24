@@ -1,4 +1,4 @@
-@prefix : <https://sembeacon.org/examples/openhps2021/beacons_v2.ttl#>.
+@prefix : <https://sembeacon.org/examples/openhps2021/beacons.ttl#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix schema: <http://schema.org/>.
 @prefix ssn: <http://www.w3.org/ns/ssn/>.
