@@ -239,10 +239,10 @@ footer {
     margin-right: 1.5em;
     background-color: mix($text-color, $accent-color, 50%);
     -webkit-mask: url("{{ baseUrl }}/images/logo_square_alpha.svg") no-repeat center;
-    mask-size: contain;
     -webkit-mask-size: contain;
     mask: url("{{ baseUrl }}/images/logo_square_alpha.svg") no-repeat center;
-
+    mask-size: contain;
+    
     &:hover {
       background-color: mix($text-color, $accent-color, 80%);
     }
