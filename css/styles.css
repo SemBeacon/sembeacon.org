@@ -1047,9 +1047,9 @@ footer div.logo {
   margin-right: 1.5em;
   background-color: #a7addf;
   -webkit-mask: url("https://sembeacon.org/images/logo_square_alpha.svg") no-repeat center;
-  mask-size: contain;
   -webkit-mask-size: contain;
   mask: url("https://sembeacon.org/images/logo_square_alpha.svg") no-repeat center;
+  mask-size: contain;
 }
 footer div.logo:hover {
   background-color: #dcdef2;
