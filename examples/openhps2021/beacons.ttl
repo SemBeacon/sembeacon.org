@@ -184,6 +184,7 @@
   ogc:dimension 3
 ];
     rdfs:label "Staircase";
+    ogc:sfWithin :pl9_3;
     dcmi:created "2023-06-22T21:12:23.587Z"^^xsd:dateTime.
 :pl9_3_toilets_1 a schema:Place, ssn:Deployment, sosa:FeatureOfInterest, ogc:SpatialObject;
     ogc:hasGeometry [
@@ -194,6 +195,7 @@
   ogc:dimension 3
 ];
     rdfs:label "Toilets #1";
+    ogc:sfWithin :pl9_3;
     dcmi:created "2023-06-22T21:12:23.587Z"^^xsd:dateTime.
 :pl9_3_toilets_2 a schema:Place, ssn:Deployment, sosa:FeatureOfInterest, ogc:SpatialObject;
     ogc:hasGeometry [
@@ -204,6 +206,7 @@
   ogc:dimension 3
 ];
     rdfs:label "Toilets #2";
+    ogc:sfWithin :pl9_3;
     dcmi:created "2023-06-22T21:12:23.587Z"^^xsd:dateTime.
 :BEACON_01 a sosa:FeatureOfInterest, ogc:SpatialObject, posoc:iBeacon, poso:RFLandmark, poso:BluetoothBeacon;
     rdfs:label "BEACON_01";
