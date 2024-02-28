@@ -130,7 +130,7 @@
   schema:hasMap [
     a schema:Map;
     schema:mapType "floorPlan";
-    schema:image "https://static.observableusercontent.com/files/69f63f0ed4e82a459af0534c2a71756ef75b16a15df7228d96b7560b59e19bfbb0dc8d3753376271183028739c9f5be817bd5bcc4889cdec739eb297ea6afedf?response-content-disposition=attachment%3Bfilename*%3DUTF-8%27%27floorplan_medium%25401.png"; 
+    schema:image "https://sembeacon.org/examples/openhps2021/floorplan_medium@1.png"; 
     schema:spatialCoverage [
       a schema:Place;
       ogc:hasGeometry [
