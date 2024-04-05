@@ -5,6 +5,8 @@
     "client_id": "https://sembeacon.org/id.jsonld",
     "client_name": "SemBeacon Application",
     "client_uri": "https://sembeacon.org",
+    "logo_uri": "https://sembeacon.org/images/logo_square.png",
+    "application_type": "app",
     "contacts": [
       "sembeacon@openhps.org"
     ],

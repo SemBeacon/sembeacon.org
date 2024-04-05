@@ -2,9 +2,11 @@
     "@context": [
       "https://www.w3.org/ns/solid/oidc-context.jsonld"
     ],
-    "client_id": "https://sembeacon.org/id.jsonld",
+    "client_id": "https://sembeacon.org/id_debug.jsonld",
     "client_name": "SemBeacon Application",
     "client_uri": "https://sembeacon.org",
+    "application_type": "app",
+    "logo_uri": "https://sembeacon.org/images/logo_square.png",
     "contacts": [
       "sembeacon@openhps.org"
     ],
