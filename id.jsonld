@@ -6,7 +6,7 @@
     "client_name": "SemBeacon Application",
     "client_uri": "https://sembeacon.org",
     "logo_uri": "https://sembeacon.org/images/logo_square.png",
-    "application_type": "app",
+    "application_type": "web",
     "contacts": [
       "sembeacon@openhps.org"
     ],
