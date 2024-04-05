@@ -14,7 +14,8 @@
       "authorization_code"
     ],
     "redirect_uris": [
-      "https://app.sembeacon.org/login"
+      "https://localhost:8085/login",
+      "https://10.240.45.71:8085/login"
     ],
     "require_auth_time": true,
     "response_types": [
