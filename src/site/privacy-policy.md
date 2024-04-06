@@ -9,7 +9,11 @@ SemBeacon (Android) is an application owned by Maxim Van de Wynckel for scanning
 
 The application will scan for nearby beacons, which requires the use of the **location** permission. This information is not shared with SemBeacon or other parties and is only used to process the beacon information. This collection is necessary for the functioning of the application whose only functionality is the scanning of beacons.
 
-SemBeacon Android app does not require or allow users to log in therefor offers no possibility for users to remove their own data as no data is collected outside the application. Changes to the privacy policy will be mentioned within app updates or as modification on this website.
+### Changes
+Changes to the privacy policy will be mentioned within app updates or as modification on this website.
+
+### Solid Login
+SemBeacon Android app does not require or allow users to log in, but offers the possibility to login via [**Solid**](https://solidproject.org/). User accounts can be created at a [Pod provider](https://solidproject.org/users/get-a-pod) which can be chosen by the user or self hosted. Any account deletion and terms of service has to be checked with the Pod provider.
 
 ### Permissions
 - **Location (Precise)**: This permission is used both for getting the GPS location in the Beacon Map page as well as
