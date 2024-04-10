@@ -1,5 +1,0 @@
-[{
-    "relation": ["delegate_permission/common.handle_all_urls"],
-    "target" : { "namespace": "android_app", "package_name": "org.sembeacon",
-                 "sha256_cert_fingerprints": ["D7:2B:39:F5:51:D7:64:24:DC:23:AB:3E:7A:6E:07:D1:66:59:B7:35:68:87:8F:35:18:C6:B4:3B:82:FC:E3:7E"] }
-}]

@@ -32,6 +32,7 @@ needs to be shortened to fit in the advertisement data.
 #### URI Shorteners
 - tinyurl.com
 - bitly.com
+- s.sembeacon.org (*only available in the SemBeacon app*)
 
 ## BLE 4.x Specification
 ![SemBeacon Bluetooth 4.x specification]({{ '/images/specification/sembeacon_specification_v4_2_alpha.svg' | absoluteUrl }})
