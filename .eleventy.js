@@ -33,6 +33,7 @@ module.exports = function(config) {
   config.addPassthroughCopy({ "./src/site/CNAME": "CNAME" });
   config.addPassthroughCopy("fonts");
   config.addPassthroughCopy("**/*.jsonld");
+  config.addPassthroughCopy("**/*.mp4");
   config.addPlugin(toc, {
     tags: ['h2'],
     ul: true
