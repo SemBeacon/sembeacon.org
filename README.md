@@ -3,7 +3,8 @@
 </div>
 
 ## About
-This repository contains the SemBeacon.org website.
+This repository contains the SemBeacon.org website. Please consult [https://sembeacon.org](https://sembeacon.org) for more
+information.
 
 ## License
 The website theme is based on the EleventyOne theme by Phil Hawksworth licensed under an MIT license.

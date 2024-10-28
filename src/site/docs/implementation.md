@@ -43,5 +43,3 @@ The beacon implementation is similar to existing Eddystone, iBeacon or AltBeacon
     location of the beacon, as well as other beacons within the same namespace. Depending on the SemBeacon flags and the implementation of the application to act on these flags, the data might not be retrieved.
 6.  **Passive scanning**: The application continues the passive scan until an unknown namespace is found, in which case step (3)
     is performed again.
-
-
