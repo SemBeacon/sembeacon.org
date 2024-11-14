@@ -1,4 +1,4 @@
-@import '../_variables';
+@use '../_variables';
 
 @font-face {
   font-family: Cascadia Mono-SemiLight;
@@ -138,13 +138,13 @@ pre.shiki div.highlight {
   opacity: 1;
 }
 
-@media screen and (max-width: $mid) {
+@media screen and (max-width: variables.$mid) {
   pre.shiki {
     margin-left: -20px;
     margin-right: -20px;
     border-radius: 0;
-    box-shadow:  5px 5px 18px $page-color,
-    -5px -5px 18px $page-color;
+    box-shadow:  5px 5px 18px variables.$page-color,
+    -5px -5px 18px variables.$page-color;
     margin-top: 20px;
     margin-bottom: 20px;
     font-size: 80%;

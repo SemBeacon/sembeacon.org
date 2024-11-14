@@ -1,6 +1,6 @@
-const QRCode = require('qrcode');
+import QRCode from 'qrcode';
 
-async function qr(el) {
+export async function qr(el) {
     el.addAsyncShortcode("qr", (data, classes, errorCorrectionLevel = 'H') => {
         return new Promise((resolve, reject) => {
             return QRCode.toString(data, {
@@ -20,7 +20,3 @@ async function qr(el) {
         });
     });
 }
-
-module.exports = {
-    qr
-};

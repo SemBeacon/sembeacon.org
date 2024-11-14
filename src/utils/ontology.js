@@ -1,14 +1,14 @@
-const chalk = require('chalk');
-const { copySync } = require('fs-extra');
-const { 
+import chalk from 'chalk';
+import { copySync } from 'fs-extra';
+import { 
     isGitHubAvailable, 
     extractZip, 
     rmdir, 
     downloadBranch 
-} = require("./utils");
-const fs = require('fs');
+} from './utils';
+import fs from 'fs';
 
-async function buildDocs() {
+export async function buildDocs() {
     if (!isGitHubAvailable()) {
         console.log(chalk.redBright(`Github API is not available!`));
         return;
@@ -36,4 +36,3 @@ async function download(repo) {
     });
 }
 
-module.exports = buildDocs;

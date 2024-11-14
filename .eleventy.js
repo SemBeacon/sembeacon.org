@@ -1,22 +1,27 @@
-const seo = require("eleventy-plugin-seo");
-const sitemap = require("@quasibit/eleventy-plugin-sitemap");
-const markdownIt = require("markdown-it");
-const markdownItShiki = require("markdown-it-shiki").default;
-const markdownItAnchor = require("markdown-it-anchor");
-const markdownItAttrs = require("markdown-it-attrs");
-const sass = require("eleventy-sass");
-const favicon = require("eleventy-favicon");
-const toc = require("eleventy-plugin-toc");
-const { decktape } = require("./src/utils/decktape");
-const { qr } = require("./src/utils/qr");
-const nunjucks = require("nunjucks");
-const markdown = require('nunjucks-markdown');
-const { DateTime } = require('luxon');
-const _ = require("lodash");
+import seo from "eleventy-plugin-seo";
+import sitemap from "@quasibit/eleventy-plugin-sitemap";
+
+import markdownIt from "markdown-it";
+import markdownItShiki from "markdown-it-shiki";
+import markdownItAnchor from "markdown-it-anchor";
+import markdownItAttrs from "markdown-it-attrs";
+
+import sass from "eleventy-sass";
+import favicon from "eleventy-favicon";
+import toc from "eleventy-plugin-toc";
+import { decktape } from "./src/utils/decktape.js";
+import { qr } from "./src/utils/qr.js";
+import nunjucks from "nunjucks";
+import markdown from 'nunjucks-markdown';
+import { DateTime } from 'luxon';
+import _ from "lodash";
+import fs from 'fs';
+import squash from "./src/utils/filters/squash.js";
+import dateDisplay from "./src/utils/filters/date.js";
 
 const baseUrl = new URL("https://sembeacon.org");
 
-module.exports = function(config) {
+export default function(config) {
   config.addPassthroughCopy({
     "./src/site/example.ttl": "example.ttl",
     "./src/site/examples": "examples",
@@ -32,26 +37,20 @@ module.exports = function(config) {
   });
   config.addPassthroughCopy({ "./src/site/CNAME": "CNAME" });
   config.addPassthroughCopy("fonts");
-  config.addPassthroughCopy("**/*.jsonld");
-  config.addPassthroughCopy("**/*.mp4");
   config.addPlugin(toc, {
     tags: ['h2'],
     ul: true
   });
 
-
-  // A useful way to reference the context we are runing eleventy in
   let env = process.env.ELEVENTY_ENV;
 
-  // Layout aliases can make templates more portable
   config.addLayoutAlias('default', 'layouts/base.njk');
 
-  // Add some utility filters
-  config.addFilter("squash", require("./src/utils/filters/squash.js") );
-  config.addFilter("dateDisplay", require("./src/utils/filters/date.js") );
+  config.addFilter("squash", squash);
+  config.addFilter("dateDisplay", dateDisplay);
 
-  // SEO
-  config.addPlugin(seo, require("./src/site/_data/seo.json"));
+  const seoData = JSON.parse(fs.readFileSync("./src/site/_data/seo.json", "utf-8"));
+  config.addPlugin(seo, seoData);
   config.addPlugin(sitemap, {
     sitemap: {
       hostname: baseUrl,
@@ -72,21 +71,6 @@ module.exports = function(config) {
     }
   });
 
-  // minify the html output
-  config.addTransform("htmlmin", require("./src/utils/minify-html.js"));
-
-  // compress and combine js files
-  config.addFilter("jsmin", function(code) {
-    const UglifyJS = require("uglify-js");
-    let minified = UglifyJS.minify(code);
-      if( minified.error ) {
-          console.log("UglifyJS error: ", minified.error);
-          return code;
-      }
-      return minified.code;
-  });
-
-  // Markdown
   const md = markdownIt({ html: true });
   md.use(markdownItAnchor);
   md.use(markdownItAttrs, {
@@ -126,19 +110,6 @@ module.exports = function(config) {
     }
   ]);
 
-  config.on('eleventy.before', async () => {
-    const scssExtension = Array.from(config.extensionMap.values())[1];
-    config.extensionMap.delete(scssExtension);
-    config.addExtension("scss", {
-      ...scssExtension,
-      compile: async function(inputContent, inputPath) {
-        inputContent = inputContent.replace(/{{ baseUrl }}/g, baseUrl.href.substring(0, baseUrl.href.length - 1));
-        return await scssExtension.compile.bind(this)(inputContent, inputPath);
-      },
-    });
-  });
-
-  // Collections
   config.addCollection("sorted_docs", (collection) => {
     const items = collection.getFilteredByTag("docs");
     items.sort((a, b) => a.data.menuOrder - b.data.menuOrder);
@@ -156,12 +127,10 @@ module.exports = function(config) {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("cccc, dd LLL yyyy");
   });
 
-  // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
   config.addFilter('htmlDateString', (dateObj) => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
   });
 
-  /* Nunjucks */
   let njkEnv = new nunjucks.Environment(
     new nunjucks.FileSystemLoader("src/site/_includes")
   );
@@ -170,7 +139,6 @@ module.exports = function(config) {
   });
   config.setLibrary("njk", njkEnv);
 
-  // Get the first `n` elements of a collection.
   config.addFilter("head", (array, n) => {
     if (n < 0) {
       return array.slice(n);
@@ -182,8 +150,6 @@ module.exports = function(config) {
     return Math.min.apply(null, numbers);
   });
 
-  // make the seed target act like prod
-  env = (env=="seed") ? "prod" : env;
   return {
     dir: {
       input: "src/site",
@@ -199,11 +165,12 @@ module.exports = function(config) {
       "png",
       "pdf",
       'gif',
-      'js'
+      'js',
+      'jsonld',
+      'mp4'
     ],
     htmlTemplateEngine : "njk",
     markdownTemplateEngine : "liquid",
     passthroughFileCopy: true
   };
-
 };

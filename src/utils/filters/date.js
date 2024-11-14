@@ -1,5 +1,4 @@
-
- const { DateTime } = require("luxon");
+import { DateTime } from "luxon";
 
 // Add a friendly date filter to nunjucks.
 // Defaults to format of LLLL d, y unless an
@@ -7,9 +6,10 @@
 // {{ date | friendlyDate('OPTIONAL FORMAT STRING') }}
 // List of supported tokens: https://moment.github.io/luxon/docs/manual/formatting.html#table-of-tokens
 
-module.exports = (dateObj, format = "LLL d, y") => {
-  return DateTime.fromJSDate(dateObj, {
-      zone: "utc"
-    }).toFormat(format);
+const friendlyDate = (dateObj, format = "LLL d, y") => {
+    return DateTime.fromJSDate(dateObj, {
+            zone: "utc"
+        }).toFormat(format);
 };
 
+export default friendlyDate;

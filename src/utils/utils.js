@@ -1,11 +1,12 @@
-const axios = require('axios');
-const unzip = require('unzip-stream');
-const { rimraf } = require('rimraf');
-require('dotenv').config();
+import axios from 'axios';
+import unzip from 'unzip-stream';
+import { rimraf } from 'rimraf';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const token = process.env.GITHUB_TOKEN;
 
-async function downloadBranch(user, repo, branch) {
+export async function downloadBranch(user, repo, branch) {
     return new Promise((resolve, reject) => {
         const url = `https://api.github.com/repos/${user}/${repo}/zipball/${branch}`;
         axios.get(url, {
@@ -20,7 +21,7 @@ async function downloadBranch(user, repo, branch) {
     });
 }
 
-async function extractZip(file, stream) {
+export async function extractZip(file, stream) {
     return new Promise((resolve, reject) => {
         stream.pipe(unzip.Extract({ path: file })).on('finish', () => {
             resolve();
@@ -28,7 +29,7 @@ async function extractZip(file, stream) {
     });
 }
 
-async function rmdir(dir) {
+export async function rmdir(dir) {
     return new Promise((resolve, reject) => {
         rimraf(dir).then(() => {
             resolve();
@@ -41,13 +42,6 @@ async function rmdir(dir) {
     });
 }
 
-function isGitHubAvailable() {
+export function isGitHubAvailable() {
     return token !== undefined;
 }
-
-module.exports = {
-    extractZip,
-    rmdir,
-    downloadBranch,
-    isGitHubAvailable
-};

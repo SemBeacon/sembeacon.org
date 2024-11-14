@@ -1,13 +1,14 @@
-const chalk = require('chalk');
-const { spawn } = require('child_process');
-let queue = [];
-const path = require('path');
-const handler = require('serve-handler');
-const crypto = require('crypto');
-const http = require('http');
-const fs = require('fs');
+import chalk from 'chalk';
+import { spawn } from 'child_process';
+import path from 'path';
+import handler from 'serve-handler';
+import crypto from 'crypto';
+import http from 'http';
+import fs from 'fs';
 
-async function decktape(el) {
+let queue = [];
+
+export async function decktape(el) {
     el.addAsyncShortcode("decktape", async (title, page) => {
         const fileBuffer = fs.readFileSync(page.inputPath);
         const hashSum = crypto.createHash('sha256');
@@ -15,13 +16,6 @@ async function decktape(el) {
         const hex = hashSum.digest('hex');
 
         const url = `http://localhost:3000${page.url}?disablepointer`;
-        // queue.push({
-        //     title,
-        //     url: url + "&presenter",
-        //     pdf: path.join(page.outputPath, `../${page.fileSlug}_presentation.pdf`),
-        //     widescreen: false,
-        //     hash: hex
-        // });
         queue.push({
             title,
             url: url + "&presenter",
@@ -29,29 +23,7 @@ async function decktape(el) {
             widescreen: true,
             hash: hex
         });
-        // queue.push({
-        //     title: title + " | Author Version",
-        //     url: url + "&presenter",
-        //     pdf: path.join(page.outputPath, `../${page.fileSlug}_author_presentation.pdf`),
-        //     widescreen: false,
-        //     hash: hex
-        // });
-        // queue.push({
-        //     title,
-        //     url: url + "&presenter",
-        //     slug: page.fileSlug,
-        //     widescreen: true,
-        //     images: path.join(page.outputPath, `../screenshots`),
-        //     hash: hex
-        // });
-        // queue.push({
-        //     title: title + " | Author Version",
-        //     url: url + "&presenter",
-        //     pdf: path.join(page.outputPath, `../${page.fileSlug}_author_presentation-16x9.pdf`),
-        //     widescreen: true,
-        //     hash: hex
-        // });
-        // Save queue
+
         fs.writeFileSync('_presentations.json', JSON.stringify(queue, null, 4), {
             encoding: 'utf-8'
         });
@@ -59,25 +31,22 @@ async function decktape(el) {
     });
 }
 
-async function generate() {
+export async function generate() {
     queue = JSON.parse(fs.readFileSync('_presentations.json', {
         encoding: 'utf-8'
     }));
-    queue_old = fs.existsSync('_presentations_generated.json') ? JSON.parse(fs.readFileSync('_presentations_generated.json', {
+    const queue_old = fs.existsSync('_presentations_generated.json') ? JSON.parse(fs.readFileSync('_presentations_generated.json', {
         encoding: 'utf-8'
     })) : [];
 
     console.log(`There are ${queue.length} presentations to be generated ...`);
     console.log(`There are ${queue_old.length} presentations previously generated ...`);
-    // console.debug("New presentations", queue);
-    // console.debug("Old presentations", queue_old);
 
     if (queue.length === 0) {
         return;
     }
     console.log(chalk.blue(`Starting web server for generating PDFs ...`));
     const server = await createServer(3000);
-    // Generate pdfs
     for (let i = 0 ; i < queue.length ; i++) {
         const item = queue[i];
         const file = item.pdf ? item.pdf : item.images;
@@ -161,8 +130,3 @@ function executeDecktape(item) {
         });
     });
 }
-
-module.exports = {
-    decktape,
-    generate
-};

@@ -1,3 +1,1 @@
-module.exports = {
-  "buildTime" : new Date()
-}
+export const buildTime = new Date();

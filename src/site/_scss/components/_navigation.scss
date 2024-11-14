@@ -1,3 +1,5 @@
+@use "../variables";
+
 .navigation {
     padding: 0px 10px 0 0;
     text-align: left;
@@ -18,7 +20,7 @@
     transition: opacity 0.2s;
 }
 .navigation a.current {
-    color: $text-color;
+    color: variables.$text-color;
     font-weight: bold;
 }
 .navigation a:hover {

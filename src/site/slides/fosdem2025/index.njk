@@ -1,0 +1,103 @@
+---
+layout: layouts/presentation.njk
+title: "Discovering Indoor Environments and Positioning Systems"
+author: Maxim Van de Wynckel
+affiliation: Web & Information Systems Engineering Lab</br>Vrije Universiteit Brussel
+width: 1280
+height: 720
+hide_title_slide: true
+---
+
+<section class="title-slide center" data-timing="15">
+    <style>
+    .slide-cover {
+        display: block;
+        position: absolute;
+        top: -20%;
+        left: -20%;
+        width: 140%;
+        height: 60%;
+        background: linear-gradient(to bottom, transparent 80%, white 95%);
+    }
+    .slide-cover-background {
+        background-image: url('./images/cover.png');
+        background-position: center;
+        background-size: cover;
+        width: 99%;
+        height: 99%;
+        opacity: 0.2;
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    </style>
+    <div class="slide-cover">
+        <div class="slide-cover-background"></div>
+    </div>
+    <div class="slide-wrapper">
+        <div class="logos">
+            <div id="vub-logo"></div>
+            <div id="wise-logo"></div>
+        </div>
+        <h2 id="label-title">
+        {% if presentation_title %}
+            {{ presentation_title | safe }}
+        {% else %}
+            {{ title }}
+        {% endif %}
+            <small id="label-subtitle">{{ subtitle }}</small>
+        </h2>
+        <h5 class="author">{{ author | safe }}</h5>
+        <h5 class="affiliation">{{ affiliation | safe }}</h5>
+    </div>
+</section>
+
+<section>
+    <h2>About me</h2>
+    <style>
+        .about-me {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+        .about-me img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        .about-me p {
+            max-width: 600px;
+            font-size: 1.2em;
+            line-height: 1.5;
+        }
+    </style>
+
+    <div class="about-me">
+        <img src="./images/profile.jpg" alt="Profile Picture">
+        <p>Hello! I'm Maxim Van de Wynckel, a researcher at the Web & Information Systems Engineering Lab at Vrije Universiteit Brussel. My work focuses on discovering indoor environments and positioning systems. I am passionate about technology and innovation, and I enjoy sharing my knowledge through presentations and publications.</p>
+    </div>
+</section>
+
+<section>
+    <h2>Presentation</h2>
+    <ul>
+        <li>Local Discovery Methods</li>
+        <li>Global Discovery Methods</li>
+        <li>SemBeacon</li>
+    </ul>
+</section>
+
+<section>
+    <h2>What we are working on</h2>
+
+</section>
+
+<section>
+    <h2>SemBeacon</h2>
+
+</section>

@@ -1,3 +1,5 @@
+@use "../variables";
+
 div.alert {
     display: block;
     border-radius: 1em;
@@ -20,7 +22,7 @@ div.alert {
         border-color: rgb(175, 175, 80);
     }
 
-    @media (max-width: $mid) {
+    @media (max-width: variables.$mid) {
         border-radius: 0.5em;
     };
 }
