@@ -20,5 +20,9 @@ a required permission to scan for beacons as these beacons can be used to determ
 - **Nearby Devices**: This permission allows nearby devices to detect your phone. This permission is used for the simulation of beacons.
 - **Notifications**: An "ongoing" notification is used when simulating a beacon. This is to ensure that users are aware that the phone is broadcasting a beacon in the background.
 
+### Error Logs
+The application collects error logs using [Sentry](https://sentry.io/). These logs help us to identify and fix issues within the application. The collected data is anonymized and does not contain any personal information.
+
 ### Changes
 Changes to the privacy policy will be mentioned within app updates or as modification on this website.
+

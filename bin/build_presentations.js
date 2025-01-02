@@ -1,2 +1,2 @@
-const { generate } = require("../src/utils/decktape");
+import { generate } from "../src/utils/decktape.js";
 generate();

@@ -31,6 +31,11 @@ hide_title_slide: true
         top: 0;
         left: 0;
     }
+    
+    #fosdem-logo {
+        width: 20%;
+        background-image: url(./images/FOSDEM_logo.svg);
+    }
     </style>
     <div class="slide-cover">
         <div class="slide-cover-background"></div>
@@ -39,6 +44,7 @@ hide_title_slide: true
         <div class="logos">
             <div id="vub-logo"></div>
             <div id="wise-logo"></div>
+            <div id="fosdem-logo"></div>
         </div>
         <h2 id="label-title">
         {% if presentation_title %}
@@ -58,46 +64,214 @@ hide_title_slide: true
     <style>
         .about-me {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            text-align: center;
+            align-items: flex-start;
+            justify-content: flex-start;
+            text-align: left;
         }
-        .about-me img {
+        .about-me img.profile {
             border-radius: 50%;
-            width: 150px;
-            height: 150px;
+            width: 260px;
+            height: 260px;
             object-fit: cover;
-            margin-bottom: 20px;
+            margin: 20px;
+            margin-right: 40px;
+            box-shadow: 0 0 150px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        .about-me h3 {
+            display: block;
         }
         .about-me p {
-            max-width: 600px;
-            font-size: 1.2em;
+            font-size: 1.1em;
             line-height: 1.5;
+        }
+        .about-me ul {
+            margin-top: 1em;
+            list-style: none !important;
+            padding: 0;
+        }
+        .about-me ul li::before {
+            content: none;
+            margin-bottom: 0.5em;
+        }
+        .about-me span {
+            font-weight: bold;
+            margin-right: 0.5em;
+            margin-left: 0.5em;
+        }
+        .about-me span::after {
+            content: ':';
+        }
+        .about-me i {
+            width: 1em;
+        }
+        .projects {
+            margin-top: 2em;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+        }
+        .projects img {
+            width: 400px;
+            height: auto;
+            margin: 10px;
+        }
+        .projects img:nth-child(2) {
+            height: 80px;
         }
     </style>
 
     <div class="about-me">
-        <img src="./images/profile.jpg" alt="Profile Picture">
-        <p>Hello! I'm Maxim Van de Wynckel, a researcher at the Web & Information Systems Engineering Lab at Vrije Universiteit Brussel. My work focuses on discovering indoor environments and positioning systems. I am passionate about technology and innovation, and I enjoy sharing my knowledge through presentations and publications.</p>
+        <img class="profile" src="https://maximvdw.be/images/profile/maxim.png" alt="Profile Picture">
+        <div>
+            <ul>
+                <li><i class="fas fa-user"></i><span>Maxim Van de Wynckel</span></li>
+                <li><i class="fas fa-envelope"></i><span>E-mail</span><a href="mailto:mvdewync@vub.be">mvdewync@vub.be</a></li>
+                <li><i class="fas fa-globe"></i><span>Website</span><a href="https://maximvdw.be" target="_blank">https://maximvdw.be</a></li>
+                <li><i class="fas fa-briefcase"></i><span>Position</span>Researcher at VUB</li>
+                <li><i class="fas fa-search-location"></i><span>Interests</span>Indoor positioning systems, linked data, and interoperability of location data</li>
+            </ul>
+        </div>
+    </div>
+    <div class="projects">
+        <img src="https://openhps.org/images/logo.svg" alt="OpenHPS Logo">
+        <img src="https://raw.githubusercontent.com/OpenHPS/POSO/refs/heads/main/1.1/docs/images/logo.svg" alt="POSO Logo">
+        <img src="https://sembeacon.org/images/logo.svg" alt="SemBeacon Logo">
     </div>
 </section>
 
 <section>
     <h2>Presentation</h2>
-    <ul>
-        <li>Local Discovery Methods</li>
-        <li>Global Discovery Methods</li>
-        <li>SemBeacon</li>
+    <ol>
+        <li>Current service-centric state</li>
+        <li>Geospatial-centric approach</li>
+        <li>OpenHPS project</li>
+        <li>SemBeacon project</li>
+    </ol>
+</section>
+
+<section>
+    <h2>Current state of geospatial data</h2>
+    <div class="row">
+        <div class="col-sm-6">
+            <h3>Outdoor data</h3>
+            <img src="./images/service-centric.svg" alt="Service-centric geospatial data">
+        </div>
+        <div class="col-sm-6">
+            <h3>Indoor data</h3>
+            <img src="./images/service-centric-indoor.svg" alt="Service-centric geospatial data">
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Current state of positioning systems</h2>
+    <div class="row">
+        <div class="col-sm-6">
+            <h3>Outdoor</h3>
+            <img src="./images/gps.svg" alt="GPS">
+        </div>
+        <div class="col-sm-6">
+            <h3>Indoor</h3>
+            <img src="./images/question.svg" alt="Question">
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Geospatial-centric service discovery</h2>
+    <p>
+        The future of geospatial services lies in its discovery through the very locations it represents, rather than predefined services.
+    </p>
+    <img src="./images/geospatial-centric.svg" alt="Geospacial-centric data discovery">
+</section>
+
+<section>
+    <h2>Geospatial-centric service discovery ...</h2>
+    <p>
+        How to interface with the discovered service?
+    </p>
+</section>
+
+<style>
+    h2.inline {
+        display: inline-block;
+    }
+    .license-badge {
+        display: inline-block;
+        line-height: 2em;
+    }
+    .license-badge img {
+        margin-left: 2em;
+        transform: scale(2);
+    }
+</style>
+
+<section>
+    <h2 class="inline">OpenHPS</h2>
+    <div class="license-badge">
+        <img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="License: Apache-2.0">
+    </div>
+    <img src="https://openhps.org/slides/fosdem2022/images/architecture3.svg" alt="OpenHPS Architecture">
+    <p>For more information, visit the <a href="https://archive.fosdem.org/2022/schedule/event/lt_openhps/" target="_blank">FOSDEM 2022 talk of OpenHPS</a>.</p>
+</section>
+
+<section>
+    <h2 class="inline">OpenHPS &rarr; POSO</h2>
+    <h3>@openhps/rdf</h3>
+</section>
+
+<section>
+    <h2 class="inline">OpenHPS &rarr; POSO &rarr; Solid</h2>
+    <h3>@openhps/solid</h3>
+</section>
+
+<section>
+    <h2 class="inline">SemBeacon</h2>
+    <div class="license-badge">
+        <img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="License: Apache-2.0">
+    </div>
+    <img src="/slides/iot2023/images/sembeacon_architecture_large.svg" alt="SemBeacon Architecture">
+</section>
+
+<section data-markdown data-timing="70">
+    {% markdown %}
+        ## Conclusion and Future Work
+        - test
+    {% endmarkdown %}
+    {% qr "https://sembeacon.org/posts/2025/02/01/", "qr-image", "H" %}
+    <ul class="info">
+        <li><i class="fa-brands fa-github"></i> <a href="https://github.com/SemBeacon/">https://github.com/SemBeacon/</a></li>
+        <li><i class="fa-solid fa-book"></i> <a href="https://sembeacon.org/">https://sembeacon.org/</a></li>
+        <li><i class="fa-solid fa-book"></i> <a href="https://openhps.org/">https://openhps.org/</a></li>
+        <li><i class="fa-solid fa-book"></i> <a href="https://poso.openhps.org/">https://poso.openhps.org/</a></li>
+        <li><i class="fa-brands fa-google-play"></i> <a href="https://play.google.com/store/apps/details?id=org.sembeacon">Android App on Google Play Store</a></li>
     </ul>
-</section>
+    <style>
+    .qr-image {
+        position: absolute;
+        left: 0em;
+        bottom: 1em;
+        width: 300px;
+        height: 300px;
+        float: right;
+    }
+    ul.info {
+        font-size: 1.1em;
+        position: absolute;
+        left: 300px;
+        bottom: 80px;
+        list-style-type: none;
+    }
+    ul.info li i {
+        width: 50px;
+    }
+    ul.info li::before {
+        content: none;
+    }
+    </style>
+    <aside class="notes">
 
-<section>
-    <h2>What we are working on</h2>
-
-</section>
-
-<section>
-    <h2>SemBeacon</h2>
-
-</section>
+    </aside>
+</section>   

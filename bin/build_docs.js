@@ -1,2 +1,2 @@
-const buildOntology = require('../src/utils/ontology');
+import buildOntology from '../src/utils/ontology.js';
 buildOntology();

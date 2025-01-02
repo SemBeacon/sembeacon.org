@@ -41,7 +41,7 @@ jobs:
           node-version: '14'
       - name: Installing Dependencies
         run: |
-          npm install
+          yarn install
       - name: Build site
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_GLOBAL }}
