@@ -4,7 +4,7 @@ layout: layouts/default.njk
 subtitle: About the SemBeacon specification and its maintainers
 ---
 
-SemBeacon was designed by Ph.D candidate [Maxim Van de Wynckel](https://wise.vub.ac.be/maxim-van-de-wynckel) of the [Web & Information Systems Engineering (WISE) Lab](https://wise.vub.ac.be) under the supervision of [Prof. Dr. Beat Signer](https://beatsigner.com). SemBeacon is a semantic beacon specification for Bluetooth Low Energy that broadcasts a resource URI containing a full semantic description of the beacon, its location and any other related information.
+SemBeacon was designed by Ph.D candidate [Maxim Van de Wynckel](https://maximvdw.be/about) of the [Web & Information Systems Engineering (WISE) Lab](https://wise.vub.ac.be) under the supervision of [Prof. Dr. Beat Signer](https://beatsigner.com). SemBeacon is a semantic beacon specification for Bluetooth Low Energy that broadcasts a resource URI containing a full semantic description of the beacon, its location and any other related information.
 
 The specification is built on top of [AltBeacon](https://altbeacon.org) and adds an [Eddystone-URL]() compatible scan response
 that includes an URI that describes the beacon.
