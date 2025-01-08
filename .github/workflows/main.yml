@@ -49,60 +49,60 @@ jobs:
           npm run build
           npm run build:docs
 
-  build_presentations:
-    needs: build
-    name: 'Build Presentations'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: browser-actions/setup-chrome@v1
-        with:
-          chrome-version: 1198101
-        id: setup-chrome
-      - run: |
-          echo Installed chromium version: ${{ steps.setup-chrome.outputs.chrome-version }}
-          ${{ steps.setup-chrome.outputs.chrome-path }} --version
-      - name: Check out repository
-        uses: actions/checkout@v3
-      - name: Load dependency cache
-        uses: actions/cache@v3
-        with:
-          path: |
-            **/node_modules
-            /home/runner/.cache/puppeteer
-          key: ${{ runner.os }}-dependencies-v1-${{ hashFiles('package.json') }}
-      - name: Load site cache
-        uses: actions/cache@v3
-        with:
-          path: |
-            **/dist
-            _presentations.json
-          key: ${{ runner.os }}-site-v1-${{ hashFiles('package.json') }}-${{ github.run_number }}
-      - name: Load presentations cache
-        uses: actions/cache@v3
-        with:
-          path: |
-            **/dist/slides/**/*.pdf
-            **/dist/slides/**/screenshots
-            *.pdf
-            _presentations_generated.json
-          key: ${{ runner.os }}-site-presentations-v2
-      - name: Installing Dependencies
-        run: |
-          node node_modules/decktape/node_modules/puppeteer/install.js
-      - name: Build presentations
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          npm run build:presentations
-      - name: Enforce cache update for a local NX cache
-        run: |
-          STATE_CACHE_KEY="${{ runner.os }}-site-presentations-${{ hashFiles('_presentations_generated.json') }}-v2"
-          echo "STATE_CACHE_KEY=${STATE_CACHE_KEY}" >> $GITHUB_ENV
+  # build_presentations:
+  #   needs: build
+  #   name: 'Build Presentations'
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: browser-actions/setup-chrome@v1
+  #       with:
+  #         chrome-version: 1198101
+  #       id: setup-chrome
+  #     - run: |
+  #         echo Installed chromium version: ${{ steps.setup-chrome.outputs.chrome-version }}
+  #         ${{ steps.setup-chrome.outputs.chrome-path }} --version
+  #     - name: Check out repository
+  #       uses: actions/checkout@v3
+  #     - name: Load dependency cache
+  #       uses: actions/cache@v3
+  #       with:
+  #         path: |
+  #           **/node_modules
+  #           /home/runner/.cache/puppeteer
+  #         key: ${{ runner.os }}-dependencies-v1-${{ hashFiles('package.json') }}
+  #     - name: Load site cache
+  #       uses: actions/cache@v3
+  #       with:
+  #         path: |
+  #           **/dist
+  #           _presentations.json
+  #         key: ${{ runner.os }}-site-v1-${{ hashFiles('package.json') }}-${{ github.run_number }}
+  #     - name: Load presentations cache
+  #       uses: actions/cache@v3
+  #       with:
+  #         path: |
+  #           **/dist/slides/**/*.pdf
+  #           **/dist/slides/**/screenshots
+  #           *.pdf
+  #           _presentations_generated.json
+  #         key: ${{ runner.os }}-site-presentations-v2
+  #     - name: Installing Dependencies
+  #       run: |
+  #         node node_modules/decktape/node_modules/puppeteer/install.js
+  #     - name: Build presentations
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #       run: |
+  #         npm run build:presentations
+  #     - name: Enforce cache update for a local NX cache
+  #       run: |
+  #         STATE_CACHE_KEY="${{ runner.os }}-site-presentations-${{ hashFiles('_presentations_generated.json') }}-v2"
+  #         echo "STATE_CACHE_KEY=${STATE_CACHE_KEY}" >> $GITHUB_ENV
 
   deploy_github:
     needs:
       - build
-      - build_presentations
+      # - build_presentations
     name: 'Deploy to Github Pages'
     runs-on: ubuntu-latest
     steps:
