@@ -1,2 +1,2 @@
-import buildOntology from '../src/utils/ontology.js';
-buildOntology();
+import { buildDocs } from '../src/utils/ontology.js';
+buildDocs();

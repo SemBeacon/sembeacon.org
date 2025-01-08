@@ -1,11 +1,11 @@
 import chalk from 'chalk';
-import { copySync } from 'fs-extra';
+import fse from 'fs-extra';
 import { 
     isGitHubAvailable, 
     extractZip, 
     rmdir, 
     downloadBranch 
-} from './utils';
+} from './utils.js';
 import fs from 'fs';
 
 export async function buildDocs() {
@@ -20,7 +20,7 @@ export async function buildDocs() {
         await extractZip(`dist/terms/specification`, stream);
         const directories = fs.readdirSync(`dist/terms/specification/`);
 
-        copySync(`dist/terms/specification/${directories[0]}`, `dist/terms/`, { overwrite: true });
+        fse.copySync(`dist/terms/specification/${directories[0]}`, `dist/terms/`, { overwrite: true });
         await rmdir(`dist/terms/specification`);
     } catch(ex) {
         console.error(chalk.red(`\tUnable to get documentation for specification`));
