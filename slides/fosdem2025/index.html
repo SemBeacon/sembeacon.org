@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no,user-scalable=0">
+    <link href="https://fonts.cdnfonts.com/css/itc-avant-garde-gothic-std-book" rel="stylesheet">
+    <title>Discovering Indoor Environments and Positioning Systems | SemBeacon</title>
+
+<meta name="description" content="">
+<meta name="robots" content="index,follow">
+<meta name="author" content="Maxim Van de Wynckel">
+
+<link rel="canonical" href="https://sembeacon.org/slides/fosdem2025/">
+
+<meta property="og:title" content="Discovering Indoor Environments and Positioning Systems | SemBeacon">
+<meta property="og:type" content="article">
+
+<meta property="og:url" content="https://sembeacon.org/slides/fosdem2025/">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://sembeacon.org/images/social/summary-large.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@SemBeacon">
+<meta name="twitter:url" content="https://sembeacon.org/slides/fosdem2025/">
+<meta name="twitter:title" content="Discovering Indoor Environments and Positioning Systems | SemBeacon">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://sembeacon.org/images/social/summary-large.png">
+
+
+    <meta name="keywords" content="sembeacon, semantic, beacon, open, source, linked, data">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"></link>
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
+    <meta name="theme-color" content="#363795">
+</head>
+
+
+  <body>
+    <link rel="stylesheet" href="/vendor/reveal.js/reset.css">
+    <link rel="stylesheet" href="/vendor/reveal.js/reveal.css">
+    <link rel="stylesheet" href="/vendor/reveal.js/plugin/pointer/pointer.css">
+    <link href="https://fonts.cdnfonts.com/css/itc-avant-garde-gothic-std-book" rel="stylesheet">
+    <link rel="stylesheet" href="/css/presentation.css" id="theme">
+
+    
+
+    <div class="reveal">
+        <div class="slides">
+          
+          
+<section class="title-slide center" data-timing="15">
+    <style>
+    .slide-cover {
+        display: block;
+        position: absolute;
+        top: -20%;
+        left: -20%;
+        width: 140%;
+        height: 60%;
+        background: linear-gradient(to bottom, transparent 80%, white 95%);
+    }
+    .slide-cover-background {
+        background-image: url('./images/cover.png');
+        background-position: center;
+        background-size: cover;
+        width: 99%;
+        height: 99%;
+        opacity: 0.2;
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    
+    #fosdem-logo {
+        width: 20%;
+        background-image: url(./images/FOSDEM_logo.svg);
+    }
+    </style>
+    <div class="slide-cover">
+        <div class="slide-cover-background"></div>
+    </div>
+    <div class="slide-wrapper">
+        <div class="logos">
+            <div id="vub-logo"></div>
+            <div id="wise-logo"></div>
+            <div id="fosdem-logo"></div>
+        </div>
+        <h2 id="label-title">
+        
+            Discovering Indoor Environments and Positioning Systems
+        
+            <small id="label-subtitle"></small>
+        </h2>
+        <h5 class="author">Maxim Van de Wynckel</h5>
+        <h5 class="affiliation">Web & Information Systems Engineering Lab</br>Vrije Universiteit Brussel</h5>
+    </div>
+    <aside class="notes">
+        Hello, my name is Maxim Van de Wynckel and today I will present to you one of the goals
+        I aim to achieve. Which is the discovering of indoor environments and positioning systems.
+    </aside>
+</section>
+
+<section>
+    <h2>About me</h2>
+    <style>
+        .about-me {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            text-align: left;
+        }
+        .about-me img.profile {
+            border-radius: 50%;
+            width: 260px;
+            height: 260px;
+            object-fit: cover;
+            margin: 20px;
+            margin-right: 40px;
+            box-shadow: 0 0 150px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        .about-me h3 {
+            display: block;
+        }
+        .about-me p {
+            font-size: 1.1em;
+            line-height: 1.5;
+        }
+        .about-me ul {
+            margin-top: 1em;
+            list-style: none !important;
+            padding: 0;
+        }
+        .about-me ul li::before {
+            content: none;
+            margin-bottom: 0.5em;
+        }
+        .about-me span {
+            font-weight: bold;
+            margin-right: 0.5em;
+            margin-left: 0.5em;
+        }
+        .about-me span::after {
+            content: ':';
+        }
+        .about-me i {
+            width: 1em;
+        }
+        .projects {
+            margin-top: 2em;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+        }
+        .projects img {
+            width: 400px;
+            height: auto;
+            margin: 10px;
+        }
+        .projects img:nth-child(2) {
+            height: 80px;
+        }
+    </style>
+
+    <div class="about-me">
+        <img class="profile" src="https://maximvdw.be/images/profile/maxim.png" alt="Profile Picture">
+        <div>
+            <ul>
+                <li><i class="fas fa-user"></i><span>Maxim Van de Wynckel</span></li>
+                <li><i class="fas fa-envelope"></i><span>E-mail</span><a href="mailto:mvdewync@vub.be">mvdewync@vub.be</a></li>
+                <li><i class="fas fa-globe"></i><span>Website</span><a href="https://maximvdw.be" target="_blank">https://maximvdw.be</a></li>
+                <li><i class="fas fa-briefcase"></i><span>Position</span>Researcher at VUB</li>
+                <li><i class="fas fa-search-location"></i><span>Interests</span>Indoor positioning systems, linked data, and interoperability of location data</li>
+            </ul>
+        </div>
+    </div>
+    <div class="projects">
+        <img src="https://openhps.org/images/logo.svg" alt="OpenHPS Logo">
+        <img src="https://raw.githubusercontent.com/OpenHPS/POSO/refs/heads/main/1.1/docs/images/logo.svg" alt="POSO Logo">
+        <img src="https://sembeacon.org/images/logo.svg" alt="SemBeacon Logo">
+    </div>
+    <aside class="notes">
+        To give you a brief introduction about myself, I am Maxim Van de Wynckel, a researcher at the Vrije Universiteit Brussel. 
+        My research interests include indoor positioning systems, linked data, and interoperability of location data. 
+        I am involved in several open source projects, including OpenHPS, POSO, and SemBeacon some of which I will discuss today.
+
+        One of my personal goals with these projects is to create a world were indoor positioning systems and environemnts are as 
+        easily accessible as outdoor positioning systems.
+    </aside>
+</section>
+
+<section>
+    <h2>Current state of geospatial data</h2>
+    <div class="row">
+        <div class="col-sm-6">
+            <h3>Outdoor data</h3>
+            <img src="./images/service-centric.svg" alt="Service-centric geospatial data">
+        </div>
+        <div class="col-sm-6">
+            <h3>Indoor data</h3>
+            <img src="./images/service-centric-indoor.svg" alt="Service-centric geospatial data">
+        </div>
+    </div>
+    <aside class="notes">
+        The current state of outdoor geospatial data is service-centric. This means that you can easily access the data you need through predefined services.
+        For outdoor data, this is straightfoward as the data is well known and in most cases publicly available.
+        Some services may provide more detailed information, but regardless on which service you use, you are always able to access some
+        form of data pertaining to a location.
+
+        However, when it comes to indoor data, the situation is quite different. While there are services that collect geospatial data of indoor environments,
+        they are not yet as complete as their outdoor counterparts. In a way, this makes sense, since indoor environments are more complex and diverse than outdoor environments.
+        Users or building owners may not want to share their data with the public, which makes it harder to collect and share indoor geospatial data and to govern
+        who publishes this data.
+    </aside>
+</section>
+
+<section>
+    <h2>Current state of positioning systems</h2>
+    <div class="row">
+        <div class="col-sm-6">
+            <h3>Outdoor</h3>
+            <img src="./images/gps.svg" alt="GPS">
+        </div>
+        <div class="col-sm-6">
+            <h3>Indoor</h3>
+            <img src="./images/question.svg" alt="Question">
+        </div>
+    </div>
+    <aside class="notes">
+        A similar story can be told about positioning systems. Outdoor positioning systems are well known and widely used. 
+        The Global Positioning System (GPS) is a prime example of this. If we are outdoors, we can easily determine our location using this single technology.
+
+        Again, indoors the situation is quite different. There are several technologies that can be used to determine your location indoors,
+        but none of them are as widely used or standardised as GPS. This makes it hard for developers to create applications that work indoors as well as outdoors
+        and often leads to navigation applications that only work for one particular building, framework or event.
+    </aside>
+</section>
+
+<section>
+    <h2>Geospatial-centric service discovery</h2>
+    <p>
+        The future of geospatial services lies in its discovery through the very locations it represents, rather than predefined services.
+    </p>
+    <img src="./images/geospatial-centric.svg" alt="Geospacial-centric data discovery">
+    <aside class="notes">
+        My vision is to create a world where geospatial services are discovered through the very locations they represent, 
+        rather than using predefined services. Or in other words, decentralised geospatial data discovery.
+
+        This means that when you are in a particular location, you can discover the services that are available in that location.
+        Simply said, you could assume that you do a kind of geospatial query on your location and receive a list of services that are available in that location.
+    </aside>
+</section>
+
+<section>
+    <h2>Geospatial-centric service discovery ...</h2>
+    <h3>Challenge 1</h3>
+    <p>
+        How to discover services in a location without relying on a discovery service?
+    </p>
+    <img width="600px" src="./images/find.svg" alt="Find services in a location">
+    <aside class="notes">
+        There are a couple of problems or challenges associated with this. First of all, we want to discover
+        these services without relying on a centralised discovery service. This would completely defeat the purpose of 
+        decentralised geospatial data discovery.
+
+        This also entails that whatever method we use to discover this data should be as easy
+        as possible for both users and developers.
+    </aside>
+</section>
+
+<section>
+    <h2>Geospatial-centric service discovery ...</h2>
+    <h3>Challenge 2</h3>
+    <p>
+        How to interface with the discovered service(s)?
+    </p>
+    <img width="600px" src="./images/find_interface.svg" alt="Interface with services in a location">
+    <aside class="notes">
+        The second challenge is that once we discover services that can provide us with indoor data and positioning systems,
+        we need to collect that data in a way that again does not require specific implementations for each service that is out there.
+    </aside>
+</section>
+
+<section>
+    <h2 id="local-linked-data-discovery" tabindex="-1">Local linked data discovery</h2>
+<blockquote>
+<p>Find data locally <strong><u>at</u></strong> a particular location</p>
+</blockquote>
+
+    <aside class="notes">
+        
+    </aside>
+</section>
+
+<section>
+    <h2 id="global-linked-data-discovery" tabindex="-1">Global linked data discovery</h2>
+<blockquote>
+<p>Find data globally <strong><u>using</u></strong> a particular location</p>
+</blockquote>
+
+        <aside class="notes">
+        
+        </aside>
+    </section>
+
+    <style>
+        .header img.inline, h2.inline {
+        display: inline-block;
+        vertical-align: top;
+        }
+        .header img.inline {
+        height: 3em;
+        }
+        .header img.inline.small {
+        height: 2em;
+        margin-top: 1em;
+    }
+    .header .license-badge {
+        height: 3em;
+        display: inline-block;
+        line-height: 3em;
+        position: absolute;
+        right: 0;
+        top: 1em;
+    }
+    .header h2.inline.arrow {
+        font-size: 2em;
+        margin: 0 1em;
+        line-height: 2em;
+        vertical-align: middle;
+    }
+    .header .license-badge img {
+        margin-left: 2em;
+        transform: scale(2);
+    }
+</style>
+
+<section>
+    <div class="header">
+        <img src="https://openhps.org/images/logo.svg" class="inline" alt="OpenHPS Logo">
+        <div class="license-badge">
+            <img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="License: Apache-2.0">
+        </div>
+    </div>
+    <img src="https://openhps.org/slides/fosdem2022/images/architecture3.svg" height="400px" alt="OpenHPS Architecture">
+    <p>For more information, visit the <a href="https://archive.fosdem.org/2022/schedule/event/lt_openhps/" target="_blank">FOSDEM 2022 talk of OpenHPS</a>.</p>
+    <aside class="notes">
+        The first project I briefly wanted to introduce is OpenHPS. OpenHPS is an open source framework for hybrid positioning systems.
+        I will not delve into the details, since it was already covered at a previous FOSDEM talk - but in general you should know
+        that it is a TypeScript framework to create positioning systems.
+
+        One issue we noticed after its development was that it was hard to share data between different positioning systems
+        or different frameworks. This is where POSO comes in.
+    </aside>
+</section>
+
+<section>
+    <div class="header">
+        <img src="https://raw.githubusercontent.com/OpenHPS/POSO/refs/heads/main/1.1/docs/images/logo.svg" class="inline small" alt="OpenHPS Logo">
+        <div class="license-badge">
+            <img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License: MIT">
+        </div>
+    </div>
+    <img src="https://openhps.org/slides/iswc2022/images/example.svg" height="400px" alt="POSO Example">
+    <aside class="notes">
+        POSO is a linked data ontology to describe positioning systems, the data they produce and the environments they are used in.
+    </aside>
+</section>
+
+<section>
+    <div class="header">
+        <img src="https://openhps.org/images/logo.svg" class="inline" alt="OpenHPS Logo">
+        <h2 class="inline arrow">&rarr;</h2>
+        <img src="https://raw.githubusercontent.com/OpenHPS/POSO/refs/heads/main/1.1/docs/images/logo.svg" class="inline small" alt="POSO Logo">
+    </div>
+    <h3>@openhps/rdf</h3>
+    <ul>
+<li>RDF data model for OpenHPS</li>
+<li>POSO integration</li>
+<li>Serialisation and deserialisation</li>
+</ul>
+
+    <aside class="notes">
+        Developers are not always eager to want to work with linked data to store information, especially for realtime applications
+        such as positioning systems. This is why we created the @openhps/rdf package. It basically provides a mapping form
+        the OpenHPS data model to RDF and back. This allows developers to easily store their data in a linked data format without
+        specifically needing to know how linked data works. Furthermore, they can query the data is if they are querying 
+        a MongoDB database, which is a lot more familiar to most developers.
+    </aside>
+</section>
+
+<section>
+    <div class="header">
+        <img src="https://openhps.org/images/logo.svg" class="inline" alt="OpenHPS Logo">
+        <h2 class="inline arrow">&rarr;</h2>
+        <img src="https://raw.githubusercontent.com/OpenHPS/POSO/refs/heads/main/1.1/docs/images/logo.svg" class="inline small" alt="POSO Logo">
+        <h2 class="inline arrow">&rarr;</h2>
+        <img src="./images/solid.svg" class="inline" alt="Solid project Logo">
+    </div>
+    <h3>@openhps/solid</h3>
+    <ul>
+<li>Solid storage and access control</li>
+<li>Solid as a communication broker</li>
+</ul>
+
+    <aside class="notes">
+        With the @openhps/rdf package we already had a way to store our data in a linked data format. However, if we talk about personal data
+        or data that needs to be governed by a user, we also need a proper way to store this data. This is where the Solid project comes into place.
+
+        For those who are unfamiliar with Solid, it is a project that allows users to store their data in a decentralised way. The data can be binary
+        data, but also structured linked data. Users can assign access rights to the data so that only certain applications or users can access it.
+
+        In addition to this, Solid offers specifications that enable applications to listen for changes in data - which is perfect for realtime applications
+        such as positioning systems that want to use Solid as a communication broker.
+    </aside>
+</section>
+
+<section>
+    <h2 class="inline">SemBeacon</h2>
+    <div class="license-badge">
+        <img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="License: Apache-2.0">
+    </div>
+    <img src="/slides/iot2023/images/sembeacon_architecture_large.svg" alt="SemBeacon Architecture">
+</section>
+
+<section data-markdown data-timing="70">
+    <h2 id="conclusion-and-future-work" tabindex="-1">Conclusion and Future Work</h2>
+<ul>
+<li>test</li>
+</ul>
+
+    <img src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2045%2045%22%20shape-rendering%3D%22crispEdges%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M0%200h45v45H0z%22%2F%3E%3Cpath%20stroke%3D%22%23000000%22%20d%3D%22M4%204.5h7m1%200h1m1%200h1m2%200h1m1%200h1m4%200h1m1%200h1m1%200h1m3%200h1m1%200h7M4%205.5h1m5%200h1m1%200h4m2%200h4m1%200h1m1%200h2m1%200h4m2%200h1m5%200h1M4%206.5h1m1%200h3m1%200h1m1%200h2m1%200h1m6%200h2m2%200h1m1%200h3m1%200h1m1%200h1m1%200h3m1%200h1M4%207.5h1m1%200h3m1%200h1m2%200h1m1%200h1m2%200h5m1%200h1m1%200h2m6%200h1m1%200h3m1%200h1M4%208.5h1m1%200h3m1%200h1m2%200h1m1%200h5m3%200h1m1%200h3m2%200h1m3%200h1m1%200h3m1%200h1M4%209.5h1m5%200h1m1%200h1m1%200h1m1%200h1m5%200h3m1%200h1m4%200h2m1%200h1m5%200h1M4%2010.5h7m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h7M12%2011.5h3m2%200h1m1%200h1m1%200h1m2%200h5m1%200h1m1%200h1M6%2012.5h3m1%200h1m1%200h4m1%200h1m1%200h10m4%200h3m2%200h3M4%2013.5h4m3%200h3m2%200h3m2%200h2m1%200h1m1%200h1m2%200h4m1%200h1m2%200h1m1%200h1M6%2014.5h1m1%200h1m1%200h3m6%200h2m1%200h1m3%200h1m2%200h2m3%200h1m4%200h2M4%2015.5h4m6%200h1m1%200h1m6%200h2m3%200h1m1%200h1m1%200h1m1%200h1m4%200h1M4%2016.5h1m1%200h1m2%200h2m1%200h1m1%200h2m3%200h3m1%200h2m2%200h1m1%200h2m2%200h4m1%200h2M4%2017.5h1m3%200h2m2%200h1m3%200h1m1%200h2m4%200h1m1%200h2m1%200h2m1%200h2m1%200h1m1%200h2M5%2018.5h1m3%200h3m4%200h3m2%200h3m5%200h3m2%200h4m1%200h2M4%2019.5h1m1%200h3m4%200h1m1%200h1m1%200h4m2%200h2m1%200h1m3%200h2m1%200h1m5%200h2M6%2020.5h1m3%200h3m3%200h1m1%200h6m2%200h1m2%200h3m1%200h2m1%200h1m1%200h2M4%2021.5h2m2%200h1m3%200h2m1%200h2m1%200h1m2%200h1m2%200h1m5%200h1m4%200h1m1%200h1M4%2022.5h1m3%200h3m3%200h2m1%200h3m4%200h2m1%200h2m2%200h1m1%200h3m1%200h4M6%2023.5h1m1%200h2m2%200h9m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m4%200h1M6%2024.5h1m3%200h4m2%200h1m5%200h2m3%200h1m5%200h6M4%2025.5h3m1%200h2m2%200h2m3%200h1m1%200h1m4%200h2m2%200h2m3%200h1m1%200h1m1%200h1m2%200h1M6%2026.5h1m1%200h1m1%200h1m1%200h5m2%200h5m1%200h1m2%200h4m1%200h1m3%200h1m2%200h1M4%2027.5h1m7%200h2m4%200h1m1%200h1m3%200h1m3%200h2m5%200h1m4%200h1M6%2028.5h1m2%200h4m1%200h1m1%200h1m1%200h1m3%200h1m2%200h4m1%200h1m1%200h2m1%200h4m1%200h1M4%2029.5h2m1%200h1m3%200h1m1%200h1m1%200h1m1%200h1m1%200h6m1%200h1m4%200h1m2%200h1m1%200h3M4%2030.5h1m1%200h5m1%200h1m2%200h2m1%200h2m1%200h2m1%200h2m1%200h3m1%200h2m1%200h1m2%200h1m2%200h1M4%2031.5h1m2%200h3m2%200h1m1%200h3m1%200h1m2%200h3m1%200h1m1%200h1m2%200h2m1%200h1m4%200h2M4%2032.5h1m2%200h2m1%200h2m1%200h1m1%200h4m1%200h1m3%200h1m2%200h1m1%200h8m1%200h3M12%2033.5h2m1%200h1m1%200h1m3%200h2m2%200h1m1%200h2m2%200h2m3%200h1M4%2034.5h7m2%200h4m1%200h2m2%200h1m3%200h1m1%200h2m2%200h1m1%200h1m1%200h2m1%200h2M4%2035.5h1m5%200h1m2%200h1m1%200h3m2%200h3m2%200h2m4%200h2m3%200h1m2%200h2M4%2036.5h1m1%200h3m1%200h1m1%200h3m2%200h2m3%200h2m1%200h2m2%200h8m1%200h3M4%2037.5h1m1%200h3m1%200h1m1%200h4m4%200h2m1%200h3m2%200h1m3%200h1m1%200h3m2%200h2M4%2038.5h1m1%200h3m1%200h1m1%200h3m2%200h1m2%200h1m2%200h1m7%200h1m1%200h1m1%200h1m4%200h1M4%2039.5h1m5%200h1m3%200h1m1%200h1m3%200h1m7%200h1m2%200h3m1%200h2m3%200h1M4%2040.5h7m2%200h3m2%200h2m1%200h4m1%200h1m1%200h1m1%200h1m2%200h1m1%200h6%22%2F%3E%3C%2Fsvg%3E%0A' class='qr-image'>
+    <ul class="info">
+        <li><i class="fa-brands fa-github"></i> <a href="https://github.com/SemBeacon/">https://github.com/SemBeacon/</a></li>
+        <li><i class="fa-solid fa-book"></i> <a href="https://sembeacon.org/">https://sembeacon.org/</a></li>
+        <li><i class="fa-solid fa-book"></i> <a href="https://openhps.org/">https://openhps.org/</a></li>
+        <li><i class="fa-solid fa-book"></i> <a href="https://poso.openhps.org/">https://poso.openhps.org/</a></li>
+        <li><i class="fa-brands fa-google-play"></i> <a href="https://play.google.com/store/apps/details?id=org.sembeacon">Android App on Google Play Store</a></li>
+    </ul>
+    <style>
+    .qr-image {
+        position: absolute;
+        left: 0em;
+        bottom: 1em;
+        width: 300px;
+        height: 300px;
+        float: right;
+    }
+    ul.info {
+        font-size: 1.1em;
+        position: absolute;
+        left: 300px;
+        bottom: 80px;
+        list-style-type: none;
+    }
+    ul.info li i {
+        width: 50px;
+    }
+    ul.info li::before {
+        content: none;
+    }
+    </style>
+    <aside class="notes">
+
+    </aside>
+</section>   
+        </div>
+    </div>
+
+    <script type="module">
+      import Reveal from '/vendor/reveal.js/reveal.esm.js';
+      import Notes from '/vendor/reveal.js/plugin/notes/notes.esm.js';
+      import Pointer from '/vendor/reveal.js/plugin/pointer/pointer.esm.js';
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const plugins = [ Notes ];
+
+      if (!urlParams.has("disablepointer")) {
+        plugins.push(Pointer);
+      }
+
+      const options = {
+        hash: true,
+        margin: .08,
+        width: urlParams.get("width") ?? 1280 ,
+        height: urlParams.get("height") ?? 720,
+        plugins,
+        controlsTutorial: true,
+        pdfMaxPagesPerSlide: 1,
+        slideNumber: true,
+        center: false,
+        pointer: {
+          key: "q",
+          color: "red",
+          pointerSize: 25,
+          alwaysVisible: false,
+          tailLength: 10,
+        },
+        controls: true,
+        totalTime: 15 * 60,
+        progress: true,
+        showSlideNumber: 'all'
+      };
+
+      
+
+      window.Reveal = Reveal;
+
+      Reveal.on('slidechanged', (event) => {
+          // Auto slide
+          event.currentSlide.querySelectorAll('.fragment[data-autoslide]:not(.visible)').forEach(fragment => {
+            setTimeout(() => {
+              fragment.classList.add("visible");
+            }, parseInt(fragment.getAttribute("data-autoslide")));
+          });
+        });
+
+      if (window.location.search.indexOf("presenter") > -1) {
+        console.log("Starting in presenter mode");
+        Reveal.initialize({
+          ...options,
+          navigationMode: 'linear',
+          slideNumber: 'c',
+        });
+        Reveal.on('pdf-ready', () => {
+          document.querySelectorAll(`.pdf-page .fragment[data-autoslide]`).forEach(e => e.classList.remove("fragment"));
+          document.querySelectorAll(`.pdf-page section[data-visibility="uncounted"]`).forEach(e => e.closest('.pdf-page').remove());
+        });
+        Reveal.on('slidechanged', (event) => {
+          if (event.currentSlide.hasAttribute("data-visibility") && !Reveal.isOverview()) {
+            const prevIndices = Reveal.getIndices(event.previousSlide);
+            const currentIndices = Reveal.getIndices(event.currentSlide);
+            if (prevIndices.h < currentIndices.h || (prevIndices.h === currentIndices.h && prevIndices.v < currentIndices.v)) {
+              Reveal.next();
+            } else if (prevIndices.h > currentIndices.h || (prevIndices.h === currentIndices.h && prevIndices.v > currentIndices.v)) {
+              Reveal.prev();
+            }
+          }
+        });
+        let lastMovement = 0;
+        let idle = false;
+        if (!urlParams.has("disablepointer")) {
+          document.addEventListener('mousemove', (event) => {
+            lastMovement = Date.now();
+            if (idle) {
+              document.querySelector('.cursor-dot').classList.remove("inactive");
+              idle = false;
+            }
+          }, false);
+          setInterval(() => {
+            if (!idle && lastMovement < Date.now() - 3000) {
+              idle = true;
+              document.querySelector('.cursor-dot').classList.add("inactive");
+            }
+          }, 2000);
+        }
+      } else {
+        Reveal.initialize(options);
+      }
+    </script>
+  </body>
+</html>
