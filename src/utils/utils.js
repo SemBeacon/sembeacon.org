@@ -11,9 +11,6 @@ export async function downloadBranch(user, repo, branch) {
         const url = `https://api.github.com/repos/${user}/${repo}/zipball/${branch}`;
         axios.get(url, {
             responseType: "stream",
-            headers: {
-                'Authorization': `token ${token}`
-            }
         }).then((response) => {
             resolve(response.data);
         })
