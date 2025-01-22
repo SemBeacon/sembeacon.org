@@ -14,7 +14,7 @@ A documentation for the SemBeacon ontology can be found [here]({{ '/terms/1.0/' 
 
 #### `sembeacon:SemBeacon`
 A SemBeacon `sosa:FeatureOfInterest` that is a subclass of `poso:BluetoothBeacon`. Optionally, users can use a beacon
-to desribe another resource using the `rdfs:seeAlso` predicate.
+to describe another resource using the `rdfs:seeAlso` predicate.
 
 ### Data Properties
 
