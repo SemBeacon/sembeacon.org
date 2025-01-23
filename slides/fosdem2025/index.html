@@ -85,6 +85,10 @@
     h3.center {
         text-align: center;
     }
+
+    .translucent {
+        opacity: 0.2;
+    }
 </style>
 
 <section class="title-slide center" data-timing="15">
@@ -135,8 +139,9 @@
         <h5 class="affiliation">Web & Information Systems Engineering Lab</br>Vrije Universiteit Brussel</h5>
     </div>
     <aside class="notes">
-        Hello, my name is Maxim Van de Wynckel and today I will present to you one of the goals
-        I aim to achieve. Which is the discovering of indoor environments and positioning systems.
+        Hello, my name is Maxim Van de Wynckel and today I want to talk to you about 
+        indoor environments and positioning systems. Or more specifically, how I hope that you,
+        as a user can discover these environments in the future.
     </aside>
 </section>
 
@@ -222,11 +227,32 @@
     </div>
     <aside class="notes">
         To give you a brief introduction about myself, I am Maxim Van de Wynckel, a researcher at the Vrije Universiteit Brussel. 
-        My research interests include indoor positioning systems, linked data, and interoperability of location data. 
-        I am involved in several open source projects, including OpenHPS, POSO, and SemBeacon some of which I will discuss today.
+        My research interests include indoor positioning systems, linked data, and interoperability of location data and positioning systems. 
+        I am involved in several open source projects, including the open source hybrid postioning system framework, the positioning system ontology - POSO
+        , and SemBeacon. These are also three projects that I will briefly introduce to you today.
 
-        One of my personal goals with these projects is to create a world were indoor positioning systems and environemnts are as 
-        easily accessible as outdoor positioning systems.
+        One of my personal goals with these projects is to create a world were indoor positioning systems and environments are as 
+        easily accessible as outdoor positioning systems or geographical world maps.
+    </aside>
+</section>
+
+<section>
+    <h2>Current state of geospatial data</h2>
+    <div class="row">
+        <div class="col-sm-6">
+            <h3 class="center">Outdoor data</h3>
+            <img src="./images/service-centric.svg" alt="Service-centric geospatial data">
+        </div>
+        <div class="col-sm-6">
+            <h3 class="translucent center">Indoor data</h3>
+            <img class="translucent" src="./images/service-centric-indoor.svg" alt="Service-centric geospatial data">
+        </div>
+    </div>
+    <aside class="notes">
+        The current state of outdoor geospatial data is service-centric. This means that you can easily access the data you need through predefined services.
+        For outdoor data, this is straightfoward as the data is well known and in most cases publicly available.
+        Some services may provide more detailed information, but regardless on which service you use, you are always able to access some
+        form of data pertaining to a location, even if it is not as detailed as you may want it to be.
     </aside>
 </section>
 
@@ -243,12 +269,7 @@
         </div>
     </div>
     <aside class="notes">
-        The current state of outdoor geospatial data is service-centric. This means that you can easily access the data you need through predefined services.
-        For outdoor data, this is straightfoward as the data is well known and in most cases publicly available.
-        Some services may provide more detailed information, but regardless on which service you use, you are always able to access some
-        form of data pertaining to a location.
-
-        However, when it comes to indoor data, the situation is quite different. While there are services that collect geospatial data of indoor environments,
+        However, when it comes to indoor data, the situation is quite different. While there are services that collect or crowdsource geospatial data of indoor environments,
         they are not yet as complete as their outdoor counterparts. In a way, this makes sense, since indoor environments are more complex and diverse than outdoor environments.
         Users or building owners may not want to share their data with the public, which makes it harder to collect and share indoor geospatial data and to govern
         who publishes this data.
@@ -288,19 +309,20 @@
         rather than using predefined services. Or in other words, decentralised geospatial data discovery.
 
         This means that when you are in a particular location, you can discover the services that are available in that location.
-        Simply said, you could assume that you do a kind of geospatial query on your location and receive a list of services that are available in that location.
+        Simply said, you could assume that you do a kind of geospatial query on your location and receive a list of services that are available in that location
+        which can then help you to retrieve data.
     </aside>
 </section>
 
 <section>
     <h2>Geospatial-centric service discovery ...</h2>
-    <h3>Challenge 1</h3>
+    <h3>Challenge 1 of 3</h3>
     <p>
         How to discover services in a location without relying on a discovery service?
     </p>
     <img width="600px" src="./images/find.svg" alt="Find services in a location">
     <aside class="notes">
-        There are a couple of problems or challenges associated with this. First of all, we want to discover
+        This comes with a few challenges on its own. First of all, we want to discover
         these services without relying on a centralised discovery service. This would completely defeat the purpose of 
         decentralised geospatial data discovery.
 
@@ -311,14 +333,27 @@
 
 <section>
     <h2>Geospatial-centric service discovery ...</h2>
-    <h3>Challenge 2</h3>
+    <h3>Challenge 2 of 3</h3>
     <p>
         How to interface with the discovered service(s)?
     </p>
     <img width="600px" src="./images/find_interface.svg" alt="Interface with services in a location">
     <aside class="notes">
         The second challenge is that once we discover services that can provide us with indoor data and positioning systems,
-        we need to collect that data in a way that again does not require specific implementations for each service that is out there.
+        we need to collect that data in a way that again does not require specific implementations for each service that is out there,
+        because that would entail that we have to interface with each service in a different way.
+    </aside>
+</section>
+
+<section>
+    <h2>Geospatial-centric service discovery ...</h2>
+    <h3>Challenge 3 of 3</h3>
+    <p>
+        How to ensure ownership and independence?
+    </p>
+    <img width="600px" src="./images/find_interface.svg" alt="Interface with services in a location">
+    <aside class="notes">
+        The third challenge is related to thw ownership of environements. Since indoor environments are often more private
     </aside>
 </section>
 
@@ -330,19 +365,25 @@
 </blockquote>
 
     <aside class="notes">
-        
+        The first type of data discovery I want to discuss is local data discovery. This is also the most important
+        type of data discovery for indoor environments. Local data discovery is about finding data a
     </aside>
 </section>
 
 <section>
     <h2 id="global-data-discovery" tabindex="-1">Global data discovery</h2>
 <blockquote>
-<p>Find data globally <strong><u>using</u></strong> a particular location
+<p>Find data globally <strong><u>about</u></strong> a particular location
 <img src="./images/global-discovery.svg" alt="" $="" width="100%" $=""></p>
 </blockquote>
 
     <aside class="notes">
-    
+        The second type of data discovery is global discovery. In this case, we want to find information about a particular
+        location without being at that location. It is still possible that you are near the location, but with this type of
+        discovery we assume we are not. 
+
+        You can compare this to looking up a restaurant on a navigation. You are not at the restaurant, but you want to know
+        where it is and what it offers. 
     </aside>
 </section>
 
@@ -358,8 +399,11 @@
     <aside class="notes">
         The first project I briefly wanted to introduce is OpenHPS. OpenHPS is an open source framework for hybrid positioning systems.
         I will not delve into the details, since it was already covered at a previous FOSDEM talk - but in general you should know
-        that it is a TypeScript framework to create positioning systems.
+        that it is a TypeScript framework to develop positioning systems. It is low level, which means that you
+        have a lot of freedom to design your own algorithms, but it also means it is not as easy to use as frameworks
+        that provide you with a bunch of pre-made algorithms and even applications to create an indoor positioning system.
 
+        The reason why I mention OpenHPS is because it is the foundation of the other projects I will introduce to you today.
         One issue we noticed after its development was that it was hard to share data between different positioning systems
         or different frameworks. This is where POSO comes in.
     </aside>
@@ -367,7 +411,7 @@
 
 <section>
     <div class="header">
-        <img src="https://raw.githubusercontent.com/OpenHPS/POSO/refs/heads/main/1.1/docs/images/logo.svg" class="inline small" alt="OpenHPS Logo">
+        <img src="https://raw.githubusercontent.com/OpenHPS/POSO/refs/heads/main/1.1/docs/images/logo.svg" class="inline small" alt="POSO Logo">
         <div class="license-badge">
             <img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License: MIT">
         </div>
@@ -375,6 +419,47 @@
     <img src="https://openhps.org/slides/iswc2022/images/example.svg" height="500px" alt="POSO Example">
     <aside class="notes">
         POSO is a linked data ontology to describe positioning systems, the data they produce and the environments they are used in.
+    </aside>
+</section>
+
+<section>
+    <div class="header">
+        <img src="https://raw.githubusercontent.com/OpenHPS/POSO/refs/heads/main/1.1/docs/images/logo.svg" class="inline small" alt="POSO Logo">
+    </div>
+    <img src="https://openhps.org/slides/iswc2022/images/architecture.svg" height="500px" alt="POSO Example">
+    <aside class="notes">
+        
+    </aside>
+</section>
+
+<section>
+    <div class="header">
+        <img src="https://raw.githubusercontent.com/OpenHPS/POSO/refs/heads/main/1.1/docs/images/logo.svg" class="inline small" alt="POSO Logo">
+        <h2 class="inline arrow">Usage</h2>
+    </div>
+    <pre class="shiki dark-plus" style="background-color: #1E1E1E" tabindex="0"><code class="language-turtle"><span class="line"><span style="color: #569CD6">dbr:</span><span style="color: #9CDCFE">Some_Unversity</span><span style="color: #D4D4D4"> </span><span style="color: #C586C0">a</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">ssn:</span><span style="color: #9CDCFE">Deployment</span><span style="color: #D4D4D4"> .</span></span>
+<span class="line"><span style="color: #4EC9B0">&lt;deployment/building_a&gt;</span><span style="color: #D4D4D4"> </span><span style="color: #C586C0">a</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">poso:</span><span style="color: #9CDCFE">IndoorDeployment</span><span style="color: #D4D4D4">, </span><span style="color: #569CD6">geosparql:</span><span style="color: #9CDCFE">Feature</span><span style="color: #D4D4D4"> ;</span></span>
+<span class="line"><span style="color: #D4D4D4">  </span><span style="color: #569CD6">rdfs:</span><span style="color: #9CDCFE">label</span><span style="color: #D4D4D4"> </span><span style="color: #CE9178">&quot;Building A&quot;</span><span style="color: #D4D4D4">@</span><span style="color: #4EC9B0">en</span><span style="color: #D4D4D4"> ;</span></span>
+<span class="line"><span style="color: #D4D4D4">  </span><span style="color: #569CD6">geosparql:</span><span style="color: #9CDCFE">hasGeometry</span><span style="color: #D4D4D4"> [ </span></span>
+<span class="line"><span style="color: #D4D4D4">      </span><span style="color: #C586C0">a</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">geosparql:</span><span style="color: #9CDCFE">Geometry</span><span style="color: #D4D4D4"> ;</span></span>
+<span class="line"><span style="color: #D4D4D4">      </span><span style="color: #569CD6">geosparql:</span><span style="color: #9CDCFE">asWKT</span><span style="color: #D4D4D4"> </span><span style="color: #CE9178">&quot;...&quot;</span><span style="color: #D4D4D4">^^</span><span style="color: #569CD6">geosparql:</span><span style="color: #9CDCFE">wktLiteral</span><span style="color: #D4D4D4"> ] .</span></span>
+<span class="line"><span style="color: #D4D4D4">  </span></span>
+<span class="line"><span style="color: #4EC9B0">&lt;system/OPS&gt;</span><span style="color: #D4D4D4"> </span><span style="color: #C586C0">a</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">poso:</span><span style="color: #9CDCFE">LocationBasedService</span><span style="color: #D4D4D4"> ;</span></span>
+<span class="line"><span style="color: #D4D4D4">  </span><span style="color: #569CD6">rdfs:</span><span style="color: #9CDCFE">label</span><span style="color: #D4D4D4"> </span><span style="color: #CE9178">&quot;Outdoor campus positioning&quot;</span><span style="color: #D4D4D4">@</span><span style="color: #4EC9B0">en</span><span style="color: #D4D4D4"> ;</span></span>
+<span class="line"><span style="color: #D4D4D4">  </span><span style="color: #569CD6">ssn:</span><span style="color: #9CDCFE">hasSubSystem</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">posoc:</span><span style="color: #9CDCFE">GPS</span><span style="color: #D4D4D4"> ;</span></span>
+<span class="line"><span style="color: #D4D4D4">  </span><span style="color: #569CD6">ssn:</span><span style="color: #9CDCFE">hasDeployment</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">dbr:</span><span style="color: #9CDCFE">Some_University</span><span style="color: #D4D4D4"> .</span></span>
+<span class="line"><span style="color: #4EC9B0">&lt;system/IPS&gt;</span><span style="color: #D4D4D4"> </span><span style="color: #C586C0">a</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">poso:</span><span style="color: #9CDCFE">IndoorPositioningSystem</span><span style="color: #D4D4D4"> ;</span></span>
+<span class="line"><span style="color: #D4D4D4">  </span><span style="color: #569CD6">rdfs:</span><span style="color: #9CDCFE">label</span><span style="color: #D4D4D4"> </span><span style="color: #CE9178">&quot;Indoor campus positioning&quot;</span><span style="color: #D4D4D4">@</span><span style="color: #4EC9B0">en</span><span style="color: #D4D4D4"> ;</span></span>
+<span class="line"><span style="color: #D4D4D4">  </span><span style="color: #569CD6">ssn:</span><span style="color: #9CDCFE">hasDeployment</span><span style="color: #D4D4D4"> </span><span style="color: #4EC9B0">&lt;deployment/building_a&gt;</span><span style="color: #D4D4D4"> ;</span></span>
+<span class="line"><span style="color: #D4D4D4">  </span><span style="color: #569CD6">ssn:</span><span style="color: #9CDCFE">implements</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">posoc:</span><span style="color: #9CDCFE">KNNFingerprinting</span><span style="color: #D4D4D4"> .</span></span>
+<span class="line"><span style="color: #4EC9B0">&lt;system/CampusPositioning&gt;</span><span style="color: #D4D4D4"> </span><span style="color: #C586C0">a</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">poso:</span><span style="color: #9CDCFE">IntegratedPositioningSystem</span><span style="color: #D4D4D4"> ;</span></span>
+<span class="line"><span style="color: #D4D4D4">  </span><span style="color: #569CD6">rdfs:</span><span style="color: #9CDCFE">label</span><span style="color: #D4D4D4"> </span><span style="color: #CE9178">&quot;Hybrid campus positioning system&quot;</span><span style="color: #D4D4D4">@</span><span style="color: #4EC9B0">en</span><span style="color: #D4D4D4"> ;</span></span>
+<span class="line"><span style="color: #D4D4D4">  </span><span style="color: #569CD6">ssn:</span><span style="color: #9CDCFE">hasSubSystem</span><span style="color: #D4D4D4">  </span><span style="color: #4EC9B0">&lt;system/OPS&gt;</span><span style="color: #D4D4D4">, </span><span style="color: #4EC9B0">&lt;system/IPS&gt;</span><span style="color: #D4D4D4"> ;</span></span>
+<span class="line"><span style="color: #D4D4D4">  </span><span style="color: #569CD6">ssn:</span><span style="color: #9CDCFE">implements</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">posoc:</span><span style="color: #9CDCFE">WeightedAccuracyFusion</span><span style="color: #D4D4D4"> .</span></span>
+<span class="line"></span></code></pre>
+
+    <aside class="notes">
+        
     </aside>
 </section>
 
@@ -598,6 +683,30 @@
         scan for SemBeacons, interpret the data and visualise it. If you want to test how SemBeacon
         works you can download the demonstrator to simulate a sembeacon.
     </aside>
+</section>
+
+<!-- Contributing -->
+<section>
+    <section>
+        <h1 id="contributing-and-roadmap" tabindex="-1">Contributing and Roadmap</h1>
+<h2 id="poso-ontology" tabindex="-1">POSO ontology</h2>
+<ol>
+<li>Use cases for the POSO ontology usage \ <a href="https://github.com/OpenHPS/POSO/issues">https://github.com/OpenHPS/POSO/issues</a></li>
+<li>Examples of POSO to describe positioning systems</li>
+<li>Feedback on the current ontology design (1.1)</li>
+</ol>
+
+    </section>
+
+        <section>
+        <h1 id="contributing-and-roadmap" tabindex="-1">Contributing and Roadmap</h1>
+<h2 id="sembeacon" tabindex="-1">SemBeacon</h2>
+<ol>
+<li>nRF52 library</li>
+<li>Mobile application editor</li>
+</ol>
+
+    </section>
 </section>
 
 <section data-markdown data-timing="70">
