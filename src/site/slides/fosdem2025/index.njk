@@ -7,7 +7,87 @@ width: 1280
 height: 720
 hide_title_slide: true
 ---
-    <style>
+<style>
+    .qr-image {
+        position: absolute;
+        left: 0em;
+        bottom: 1em;
+        width: 300px;
+        height: 300px;
+        float: right;
+    }
+    ul.info {
+        font-size: 1.1em;
+        position: absolute;
+        left: 300px;
+        bottom: 80px;
+        list-style-type: none;
+    }
+    ul.info li i {
+        width: 50px;
+    }
+    ul.info li::before {
+        content: none;
+    }
+    .about-me {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        text-align: left;
+    }
+    .about-me img.profile {
+        border-radius: 50%;
+        width: 260px;
+        height: 260px;
+        object-fit: cover;
+        margin: 20px;
+        margin-right: 40px;
+        box-shadow: 0 0 150px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    .about-me h3 {
+        display: block;
+    }
+    .about-me p {
+        font-size: 1.1em;
+        line-height: 1.5;
+    }
+    .about-me ul {
+        margin-top: 1em;
+        list-style: none !important;
+        padding: 0;
+    }
+    .about-me ul li::before {
+        content: none;
+        margin-bottom: 0.5em;
+    }
+    .about-me span {
+        font-weight: bold;
+        margin-right: 0.5em;
+        margin-left: 0.5em;
+    }
+    .about-me span::after {
+        content: ':';
+    }
+    .about-me i {
+        width: 1em;
+    }
+    .projects {
+        margin-top: 2em;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+    }
+    .projects img {
+        width: 400px;
+        height: auto;
+        margin: 10px;
+    }
+    .projects img:nth-child(2) {
+        height: 80px;
+    }
+
     .header img.inline, h2.inline {
         display: inline-block;
         vertical-align: top;
@@ -45,10 +125,21 @@ hide_title_slide: true
     .translucent {
         opacity: 0.2;
     }
-</style>
 
-<section class="title-slide center" data-timing="15">
-    <style>
+    .screenshots {
+        margin-top: 1em;
+    }
+    .screenshots img {
+        border-radius: 0.5em;
+        box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+    .fragment.fade-up-slow {
+        transform: translate(0,200px);
+    }
+    .fragment.fade-up-slow.visible {
+        transform: translate(0,0);
+    }
+
     .slide-cover {
         display: block;
         position: absolute;
@@ -75,7 +166,9 @@ hide_title_slide: true
         width: 20%;
         background-image: url(./images/FOSDEM_logo.svg);
     }
-    </style>
+</style>
+
+<section class="title-slide center" data-timing="15">
     <div class="slide-cover">
         <div class="slide-cover-background"></div>
     </div>
@@ -105,67 +198,6 @@ hide_title_slide: true
 
 <section>
     <h2>About me</h2>
-    <style>
-        .about-me {
-            display: flex;
-            align-items: flex-start;
-            justify-content: flex-start;
-            text-align: left;
-        }
-        .about-me img.profile {
-            border-radius: 50%;
-            width: 260px;
-            height: 260px;
-            object-fit: cover;
-            margin: 20px;
-            margin-right: 40px;
-            box-shadow: 0 0 150px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(0, 0, 0, 0.1);
-        }
-        .about-me h3 {
-            display: block;
-        }
-        .about-me p {
-            font-size: 1.1em;
-            line-height: 1.5;
-        }
-        .about-me ul {
-            margin-top: 1em;
-            list-style: none !important;
-            padding: 0;
-        }
-        .about-me ul li::before {
-            content: none;
-            margin-bottom: 0.5em;
-        }
-        .about-me span {
-            font-weight: bold;
-            margin-right: 0.5em;
-            margin-left: 0.5em;
-        }
-        .about-me span::after {
-            content: ':';
-        }
-        .about-me i {
-            width: 1em;
-        }
-        .projects {
-            margin-top: 2em;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            width: 100%;
-        }
-        .projects img {
-            width: 400px;
-            height: auto;
-            margin: 10px;
-        }
-        .projects img:nth-child(2) {
-            height: 80px;
-        }
-    </style>
-
     <div class="about-me">
         <img class="profile" src="https://maximvdw.be/images/profile/maxim.png" alt="Profile Picture">
         <div>
@@ -365,60 +397,63 @@ hide_title_slide: true
     </aside>
 </section>
 
+<!-- POSO ontology -->
 <section>
-    <div class="header">
-        <img src="https://raw.githubusercontent.com/OpenHPS/POSO/refs/heads/main/1.1/docs/images/logo.svg" class="inline small" alt="POSO Logo">
-        <div class="license-badge">
-            <img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License: MIT">
+    <section>
+        <div class="header">
+            <img src="https://raw.githubusercontent.com/OpenHPS/POSO/refs/heads/main/1.1/docs/images/logo.svg" class="inline small" alt="POSO Logo">
+            <div class="license-badge">
+                <img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License: MIT">
+            </div>
         </div>
-    </div>
-    <img src="https://openhps.org/slides/iswc2022/images/example.svg" height="500px" alt="POSO Example">
-    <aside class="notes">
-        POSO is a linked data ontology to describe positioning systems, the data they produce and the environments they are used in.
-    </aside>
-</section>
+        <img src="https://openhps.org/slides/iswc2022/images/example.svg" height="500px" alt="POSO Example">
+        <aside class="notes">
+            POSO is a linked data ontology to describe positioning systems, the data they produce and the environments they are used in.
+        </aside>
+    </section>
 
-<section>
-    <div class="header">
-        <img src="https://raw.githubusercontent.com/OpenHPS/POSO/refs/heads/main/1.1/docs/images/logo.svg" class="inline small" alt="POSO Logo">
-    </div>
-    <img src="https://openhps.org/slides/iswc2022/images/architecture.svg" height="500px" alt="POSO Example">
-    <aside class="notes">
-        
-    </aside>
-</section>
+    <section>
+        <div class="header">
+            <img src="https://raw.githubusercontent.com/OpenHPS/POSO/refs/heads/main/1.1/docs/images/logo.svg" class="inline small" alt="POSO Logo">
+        </div>
+        <img src="https://openhps.org/slides/iswc2022/images/architecture.svg" height="500px" alt="POSO Example">
+        <aside class="notes">
+            
+        </aside>
+    </section>
 
-<section>
-    <div class="header">
-        <img src="https://raw.githubusercontent.com/OpenHPS/POSO/refs/heads/main/1.1/docs/images/logo.svg" class="inline small" alt="POSO Logo">
-        <h2 class="inline arrow">Usage</h2>
-    </div>
-    {% markdown %}
-    ```turtle
-    dbr:Some_Unversity a ssn:Deployment .
-    <deployment/building_a> a poso:IndoorDeployment, geosparql:Feature ;
-        rdfs:label "Building A"@en ;
-        geosparql:hasGeometry [ 
-            a geosparql:Geometry ;
-            geosparql:asWKT "..."^^geosparql:wktLiteral ] .
-        
-    <system/OPS> a poso:LocationBasedService ;
-        rdfs:label "Outdoor campus positioning"@en ;
-        ssn:hasSubSystem posoc:GPS ;
-        ssn:hasDeployment dbr:Some_University .
-    <system/IPS> a poso:IndoorPositioningSystem ;
-        rdfs:label "Indoor campus positioning"@en ;
-        ssn:hasDeployment <deployment/building_a> ;
-        ssn:implements posoc:KNNFingerprinting .
-    <system/CampusPositioning> a poso:IntegratedPositioningSystem ;
-        rdfs:label "Hybrid campus positioning system"@en ;
-        ssn:hasSubSystem  <system/OPS>, <system/IPS> ;
-        ssn:implements posoc:WeightedAccuracyFusion .
-    ```
-{% endmarkdown %}
-    <aside class="notes">
-        
-    </aside>
+    <section>
+        <div class="header">
+            <img src="https://raw.githubusercontent.com/OpenHPS/POSO/refs/heads/main/1.1/docs/images/logo.svg" class="inline small" alt="POSO Logo">
+            <h2 class="inline arrow">Usage</h2>
+        </div>
+        {% markdown %}
+        ```turtle
+        dbr:Some_Unversity a ssn:Deployment .
+        <deployment/building_a> a poso:IndoorDeployment, geosparql:Feature ;
+            rdfs:label "Building A"@en ;
+            geosparql:hasGeometry [ 
+                a geosparql:Geometry ;
+                geosparql:asWKT "..."^^geosparql:wktLiteral ] .
+            
+        <system/OPS> a poso:LocationBasedService ;
+            rdfs:label "Outdoor campus positioning"@en ;
+            ssn:hasSubSystem posoc:GPS ;
+            ssn:hasDeployment dbr:Some_University .
+        <system/IPS> a poso:IndoorPositioningSystem ;
+            rdfs:label "Indoor campus positioning"@en ;
+            ssn:hasDeployment <deployment/building_a> ;
+            ssn:implements posoc:KNNFingerprinting .
+        <system/CampusPositioning> a poso:IntegratedPositioningSystem ;
+            rdfs:label "Hybrid campus positioning system"@en ;
+            ssn:hasSubSystem  <system/OPS>, <system/IPS> ;
+            ssn:implements posoc:WeightedAccuracyFusion .
+        ```
+    {% endmarkdown %}
+        <aside class="notes">
+            
+        </aside>
+    </section>
 </section>
 
 <section>
@@ -474,163 +509,162 @@ hide_title_slide: true
     </aside>
 </section>
 
+<!-- SemBeacon -->
 <section>
-    <div class="header">
-        <h2 class="inline">SemBeacon</h2>
-        <div class="license-badge">
-            <img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="License: Apache-2.0">
-        </div>
-    </div>
-    <img src="/slides/iot2023/images/sembeacon_architecture_large.svg" width="85%" alt="SemBeacon Architecture">
-    <aside class="notes">
-        The basic principle of our semantic beacon solution called SemBeacon is a Bluetooth Low Energy beacon that
-        advertises two identifiers and a set of flags. Compatible applications that have no information about this beacon
-        or the data it contains can then ask to retrieve an additional URI that redirects to linked data on the Web containing 
-        more information about the beacon, its position and more importantly also its environment.
-
-        In our semantic data we can make use of existing and extended vocabularies such as the POSO ontology,
-        GeoSPARQL, sensors and observations ontology. By using these existing vocabularies, SemBeacon becomes
-        merely a communication protocol to make nearby devices aware of the data, and what they can expect when they
-        visit the URI.
-    </aside>
-</section>
-
-
-<section data-markdown data-timing="50">
-    {% markdown %}
-        ## <span class="light">SemBeacon <i class="fa-solid fa-chevron-right"></i></span> Bluetooth Specification
-        ### BLE 4.X
-        ![SemBeacon specification for BLE v4.x](../iot2023/images/specification_BLE4.svg){ width=80% }
-    {% endmarkdown %}
-    <aside class="notes">
-        Our main solution in general consists of an AltBeacon advertisement with a namespace and instance identifier, a set of flags 
-        which we will discuss in a moment and an Eddystone-URL compatible scan response.
-        It is the combination of the advertisement data along with the eddystone-url scan response that makes up SemBeacon.
-
-        Similar to Eddystone-URL we perform encoding of the short URI without further extensions in order to prevent
-        backwards compatibility with existing libraries that can scan for Eddstone.
-    </aside>
-</section>
-
-<section data-markdown class="flags" data-timing="60">
-    <style>
-        section.flags table {
-            font-size: 80%;
-        }
-    </style>
-    {% markdown %}
-        ## <span class="light">SemBeacon <i class="fa-solid fa-chevron-right"></i></span> Bluetooth Specification
-        ### Flags
-        Based on UriBeacon, Bluetooth IPS and Eddystone frames
-
-        | **Bit (MSB)** | **Description** | **Example** |
-        |---|---|---|
-        | 0 | Indicates if the beacon has a position. | 0 = Unsure, 1 = Yes |
-        | 1 | Indicates if the beacon is private. | 0 = Public, 1 = Private |
-        | 2 | Indicates if the beacon is attached to a moving object. | 0 = No, 1 = Yes |
-        | 3 | Indicates if the beacon has a positioning system. | 0 = No, 1 = Yes |
-        | 4 | Indicates if the beacon has telemetry data. | 0 = No, 1 = Yes |
-        | 5 - 7 | *Reserved for future use.* ||
-    {% endmarkdown %}
-    <aside class="notes">
-        Our flags are based on the invisibility flag of UriBeacon and its use cases, the flags and data of the Bluetooth IPS
-        service and finally the use cases of the Eddystone frames. These flags should be configured when setting up a device and
-        do not offer any dynamic information. 
-
-        For example, the position flag would be set to 1 when, during the installation it is clear the beacon will
-        have a fixed position, which would be the case when mounted on wall. Similarly we have other flags that can be decided
-        on during initial setup based on the use case for the SemBeacon.
-
-        We introduced these flags in order to still provide applications with context on the type of beacon without requiring
-        them to perform an HTTP request. For example, an application that only aims to navigate within a building should
-        not access moveable objects without a position, as these will not be useful.
-    </aside>
-</section>
-
-
-<section data-markdown data-timing="50">
-    {% markdown %}
-        ## <span class="light">SemBeacon <i class="fa-solid fa-chevron-right"></i></span> Bluetooth Specification
-        ### BLE 5.X
-        ![SemBeacon specification for BLE v5.x](../iot2023/images/specification_BLE5.svg){ width=80% }
-    {% endmarkdown %}
-    <aside class="notes">
-        In addition to our backwards compatible BLE 4 advertisement we also have a work in progress BLE 5 advertisement specification.
-        With the increased payload size for BLE 5 advertisements we can include both the namespace and instance identifiers and uri
-        within a single advertisement.
-
-        As we no longer have to ensure Eddystone-URL compatibility, we also extended the encoding for the the URI to enable
-        a smaller payload for common linked data URIs, versioning, and a larger URI in general which could negate the need for 
-        URL shorteners.
-
-        BLE 5 advertisements offer better range compared to legacy BLE 4 advertisements which is useful for positioning. Our arduino
-        library already offers the capabilities to use this new service on newer BLE 5 compatible ESP32 hardware for both scanning
-        and advertising. However, our mobile application currently does not scan for BLE 5 advertisements yet.
-    </aside>
-</section>
-
-
-<section data-markdown>
-    <style>
-        .screenshots {
-            margin-top: 1em;
-        }
-        .screenshots img {
-            border-radius: 0.5em;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
-        }
-        .fragment.fade-up-slow {
-            transform: translate(0,200px);
-        }
-        .fragment.fade-up-slow.visible {
-            transform: translate(0,0);
-        }
-    </style>
-    {% markdown %}
-        ## <span class="light">SemBeacon <i class="fa-solid fa-chevron-right"></i></span> Mobile Application
-        - **Scans** and **Simulates** SemBeacon, iBeacon, AltBeacon and Eddystone
-        - **Extracts** and visualises SemBeacon encoded information
-        - Implements HTTP **caching** and namespace mapping to environments
-        <div class="row screenshots">
-            <div class="col-3">
-                <img class="fragment fade-up-slow" data-autoslide="200" src="/images/android-app/Screenshot_20231027_164519_SemBeacon.jpg" width="100%">
-            </div>
-            <div class="col-3">
-                <img class="fragment fade-up-slow" data-autoslide="400" src="/images/android-app/Screenshot_20231027_174719_SemBeacon.jpg" width="100%">
-            </div>
-            <div class="col-3">
-                <img class="fragment fade-up-slow" data-autoslide="600" src="/images/android-app/Screenshot_20231027_164555_SemBeacon.jpg" width="100%">
-            </div>
-            <div class="col-3">
-                <img class="fragment fade-up-slow" data-autoslide="800" src="/images/android-app/Screenshot_20231027_180046_SemBeacon.jpg" width="100%">
+    <section>
+        <div class="header">
+            <h2 class="inline">SemBeacon</h2>
+            <div class="license-badge">
+                <img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="License: Apache-2.0">
             </div>
         </div>
-    {% endmarkdown %}
-    <aside class="notes">
-        Part of our demonstrator included the creation of a demonstrator application that can actually
-        scan for SemBeacons, interpret the data and visualise it. If you want to test how SemBeacon
-        works you can download the demonstrator to simulate a sembeacon.
-    </aside>
+        <img src="/slides/iot2023/images/sembeacon_architecture_large.svg" width="85%" alt="SemBeacon Architecture">
+        <aside class="notes">
+            The basic principle of our semantic beacon solution called SemBeacon is a Bluetooth Low Energy beacon that
+            advertises two identifiers and a set of flags. Compatible applications that have no information about this beacon
+            or the data it contains can then ask to retrieve an additional URI that redirects to linked data on the Web containing 
+            more information about the beacon, its position and more importantly also its environment.
+
+            In our semantic data we can make use of existing and extended vocabularies such as the POSO ontology,
+            GeoSPARQL, sensors and observations ontology. By using these existing vocabularies, SemBeacon becomes
+            merely a communication protocol to make nearby devices aware of the data, and what they can expect when they
+            visit the URI.
+        </aside>
+    </section>
+
+
+    <section data-markdown data-timing="50">
+        {% markdown %}
+            ## <span class="light">SemBeacon <i class="fa-solid fa-chevron-right"></i></span> Bluetooth Specification
+            ### BLE 4.X
+            ![SemBeacon specification for BLE v4.x](../iot2023/images/specification_BLE4.svg){ width=80% }
+        {% endmarkdown %}
+        <aside class="notes">
+            Our main solution in general consists of an AltBeacon advertisement with a namespace and instance identifier, a set of flags 
+            which we will discuss in a moment and an Eddystone-URL compatible scan response.
+            It is the combination of the advertisement data along with the eddystone-url scan response that makes up SemBeacon.
+
+            Similar to Eddystone-URL we perform encoding of the short URI without further extensions in order to prevent
+            backwards compatibility with existing libraries that can scan for Eddstone.
+        </aside>
+    </section>
+
+    <section data-markdown class="flags" data-timing="60">
+        <style>
+            section.flags table {
+                font-size: 80%;
+            }
+        </style>
+        {% markdown %}
+            ## <span class="light">SemBeacon <i class="fa-solid fa-chevron-right"></i></span> Bluetooth Specification
+            ### Flags
+            Based on UriBeacon, Bluetooth IPS and Eddystone frames
+
+            | **Bit (MSB)** | **Description** | **Example** |
+            |---|---|---|
+            | 0 | Indicates if the beacon has a position. | 0 = Unsure, 1 = Yes |
+            | 1 | Indicates if the beacon is private. | 0 = Public, 1 = Private |
+            | 2 | Indicates if the beacon is attached to a moving object. | 0 = No, 1 = Yes |
+            | 3 | Indicates if the beacon has a positioning system. | 0 = No, 1 = Yes |
+            | 4 | Indicates if the beacon has telemetry data. | 0 = No, 1 = Yes |
+            | 5 - 7 | *Reserved for future use.* ||
+        {% endmarkdown %}
+        <aside class="notes">
+            Our flags are based on the invisibility flag of UriBeacon and its use cases, the flags and data of the Bluetooth IPS
+            service and finally the use cases of the Eddystone frames. These flags should be configured when setting up a device and
+            do not offer any dynamic information. 
+
+            For example, the position flag would be set to 1 when, during the installation it is clear the beacon will
+            have a fixed position, which would be the case when mounted on wall. Similarly we have other flags that can be decided
+            on during initial setup based on the use case for the SemBeacon.
+
+            We introduced these flags in order to still provide applications with context on the type of beacon without requiring
+            them to perform an HTTP request. For example, an application that only aims to navigate within a building should
+            not access moveable objects without a position, as these will not be useful.
+        </aside>
+    </section>
+
+
+    <section data-markdown data-timing="50">
+        {% markdown %}
+            ## <span class="light">SemBeacon <i class="fa-solid fa-chevron-right"></i></span> Bluetooth Specification
+            ### BLE 5.X
+            ![SemBeacon specification for BLE v5.x](../iot2023/images/specification_BLE5.svg){ width=80% }
+        {% endmarkdown %}
+        <aside class="notes">
+            In addition to our backwards compatible BLE 4 advertisement we also have a work in progress BLE 5 advertisement specification.
+            With the increased payload size for BLE 5 advertisements we can include both the namespace and instance identifiers and uri
+            within a single advertisement.
+
+            As we no longer have to ensure Eddystone-URL compatibility, we also extended the encoding for the the URI to enable
+            a smaller payload for common linked data URIs, versioning, and a larger URI in general which could negate the need for 
+            URL shorteners.
+
+            BLE 5 advertisements offer better range compared to legacy BLE 4 advertisements which is useful for positioning. Our arduino
+            library already offers the capabilities to use this new service on newer BLE 5 compatible ESP32 hardware for both scanning
+            and advertising. However, our mobile application currently does not scan for BLE 5 advertisements yet.
+        </aside>
+    </section>
+
+
+    <section data-markdown>
+        {% markdown %}
+            ## <span class="light">SemBeacon <i class="fa-solid fa-chevron-right"></i></span> Mobile Application
+            - **Scans** and **Simulates** SemBeacon, iBeacon, AltBeacon and Eddystone
+            - **Extracts** and visualises SemBeacon encoded information
+            - Implements HTTP **caching** and namespace mapping to environments
+            <div class="row screenshots">
+                <div class="col-3">
+                    <img class="fragment fade-up-slow" data-autoslide="200" src="/images/android-app/Screenshot_20231027_164519_SemBeacon.jpg" width="100%">
+                </div>
+                <div class="col-3">
+                    <img class="fragment fade-up-slow" data-autoslide="400" src="/images/android-app/Screenshot_20231027_174719_SemBeacon.jpg" width="100%">
+                </div>
+                <div class="col-3">
+                    <img class="fragment fade-up-slow" data-autoslide="600" src="/images/android-app/Screenshot_20231027_164555_SemBeacon.jpg" width="100%">
+                </div>
+                <div class="col-3">
+                    <img class="fragment fade-up-slow" data-autoslide="800" src="/images/android-app/Screenshot_20231027_180046_SemBeacon.jpg" width="100%">
+                </div>
+            </div>
+        {% endmarkdown %}
+        <aside class="notes">
+            Part of our demonstrator included the creation of a demonstrator application that can actually
+            scan for SemBeacons, interpret the data and visualise it. If you want to test how SemBeacon
+            works you can download the demonstrator to simulate a sembeacon.
+        </aside>
+    </section>
+
+    <section>
+
+    </section>
 </section>
 
 <!-- Contributing -->
 <section>
     <section>
         {% markdown %}
-        # Contributing and Roadmap
-        ## POSO ontology
-        1. Use cases for the POSO ontology usage \\ [https://github.com/OpenHPS/POSO/issues](https://github.com/OpenHPS/POSO/issues)
+        ## <span class="light">Contributing <i class="fa-solid fa-chevron-right"></i></span> POSO ontology
+
+        [![GitHub](https://img.shields.io/badge/GitHub-OpenHPS%2FPOSO-blue?logo=github&style=for-the-badge){$ height="50px" $}](https://github.com/OpenHPS/POSO)
+
+        1. Use cases for the POSO ontology usage
+        [https://github.com/OpenHPS/POSO/issues](https://github.com/OpenHPS/POSO/issues)
         2. Examples of POSO to describe positioning systems
         3. Feedback on the current ontology design (1.1)
         {% endmarkdown %}
     </section>
 
-        <section>
+    <section>
         {% markdown %}
-        # Contributing and Roadmap
-        ## SemBeacon
-        1. nRF52 library
-        2. Mobile application editor 
+        ## <span class="light">Contributing <i class="fa-solid fa-chevron-right"></i></span> SemBeacon
+
+        [![GitHub](https://img.shields.io/badge/GitHub-SemBeacon-blue?logo=github&style=for-the-badge){$ height="50px" $}](https://github.com/SemBeacon)
+
+        1. Mobile application
+            1a. Editor for Environments
+            1b. Examples of unsupported indoor environment descriptions
+        2. nRF52 firmware
         {% endmarkdown %}
     </section>
 </section>
@@ -638,7 +672,9 @@ hide_title_slide: true
 <section data-markdown data-timing="70">
     {% markdown %}
         ## Conclusion and Future Work
-        - test
+        - SemBeacon as a step towards local discovery
+        - POSO as a way to describe positioning systems
+        - @openhps/rdf and @openhps/solid for linked data storage and access control
     {% endmarkdown %}
     {% qr "https://sembeacon.org/posts/2025/02/01/", "qr-image", "H" %}
     <ul class="info">
@@ -648,31 +684,9 @@ hide_title_slide: true
         <li><i class="fa-solid fa-book"></i> <a href="https://poso.openhps.org/">https://poso.openhps.org/</a></li>
         <li><i class="fa-brands fa-google-play"></i> <a href="https://play.google.com/store/apps/details?id=org.sembeacon">Android App on Google Play Store</a></li>
     </ul>
-    <style>
-    .qr-image {
-        position: absolute;
-        left: 0em;
-        bottom: 1em;
-        width: 300px;
-        height: 300px;
-        float: right;
-    }
-    ul.info {
-        font-size: 1.1em;
-        position: absolute;
-        left: 300px;
-        bottom: 80px;
-        list-style-type: none;
-    }
-    ul.info li i {
-        width: 50px;
-    }
-    ul.info li::before {
-        content: none;
-    }
-    </style>
     <aside class="notes">
-
+        So to conclude, I game you a brief introduction to the projects I am working on and how I hope 
+        they can help to create a world where indoor environments can easily be discovered and accessed.
     </aside>
 </section>   
 
