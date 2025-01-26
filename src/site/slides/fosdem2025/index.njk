@@ -418,7 +418,7 @@ hide_title_slide: true
         </div>
         <img src="https://openhps.org/slides/iswc2022/images/architecture.svg" height="500px" alt="POSO Example">
         <aside class="notes">
-            
+            POSO is an ontology that describes positioning systems, the data they produce and the environments they are used in.
         </aside>
     </section>
 
@@ -454,59 +454,6 @@ hide_title_slide: true
             
         </aside>
     </section>
-</section>
-
-<section>
-    <div class="header">
-        <img src="https://openhps.org/images/logo.svg" class="inline" alt="OpenHPS Logo">
-        <h2 class="inline arrow">&rarr;</h2>
-        <img src="https://raw.githubusercontent.com/OpenHPS/POSO/refs/heads/main/1.1/docs/images/logo.svg" class="inline small" alt="POSO Logo">
-    </div>
-    <h3>@openhps/rdf</h3>
-    {% markdown %}
-        - RDF data model for OpenHPS
-        - POSO integration
-        - Serialisation and deserialisation
-
-        ```typescript
-        const position = new GeographicalPosition();
-        console.log(RDFSerializer.serialize(position));
-        ```
-    {% endmarkdown %}
-    <aside class="notes">
-        Developers are not always eager to want to work with linked data to store information, especially for realtime applications
-        such as positioning systems. This is why we created the @openhps/rdf package. It basically provides a mapping form
-        the OpenHPS data model to RDF and back. This allows developers to easily store their data in a linked data format without
-        specifically needing to know how linked data works. Furthermore, they can query the data is if they are querying 
-        a MongoDB database, which is a lot more familiar to most developers.
-
-        With this project we focus on positioning systems, geospatial data and observational data such as locations.
-    </aside>
-</section>
-
-<section>
-    <div class="header">
-        <img src="https://openhps.org/images/logo.svg" class="inline" alt="OpenHPS Logo">
-        <h2 class="inline arrow">&rarr;</h2>
-        <img src="https://raw.githubusercontent.com/OpenHPS/POSO/refs/heads/main/1.1/docs/images/logo.svg" class="inline small" alt="POSO Logo">
-        <h2 class="inline arrow">&rarr;</h2>
-        <img src="./images/solid.svg" class="inline" alt="Solid project Logo">
-    </div>
-    <h3>@openhps/solid</h3>
-    {% markdown %}
-        - Solid storage and access control
-        - Solid as a communication broker
-    {% endmarkdown %}
-    <aside class="notes">
-        With the @openhps/rdf package we already had a way to store our data in a linked data format. However, if we talk about personal data
-        or data that needs to be governed by a user, we also need a proper way to store this data. This is where the Solid project comes into place.
-
-        For those who are unfamiliar with Solid, it is a project that allows users to store their data in a decentralised way. The data can be binary
-        data, but also structured linked data. Users can assign access rights to the data so that only certain applications or users can access it.
-
-        In addition to this, Solid offers specifications that enable applications to listen for changes in data - which is perfect for realtime applications
-        such as positioning systems that want to use Solid as a communication broker.
-    </aside>
 </section>
 
 <!-- SemBeacon -->
@@ -636,7 +583,36 @@ hide_title_slide: true
     </section>
 
     <section>
+        {% markdown %}
+            ## <span class="light">SemBeacon <i class="fa-solid fa-chevron-right"></i></span> Example
+            ```turtle
+            :pl9_3 a ssn:Deployment, sosa:FeatureOfInterest, ogc:SpatialObject, schema:Accommodation, seas:Floor;
+                ogc:sfWithin :pl9;
+                schema:hasMap [ a schema:Map;
+                    schema:mapType "floorPlan";
+                    schema:image "https://static.observableusercontent.com/files/69f63f0ed4e82a459af0534c2a71756ef75b16a15df7228d96b7560b59e19bfbb0dc8d3753376271183028739c9f5be817bd5bcc4889cdec739eb297ea6afedf?response-content-disposition=attachment%3Bfilename*%3DUTF-8%27%27floorplan_medium%25401.png"; 
+                    schema:spatialCoverage [ a schema:Place;
+                        ogc:hasGeometry [ a ogc:Geometry;
+                            ogc:asWKT "POLYGON Z((4.392680949135989 50.820560314350246 91.99999999906868, 4.392518989118047 50.82049119550264 91.99999999906868, 4.39243849045628 50.82056647750913 92.00000000093132, 4.392322771133238 50.82051709238308 91.99999999906868, 4.3924032699815685 50.82044181037657 91.99999999906868, 4.392241310785677 50.82037269114458 92, 4.391888059447844 50.82070304624146 91.99999999906868, 4.3920500197895525 50.82077216547346 91.99999999813735, 4.392179670282718 50.820650918644354 91.99999999813735, 4.392295389937405 50.820700303770394 92.00000000093132, 4.392165739744715 50.8208215505995 91.99999999906868, 4.3923277009084885 50.82089066944712 91.99999999906868, 4.392680949135989 50.820560314350246 94.99999999906868, 4.392518989118048 50.82049119550264 94.99999999906868, 4.392438490456279 50.82056647750913 95.00000000093132, 4.392322771133238 50.82051709238309 95, 4.392403269981569 50.82044181037658 95.00000000093132, 4.392241310785677 50.82037269114457 94.99999999906868, 4.391888059447844 50.82070304624145 95, 4.392050019789552 50.82077216547345 94.99999999813735, 4.392179670282718 50.82065091864436 94.99999999813735, 4.392295389937405 50.82070030377039 95.00000000093132, 4.392165739744715 50.82082155059949 94.99999999813735, 4.3923277009084885 50.82089066944712 94.99999999906868, 4.392680949135989 50.820560314350246 91.99999999906868))"^^ogc:wktLiteral;
+                            ogc:coordinateDimension 3;
+                            ogc:spatialDimension 3;
+                            ogc:dimension 3 ];
+                    ]
+                ] ;
+                schema:floorLevel "3";
+                ogc:hasGeometry [ a ogc:Geometry;
+                    ogc:asWKT "POLYGON Z((4.392680949135989 50.820560314350246 91.99999999906868, 4.392518989118047 50.82049119550264 91.99999999906868, 4.39243849045628 50.82056647750913 92.00000000093132, 4.392322771133238 50.82051709238308 91.99999999906868, 4.3924032699815685 50.82044181037657 91.99999999906868, 4.392241310785677 50.82037269114458 92, 4.391888059447844 50.82070304624146 91.99999999906868, 4.3920500197895525 50.82077216547346 91.99999999813735, 4.392179670282718 50.820650918644354 91.99999999813735, 4.392295389937405 50.820700303770394 92.00000000093132, 4.392165739744715 50.8208215505995 91.99999999906868, 4.3923277009084885 50.82089066944712 91.99999999906868, 4.392680949135989 50.820560314350246 94.99999999906868, 4.392518989118048 50.82049119550264 94.99999999906868, 4.392438490456279 50.82056647750913 95.00000000093132, 4.392322771133238 50.82051709238309 95, 4.392403269981569 50.82044181037658 95.00000000093132, 4.392241310785677 50.82037269114457 94.99999999906868, 4.391888059447844 50.82070304624145 95, 4.392050019789552 50.82077216547345 94.99999999813735, 4.392179670282718 50.82065091864436 94.99999999813735, 4.392295389937405 50.82070030377039 95.00000000093132, 4.392165739744715 50.82082155059949 94.99999999813735, 4.3923277009084885 50.82089066944712 94.99999999906868, 4.392680949135989 50.820560314350246 91.99999999906868))"^^ogc:wktLiteral;
+                    ogc:coordinateDimension 3;
+                    ogc:spatialDimension 3;
+                    ogc:dimension 3 ];
+                rdfs:label "PL9.3";
+                dcmi:created "2023-06-22T21:12:23.587Z"^^xsd:dateTime;
+                sembeacon:namespaceId "77f340dbac0d20e8aa3af656a29f236c"^^xsd:hexBinary.
+            ```
+        {% endmarkdown %}
+        <aside class="notes">
 
+        </aside>
     </section>
 </section>
 
@@ -690,3 +666,61 @@ hide_title_slide: true
     </aside>
 </section>   
 
+<section>
+    {% markdown %}
+        ## Extra slides
+    {% endmarkdown %}
+</section>
+
+<section>
+    <div class="header">
+        <img src="https://openhps.org/images/logo.svg" class="inline" alt="OpenHPS Logo">
+        <h2 class="inline arrow">&rarr;</h2>
+        <img src="https://raw.githubusercontent.com/OpenHPS/POSO/refs/heads/main/1.1/docs/images/logo.svg" class="inline small" alt="POSO Logo">
+    </div>
+    <h3>@openhps/rdf</h3>
+    {% markdown %}
+        - RDF data model for OpenHPS
+        - POSO integration
+        - Serialisation and deserialisation
+
+        ```typescript
+        const position = new GeographicalPosition();
+        console.log(RDFSerializer.serialize(position));
+        ```
+    {% endmarkdown %}
+    <aside class="notes">
+        Developers are not always eager to want to work with linked data to store information, especially for realtime applications
+        such as positioning systems. This is why we created the @openhps/rdf package. It basically provides a mapping form
+        the OpenHPS data model to RDF and back. This allows developers to easily store their data in a linked data format without
+        specifically needing to know how linked data works. Furthermore, they can query the data is if they are querying 
+        a MongoDB database, which is a lot more familiar to most developers.
+
+        With this project we focus on positioning systems, geospatial data and observational data such as locations.
+    </aside>
+</section>
+
+<section>
+    <div class="header">
+        <img src="https://openhps.org/images/logo.svg" class="inline" alt="OpenHPS Logo">
+        <h2 class="inline arrow">&rarr;</h2>
+        <img src="https://raw.githubusercontent.com/OpenHPS/POSO/refs/heads/main/1.1/docs/images/logo.svg" class="inline small" alt="POSO Logo">
+        <h2 class="inline arrow">&rarr;</h2>
+        <img src="./images/solid.svg" class="inline" alt="Solid project Logo">
+    </div>
+    <h3>@openhps/solid</h3>
+    {% markdown %}
+        - Solid storage and access control
+        - Solid as a communication broker
+    {% endmarkdown %}
+    <aside class="notes">
+        With the @openhps/rdf package we already had a way to store our data in a linked data format. However, if we talk about personal data
+        or data that needs to be governed by a user, we also need a proper way to store this data. This is where the Solid project comes into place.
+
+        For those who are unfamiliar with Solid, it is a project that allows users to store their data in a decentralised way. The data can be binary
+        data, but also structured linked data. Users can assign access rights to the data so that only certain applications or users can access it.
+
+        In addition to this, Solid offers specifications that enable applications to listen for changes in data - which is perfect for realtime applications
+        such as positioning systems that want to use Solid as a communication broker.
+    </aside>
+</section>
