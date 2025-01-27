@@ -44,6 +44,6 @@ beaconManager.getBeaconParsers().add(new BeaconParser().
     setBeaconLayout(BeaconParser.ALTBEACON_LAYOUT));
 ```
 
-While this tool enables you to broadcast and scan for SemBeacons, it does not provide the necesarry tools for extracting semantic data from the public URI.
+While this tool enables you to broadcast and scan for SemBeacons, it does not provide the necessary tools for extracting semantic data from the public URI.
 
 An example implementation of this library can be found [here](https://github.com/SemBeacon/android-beacon-scanner).
