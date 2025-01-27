@@ -43,8 +43,9 @@ The semantic flags specified in the advertisement data need to indicate that dat
 | 1 | N.a. |
 | 2 | N.a. |
 | 3 | `poso:inDeployment` **min** 1 `ssn:Deployment` |
-| 4 | `sosa:observes` **min** 1 `sosa:ObservableProperty` |
-| 5 - 7 | *Reserved for future use.* |
+| 4 | `ssn:hasProperty` **min** 1 `sosa:ObserableProperty` |
+| 5 | `ssn:hasProperty` **min** 1 `sosa:ActuatableProperty` |
+| 6 - 7 | *Reserved for future use.* |
 
 ### Example
 
