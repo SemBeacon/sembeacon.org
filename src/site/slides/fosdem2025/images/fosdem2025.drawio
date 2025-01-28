@@ -161,7 +161,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="VxLZQK2qgzXv_Sr5m1dZ" name="Page-2">
-    <mxGraphModel dx="796" dy="477" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="627" dy="469" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -284,6 +284,54 @@
         </mxCell>
         <mxCell id="wZmACk3f4rF1Sazj7pGf-25" value="" style="image;points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/buildings/Large_Building.svg;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="219.15000000000003" y="1073" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="j_xY1W86706MrKhE18qV-1" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.user;fillColor=#cce5ff;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="616.95" y="638.01" width="45" height="63" as="geometry" />
+        </mxCell>
+        <mxCell id="j_xY1W86706MrKhE18qV-2" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#1B0FBA;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.question;" vertex="1" parent="1">
+          <mxGeometry x="810" y="626.52" width="45.2" height="85.99" as="geometry" />
+        </mxCell>
+        <mxCell id="j_xY1W86706MrKhE18qV-3" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="682.8" y="669.36" as="sourcePoint" />
+            <mxPoint x="802.8" y="669.27" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="j_xY1W86706MrKhE18qV-4" value="Find all&lt;div&gt;services in&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="670.85" y="629.51" width="89.15" height="23.48" as="geometry" />
+        </mxCell>
+        <mxCell id="j_xY1W86706MrKhE18qV-5" value="" style="image;points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/buildings/Large_Building.svg;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="755.0000000000001" y="626.25" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="j_xY1W86706MrKhE18qV-6" value="" style="shape=flexArrow;endArrow=none;html=1;rounded=0;startArrow=block;endFill=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="682.8" y="693.09" as="sourcePoint" />
+            <mxPoint x="802.8" y="693" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="j_xY1W86706MrKhE18qV-15" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.user;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="880" y="636.62" width="45" height="63" as="geometry" />
+        </mxCell>
+        <mxCell id="j_xY1W86706MrKhE18qV-16" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#CF1406;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.question;" vertex="1" parent="1">
+          <mxGeometry x="1073.05" y="625.13" width="45.2" height="85.99" as="geometry" />
+        </mxCell>
+        <mxCell id="j_xY1W86706MrKhE18qV-17" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="945.8499999999999" y="667.97" as="sourcePoint" />
+            <mxPoint x="1065.85" y="667.88" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="j_xY1W86706MrKhE18qV-18" value="Find all&lt;div&gt;services in&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="933.9000000000001" y="628.12" width="89.15" height="23.48" as="geometry" />
+        </mxCell>
+        <mxCell id="j_xY1W86706MrKhE18qV-19" value="" style="image;points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/buildings/Large_Building.svg;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1018.0500000000002" y="624.86" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="j_xY1W86706MrKhE18qV-20" value="" style="shape=flexArrow;endArrow=none;html=1;rounded=0;startArrow=block;endFill=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="945.8499999999999" y="691.7" as="sourcePoint" />
+            <mxPoint x="1065.85" y="691.61" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>

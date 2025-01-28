@@ -341,7 +341,7 @@ hide_title_slide: true
     <p>
         How to ensure ownership and independence?
     </p>
-    <img width="600px" src="./images/find_interface.svg" alt="Interface with services in a location">
+    <img width="100%" style="margin-top: 2em" src="./images/find_independence.svg" alt="Independence and ownership">
     <aside class="notes">
         The third challenge is related to thw ownership of environements. Since indoor environments are often more private
     </aside>
@@ -513,8 +513,9 @@ hide_title_slide: true
             | 1 | Indicates if the beacon is private. | 0 = Public, 1 = Private |
             | 2 | Indicates if the beacon is attached to a moving object. | 0 = No, 1 = Yes |
             | 3 | Indicates if the beacon has a positioning system. | 0 = No, 1 = Yes |
-            | 4 | Indicates if the beacon has telemetry data. | 0 = No, 1 = Yes |
-            | 5 - 7 | *Reserved for future use.* ||
+            | 4 | Indicates if the beacon has observable data. | 0 = No, 1 = Yes |
+            | 5 | Indicates if the beacon provides actuable properties. | 0 = No, 1 = Yes |
+            | 6 - 7 | *Reserved for future use.* ||
         {% endmarkdown %}
         <aside class="notes">
             Our flags are based on the invisibility flag of UriBeacon and its use cases, the flags and data of the Bluetooth IPS
@@ -531,6 +532,30 @@ hide_title_slide: true
         </aside>
     </section>
 
+<section data-markdown class="flags" data-timing="60">
+        <style>
+            section.flags table {
+                font-size: 80%;
+            }
+        </style>
+        {% markdown %}
+            ## <span class="light">SemBeacon <i class="fa-solid fa-chevron-right"></i></span> Bluetooth Specification
+            ### Flags ...
+
+            | **Bit**  | **Axiom** |
+            |---|---|
+            | 0 | `poso:hasPosition` **min** 1 `poso:AbsolutePosition` |
+            | 1 | N.a. |
+            | 2 | N.a. |
+            | 3 | `poso:inDeployment` **min** 1 `ssn:Deployment` |
+            | 4 | `ssn:hasProperty` **min** 1 `sosa:ObserableProperty` |
+            | 5 | `ssn:hasProperty` **min** 1 `sosa:ActuatableProperty` |
+            | 6 - 7 | *Reserved for future use.* |
+        {% endmarkdown %}
+        <aside class="notes">
+
+        </aside>
+    </section>
 
     <section data-markdown data-timing="50">
         {% markdown %}
@@ -565,7 +590,7 @@ hide_title_slide: true
                     <img class="fragment fade-up-slow" data-autoslide="200" src="/images/android-app/Screenshot_20231027_164519_SemBeacon.jpg" width="100%">
                 </div>
                 <div class="col-3">
-                    <img class="fragment fade-up-slow" data-autoslide="400" src="/images/android-app/Screenshot_20231027_174719_SemBeacon.jpg" width="100%">
+                    <img class="fragment fade-up-slow" data-autoslide="400" src="/images/android-app/Screenshot_20240418_210033_SemBeacon.jpg" width="100%">
                 </div>
                 <div class="col-3">
                     <img class="fragment fade-up-slow" data-autoslide="600" src="/images/android-app/Screenshot_20231027_164555_SemBeacon.jpg" width="100%">
@@ -638,11 +663,17 @@ hide_title_slide: true
         [![GitHub](https://img.shields.io/badge/GitHub-SemBeacon-blue?logo=github&style=for-the-badge){$ height="50px" $}](https://github.com/SemBeacon)
 
         1. Mobile application
-            1a. Editor for Environments
+            1a. Editor for environments (Building, floors, rooms, ...)
             1b. Examples of unsupported indoor environment descriptions
-        2. nRF52 firmware
+            1c. iOS support (partially implemented)
+        2. nRF5x firmware
         {% endmarkdown %}
     </section>
+</section>
+
+<!-- Global data discovery -->
+<section>
+
 </section>
 
 <section data-markdown data-timing="70">

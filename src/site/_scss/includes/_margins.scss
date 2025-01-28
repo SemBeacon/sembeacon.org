@@ -1,0 +1,52 @@
+@mixin mt($size) {
+    margin-top: $size;
+}
+
+@mixin mb($size) {
+    margin-bottom: $size;
+}
+
+@mixin ml($size) {
+    margin-left: $size;
+}
+
+@mixin mr($size) {
+    margin-right: $size;
+}
+
+@mixin mx($size) {
+    @include ml($size);
+    @include mr($size);
+}
+
+@mixin my($size) {
+    @include mt($size);
+    @include mb($size);
+}
+
+@mixin m($size) {
+    margin: $size;
+}
+@each $size, $value in (0: 0, 1: 0.25rem, 2: 0.5rem, 3: 1rem, 4: 1.5rem, 5: 3rem) {
+    .mt-#{$size} {
+        @include mt($value);
+    }
+    .mb-#{$size} {
+        @include mb($value);
+    }
+    .ml-#{$size} {
+        @include ml($value);
+    }
+    .mr-#{$size} {
+        @include mr($value);
+    }
+    .mx-#{$size} {
+        @include mx($value);
+    }
+    .my-#{$size} {
+        @include my($value);
+    }
+    .m-#{$size} {
+        @include m($value);
+    }
+}
