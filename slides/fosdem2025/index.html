@@ -383,7 +383,7 @@
     <p>
         How to ensure ownership and independence?
     </p>
-    <img width="600px" src="./images/find_interface.svg" alt="Interface with services in a location">
+    <img width="100%" style="margin-top: 2em" src="./images/find_independence.svg" alt="Independence and ownership">
     <aside class="notes">
         The third challenge is related to thw ownership of environements. Since indoor environments are often more private
     </aside>
@@ -577,11 +577,16 @@
 </tr>
 <tr>
 <td>4</td>
-<td>Indicates if the beacon has telemetry data.</td>
+<td>Indicates if the beacon has observable data.</td>
 <td>0 = No, 1 = Yes</td>
 </tr>
 <tr>
-<td>5 - 7</td>
+<td>5</td>
+<td>Indicates if the beacon provides actuable properties.</td>
+<td>0 = No, 1 = Yes</td>
+</tr>
+<tr>
+<td>6 - 7</td>
 <td><em>Reserved for future use.</em></td>
 <td></td>
 </tr>
@@ -603,6 +608,57 @@
         </aside>
     </section>
 
+<section data-markdown class="flags" data-timing="60">
+        <style>
+            section.flags table {
+                font-size: 80%;
+            }
+        </style>
+        <h2 id="sembeacon-bluetooth-specification" tabindex="-1"><span class="light">SemBeacon <i class="fa-solid fa-chevron-right"></i></span> Bluetooth Specification</h2>
+<h3 id="flags-..." tabindex="-1">Flags ...</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Bit</strong></th>
+<th><strong>Axiom</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td><code>poso:hasPosition</code> <strong>min</strong> 1 <code>poso:AbsolutePosition</code></td>
+</tr>
+<tr>
+<td>1</td>
+<td>N.a.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>N.a.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>poso:inDeployment</code> <strong>min</strong> 1 <code>ssn:Deployment</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>ssn:hasProperty</code> <strong>min</strong> 1 <code>sosa:ObserableProperty</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>ssn:hasProperty</code> <strong>min</strong> 1 <code>sosa:ActuatableProperty</code></td>
+</tr>
+<tr>
+<td>6 - 7</td>
+<td><em>Reserved for future use.</em></td>
+</tr>
+</tbody>
+</table>
+
+        <aside class="notes">
+
+        </aside>
+    </section>
 
     <section data-markdown data-timing="50">
         <h2 id="sembeacon-bluetooth-specification" tabindex="-1"><span class="light">SemBeacon <i class="fa-solid fa-chevron-right"></i></span> Bluetooth Specification</h2>
@@ -637,7 +693,7 @@
           <img class="fragment fade-up-slow" data-autoslide="200" src="/images/android-app/Screenshot_20231027_164519_SemBeacon.jpg" width="100%">
       </div>
       <div class="col-3">
-          <img class="fragment fade-up-slow" data-autoslide="400" src="/images/android-app/Screenshot_20231027_174719_SemBeacon.jpg" width="100%">
+          <img class="fragment fade-up-slow" data-autoslide="400" src="/images/android-app/Screenshot_20240418_210033_SemBeacon.jpg" width="100%">
       </div>
       <div class="col-3">
           <img class="fragment fade-up-slow" data-autoslide="600" src="/images/android-app/Screenshot_20231027_164555_SemBeacon.jpg" width="100%">
@@ -705,12 +761,18 @@
 <p><a href="https://github.com/SemBeacon"><img src="https://img.shields.io/badge/GitHub-SemBeacon-blue?logo=github&amp;style=for-the-badge" alt="GitHub" $="" height="50px" $=""></a></p>
 <ol>
 <li>Mobile application
-1a. Editor for Environments
-1b. Examples of unsupported indoor environment descriptions</li>
-<li>nRF52 firmware</li>
+1a. Editor for environments (Building, floors, rooms, ...)
+1b. Examples of unsupported indoor environment descriptions
+1c. iOS support (partially implemented)</li>
+<li>nRF5x firmware</li>
 </ol>
 
     </section>
+</section>
+
+<!-- Global data discovery -->
+<section>
+
 </section>
 
 <section data-markdown data-timing="70">
