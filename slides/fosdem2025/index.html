@@ -52,6 +52,9 @@
         <div class="slides">
           
           <style>
+    .row ul {
+        width: 100%;
+    }
     .qr-image {
         position: absolute;
         left: 0em;
@@ -184,6 +187,11 @@
         transform: translate(0,0);
     }
 
+    .reveal img {
+        max-height: 100%;
+        max-width: 100%;
+    }
+
     .slide-cover {
         display: block;
         position: absolute;
@@ -248,7 +256,7 @@
                 <li><i class="fas fa-envelope"></i><span>E-mail</span><a href="mailto:mvdewync@vub.be">mvdewync@vub.be</a></li>
                 <li><i class="fas fa-globe"></i><span>Website</span><a href="https://maximvdw.be" target="_blank">https://maximvdw.be</a></li>
                 <li><i class="fas fa-briefcase"></i><span>Position</span>Researcher at Vrije Universiteit Brussel</li>
-                <li><i class="fas fa-search-location"></i><span>Interests</span>Indoor positioning systems, linked data, and interoperability of location data</li>
+                <li><i class="fas fa-search-location"></i><span>Interests</span>Indoor positioning systems, linked data, and interoperability of positioning systems</li>
             </ul>
         </div>
     </div>
@@ -268,40 +276,17 @@
     </aside>
 </section>
 
-<section>
-    <h2 id="table-of-contents" tabindex="-1">Table of Contents</h2>
-<ol>
-<li>Introduction<br>
-1.1. Current service-centric state<br>
-1.2. Global and local local-discovery</li>
-<li>Geospatial-centric service discovery</li>
-<li>Projects<br>
-3.1. OpenHPS &amp; POSO<br>
-3.2. SemBeacon</li>
-<li>Roadmap &amp; Contributing</li>
-<li>(Optional) SemBeacon demo</li>
-</ol>
-
-    <aside class="notes">
-        So for this presentation I will first introduce you to the current state of geospatial data and positioning systems
-        and why there is a problem with this. Next, I will introduce you to the concept of geospatial-centric service discovery
-        which is something that I hope to solve using a few open source projects that I will introduce to you today.
-
-        For those who are interested, I will also list the roadmap for these projects and how you could contribute to them.
-        If time permits it, I will also give a short demonstration of SemBeacon.
-    </aside>
-</section>
 
 <section>
     <h2>Current state of geospatial data</h2>
     <div class="row">
         <div class="col-sm-6">
             <h3 class="center">Outdoor data</h3>
-            <img src="./images/service-centric.svg" alt="Service-centric geospatial data">
+            <img style="height: 500px" src="./images/service-centric.svg" alt="Service-centric geospatial data">
         </div>
         <div class="col-sm-6">
             <h3 class="translucent center">Indoor data</h3>
-            <img class="translucent" src="./images/service-centric-indoor.svg" alt="Service-centric geospatial data">
+            <img style="height: 500px" class="translucent" src="./images/service-centric-indoor.svg" alt="Service-centric geospatial data">
         </div>
     </div>
     <aside class="notes">
@@ -312,16 +297,16 @@
     </aside>
 </section>
 
-<section>
+<section data-transition="none">
     <h2>Current state of geospatial data</h2>
     <div class="row">
         <div class="col-sm-6">
             <h3 class="center">Outdoor data</h3>
-            <img src="./images/service-centric.svg" alt="Service-centric geospatial data">
+            <img style="height: 500px" src="./images/service-centric.svg" alt="Service-centric geospatial data">
         </div>
         <div class="col-sm-6">
             <h3 class="center">Indoor data</h3>
-            <img src="./images/service-centric-indoor.svg" alt="Service-centric geospatial data">
+            <img style="height: 500px" src="./images/service-centric-indoor.svg" alt="Service-centric geospatial data">
         </div>
     </div>
     <aside class="notes">
@@ -366,11 +351,19 @@
 </section>
 
 <section>
-    <h2 id="global-data-%26-service-discovery" tabindex="-1">Global data &amp; service discovery</h2>
-<blockquote>
-<p>Find data globally <strong><u>about</u></strong> a particular location
-<img src="./images/global-discovery.svg" alt="" $="" width="100%" $=""></p>
-</blockquote>
+    <h2 id="global-and-local-geospatial-data-discovery" tabindex="-1">Global and Local Geospatial Data Discovery</h2>
+  <div class="row">
+      <div class="col-sm-6" style="border-right: solid 4px">
+          <h3 class="center">Global Discovery</h3>
+          <p>Find data globally <u>about</u> a particular location</p>
+          <img style="width: 90%; margin-top: 3em" src="./images/global-discovery.svg" alt="Global discovery">
+      </div>
+      <div class="col-sm-6">
+          <h3 class="center">Local Discovery</h3>
+          <p>Find data locally <u>at</u> a particular location</p>
+          <img style="width: 80%; margin-top: 3em" src="./images/local-discovery.svg" alt="Local discovery">
+      </div>
+  </div>
 
     <aside class="notes">
         In general, we have to types of data or service discovery. We can have global discovery methods such as 
@@ -379,17 +372,7 @@
         It is by far one of the most common ways to discover data about a location and is used in many applications 
         that require information about a given location. This type of discovery works when you are near a location, but
         it is not one of the requirements for this type of discovery.
-    </aside>
-</section>
 
-<section>
-    <h2 id="local-data-%26-service-discovery" tabindex="-1">Local data &amp; service discovery</h2>
-<blockquote>
-<p>Find data locally <strong><u>at</u></strong> a particular location
-<img src="./images/local-discovery.svg" alt="" $="" width="100%" $=""></p>
-</blockquote>
-
-    <aside class="notes">
         The second type of data discovery is also the most important type of data discovery for indoor environments. 
         Local data discovery is about finding data at a location. With this type of discovery we assume we are near
         the location that provides the data pertaining to that location.
@@ -397,9 +380,9 @@
 </section>
 
 <section>
-    <h2>Geospatial-centric service discovery</h2>
+    <h2>Geospatial-centric data discovery</h2>
     <p>
-        The future of geospatial services lies in its discovery through the very locations it represents, rather than predefined services.
+        Discovery of geospatial data through the very locations it represents, rather than predefined services.
     </p>
     <img src="./images/geospatial-centric.svg" alt="Geospacial-centric data discovery">
     <aside class="notes">
@@ -414,10 +397,10 @@
 </section>
 
 <section>
-    <h2>Geospatial-centric service discovery ...</h2>
-    <h3>Challenge 1 of 3</h3>
+    <h2>Geospatial-centric data discovery ...</h2>
+    <h3>Challenge 1</h3>
     <p>
-        How to discover services in a location without relying on a discovery service?
+        How to discover data without relying on a discovery service?
     </p>
     <img width="600px" src="./images/find.svg" alt="Find services in a location">
     <aside class="notes">
@@ -431,10 +414,10 @@
 </section>
 
 <section>
-    <h2>Geospatial-centric service discovery ...</h2>
-    <h3>Challenge 2 of 3</h3>
+    <h2>Geospatial-centric data discovery ...</h2>
+    <h3>Challenge 2</h3>
     <p>
-        How to interface with the discovered service(s)?
+        How to understand the discovered data?
     </p>
     <img width="600px" src="./images/find_interface.svg" alt="Interface with services in a location">
     <aside class="notes">
@@ -444,40 +427,118 @@
     </aside>
 </section>
 
-<section>
-    <h2>Geospatial-centric service discovery ...</h2>
-    <h3>Challenge 3 of 3</h3>
+<section data-transition="none">
+    <h2>Geospatial-centric data discovery ...</h2>
+    <h3>Challenge 2</h3>
     <p>
-        How to ensure ownership and independence?
+        How to understand the discovered data?
     </p>
-    <img width="100%" style="margin-top: 2em" src="./images/find_independence.svg" alt="Independence and ownership">
+    <img width="600px" src="./images/mapping_standards.png" alt="Interface with services in a location">
     <aside class="notes">
-        The third challenge is related to thw ownership of environements. Since indoor environments are often more private
-        we can assume that the data is possibly also private. Building owners should have the freedom to choose where they
-        publish their information and who can access it.
+        As I already said before, there are a lot of standardisations to represent buildings or indoor environments in general.
+        And the ones listed here are just a few of them. 
     </aside>
 </section>
 
 <section>
-    <div class="header">
-        <img src="https://openhps.org/images/logo.svg" class="inline" alt="OpenHPS Logo">
-        <div class="license-badge">
-            <img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="License: Apache-2.0">
-        </div>
-    </div>
-    <img src="https://openhps.org/slides/fosdem2022/images/architecture3.svg" height="400px" alt="OpenHPS Architecture">
-    <p>For more information, visit the <a href="https://archive.fosdem.org/2022/schedule/event/lt_openhps/" target="_blank">FOSDEM 2022 talk of OpenHPS</a>.</p>
+    <h2>Geospatial-centric data discovery ...</h2>
+    <img style="margin-top: 4em;" width="600px" src="./images/find_solution.svg" alt="Solution">
     <aside class="notes">
-        The first project I briefly wanted to introduce is OpenHPS. OpenHPS is an open source framework for hybrid positioning systems.
-        I will not delve into the details, since it was already covered at a previous FOSDEM talk - but in general you should know
-        that it is a TypeScript framework to develop positioning systems. It is low level, which means that you
-        have a lot of freedom to design your own algorithms, but it also means it is not as easy to use as frameworks
-        that provide you with a bunch of pre-made algorithms and even applications to create an indoor positioning system.
+        As a very simplisitc representation of a solution to these challenges, we could use a method that is similar to how a lighthouse works.
+        My solution to this issue is to let the building act like a lighthouse. A lighthouse emits a light pattern that is unique to that lighthouse.
+        If you have knowledge about the light pattern of a lighthouse, you can easily identify it. A building could do a similar thing
+        by somehow emitting a pattern that can be identified by smartphone. Unfortunately, that only helps with the identification
+        but it does not give us any knowledge about the building or the services that are available in that building.
 
-        The reason why I mention OpenHPS is because it is the foundation of the other projects I will introduce to you today.
-        One issue we noticed after its development was that it was hard to share data between different positioning systems
-        or different frameworks. This is where POSO comes in.
+        So instead, the building could emit a URI containing more information about the building.
+        To solve the 2nd challenge 
     </aside>
+</section>
+
+<section>
+    <section>
+        <div class="header">
+            <img src="https://openhps.org/images/logo.svg" class="inline" alt="OpenHPS Logo">
+            <div class="license-badge">
+                <img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="License: Apache-2.0">
+            </div>
+        </div>
+        <img src="https://openhps.org/slides/fosdem2022/images/architecture3.svg" height="400px" alt="OpenHPS Architecture">
+        <p>For more information, visit the <a href="https://archive.fosdem.org/2022/schedule/event/lt_openhps/" target="_blank">FOSDEM 2022 talk of OpenHPS</a>.</p>
+        <aside class="notes">
+            The first project I briefly wanted to introduce is OpenHPS. OpenHPS is an open source framework for hybrid positioning systems.
+            I will not delve into the details, since it was already covered at a previous FOSDEM talk - but in general you should know
+            that it is a TypeScript framework to develop positioning systems. It is low level, which means that you
+            have a lot of freedom to design your own algorithms, but it also means it is not as easy to use as frameworks
+            that provide you with a bunch of pre-made algorithms and even applications to create an indoor positioning system.
+
+            The reason why I mention OpenHPS is because it is the foundation of the other projects I will introduce to you today.
+            One issue we noticed after its development was that it was hard to share data between different positioning systems
+            or different frameworks. This is where POSO comes in.
+        </aside>
+    </section>
+    <section data-visibility="uncounted">
+        <div class="header">
+            <img src="https://openhps.org/images/logo.svg" class="inline" alt="OpenHPS Logo">
+            <h2 class="inline arrow">&rarr;</h2>
+            <img src="https://raw.githubusercontent.com/OpenHPS/POSO/refs/heads/main/1.1/docs/images/logo.svg" class="inline small" alt="POSO Logo">
+        </div>
+        <h3>@openhps/rdf</h3>
+        <ul>
+<li>RDF data model for OpenHPS</li>
+<li>POSO integration</li>
+<li>Serialisation and deserialisation</li>
+</ul>
+<pre class="shiki dark-plus" style="background-color: #1E1E1E" tabindex="0"><code class="language-typescript"><span class="line"><span style="color: #569CD6">const</span><span style="color: #D4D4D4"> </span><span style="color: #4FC1FF">position</span><span style="color: #D4D4D4"> = </span><span style="color: #569CD6">new</span><span style="color: #D4D4D4"> </span><span style="color: #DCDCAA">GeographicalPosition</span><span style="color: #D4D4D4">();</span></span>
+<span class="line"><span style="color: #9CDCFE">console</span><span style="color: #D4D4D4">.</span><span style="color: #DCDCAA">log</span><span style="color: #D4D4D4">(</span><span style="color: #9CDCFE">RDFSerializer</span><span style="color: #D4D4D4">.</span><span style="color: #DCDCAA">serialize</span><span style="color: #D4D4D4">(</span><span style="color: #9CDCFE">position</span><span style="color: #D4D4D4">));</span></span>
+<span class="line"></span></code></pre>
+
+        <aside class="notes">
+            Developers are not always eager to want to work with linked data to store information, especially for realtime applications
+            such as positioning systems. This is why we created the @openhps/rdf package. It basically provides a mapping form
+            the OpenHPS data model to RDF and back. This allows developers to easily store their data in a linked data format without
+            specifically needing to know how linked data works. Furthermore, they can query the data is if they are querying 
+            a MongoDB database, which is a lot more familiar to most developers.
+
+            With this project we focus on positioning systems, geospatial data and observational data such as locations.
+        </aside>
+    </section>
+
+    <section data-visibility="uncounted">
+        <div class="header">
+            <img src="https://openhps.org/images/logo.svg" class="inline" alt="OpenHPS Logo">
+        </div>
+        <h3>@openhps/dht</h3>
+        <img src="./images/dht.svg" height="400px" alt="Distributed Hash Table">
+        <aside class="notes">
+            
+        </aside>
+    </section>
+    <section data-visibility="uncounted">
+        <div class="header">
+            <img src="https://openhps.org/images/logo.svg" class="inline" alt="OpenHPS Logo">
+            <h2 class="inline arrow">&rarr;</h2>
+            <img src="https://raw.githubusercontent.com/OpenHPS/POSO/refs/heads/main/1.1/docs/images/logo.svg" class="inline small" alt="POSO Logo">
+            <h2 class="inline arrow">&rarr;</h2>
+            <img src="./images/solid.svg" class="inline" alt="Solid project Logo">
+        </div>
+        <h3>@openhps/solid</h3>
+        <ul>
+<li>Solid storage and access control</li>
+<li>Solid as a communication broker</li>
+</ul>
+
+        <aside class="notes">
+            With the @openhps/rdf package we already had a way to store our data in a linked data format. However, if we talk about personal data
+            or data that needs to be governed by a user, we also need a proper way to store this data. This is where the Solid project comes into place.
+
+            For those who are unfamiliar with Solid, it is a project that allows users to store their data in a decentralised way. The data can be binary
+            data, but also structured linked data. Users can assign access rights to the data so that only certain applications or users can access it.
+
+            In addition to this, Solid offers specifications that enable applications to listen for changes in data - which is perfect for realtime applications
+            such as positioning systems that want to use Solid as a communication broker.
+        </aside>
+    </section>
 </section>
 
 <!-- POSO ontology -->
@@ -505,10 +566,40 @@
         </aside>
     </section>
 
-    <section>
+    <section data-visibility="uncounted">
         <div class="header">
             <img src="https://raw.githubusercontent.com/OpenHPS/POSO/refs/heads/main/1.1/docs/images/logo.svg" class="inline small" alt="POSO Logo">
-            <h2 class="inline arrow">Usage</h2>
+            <h2 class="inline arrow">Basic Usage</h2>
+        </div>
+        <pre class="shiki dark-plus" style="background-color: #1E1E1E" tabindex="0"><code class="language-turtle"><span class="line"><span style="color: #569CD6">dbr:</span><span style="color: #9CDCFE">Some_Unversity</span><span style="color: #D4D4D4"> </span><span style="color: #C586C0">a</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">ssn:</span><span style="color: #9CDCFE">Deployment</span><span style="color: #D4D4D4"> .</span></span>
+<span class="line"><span style="color: #4EC9B0">&lt;deployment/building_a&gt;</span><span style="color: #D4D4D4"> </span><span style="color: #C586C0">a</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">poso:</span><span style="color: #9CDCFE">IndoorDeployment</span><span style="color: #D4D4D4">, </span><span style="color: #569CD6">geosparql:</span><span style="color: #9CDCFE">Feature</span><span style="color: #D4D4D4"> ;</span></span>
+<span class="line"><span style="color: #D4D4D4">  </span><span style="color: #569CD6">rdfs:</span><span style="color: #9CDCFE">label</span><span style="color: #D4D4D4"> </span><span style="color: #CE9178">&quot;Building A&quot;</span><span style="color: #D4D4D4">@</span><span style="color: #4EC9B0">en</span><span style="color: #D4D4D4"> ;</span></span>
+<span class="line"><span style="color: #D4D4D4">  </span><span style="color: #569CD6">geosparql:</span><span style="color: #9CDCFE">hasGeometry</span><span style="color: #D4D4D4"> [ </span></span>
+<span class="line"><span style="color: #D4D4D4">      </span><span style="color: #C586C0">a</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">geosparql:</span><span style="color: #9CDCFE">Geometry</span><span style="color: #D4D4D4"> ;</span></span>
+<span class="line"><span style="color: #D4D4D4">      </span><span style="color: #569CD6">geosparql:</span><span style="color: #9CDCFE">asWKT</span><span style="color: #D4D4D4"> </span><span style="color: #CE9178">&quot;...&quot;</span><span style="color: #D4D4D4">^^</span><span style="color: #569CD6">geosparql:</span><span style="color: #9CDCFE">wktLiteral</span><span style="color: #D4D4D4"> ] .</span></span>
+<span class="line"><span style="color: #D4D4D4">  </span></span>
+<span class="line"><span style="color: #4EC9B0">&lt;system/OPS&gt;</span><span style="color: #D4D4D4"> </span><span style="color: #C586C0">a</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">poso:</span><span style="color: #9CDCFE">LocationBasedService</span><span style="color: #D4D4D4"> ;</span></span>
+<span class="line"><span style="color: #D4D4D4">  </span><span style="color: #569CD6">rdfs:</span><span style="color: #9CDCFE">label</span><span style="color: #D4D4D4"> </span><span style="color: #CE9178">&quot;Outdoor campus positioning&quot;</span><span style="color: #D4D4D4">@</span><span style="color: #4EC9B0">en</span><span style="color: #D4D4D4"> ;</span></span>
+<span class="line"><span style="color: #D4D4D4">  </span><span style="color: #569CD6">ssn:</span><span style="color: #9CDCFE">hasSubSystem</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">posoc:</span><span style="color: #9CDCFE">GPS</span><span style="color: #D4D4D4"> ;</span></span>
+<span class="line"><span style="color: #D4D4D4">  </span><span style="color: #569CD6">ssn:</span><span style="color: #9CDCFE">hasDeployment</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">dbr:</span><span style="color: #9CDCFE">Some_University</span><span style="color: #D4D4D4"> .</span></span>
+<span class="line"><span style="color: #4EC9B0">&lt;system/IPS&gt;</span><span style="color: #D4D4D4"> </span><span style="color: #C586C0">a</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">poso:</span><span style="color: #9CDCFE">IndoorPositioningSystem</span><span style="color: #D4D4D4"> ;</span></span>
+<span class="line"><span style="color: #D4D4D4">  </span><span style="color: #569CD6">rdfs:</span><span style="color: #9CDCFE">label</span><span style="color: #D4D4D4"> </span><span style="color: #CE9178">&quot;Indoor campus positioning&quot;</span><span style="color: #D4D4D4">@</span><span style="color: #4EC9B0">en</span><span style="color: #D4D4D4"> ;</span></span>
+<span class="line"><span style="color: #D4D4D4">  </span><span style="color: #569CD6">ssn:</span><span style="color: #9CDCFE">hasDeployment</span><span style="color: #D4D4D4"> </span><span style="color: #4EC9B0">&lt;deployment/building_a&gt;</span><span style="color: #D4D4D4"> ;</span></span>
+<span class="line"><span style="color: #D4D4D4">  </span><span style="color: #569CD6">ssn:</span><span style="color: #9CDCFE">implements</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">posoc:</span><span style="color: #9CDCFE">KNNFingerprinting</span><span style="color: #D4D4D4"> .</span></span>
+<span class="line"><span style="color: #4EC9B0">&lt;system/CampusPositioning&gt;</span><span style="color: #D4D4D4"> </span><span style="color: #C586C0">a</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">poso:</span><span style="color: #9CDCFE">IntegratedPositioningSystem</span><span style="color: #D4D4D4"> ;</span></span>
+<span class="line"><span style="color: #D4D4D4">  </span><span style="color: #569CD6">rdfs:</span><span style="color: #9CDCFE">label</span><span style="color: #D4D4D4"> </span><span style="color: #CE9178">&quot;Hybrid campus positioning system&quot;</span><span style="color: #D4D4D4">@</span><span style="color: #4EC9B0">en</span><span style="color: #D4D4D4"> ;</span></span>
+<span class="line"><span style="color: #D4D4D4">  </span><span style="color: #569CD6">ssn:</span><span style="color: #9CDCFE">hasSubSystem</span><span style="color: #D4D4D4">  </span><span style="color: #4EC9B0">&lt;system/OPS&gt;</span><span style="color: #D4D4D4">, </span><span style="color: #4EC9B0">&lt;system/IPS&gt;</span><span style="color: #D4D4D4"> ;</span></span>
+<span class="line"><span style="color: #D4D4D4">  </span><span style="color: #569CD6">ssn:</span><span style="color: #9CDCFE">implements</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">posoc:</span><span style="color: #9CDCFE">WeightedAccuracyFusion</span><span style="color: #D4D4D4"> .</span></span>
+<span class="line"></span></code></pre>
+
+        <aside class="notes">
+            
+        </aside>
+    </section>
+    <section data-visibility="uncounted">
+        <div class="header">
+            <img src="https://raw.githubusercontent.com/OpenHPS/POSO/refs/heads/main/1.1/docs/images/logo.svg" class="inline small" alt="POSO Logo">
+            <h2 class="inline arrow">Basic Usage</h2>
         </div>
         <pre class="shiki dark-plus" style="background-color: #1E1E1E" tabindex="0"><code class="language-turtle"><span class="line"><span style="color: #569CD6">dbr:</span><span style="color: #9CDCFE">Some_Unversity</span><span style="color: #D4D4D4"> </span><span style="color: #C586C0">a</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">ssn:</span><span style="color: #9CDCFE">Deployment</span><span style="color: #D4D4D4"> .</span></span>
 <span class="line"><span style="color: #4EC9B0">&lt;deployment/building_a&gt;</span><span style="color: #D4D4D4"> </span><span style="color: #C586C0">a</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">poso:</span><span style="color: #9CDCFE">IndoorDeployment</span><span style="color: #D4D4D4">, </span><span style="color: #569CD6">geosparql:</span><span style="color: #9CDCFE">Feature</span><span style="color: #D4D4D4"> ;</span></span>
@@ -560,12 +651,27 @@
         </aside>
     </section>
 
-
-    <section data-markdown data-timing="50">
+    <section>
         <h2 id="sembeacon-bluetooth-specification" tabindex="-1"><span class="light">SemBeacon <i class="fa-solid fa-chevron-right"></i></span> Bluetooth Specification</h2>
-<h3 id="ble-4.x" tabindex="-1">BLE 4.X</h3>
-<p><img src="../iot2023/images/specification_BLE4.svg" alt="SemBeacon specification for BLE v4.x" width="80%"></p>
 
+        <div class="row">
+            <div class="col-6">
+                <h3 id="ble-4.x" tabindex="-1">BLE 4.X</h3>
+<ul>
+<li>AltBeacon + Eddystone-URL + Flags
+<img src="../iot2023/images/specification_BLE4.svg" alt="SemBeacon specification for BLE v4.x" width="100%"></li>
+</ul>
+
+            </div>
+            <div class="col-6">
+                <h3 id="ble-5.x" tabindex="-1">BLE 5.X</h3>
+<ul>
+<li>No scan response
+<img src="../iot2023/images/specification_BLE5.svg" alt="SemBeacon specification for BLE v5.x" width="100%"></li>
+</ul>
+
+            </div>
+        </div>
         <aside class="notes">
             Our main solution in general consists of an AltBeacon advertisement with a namespace and instance identifier, a set of flags 
             which we will discuss in a moment and an Eddystone-URL compatible scan response.
@@ -573,6 +679,18 @@
 
             Similar to Eddystone-URL we perform encoding of the short URI without further extensions in order to prevent
             backwards compatibility with existing libraries that can scan for Eddstone.
+
+            In addition to our backwards compatible BLE 4 advertisement we also have a work in progress BLE 5 advertisement specification.
+            With the increased payload size for BLE 5 advertisements we can include both the namespace and instance identifiers and uri
+            within a single advertisement.
+
+            As we no longer have to ensure Eddystone-URL compatibility, we also extended the encoding for the the URI to enable
+            a smaller payload for common linked data URIs, versioning, and a larger URI in general which could negate the need for 
+            URL shorteners.
+
+            BLE 5 advertisements offer better range compared to legacy BLE 4 advertisements which is useful for positioning. Our arduino
+            library already offers the capabilities to use this new service on newer BLE 5 compatible ESP32 hardware for both scanning
+            and advertising. However, our mobile application currently does not scan for BLE 5 advertisements yet.
         </aside>
     </section>
 
@@ -584,7 +702,6 @@
         </style>
         <h2 id="sembeacon-bluetooth-specification" tabindex="-1"><span class="light">SemBeacon <i class="fa-solid fa-chevron-right"></i></span> Bluetooth Specification</h2>
 <h3 id="flags" tabindex="-1">Flags</h3>
-<p>Based on UriBeacon, Bluetooth IPS and Eddystone frames</p>
 <table>
 <thead>
 <tr>
@@ -633,21 +750,11 @@
 </table>
 
         <aside class="notes">
-            Our flags are based on the invisibility flag of UriBeacon and its use cases, the flags and data of the Bluetooth IPS
-            service and finally the use cases of the Eddystone frames. These flags should be configured when setting up a device and
-            do not offer any dynamic information. 
-
-            For example, the position flag would be set to 1 when, during the installation it is clear the beacon will
-            have a fixed position, which would be the case when mounted on wall. Similarly we have other flags that can be decided
-            on during initial setup based on the use case for the SemBeacon.
-
-            We introduced these flags in order to still provide applications with context on the type of beacon without requiring
-            them to perform an HTTP request. For example, an application that only aims to navigate within a building should
-            not access moveable objects without a position, as these will not be useful.
+            
         </aside>
     </section>
 
-<section data-markdown class="flags" data-timing="60">
+    <section data-markdown class="flags" data-timing="60" data-visibility="uncounted">
         <style>
             section.flags table {
                 font-size: 80%;
@@ -699,33 +806,11 @@
         </aside>
     </section>
 
-    <section data-markdown data-timing="50">
-        <h2 id="sembeacon-bluetooth-specification" tabindex="-1"><span class="light">SemBeacon <i class="fa-solid fa-chevron-right"></i></span> Bluetooth Specification</h2>
-<h3 id="ble-5.x" tabindex="-1">BLE 5.X</h3>
-<p><img src="../iot2023/images/specification_BLE5.svg" alt="SemBeacon specification for BLE v5.x" width="80%"></p>
-
-        <aside class="notes">
-            In addition to our backwards compatible BLE 4 advertisement we also have a work in progress BLE 5 advertisement specification.
-            With the increased payload size for BLE 5 advertisements we can include both the namespace and instance identifiers and uri
-            within a single advertisement.
-
-            As we no longer have to ensure Eddystone-URL compatibility, we also extended the encoding for the the URI to enable
-            a smaller payload for common linked data URIs, versioning, and a larger URI in general which could negate the need for 
-            URL shorteners.
-
-            BLE 5 advertisements offer better range compared to legacy BLE 4 advertisements which is useful for positioning. Our arduino
-            library already offers the capabilities to use this new service on newer BLE 5 compatible ESP32 hardware for both scanning
-            and advertising. However, our mobile application currently does not scan for BLE 5 advertisements yet.
-        </aside>
-    </section>
-
-
     <section data-markdown>
         <h2 id="sembeacon-mobile-application" tabindex="-1"><span class="light">SemBeacon <i class="fa-solid fa-chevron-right"></i></span> Mobile Application</h2>
 <ul>
 <li><strong>Scans</strong> and <strong>Simulates</strong> SemBeacon, iBeacon, AltBeacon and Eddystone</li>
 <li><strong>Extracts</strong> and visualises SemBeacon encoded information</li>
-<li>Implements HTTP <strong>caching</strong> and namespace mapping to environments</li>
 </ul>
   <div class="row screenshots">
       <div class="col-3">
@@ -752,26 +837,22 @@
     <section>
         <h2 id="sembeacon-example" tabindex="-1"><span class="light">SemBeacon <i class="fa-solid fa-chevron-right"></i></span> Example</h2>
 <pre class="shiki dark-plus" style="background-color: #1E1E1E" tabindex="0"><code class="language-turtle"><span class="line"><span style="color: #569CD6">:</span><span style="color: #9CDCFE">pl9_3</span><span style="color: #D4D4D4"> </span><span style="color: #C586C0">a</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">ssn:</span><span style="color: #9CDCFE">Deployment</span><span style="color: #D4D4D4">, </span><span style="color: #569CD6">sosa:</span><span style="color: #9CDCFE">FeatureOfInterest</span><span style="color: #D4D4D4">, </span><span style="color: #569CD6">ogc:</span><span style="color: #9CDCFE">SpatialObject</span><span style="color: #D4D4D4">, </span><span style="color: #569CD6">schema:</span><span style="color: #9CDCFE">Accommodation</span><span style="color: #D4D4D4">, </span><span style="color: #569CD6">seas:</span><span style="color: #9CDCFE">Floor</span><span style="color: #D4D4D4">;</span></span>
-<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #569CD6">ogc:</span><span style="color: #9CDCFE">sfWithin</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">:</span><span style="color: #9CDCFE">pl9</span><span style="color: #D4D4D4">;</span></span>
+<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #569CD6">rdfs:</span><span style="color: #9CDCFE">label</span><span style="color: #D4D4D4"> </span><span style="color: #CE9178">&quot;PL9.3&quot;</span><span style="color: #D4D4D4">; </span><span style="color: #569CD6">ogc:</span><span style="color: #9CDCFE">sfWithin</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">:</span><span style="color: #9CDCFE">pl9</span><span style="color: #D4D4D4">;</span></span>
 <span class="line"><span style="color: #D4D4D4">    </span><span style="color: #569CD6">schema:</span><span style="color: #9CDCFE">hasMap</span><span style="color: #D4D4D4"> [ </span><span style="color: #C586C0">a</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">schema:</span><span style="color: #9CDCFE">Map</span><span style="color: #D4D4D4">;</span></span>
 <span class="line"><span style="color: #D4D4D4">        </span><span style="color: #569CD6">schema:</span><span style="color: #9CDCFE">mapType</span><span style="color: #D4D4D4"> </span><span style="color: #CE9178">&quot;floorPlan&quot;</span><span style="color: #D4D4D4">;</span></span>
 <span class="line"><span style="color: #D4D4D4">        </span><span style="color: #569CD6">schema:</span><span style="color: #9CDCFE">image</span><span style="color: #D4D4D4"> </span><span style="color: #CE9178">&quot;https://static.observableusercontent.com/files/69f63f0ed4e82a459af0534c2a71756ef75b16a15df7228d96b7560b59e19bfbb0dc8d3753376271183028739c9f5be817bd5bcc4889cdec739eb297ea6afedf?response-content-disposition=attachment%3Bfilename*%3DUTF-8%27%27floorplan_medium%25401.png&quot;</span><span style="color: #D4D4D4">; </span></span>
 <span class="line"><span style="color: #D4D4D4">        </span><span style="color: #569CD6">schema:</span><span style="color: #9CDCFE">spatialCoverage</span><span style="color: #D4D4D4"> [ </span><span style="color: #C586C0">a</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">schema:</span><span style="color: #9CDCFE">Place</span><span style="color: #D4D4D4">;</span></span>
 <span class="line"><span style="color: #D4D4D4">            </span><span style="color: #569CD6">ogc:</span><span style="color: #9CDCFE">hasGeometry</span><span style="color: #D4D4D4"> [ </span><span style="color: #C586C0">a</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">ogc:</span><span style="color: #9CDCFE">Geometry</span><span style="color: #D4D4D4">;</span></span>
 <span class="line"><span style="color: #D4D4D4">                </span><span style="color: #569CD6">ogc:</span><span style="color: #9CDCFE">asWKT</span><span style="color: #D4D4D4"> </span><span style="color: #CE9178">&quot;POLYGON Z((4.392680949135989 50.820560314350246 91.99999999906868, 4.392518989118047 50.82049119550264 91.99999999906868, 4.39243849045628 50.82056647750913 92.00000000093132, 4.392322771133238 50.82051709238308 91.99999999906868, 4.3924032699815685 50.82044181037657 91.99999999906868, 4.392241310785677 50.82037269114458 92, 4.391888059447844 50.82070304624146 91.99999999906868, 4.3920500197895525 50.82077216547346 91.99999999813735, 4.392179670282718 50.820650918644354 91.99999999813735, 4.392295389937405 50.820700303770394 92.00000000093132, 4.392165739744715 50.8208215505995 91.99999999906868, 4.3923277009084885 50.82089066944712 91.99999999906868, 4.392680949135989 50.820560314350246 94.99999999906868, 4.392518989118048 50.82049119550264 94.99999999906868, 4.392438490456279 50.82056647750913 95.00000000093132, 4.392322771133238 50.82051709238309 95, 4.392403269981569 50.82044181037658 95.00000000093132, 4.392241310785677 50.82037269114457 94.99999999906868, 4.391888059447844 50.82070304624145 95, 4.392050019789552 50.82077216547345 94.99999999813735, 4.392179670282718 50.82065091864436 94.99999999813735, 4.392295389937405 50.82070030377039 95.00000000093132, 4.392165739744715 50.82082155059949 94.99999999813735, 4.3923277009084885 50.82089066944712 94.99999999906868, 4.392680949135989 50.820560314350246 91.99999999906868))&quot;</span><span style="color: #D4D4D4">^^</span><span style="color: #569CD6">ogc:</span><span style="color: #9CDCFE">wktLiteral</span><span style="color: #D4D4D4">;</span></span>
-<span class="line"><span style="color: #D4D4D4">                </span><span style="color: #569CD6">ogc:</span><span style="color: #9CDCFE">coordinateDimension</span><span style="color: #D4D4D4"> </span><span style="color: #B5CEA8">3</span><span style="color: #D4D4D4">;</span></span>
-<span class="line"><span style="color: #D4D4D4">                </span><span style="color: #569CD6">ogc:</span><span style="color: #9CDCFE">spatialDimension</span><span style="color: #D4D4D4"> </span><span style="color: #B5CEA8">3</span><span style="color: #D4D4D4">;</span></span>
+<span class="line"><span style="color: #D4D4D4">                </span><span style="color: #569CD6">ogc:</span><span style="color: #9CDCFE">coordinateDimension</span><span style="color: #D4D4D4"> </span><span style="color: #B5CEA8">3</span><span style="color: #D4D4D4">; </span><span style="color: #569CD6">ogc:</span><span style="color: #9CDCFE">spatialDimension</span><span style="color: #D4D4D4"> </span><span style="color: #B5CEA8">3</span><span style="color: #D4D4D4">;</span></span>
 <span class="line"><span style="color: #D4D4D4">                </span><span style="color: #569CD6">ogc:</span><span style="color: #9CDCFE">dimension</span><span style="color: #D4D4D4"> </span><span style="color: #B5CEA8">3</span><span style="color: #D4D4D4"> ];</span></span>
 <span class="line"><span style="color: #D4D4D4">        ]</span></span>
 <span class="line"><span style="color: #D4D4D4">    ] ;</span></span>
 <span class="line"><span style="color: #D4D4D4">    </span><span style="color: #569CD6">schema:</span><span style="color: #9CDCFE">floorLevel</span><span style="color: #D4D4D4"> </span><span style="color: #CE9178">&quot;3&quot;</span><span style="color: #D4D4D4">;</span></span>
 <span class="line"><span style="color: #D4D4D4">    </span><span style="color: #569CD6">ogc:</span><span style="color: #9CDCFE">hasGeometry</span><span style="color: #D4D4D4"> [ </span><span style="color: #C586C0">a</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">ogc:</span><span style="color: #9CDCFE">Geometry</span><span style="color: #D4D4D4">;</span></span>
 <span class="line"><span style="color: #D4D4D4">        </span><span style="color: #569CD6">ogc:</span><span style="color: #9CDCFE">asWKT</span><span style="color: #D4D4D4"> </span><span style="color: #CE9178">&quot;POLYGON Z((4.392680949135989 50.820560314350246 91.99999999906868, 4.392518989118047 50.82049119550264 91.99999999906868, 4.39243849045628 50.82056647750913 92.00000000093132, 4.392322771133238 50.82051709238308 91.99999999906868, 4.3924032699815685 50.82044181037657 91.99999999906868, 4.392241310785677 50.82037269114458 92, 4.391888059447844 50.82070304624146 91.99999999906868, 4.3920500197895525 50.82077216547346 91.99999999813735, 4.392179670282718 50.820650918644354 91.99999999813735, 4.392295389937405 50.820700303770394 92.00000000093132, 4.392165739744715 50.8208215505995 91.99999999906868, 4.3923277009084885 50.82089066944712 91.99999999906868, 4.392680949135989 50.820560314350246 94.99999999906868, 4.392518989118048 50.82049119550264 94.99999999906868, 4.392438490456279 50.82056647750913 95.00000000093132, 4.392322771133238 50.82051709238309 95, 4.392403269981569 50.82044181037658 95.00000000093132, 4.392241310785677 50.82037269114457 94.99999999906868, 4.391888059447844 50.82070304624145 95, 4.392050019789552 50.82077216547345 94.99999999813735, 4.392179670282718 50.82065091864436 94.99999999813735, 4.392295389937405 50.82070030377039 95.00000000093132, 4.392165739744715 50.82082155059949 94.99999999813735, 4.3923277009084885 50.82089066944712 94.99999999906868, 4.392680949135989 50.820560314350246 91.99999999906868))&quot;</span><span style="color: #D4D4D4">^^</span><span style="color: #569CD6">ogc:</span><span style="color: #9CDCFE">wktLiteral</span><span style="color: #D4D4D4">;</span></span>
-<span class="line"><span style="color: #D4D4D4">        </span><span style="color: #569CD6">ogc:</span><span style="color: #9CDCFE">coordinateDimension</span><span style="color: #D4D4D4"> </span><span style="color: #B5CEA8">3</span><span style="color: #D4D4D4">;</span></span>
-<span class="line"><span style="color: #D4D4D4">        </span><span style="color: #569CD6">ogc:</span><span style="color: #9CDCFE">spatialDimension</span><span style="color: #D4D4D4"> </span><span style="color: #B5CEA8">3</span><span style="color: #D4D4D4">;</span></span>
+<span class="line"><span style="color: #D4D4D4">        </span><span style="color: #569CD6">ogc:</span><span style="color: #9CDCFE">coordinateDimension</span><span style="color: #D4D4D4"> </span><span style="color: #B5CEA8">3</span><span style="color: #D4D4D4">; </span><span style="color: #569CD6">ogc:</span><span style="color: #9CDCFE">spatialDimension</span><span style="color: #D4D4D4"> </span><span style="color: #B5CEA8">3</span><span style="color: #D4D4D4">;</span></span>
 <span class="line"><span style="color: #D4D4D4">        </span><span style="color: #569CD6">ogc:</span><span style="color: #9CDCFE">dimension</span><span style="color: #D4D4D4"> </span><span style="color: #B5CEA8">3</span><span style="color: #D4D4D4"> ];</span></span>
-<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #569CD6">rdfs:</span><span style="color: #9CDCFE">label</span><span style="color: #D4D4D4"> </span><span style="color: #CE9178">&quot;PL9.3&quot;</span><span style="color: #D4D4D4">;</span></span>
-<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #569CD6">dcmi:</span><span style="color: #9CDCFE">created</span><span style="color: #D4D4D4"> </span><span style="color: #CE9178">&quot;2023-06-22T21:12:23.587Z&quot;</span><span style="color: #D4D4D4">^^</span><span style="color: #569CD6">xsd:</span><span style="color: #9CDCFE">dateTime</span><span style="color: #D4D4D4">;</span></span>
 <span class="line"><span style="color: #D4D4D4">    </span><span style="color: #569CD6">sembeacon:</span><span style="color: #9CDCFE">namespaceId</span><span style="color: #D4D4D4"> </span><span style="color: #CE9178">&quot;77f340dbac0d20e8aa3af656a29f236c&quot;</span><span style="color: #D4D4D4">^^</span><span style="color: #569CD6">xsd:</span><span style="color: #9CDCFE">hexBinary</span><span style="color: #D4D4D4">.</span></span>
 <span class="line"></span></code></pre>
 
@@ -784,7 +865,7 @@
 <!-- Contributing -->
 <section>
     <section>
-        <h2 id="contributing-poso-ontology" tabindex="-1"><span class="light">Contributing <i class="fa-solid fa-chevron-right"></i></span> POSO ontology</h2>
+        <h2 id="contributing-%26-roadmap-poso-ontology" tabindex="-1"><span class="light">Contributing &amp; Roadmap <i class="fa-solid fa-chevron-right"></i></span> POSO ontology</h2>
 <p><a href="https://github.com/OpenHPS/POSO"><img src="https://img.shields.io/badge/GitHub-OpenHPS%2FPOSO-blue?logo=github&amp;style=for-the-badge" alt="GitHub" $="" height="50px" $=""></a></p>
 <ol>
 <li>Use cases for the POSO ontology usage
@@ -796,28 +877,40 @@
     </section>
 
     <section>
-        <h2 id="contributing-sembeacon" tabindex="-1"><span class="light">Contributing <i class="fa-solid fa-chevron-right"></i></span> SemBeacon</h2>
+        <h2 id="contributing-%26-roadmap-sembeacon" tabindex="-1"><span class="light">Contributing &amp; Roadmap <i class="fa-solid fa-chevron-right"></i></span> SemBeacon</h2>
 <p><a href="https://github.com/SemBeacon"><img src="https://img.shields.io/badge/GitHub-SemBeacon-blue?logo=github&amp;style=for-the-badge" alt="GitHub" $="" height="50px" $=""></a></p>
 <ol>
 <li>Mobile application<br>
 <a href="https://github.com/SemBeacon/app">https://github.com/SemBeacon/app</a><br>
-1.1. Editor for environments (Building, floors, rooms, ...)<br>
-1.2. Examples of unsupported indoor environment descriptions<br>
-1.3. iOS support (partially implemented)</li>
-<li>nRF5x firmware</li>
+1.1. Examples/implementations of unsupported indoor environment descriptions<br>
+1.2. iOS support (partially implemented)</li>
+<li>Arduino library (ESP32_SemBeacon)<br>
+<a href="https://github.com/SemBeacon/arduino-esp32">https://github.com/SemBeacon/arduino-esp32</a><br>
+2.1. No retrieval of (important) data</li>
+<li>nRF5x library (WiP)</li>
 <li>Specification improvements<br>
 <a href="https://github.com/SemBeacon/specification">https://github.com/SemBeacon/specification</a></li>
 </ol>
 
     </section>
+
+    <section>
+        <h2 id="contributing-%26-roadmap-outside-the-scope" tabindex="-1"><span class="light">Contributing &amp; Roadmap <i class="fa-solid fa-chevron-right"></i></span> Outside the scope</h2>
+<ol>
+<li>Authoring indoor environments to RDF</li>
+<li>Mapping IndoorGML, OSM Simple Indoor Tagging to RDF<br>
+<em>and vice versa</em></li>
+</ol>
+
+    </section>
 </section>
 
-<section data-markdown data-timing="70">
+<section data-markdown>
     <h2 id="conclusion-and-future-work" tabindex="-1">Conclusion and Future Work</h2>
 <ul>
-<li>SemBeacon as a step towards local discovery</li>
+<li>Linked data for expressing indoor environments</li>
 <li>POSO as a way to describe positioning systems</li>
-<li>@openhps/rdf and @openhps/solid for linked data storage and access control</li>
+<li>SemBeacon as a step towards local discovery of linked data</li>
 </ul>
 
     <img src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2045%2045%22%20shape-rendering%3D%22crispEdges%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M0%200h45v45H0z%22%2F%3E%3Cpath%20stroke%3D%22%23000000%22%20d%3D%22M4%204.5h7m1%200h1m1%200h1m2%200h1m1%200h1m4%200h1m1%200h1m1%200h1m3%200h1m1%200h7M4%205.5h1m5%200h1m1%200h4m2%200h4m1%200h1m1%200h2m1%200h4m2%200h1m5%200h1M4%206.5h1m1%200h3m1%200h1m1%200h2m1%200h1m6%200h2m2%200h1m1%200h3m1%200h1m1%200h1m1%200h3m1%200h1M4%207.5h1m1%200h3m1%200h1m2%200h1m1%200h1m2%200h5m1%200h1m1%200h2m6%200h1m1%200h3m1%200h1M4%208.5h1m1%200h3m1%200h1m2%200h1m1%200h5m3%200h1m1%200h3m2%200h1m3%200h1m1%200h3m1%200h1M4%209.5h1m5%200h1m1%200h1m1%200h1m1%200h1m5%200h3m1%200h1m4%200h2m1%200h1m5%200h1M4%2010.5h7m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h7M12%2011.5h3m2%200h1m1%200h1m1%200h1m2%200h5m1%200h1m1%200h1M6%2012.5h3m1%200h1m1%200h4m1%200h1m1%200h10m4%200h3m2%200h3M4%2013.5h4m3%200h3m2%200h3m2%200h2m1%200h1m1%200h1m2%200h4m1%200h1m2%200h1m1%200h1M6%2014.5h1m1%200h1m1%200h3m6%200h2m1%200h1m3%200h1m2%200h2m3%200h1m4%200h2M4%2015.5h4m6%200h1m1%200h1m6%200h2m3%200h1m1%200h1m1%200h1m1%200h1m4%200h1M4%2016.5h1m1%200h1m2%200h2m1%200h1m1%200h2m3%200h3m1%200h2m2%200h1m1%200h2m2%200h4m1%200h2M4%2017.5h1m3%200h2m2%200h1m3%200h1m1%200h2m4%200h1m1%200h2m1%200h2m1%200h2m1%200h1m1%200h2M5%2018.5h1m3%200h3m4%200h3m2%200h3m5%200h3m2%200h4m1%200h2M4%2019.5h1m1%200h3m4%200h1m1%200h1m1%200h4m2%200h2m1%200h1m3%200h2m1%200h1m5%200h2M6%2020.5h1m3%200h3m3%200h1m1%200h6m2%200h1m2%200h3m1%200h2m1%200h1m1%200h2M4%2021.5h2m2%200h1m3%200h2m1%200h2m1%200h1m2%200h1m2%200h1m5%200h1m4%200h1m1%200h1M4%2022.5h1m3%200h3m3%200h2m1%200h3m4%200h2m1%200h2m2%200h1m1%200h3m1%200h4M6%2023.5h1m1%200h2m2%200h9m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m4%200h1M6%2024.5h1m3%200h4m2%200h1m5%200h2m3%200h1m5%200h6M4%2025.5h3m1%200h2m2%200h2m3%200h1m1%200h1m4%200h2m2%200h2m3%200h1m1%200h1m1%200h1m2%200h1M6%2026.5h1m1%200h1m1%200h1m1%200h5m2%200h5m1%200h1m2%200h4m1%200h1m3%200h1m2%200h1M4%2027.5h1m7%200h2m4%200h1m1%200h1m3%200h1m3%200h2m5%200h1m4%200h1M6%2028.5h1m2%200h4m1%200h1m1%200h1m1%200h1m3%200h1m2%200h4m1%200h1m1%200h2m1%200h4m1%200h1M4%2029.5h2m1%200h1m3%200h1m1%200h1m1%200h1m1%200h1m1%200h6m1%200h1m4%200h1m2%200h1m1%200h3M4%2030.5h1m1%200h5m1%200h1m2%200h2m1%200h2m1%200h2m1%200h2m1%200h3m1%200h2m1%200h1m2%200h1m2%200h1M4%2031.5h1m2%200h3m2%200h1m1%200h3m1%200h1m2%200h3m1%200h1m1%200h1m2%200h2m1%200h1m4%200h2M4%2032.5h1m2%200h2m1%200h2m1%200h1m1%200h4m1%200h1m3%200h1m2%200h1m1%200h8m1%200h3M12%2033.5h2m1%200h1m1%200h1m3%200h2m2%200h1m1%200h2m2%200h2m3%200h1M4%2034.5h7m2%200h4m1%200h2m2%200h1m3%200h1m1%200h2m2%200h1m1%200h1m1%200h2m1%200h2M4%2035.5h1m5%200h1m2%200h1m1%200h3m2%200h3m2%200h2m4%200h2m3%200h1m2%200h2M4%2036.5h1m1%200h3m1%200h1m1%200h3m2%200h2m3%200h2m1%200h2m2%200h8m1%200h3M4%2037.5h1m1%200h3m1%200h1m1%200h4m4%200h2m1%200h3m2%200h1m3%200h1m1%200h3m2%200h2M4%2038.5h1m1%200h3m1%200h1m1%200h3m2%200h1m2%200h1m2%200h1m7%200h1m1%200h1m1%200h1m4%200h1M4%2039.5h1m5%200h1m3%200h1m1%200h1m3%200h1m7%200h1m2%200h3m1%200h2m3%200h1M4%2040.5h7m2%200h3m2%200h2m1%200h4m1%200h1m1%200h1m1%200h1m2%200h1m1%200h6%22%2F%3E%3C%2Fsvg%3E%0A' class='qr-image'>
@@ -834,63 +927,6 @@
     </aside>
 </section>   
 
-<section>
-    <h2 id="extra-slides" tabindex="-1">Extra slides</h2>
-
-</section>
-
-<section>
-    <div class="header">
-        <img src="https://openhps.org/images/logo.svg" class="inline" alt="OpenHPS Logo">
-        <h2 class="inline arrow">&rarr;</h2>
-        <img src="https://raw.githubusercontent.com/OpenHPS/POSO/refs/heads/main/1.1/docs/images/logo.svg" class="inline small" alt="POSO Logo">
-    </div>
-    <h3>@openhps/rdf</h3>
-    <ul>
-<li>RDF data model for OpenHPS</li>
-<li>POSO integration</li>
-<li>Serialisation and deserialisation</li>
-</ul>
-<pre class="shiki dark-plus" style="background-color: #1E1E1E" tabindex="0"><code class="language-typescript"><span class="line"><span style="color: #569CD6">const</span><span style="color: #D4D4D4"> </span><span style="color: #4FC1FF">position</span><span style="color: #D4D4D4"> = </span><span style="color: #569CD6">new</span><span style="color: #D4D4D4"> </span><span style="color: #DCDCAA">GeographicalPosition</span><span style="color: #D4D4D4">();</span></span>
-<span class="line"><span style="color: #9CDCFE">console</span><span style="color: #D4D4D4">.</span><span style="color: #DCDCAA">log</span><span style="color: #D4D4D4">(</span><span style="color: #9CDCFE">RDFSerializer</span><span style="color: #D4D4D4">.</span><span style="color: #DCDCAA">serialize</span><span style="color: #D4D4D4">(</span><span style="color: #9CDCFE">position</span><span style="color: #D4D4D4">));</span></span>
-<span class="line"></span></code></pre>
-
-    <aside class="notes">
-        Developers are not always eager to want to work with linked data to store information, especially for realtime applications
-        such as positioning systems. This is why we created the @openhps/rdf package. It basically provides a mapping form
-        the OpenHPS data model to RDF and back. This allows developers to easily store their data in a linked data format without
-        specifically needing to know how linked data works. Furthermore, they can query the data is if they are querying 
-        a MongoDB database, which is a lot more familiar to most developers.
-
-        With this project we focus on positioning systems, geospatial data and observational data such as locations.
-    </aside>
-</section>
-
-<section>
-    <div class="header">
-        <img src="https://openhps.org/images/logo.svg" class="inline" alt="OpenHPS Logo">
-        <h2 class="inline arrow">&rarr;</h2>
-        <img src="https://raw.githubusercontent.com/OpenHPS/POSO/refs/heads/main/1.1/docs/images/logo.svg" class="inline small" alt="POSO Logo">
-        <h2 class="inline arrow">&rarr;</h2>
-        <img src="./images/solid.svg" class="inline" alt="Solid project Logo">
-    </div>
-    <h3>@openhps/solid</h3>
-    <ul>
-<li>Solid storage and access control</li>
-<li>Solid as a communication broker</li>
-</ul>
-
-    <aside class="notes">
-        With the @openhps/rdf package we already had a way to store our data in a linked data format. However, if we talk about personal data
-        or data that needs to be governed by a user, we also need a proper way to store this data. This is where the Solid project comes into place.
-
-        For those who are unfamiliar with Solid, it is a project that allows users to store their data in a decentralised way. The data can be binary
-        data, but also structured linked data. Users can assign access rights to the data so that only certain applications or users can access it.
-
-        In addition to this, Solid offers specifications that enable applications to listen for changes in data - which is perfect for realtime applications
-        such as positioning systems that want to use Solid as a communication broker.
-    </aside>
-</section>
         </div>
     </div>
 
