@@ -216,13 +216,36 @@ hide_title_slide: true
         <img src="https://sembeacon.org/images/logo.svg" alt="SemBeacon Logo">
     </div>
     <aside class="notes">
-        To give you a brief introduction about myself, I am Maxim Van de Wynckel, a researcher at the Vrije Universiteit Brussel. 
+        To give you a brief introduction about myself, I am a researcher at the Vrije Universiteit Brussel. 
         My research interests include indoor positioning systems, linked data, and interoperability of location data and positioning systems. 
         I am involved in several open source projects, including the open source hybrid postioning system framework, the positioning system ontology - POSO
         , and SemBeacon. These are also three projects that I will briefly introduce to you today.
 
-        One of my personal goals with these projects is to create a world were indoor positioning systems and environments are as 
-        easily accessible as outdoor positioning systems or geographical world maps.
+        One of my goals with these projects is to create a world were indoor positioning systems and environments are as 
+        easily accessible as outdoor positioning systems or geographical world maps - which at the moment is not the case.
+    </aside>
+</section>
+
+<section>
+    {% markdown %}
+        ## Table of Contents
+        1. Introduction  
+            1.1. Current service-centric state  
+            1.2. Global and local local-discovery  
+        2. Geospatial-centric service discovery  
+        3. Projects  
+            3.1. OpenHPS &amp; POSO  
+            3.2. SemBeacon  
+        4. Roadmap &amp; Contributing
+        5. (Optional) SemBeacon demo  
+    {% endmarkdown %}
+    <aside class="notes">
+        So for this presentation I will first introduce you to the current state of geospatial data and positioning systems
+        and why there is a problem with this. Next, I will introduce you to the concept of geospatial-centric service discovery
+        which is something that I hope to solve using a few open source projects that I will introduce to you today.
+
+        For those who are interested, I will also list the roadmap for these projects and how you could contribute to them.
+        If time permits it, I will also give a short demonstration of SemBeacon.
     </aside>
 </section>
 
@@ -260,9 +283,16 @@ hide_title_slide: true
     </div>
     <aside class="notes">
         However, when it comes to indoor data, the situation is quite different. While there are services that collect or crowdsource geospatial data of indoor environments,
-        they are not yet as complete as their outdoor counterparts. In a way, this makes sense, since indoor environments are more complex and diverse than outdoor environments.
+        they are not yet as complete as their outdoor counterparts. Furthermore, the collection of indoor environments is very scattered among
+        different services.
+        
+        In a way, this makes sense, since indoor environments are more complex and diverse than outdoor environments.
         Users or building owners may not want to share their data with the public, which makes it harder to collect and share indoor geospatial data and to govern
         who publishes this data.
+
+        But there are also some other reasons to consider, and one of those reasons is that there are a lot of standardisations to represent
+        buildings or indoor environments in general. This makes it hard to create a service that can provide you with indoor data in the same way
+        that you might expect.
     </aside>
 </section>
 
@@ -281,10 +311,43 @@ hide_title_slide: true
     <aside class="notes">
         A similar story can be told about positioning systems. Outdoor positioning systems are well known and widely used. 
         The Global Positioning System (GPS) is a prime example of this. If we are outdoors, we can easily determine our location using this single technology.
+        That is not to say that there are no other technologies that can be used to determine your location outdoors, but GPS is by far the most widely used 
+        and standardised technology.
 
         Again, indoors the situation is quite different. There are several technologies that can be used to determine your location indoors,
         but none of them are as widely used or standardised as GPS. This makes it hard for developers to create applications that work indoors as well as outdoors
         and often leads to navigation applications that only work for one particular building, framework or event.
+        Additionally, these positioning techniques often require knowledge about the building layout and infrastructure,
+        which again leads to the original problem that this information is scattered among services.
+    </aside>
+</section>
+
+<section>
+    {% markdown %}
+        ## Global data &amp; service discovery
+        > Find data globally **<u>about</u>** a particular location
+        ![](./images/global-discovery.svg){$ width="100%" $}
+    {% endmarkdown %}
+    <aside class="notes">
+        In general, we have to types of data or service discovery. We can have global discovery methods such as 
+        geocoding services that allow you to find information about a particular location without being at that location.
+
+        It is by far one of the most common ways to discover data about a location and is used in many applications 
+        that require information about a given location. This type of discovery works when you are near a location, but
+        it is not one of the requirements for this type of discovery.
+    </aside>
+</section>
+
+<section>
+    {% markdown %}
+        ## Local data &amp; service discovery
+        > Find data locally **<u>at</u>** a particular location
+        ![](./images/local-discovery.svg){$ width="100%" $}
+    {% endmarkdown %}
+    <aside class="notes">
+        The second type of data discovery is also the most important type of data discovery for indoor environments. 
+        Local data discovery is about finding data at a location. With this type of discovery we assume we are near
+        the location that provides the data pertaining to that location.
     </aside>
 </section>
 
@@ -300,7 +363,8 @@ hide_title_slide: true
 
         This means that when you are in a particular location, you can discover the services that are available in that location.
         Simply said, you could assume that you do a kind of geospatial query on your location and receive a list of services that are available in that location
-        which can then help you to retrieve data.
+        which can then help you to retrieve data. But it also means that you do not need to rely on one particular service to discover
+        the data. Instead, the discovery helps to find the services responsible for the data.
     </aside>
 </section>
 
@@ -316,7 +380,7 @@ hide_title_slide: true
         these services without relying on a centralised discovery service. This would completely defeat the purpose of 
         decentralised geospatial data discovery.
 
-        This also entails that whatever method we use to discover this data should be as easy
+        This also entails that whatever method we do use to discover this data should be as easy
         as possible for both users and developers.
     </aside>
 </section>
@@ -344,34 +408,8 @@ hide_title_slide: true
     <img width="100%" style="margin-top: 2em" src="./images/find_independence.svg" alt="Independence and ownership">
     <aside class="notes">
         The third challenge is related to thw ownership of environements. Since indoor environments are often more private
-    </aside>
-</section>
-
-<section>
-    {% markdown %}
-        ## Local data discovery
-        > Find data locally **<u>at</u>** a particular location
-        ![](./images/local-discovery.svg){$ width="100%" $}
-    {% endmarkdown %}
-    <aside class="notes">
-        The first type of data discovery I want to discuss is local data discovery. This is also the most important
-        type of data discovery for indoor environments. Local data discovery is about finding data a
-    </aside>
-</section>
-
-<section>
-    {% markdown %}
-        ## Global data discovery
-        > Find data globally **<u>about</u>** a particular location
-        ![](./images/global-discovery.svg){$ width="100%" $}
-    {% endmarkdown %}
-    <aside class="notes">
-        The second type of data discovery is global discovery. In this case, we want to find information about a particular
-        location without being at that location. It is still possible that you are near the location, but with this type of
-        discovery we assume we are not. 
-
-        You can compare this to looking up a restaurant on a navigation. You are not at the restaurant, but you want to know
-        where it is and what it offers. 
+        we can assume that the data is possibly also private. Building owners should have the freedom to choose where they
+        publish their information and who can access it.
     </aside>
 </section>
 
@@ -406,9 +444,9 @@ hide_title_slide: true
                 <img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License: MIT">
             </div>
         </div>
-        <img src="https://openhps.org/slides/iswc2022/images/example.svg" height="500px" alt="POSO Example">
+        <img src="https://openhps.org/slides/iswc2022/images/architecture.svg" height="500px" alt="POSO Example">
         <aside class="notes">
-            POSO is a linked data ontology to describe positioning systems, the data they produce and the environments they are used in.
+            POSO is a linked data ontology to describe positioning systems, the objects they are tracking, the data they produce about those objects, and the environments they are deployed in.
         </aside>
     </section>
 
@@ -416,7 +454,7 @@ hide_title_slide: true
         <div class="header">
             <img src="https://raw.githubusercontent.com/OpenHPS/POSO/refs/heads/main/1.1/docs/images/logo.svg" class="inline small" alt="POSO Logo">
         </div>
-        <img src="https://openhps.org/slides/iswc2022/images/architecture.svg" height="500px" alt="POSO Example">
+        <img src="https://openhps.org/slides/iswc2022/images/example.svg" height="500px" alt="POSO Example">
         <aside class="notes">
             POSO is an ontology that describes positioning systems, the data they produce and the environments they are used in.
         </aside>
@@ -662,18 +700,16 @@ hide_title_slide: true
 
         [![GitHub](https://img.shields.io/badge/GitHub-SemBeacon-blue?logo=github&style=for-the-badge){$ height="50px" $}](https://github.com/SemBeacon)
 
-        1. Mobile application
-            1a. Editor for environments (Building, floors, rooms, ...)
-            1b. Examples of unsupported indoor environment descriptions
-            1c. iOS support (partially implemented)
-        2. nRF5x firmware
+        1. Mobile application  
+        [https://github.com/SemBeacon/app](https://github.com/SemBeacon/app)  
+            1.1. Editor for environments (Building, floors, rooms, ...)  
+            1.2. Examples of unsupported indoor environment descriptions  
+            1.3. iOS support (partially implemented)  
+        2. nRF5x firmware  
+        3. Specification improvements  
+        [https://github.com/SemBeacon/specification](https://github.com/SemBeacon/specification)  
         {% endmarkdown %}
     </section>
-</section>
-
-<!-- Global data discovery -->
-<section>
-
 </section>
 
 <section data-markdown data-timing="70">
