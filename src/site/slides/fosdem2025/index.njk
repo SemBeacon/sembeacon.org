@@ -7,6 +7,8 @@ width: 1280
 height: 720
 hide_title_slide: true
 ---
+{% decktape title, page %}
+
 <style>
     .row ul {
         width: 100%;
@@ -176,7 +178,7 @@ hide_title_slide: true
     }
 </style>
 
-<section class="title-slide center" data-timing="15">
+<section class="title-slide center" data-timing="30">
     <div class="slide-cover">
         <div class="slide-cover-background"></div>
     </div>
@@ -204,7 +206,7 @@ hide_title_slide: true
     </aside>
 </section>
 
-<section>
+<section data-timing="70">
     <h2>About me</h2>
     <div class="about-me">
         <img class="profile" src="https://maximvdw.be/images/profile/maxim.png" alt="Profile Picture">
@@ -233,31 +235,8 @@ hide_title_slide: true
         easily accessible as outdoor positioning systems or geographical world maps - which at the moment is not the case.
     </aside>
 </section>
-{# 
-<section>
-    {% markdown %}
-        ## Table of Contents
-        1. Introduction  
-            1.1. Current service-centric state  
-            1.2. Global and local local-discovery  
-        2. Geospatial-centric service discovery  
-        3. Projects  
-            3.1. OpenHPS &amp; POSO  
-            3.2. SemBeacon  
-        4. Roadmap &amp; Contributing
-        5. (Optional) SemBeacon demo  
-    {% endmarkdown %}
-    <aside class="notes">
-        So for this presentation I will first introduce you to the current state of geospatial data and positioning systems
-        and why there is a problem with this. Next, I will introduce you to the concept of geospatial-centric service discovery
-        which is something that I hope to solve using a few open source projects that I will introduce to you today.
 
-        For those who are interested, I will also list the roadmap for these projects and how you could contribute to them.
-        If time permits it, I will also give a short demonstration of SemBeacon.
-    </aside>
-</section> #}
-
-<section>
+<section data-timing="30">
     <h2>Current state of geospatial data</h2>
     <div class="row">
         <div class="col-sm-6">
@@ -277,7 +256,7 @@ hide_title_slide: true
     </aside>
 </section>
 
-<section data-transition="none">
+<section data-transition="none" data-timing="70">
     <h2>Current state of geospatial data</h2>
     <div class="row">
         <div class="col-sm-6">
@@ -304,7 +283,7 @@ hide_title_slide: true
     </aside>
 </section>
 
-<section>
+<section data-timing="45">
     <h2>Current state of positioning systems</h2>
     <div class="row">
         <div class="col-sm-6">
@@ -330,7 +309,7 @@ hide_title_slide: true
     </aside>
 </section>
 
-<section>
+<section data-timing="60">
     {% markdown %}
         ## Global and Local Geospatial Data Discovery
         <div class="row">
@@ -360,7 +339,7 @@ hide_title_slide: true
     </aside>
 </section>
 
-<section>
+<section data-timing="20">
     <h2>Geospatial-centric data discovery</h2>
     <p>
         Discovery of geospatial data through the very locations it represents, rather than predefined services.
@@ -377,7 +356,7 @@ hide_title_slide: true
     </aside>
 </section>
 
-<section>
+<section data-timing="20">
     <h2>Geospatial-centric data discovery ...</h2>
     <h3>Challenge 1</h3>
     <p>
@@ -394,7 +373,7 @@ hide_title_slide: true
     </aside>
 </section>
 
-<section>
+<section data-timing="20">
     <h2>Geospatial-centric data discovery ...</h2>
     <h3>Challenge 2</h3>
     <p>
@@ -408,7 +387,7 @@ hide_title_slide: true
     </aside>
 </section>
 
-<section data-transition="none">
+<section data-transition="none" data-timing="20">
     <h2>Geospatial-centric data discovery ...</h2>
     <h3>Challenge 2</h3>
     <p>
@@ -421,23 +400,15 @@ hide_title_slide: true
     </aside>
 </section>
 
-<section>
+<section data-timing="60">
     <h2>Geospatial-centric data discovery ...</h2>
-    <img style="margin-top: 4em;" width="600px" src="./images/find_solution.svg" alt="Solution">
+    <img width="600px" src="./images/find_solution.svg" alt="Solution">
     <aside class="notes">
-        As a very simplisitc representation of a solution to these challenges, we could use a method that is similar to how a lighthouse works.
-        My solution to this issue is to let the building act like a lighthouse. A lighthouse emits a light pattern that is unique to that lighthouse.
-        If you have knowledge about the light pattern of a lighthouse, you can easily identify it. A building could do a similar thing
-        by somehow emitting a pattern that can be identified by smartphone. Unfortunately, that only helps with the identification
-        but it does not give us any knowledge about the building or the services that are available in that building.
-
-        So instead, the building could emit a URI containing more information about the building.
-        To solve the 2nd challenge 
     </aside>
 </section>
 
 <section>
-    <section>
+    <section data-timing="90">
         <div class="header">
             <img src="https://openhps.org/images/logo.svg" class="inline" alt="OpenHPS Logo">
             <div class="license-badge">
@@ -524,7 +495,7 @@ hide_title_slide: true
 
 <!-- POSO ontology -->
 <section>
-    <section>
+    <section data-timing="45">
         <div class="header">
             <img src="https://raw.githubusercontent.com/OpenHPS/POSO/refs/heads/main/1.1/docs/images/logo.svg" class="inline small" alt="POSO Logo">
             <div class="license-badge">
@@ -534,6 +505,16 @@ hide_title_slide: true
         <img src="https://openhps.org/slides/iswc2022/images/architecture.svg" height="500px" alt="POSO Example">
         <aside class="notes">
             POSO is a linked data ontology to describe positioning systems, the objects they are tracking, the data they produce about those objects, and the environments they are deployed in.
+        </aside>
+    </section>
+
+    <section>
+        <div class="header">
+            <img src="https://raw.githubusercontent.com/OpenHPS/POSO/refs/heads/main/1.1/docs/images/logo.svg" class="inline small" alt="POSO Logo">
+        </div>
+        <img src="./images/linkeddata.svg" height="500px" alt="POSO Example">
+        <aside class="notes">
+
         </aside>
     </section>
 
@@ -615,14 +596,14 @@ hide_title_slide: true
 
 <!-- SemBeacon -->
 <section>
-    <section>
+    <section data-timing="120">
         <div class="header">
             <h2 class="inline">SemBeacon</h2>
             <div class="license-badge">
                 <img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="License: Apache-2.0">
             </div>
         </div>
-        <img src="/slides/iot2023/images/sembeacon_architecture_large.svg" width="85%" alt="SemBeacon Architecture">
+        <img src="./images/sembeacon_1.svg" width="85%" alt="SemBeacon Architecture">
         <aside class="notes">
             The basic principle of our semantic beacon solution called SemBeacon is a Bluetooth Low Energy beacon that
             advertises two identifiers and a set of flags. Compatible applications that have no information about this beacon
@@ -633,6 +614,44 @@ hide_title_slide: true
             GeoSPARQL, sensors and observations ontology. By using these existing vocabularies, SemBeacon becomes
             merely a communication protocol to make nearby devices aware of the data, and what they can expect when they
             visit the URI.
+        </aside>
+    </section>
+
+    <section data-transition="none">
+        <div class="header">
+            <h2 class="inline">SemBeacon</h2>
+            <div class="license-badge">
+                <img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="License: Apache-2.0">
+            </div>
+        </div>
+        <img src="./images/sembeacon_2.svg" width="85%" alt="SemBeacon Architecture">
+        <aside class="notes">
+        </aside>
+    </section>
+
+    <section data-transition="none">
+        <div class="header">
+            <h2 class="inline">SemBeacon</h2>
+            <div class="license-badge">
+                <img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="License: Apache-2.0">
+            </div>
+        </div>
+        <img src="./images/sembeacon_3.svg" width="85%" alt="SemBeacon Architecture">
+        <aside class="notes">
+        </aside>
+    </section>
+
+    <section data-markdown data-timing="60">
+        {% markdown %}
+            ## <span class="light">SemBeacon <i class="fa-solid fa-chevron-right"></i></span> Namespace and Instance
+            ![](../iot2023/images/identifier_example.svg){ width=100% }
+        {% endmarkdown %}
+        <aside class="notes">
+            Identification of SemBeacons is an important aspect to prevent the need to contact a web server every
+            time a new SemBeacon is detected that is already known. We split up the identification in a 16 byte namespace
+            uuid that would be equal to a proximity uuid and we combine the remaining 4 bytes to a single instance identifier.
+            In our specification we recommend that the Base URI is functionally dependant on the namespace id which in this example we
+            did by hashing the URI.
         </aside>
     </section>
 
@@ -690,7 +709,7 @@ hide_title_slide: true
             | **Bit (MSB)** | **Description** | **Example** |
             |---|---|---|
             | 0 | Indicates if the beacon has a position. | 0 = Unsure, 1 = Yes |
-            | 1 | Indicates if the beacon is private. | 0 = Public, 1 = Private |
+            | 1 | Indicates if the beacon requires authentication. | 0 = Public, 1 = Private |
             | 2 | Indicates if the beacon is attached to a moving object. | 0 = No, 1 = Yes |
             | 3 | Indicates if the beacon has a positioning system. | 0 = No, 1 = Yes |
             | 4 | Indicates if the beacon has observable data. | 0 = No, 1 = Yes |
@@ -754,6 +773,31 @@ hide_title_slide: true
         </aside>
     </section>
 
+    <section data-markdown>
+        {% markdown %}
+            ## <span class="light">SemBeacon <i class="fa-solid fa-chevron-right"></i></span> Mobile Application ...
+            - ... authentication and authorisation to Solid Pods
+            - Enable **access control** to environment data
+            <div class="row screenshots">
+                <div class="col-3">
+                    <img class="fragment fade-up-slow" data-autoslide="200" src="/images/android-app/Screenshot_20240418_205836_SemBeacon.jpg" width="100%">
+                </div>
+                <div class="col-3">
+                    <img class="fragment fade-up-slow" data-autoslide="400" src="/images/android-app/Screenshot_20250131_165235_SemBeacon.jpg" width="100%">
+                </div>
+                <div class="col-3">
+                    <img class="fragment fade-up-slow" data-autoslide="600" src="/images/android-app/Screenshot_20240418_205852_SemBeacon.jpg" width="100%">
+                </div>
+                <div class="col-3">
+                    <img class="fragment fade-up-slow" data-autoslide="800" src="/images/android-app/Screenshot_20240422_202719_SemBeacon.jpg" width="100%">
+                </div>
+            </div>
+        {% endmarkdown %}
+        <aside class="notes">
+
+        </aside>
+    </section>
+
     <section>
         {% markdown %}
             ## <span class="light">SemBeacon <i class="fa-solid fa-chevron-right"></i></span> Example
@@ -795,7 +839,9 @@ hide_title_slide: true
         1. Use cases for the POSO ontology usage
         [https://github.com/OpenHPS/POSO/issues](https://github.com/OpenHPS/POSO/issues)
         2. Examples of POSO to describe positioning systems
-        3. Feedback on the current ontology design (1.1)
+        3. Feedback on the current ontology design (1.1)  
+        4. OpenHPS geospatial mapping to RDF  
+        [https://github.com/OpenHPS/openhps-rdf/tree/master/src/mapping/geospatial](https://github.com/OpenHPS/openhps-rdf/tree/master/src/mapping/geospatial)
         {% endmarkdown %}
     </section>
 
@@ -820,23 +866,22 @@ hide_title_slide: true
 
     <section>
         {% markdown %}
-        ## <span class="light">Contributing &amp; Roadmap <i class="fa-solid fa-chevron-right"></i></span> Outside the scope
-
-        1. Authoring indoor environments to RDF
-        2. Mapping IndoorGML, OSM Simple Indoor Tagging to RDF  
-        _and vice versa_
+        ## Demo time!
+        ![](./images/demo.jpg){$ width="60%" $}
         {% endmarkdown %}
     </section>
 </section>
 
 <section data-markdown>
     {% markdown %}
-        ## Conclusion and Future Work
-        - Linked data for expressing indoor environments
-        - POSO as a way to describe positioning systems
-        - SemBeacon as a step towards local discovery of linked data
+        ### Discovering Indoor Environments and Positioning Systems
     {% endmarkdown %}
-    {% qr "https://sembeacon.org/posts/2025/02/01/", "qr-image", "H" %}
+    <div class="projects">
+        <img src="https://openhps.org/images/logo.svg" alt="OpenHPS Logo">
+        <img src="https://raw.githubusercontent.com/OpenHPS/POSO/refs/heads/main/1.1/docs/images/logo.svg" alt="POSO Logo">
+        <img src="https://sembeacon.org/images/logo.svg" alt="SemBeacon Logo">
+    </div>
+    {% qr "https://sembeacon.org/slides/fosdem2025/", "qr-image", "H" %}
     <ul class="info">
         <li><i class="fa-brands fa-github"></i> <a href="https://github.com/SemBeacon/">https://github.com/SemBeacon/</a></li>
         <li><i class="fa-solid fa-book"></i> <a href="https://sembeacon.org/">https://sembeacon.org/</a></li>

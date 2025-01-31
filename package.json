@@ -13,7 +13,7 @@
     "start": "npm run dev",
     "clean": "rimraf dist",
     "dev": "cross-env ELEVENTY_ENV=dev npx --node-options=\"--experimental-require-module\" eleventy --serve",
-    "build": "cross-env ELEVENTY_ENV=prod eleventy",
+    "build": "cross-env ELEVENTY_ENV=prod npx --node-options=\"--experimental-require-module\" eleventy",
     "build:docs": "node ./bin/build_docs.js",
     "build:presentations": "node ./bin/build_presentations.js"
   },
