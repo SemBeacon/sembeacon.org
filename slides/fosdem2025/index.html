@@ -51,7 +51,9 @@
     <div class="reveal">
         <div class="slides">
           
-          <style>
+          
+
+<style>
     .row ul {
         width: 100%;
     }
@@ -220,7 +222,7 @@
     }
 </style>
 
-<section class="title-slide center" data-timing="15">
+<section class="title-slide center" data-timing="30">
     <div class="slide-cover">
         <div class="slide-cover-background"></div>
     </div>
@@ -246,7 +248,7 @@
     </aside>
 </section>
 
-<section>
+<section data-timing="70">
     <h2>About me</h2>
     <div class="about-me">
         <img class="profile" src="https://maximvdw.be/images/profile/maxim.png" alt="Profile Picture">
@@ -276,8 +278,7 @@
     </aside>
 </section>
 
-
-<section>
+<section data-timing="30">
     <h2>Current state of geospatial data</h2>
     <div class="row">
         <div class="col-sm-6">
@@ -297,7 +298,7 @@
     </aside>
 </section>
 
-<section data-transition="none">
+<section data-transition="none" data-timing="70">
     <h2>Current state of geospatial data</h2>
     <div class="row">
         <div class="col-sm-6">
@@ -324,7 +325,7 @@
     </aside>
 </section>
 
-<section>
+<section data-timing="45">
     <h2>Current state of positioning systems</h2>
     <div class="row">
         <div class="col-sm-6">
@@ -350,7 +351,7 @@
     </aside>
 </section>
 
-<section>
+<section data-timing="60">
     <h2 id="global-and-local-geospatial-data-discovery" tabindex="-1">Global and Local Geospatial Data Discovery</h2>
   <div class="row">
       <div class="col-sm-6" style="border-right: solid 4px">
@@ -379,7 +380,7 @@
     </aside>
 </section>
 
-<section>
+<section data-timing="20">
     <h2>Geospatial-centric data discovery</h2>
     <p>
         Discovery of geospatial data through the very locations it represents, rather than predefined services.
@@ -396,7 +397,7 @@
     </aside>
 </section>
 
-<section>
+<section data-timing="20">
     <h2>Geospatial-centric data discovery ...</h2>
     <h3>Challenge 1</h3>
     <p>
@@ -413,7 +414,7 @@
     </aside>
 </section>
 
-<section>
+<section data-timing="20">
     <h2>Geospatial-centric data discovery ...</h2>
     <h3>Challenge 2</h3>
     <p>
@@ -427,7 +428,7 @@
     </aside>
 </section>
 
-<section data-transition="none">
+<section data-transition="none" data-timing="20">
     <h2>Geospatial-centric data discovery ...</h2>
     <h3>Challenge 2</h3>
     <p>
@@ -440,23 +441,15 @@
     </aside>
 </section>
 
-<section>
+<section data-timing="60">
     <h2>Geospatial-centric data discovery ...</h2>
-    <img style="margin-top: 4em;" width="600px" src="./images/find_solution.svg" alt="Solution">
+    <img width="600px" src="./images/find_solution.svg" alt="Solution">
     <aside class="notes">
-        As a very simplisitc representation of a solution to these challenges, we could use a method that is similar to how a lighthouse works.
-        My solution to this issue is to let the building act like a lighthouse. A lighthouse emits a light pattern that is unique to that lighthouse.
-        If you have knowledge about the light pattern of a lighthouse, you can easily identify it. A building could do a similar thing
-        by somehow emitting a pattern that can be identified by smartphone. Unfortunately, that only helps with the identification
-        but it does not give us any knowledge about the building or the services that are available in that building.
-
-        So instead, the building could emit a URI containing more information about the building.
-        To solve the 2nd challenge 
     </aside>
 </section>
 
 <section>
-    <section>
+    <section data-timing="90">
         <div class="header">
             <img src="https://openhps.org/images/logo.svg" class="inline" alt="OpenHPS Logo">
             <div class="license-badge">
@@ -543,7 +536,7 @@
 
 <!-- POSO ontology -->
 <section>
-    <section>
+    <section data-timing="45">
         <div class="header">
             <img src="https://raw.githubusercontent.com/OpenHPS/POSO/refs/heads/main/1.1/docs/images/logo.svg" class="inline small" alt="POSO Logo">
             <div class="license-badge">
@@ -553,6 +546,16 @@
         <img src="https://openhps.org/slides/iswc2022/images/architecture.svg" height="500px" alt="POSO Example">
         <aside class="notes">
             POSO is a linked data ontology to describe positioning systems, the objects they are tracking, the data they produce about those objects, and the environments they are deployed in.
+        </aside>
+    </section>
+
+    <section>
+        <div class="header">
+            <img src="https://raw.githubusercontent.com/OpenHPS/POSO/refs/heads/main/1.1/docs/images/logo.svg" class="inline small" alt="POSO Logo">
+        </div>
+        <img src="./images/linkeddata.svg" height="500px" alt="POSO Example">
+        <aside class="notes">
+
         </aside>
     </section>
 
@@ -630,14 +633,14 @@
 
 <!-- SemBeacon -->
 <section>
-    <section>
+    <section data-timing="120">
         <div class="header">
             <h2 class="inline">SemBeacon</h2>
             <div class="license-badge">
                 <img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="License: Apache-2.0">
             </div>
         </div>
-        <img src="/slides/iot2023/images/sembeacon_architecture_large.svg" width="85%" alt="SemBeacon Architecture">
+        <img src="./images/sembeacon_1.svg" width="85%" alt="SemBeacon Architecture">
         <aside class="notes">
             The basic principle of our semantic beacon solution called SemBeacon is a Bluetooth Low Energy beacon that
             advertises two identifiers and a set of flags. Compatible applications that have no information about this beacon
@@ -648,6 +651,43 @@
             GeoSPARQL, sensors and observations ontology. By using these existing vocabularies, SemBeacon becomes
             merely a communication protocol to make nearby devices aware of the data, and what they can expect when they
             visit the URI.
+        </aside>
+    </section>
+
+    <section data-transition="none">
+        <div class="header">
+            <h2 class="inline">SemBeacon</h2>
+            <div class="license-badge">
+                <img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="License: Apache-2.0">
+            </div>
+        </div>
+        <img src="./images/sembeacon_2.svg" width="85%" alt="SemBeacon Architecture">
+        <aside class="notes">
+        </aside>
+    </section>
+
+    <section data-transition="none">
+        <div class="header">
+            <h2 class="inline">SemBeacon</h2>
+            <div class="license-badge">
+                <img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="License: Apache-2.0">
+            </div>
+        </div>
+        <img src="./images/sembeacon_3.svg" width="85%" alt="SemBeacon Architecture">
+        <aside class="notes">
+        </aside>
+    </section>
+
+    <section data-markdown data-timing="60">
+        <h2 id="sembeacon-namespace-and-instance" tabindex="-1"><span class="light">SemBeacon <i class="fa-solid fa-chevron-right"></i></span> Namespace and Instance</h2>
+<p><img src="../iot2023/images/identifier_example.svg" alt="" width="100%"></p>
+
+        <aside class="notes">
+            Identification of SemBeacons is an important aspect to prevent the need to contact a web server every
+            time a new SemBeacon is detected that is already known. We split up the identification in a 16 byte namespace
+            uuid that would be equal to a proximity uuid and we combine the remaining 4 bytes to a single instance identifier.
+            In our specification we recommend that the Base URI is functionally dependant on the namespace id which in this example we
+            did by hashing the URI.
         </aside>
     </section>
 
@@ -718,7 +758,7 @@
 </tr>
 <tr>
 <td>1</td>
-<td>Indicates if the beacon is private.</td>
+<td>Indicates if the beacon requires authentication.</td>
 <td>0 = Public, 1 = Private</td>
 </tr>
 <tr>
@@ -834,6 +874,32 @@
         </aside>
     </section>
 
+    <section data-markdown>
+        <h2 id="sembeacon-mobile-application-..." tabindex="-1"><span class="light">SemBeacon <i class="fa-solid fa-chevron-right"></i></span> Mobile Application ...</h2>
+<ul>
+<li>... authentication and authorisation to Solid Pods</li>
+<li>Enable <strong>access control</strong> to environment data</li>
+</ul>
+  <div class="row screenshots">
+      <div class="col-3">
+          <img class="fragment fade-up-slow" data-autoslide="200" src="/images/android-app/Screenshot_20240418_205836_SemBeacon.jpg" width="100%">
+      </div>
+      <div class="col-3">
+          <img class="fragment fade-up-slow" data-autoslide="400" src="/images/android-app/Screenshot_20250131_165235_SemBeacon.jpg" width="100%">
+      </div>
+      <div class="col-3">
+          <img class="fragment fade-up-slow" data-autoslide="600" src="/images/android-app/Screenshot_20240418_205852_SemBeacon.jpg" width="100%">
+      </div>
+      <div class="col-3">
+          <img class="fragment fade-up-slow" data-autoslide="800" src="/images/android-app/Screenshot_20240422_202719_SemBeacon.jpg" width="100%">
+      </div>
+  </div>
+
+        <aside class="notes">
+
+        </aside>
+    </section>
+
     <section>
         <h2 id="sembeacon-example" tabindex="-1"><span class="light">SemBeacon <i class="fa-solid fa-chevron-right"></i></span> Example</h2>
 <pre class="shiki dark-plus" style="background-color: #1E1E1E" tabindex="0"><code class="language-turtle"><span class="line"><span style="color: #569CD6">:</span><span style="color: #9CDCFE">pl9_3</span><span style="color: #D4D4D4"> </span><span style="color: #C586C0">a</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">ssn:</span><span style="color: #9CDCFE">Deployment</span><span style="color: #D4D4D4">, </span><span style="color: #569CD6">sosa:</span><span style="color: #9CDCFE">FeatureOfInterest</span><span style="color: #D4D4D4">, </span><span style="color: #569CD6">ogc:</span><span style="color: #9CDCFE">SpatialObject</span><span style="color: #D4D4D4">, </span><span style="color: #569CD6">schema:</span><span style="color: #9CDCFE">Accommodation</span><span style="color: #D4D4D4">, </span><span style="color: #569CD6">seas:</span><span style="color: #9CDCFE">Floor</span><span style="color: #D4D4D4">;</span></span>
@@ -872,6 +938,8 @@
 <a href="https://github.com/OpenHPS/POSO/issues">https://github.com/OpenHPS/POSO/issues</a></li>
 <li>Examples of POSO to describe positioning systems</li>
 <li>Feedback on the current ontology design (1.1)</li>
+<li>OpenHPS geospatial mapping to RDF<br>
+<a href="https://github.com/OpenHPS/openhps-rdf/tree/master/src/mapping/geospatial">https://github.com/OpenHPS/openhps-rdf/tree/master/src/mapping/geospatial</a></li>
 </ol>
 
     </section>
@@ -895,25 +963,21 @@
     </section>
 
     <section>
-        <h2 id="contributing-%26-roadmap-outside-the-scope" tabindex="-1"><span class="light">Contributing &amp; Roadmap <i class="fa-solid fa-chevron-right"></i></span> Outside the scope</h2>
-<ol>
-<li>Authoring indoor environments to RDF</li>
-<li>Mapping IndoorGML, OSM Simple Indoor Tagging to RDF<br>
-<em>and vice versa</em></li>
-</ol>
+        <h2 id="demo-time!" tabindex="-1">Demo time!</h2>
+<p><img src="./images/demo.jpg" alt="" $="" width="60%" $=""></p>
 
     </section>
 </section>
 
 <section data-markdown>
-    <h2 id="conclusion-and-future-work" tabindex="-1">Conclusion and Future Work</h2>
-<ul>
-<li>Linked data for expressing indoor environments</li>
-<li>POSO as a way to describe positioning systems</li>
-<li>SemBeacon as a step towards local discovery of linked data</li>
-</ul>
+    <h3 id="discovering-indoor-environments-and-positioning-systems" tabindex="-1">Discovering Indoor Environments and Positioning Systems</h3>
 
-    <img src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2045%2045%22%20shape-rendering%3D%22crispEdges%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M0%200h45v45H0z%22%2F%3E%3Cpath%20stroke%3D%22%23000000%22%20d%3D%22M4%204.5h7m1%200h1m1%200h1m2%200h1m1%200h1m4%200h1m1%200h1m1%200h1m3%200h1m1%200h7M4%205.5h1m5%200h1m1%200h4m2%200h4m1%200h1m1%200h2m1%200h4m2%200h1m5%200h1M4%206.5h1m1%200h3m1%200h1m1%200h2m1%200h1m6%200h2m2%200h1m1%200h3m1%200h1m1%200h1m1%200h3m1%200h1M4%207.5h1m1%200h3m1%200h1m2%200h1m1%200h1m2%200h5m1%200h1m1%200h2m6%200h1m1%200h3m1%200h1M4%208.5h1m1%200h3m1%200h1m2%200h1m1%200h5m3%200h1m1%200h3m2%200h1m3%200h1m1%200h3m1%200h1M4%209.5h1m5%200h1m1%200h1m1%200h1m1%200h1m5%200h3m1%200h1m4%200h2m1%200h1m5%200h1M4%2010.5h7m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h7M12%2011.5h3m2%200h1m1%200h1m1%200h1m2%200h5m1%200h1m1%200h1M6%2012.5h3m1%200h1m1%200h4m1%200h1m1%200h10m4%200h3m2%200h3M4%2013.5h4m3%200h3m2%200h3m2%200h2m1%200h1m1%200h1m2%200h4m1%200h1m2%200h1m1%200h1M6%2014.5h1m1%200h1m1%200h3m6%200h2m1%200h1m3%200h1m2%200h2m3%200h1m4%200h2M4%2015.5h4m6%200h1m1%200h1m6%200h2m3%200h1m1%200h1m1%200h1m1%200h1m4%200h1M4%2016.5h1m1%200h1m2%200h2m1%200h1m1%200h2m3%200h3m1%200h2m2%200h1m1%200h2m2%200h4m1%200h2M4%2017.5h1m3%200h2m2%200h1m3%200h1m1%200h2m4%200h1m1%200h2m1%200h2m1%200h2m1%200h1m1%200h2M5%2018.5h1m3%200h3m4%200h3m2%200h3m5%200h3m2%200h4m1%200h2M4%2019.5h1m1%200h3m4%200h1m1%200h1m1%200h4m2%200h2m1%200h1m3%200h2m1%200h1m5%200h2M6%2020.5h1m3%200h3m3%200h1m1%200h6m2%200h1m2%200h3m1%200h2m1%200h1m1%200h2M4%2021.5h2m2%200h1m3%200h2m1%200h2m1%200h1m2%200h1m2%200h1m5%200h1m4%200h1m1%200h1M4%2022.5h1m3%200h3m3%200h2m1%200h3m4%200h2m1%200h2m2%200h1m1%200h3m1%200h4M6%2023.5h1m1%200h2m2%200h9m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m4%200h1M6%2024.5h1m3%200h4m2%200h1m5%200h2m3%200h1m5%200h6M4%2025.5h3m1%200h2m2%200h2m3%200h1m1%200h1m4%200h2m2%200h2m3%200h1m1%200h1m1%200h1m2%200h1M6%2026.5h1m1%200h1m1%200h1m1%200h5m2%200h5m1%200h1m2%200h4m1%200h1m3%200h1m2%200h1M4%2027.5h1m7%200h2m4%200h1m1%200h1m3%200h1m3%200h2m5%200h1m4%200h1M6%2028.5h1m2%200h4m1%200h1m1%200h1m1%200h1m3%200h1m2%200h4m1%200h1m1%200h2m1%200h4m1%200h1M4%2029.5h2m1%200h1m3%200h1m1%200h1m1%200h1m1%200h1m1%200h6m1%200h1m4%200h1m2%200h1m1%200h3M4%2030.5h1m1%200h5m1%200h1m2%200h2m1%200h2m1%200h2m1%200h2m1%200h3m1%200h2m1%200h1m2%200h1m2%200h1M4%2031.5h1m2%200h3m2%200h1m1%200h3m1%200h1m2%200h3m1%200h1m1%200h1m2%200h2m1%200h1m4%200h2M4%2032.5h1m2%200h2m1%200h2m1%200h1m1%200h4m1%200h1m3%200h1m2%200h1m1%200h8m1%200h3M12%2033.5h2m1%200h1m1%200h1m3%200h2m2%200h1m1%200h2m2%200h2m3%200h1M4%2034.5h7m2%200h4m1%200h2m2%200h1m3%200h1m1%200h2m2%200h1m1%200h1m1%200h2m1%200h2M4%2035.5h1m5%200h1m2%200h1m1%200h3m2%200h3m2%200h2m4%200h2m3%200h1m2%200h2M4%2036.5h1m1%200h3m1%200h1m1%200h3m2%200h2m3%200h2m1%200h2m2%200h8m1%200h3M4%2037.5h1m1%200h3m1%200h1m1%200h4m4%200h2m1%200h3m2%200h1m3%200h1m1%200h3m2%200h2M4%2038.5h1m1%200h3m1%200h1m1%200h3m2%200h1m2%200h1m2%200h1m7%200h1m1%200h1m1%200h1m4%200h1M4%2039.5h1m5%200h1m3%200h1m1%200h1m3%200h1m7%200h1m2%200h3m1%200h2m3%200h1M4%2040.5h7m2%200h3m2%200h2m1%200h4m1%200h1m1%200h1m1%200h1m2%200h1m1%200h6%22%2F%3E%3C%2Fsvg%3E%0A' class='qr-image'>
+    <div class="projects">
+        <img src="https://openhps.org/images/logo.svg" alt="OpenHPS Logo">
+        <img src="https://raw.githubusercontent.com/OpenHPS/POSO/refs/heads/main/1.1/docs/images/logo.svg" alt="POSO Logo">
+        <img src="https://sembeacon.org/images/logo.svg" alt="SemBeacon Logo">
+    </div>
+    <img src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2049%2049%22%20shape-rendering%3D%22crispEdges%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M0%200h49v49H0z%22%2F%3E%3Cpath%20stroke%3D%22%23000000%22%20d%3D%22M4%204.5h7m1%200h1m1%200h2m1%200h2m1%200h3m5%200h1m3%200h2m1%200h1m2%200h7M4%205.5h1m5%200h1m1%200h2m1%200h2m4%200h1m1%200h1m3%200h2m2%200h1m1%200h1m4%200h1m5%200h1M4%206.5h1m1%200h3m1%200h1m1%200h2m3%200h4m2%200h2m2%200h1m2%200h1m2%200h3m2%200h1m1%200h3m1%200h1M4%207.5h1m1%200h3m1%200h1m2%200h1m4%200h1m1%200h2m2%200h1m1%200h2m3%200h1m6%200h1m1%200h3m1%200h1M4%208.5h1m1%200h3m1%200h1m4%200h2m1%200h5m1%200h1m1%200h1m1%200h3m3%200h3m1%200h1m1%200h3m1%200h1M4%209.5h1m5%200h1m1%200h1m5%200h1m5%200h2m1%200h2m2%200h4m1%200h1m1%200h1m5%200h1M4%2010.5h7m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h7M12%2011.5h2m2%200h2m1%200h1m2%200h1m4%200h1m7%200h1M6%2012.5h3m1%200h1m1%200h2m1%200h1m1%200h4m2%200h2m2%200h1m1%200h3m1%200h1m2%200h4m2%200h3M7%2013.5h3m2%200h2m2%200h2m2%200h1m1%200h1m3%200h1m2%200h1m2%200h9m1%200h3M4%2014.5h1m3%200h3m1%200h1m1%200h1m1%200h3m3%200h3m1%200h3m1%200h3m3%200h1m2%200h2M6%2015.5h1m4%200h2m1%200h1m1%200h1m3%200h1m2%200h1m1%200h1m1%200h6m1%200h3m2%200h3m2%200h1M8%2016.5h1m1%200h2m1%200h1m1%200h10m1%200h1m3%200h2m1%200h1m1%200h2m2%200h1m1%200h3M5%2017.5h2m5%200h1m5%200h1m1%200h1m2%200h3m3%200h4m1%200h1m3%200h7M5%2018.5h2m2%200h8m2%200h1m2%200h2m1%200h1m2%200h2m6%200h2m1%200h1m1%200h2M5%2019.5h3m3%200h3m1%200h1m1%200h2m1%200h2m2%200h1m2%200h1m4%200h1m5%200h2m1%200h1m1%200h2M4%2020.5h1m1%200h1m1%200h4m2%200h2m1%200h1m2%200h2m2%200h2m4%200h1m1%200h3m1%200h2m1%200h1m2%200h1M4%2021.5h4m1%200h1m2%200h1m1%200h1m3%200h2m2%200h3m1%200h1m1%200h3m1%200h1m1%200h2m2%200h7M4%2022.5h2m2%200h3m1%200h1m5%200h1m3%200h2m2%200h2m3%200h1m2%200h1m2%200h1m2%200h3M4%2023.5h1m1%200h2m3%200h1m2%200h1m1%200h1m2%200h1m3%200h2m1%200h1m3%200h2m5%200h2m1%200h2m2%200h1M5%2024.5h1m1%200h1m1%200h2m4%200h5m6%200h3m2%200h2m1%200h1m1%200h1m4%200h3M4%2025.5h2m2%200h2m1%200h1m1%200h2m4%200h1m1%200h2m2%200h2m1%200h1m1%200h1m1%200h1m2%200h7m1%200h2M6%2026.5h8m2%200h3m1%200h1m1%200h1m1%200h1m6%200h2m3%200h1m1%200h1m1%200h2M4%2027.5h1m1%200h4m1%200h1m1%200h1m2%200h2m1%200h1m1%200h2m1%200h1m1%200h3m2%200h2m2%200h2m2%200h3m1%200h2M5%2028.5h1m2%200h4m1%200h2m1%200h3m2%200h4m2%200h5m1%200h1m1%200h1m1%200h1m4%200h2M5%2029.5h1m2%200h2m2%200h1m1%200h1m1%200h1m1%200h1m1%200h2m8%200h1m1%200h4m2%200h4m2%200h1M4%2030.5h1m1%200h1m3%200h2m1%200h1m2%200h1m1%200h3m5%200h1m4%200h1m2%200h1m1%200h2m2%200h1M4%2031.5h5m6%200h3m4%200h3m1%200h1m2%200h2m4%200h7M5%2032.5h1m2%200h3m6%200h3m1%200h2m2%200h1m2%200h2m1%200h3m1%200h1m1%200h1m3%200h2M4%2033.5h2m1%200h2m4%200h1m4%200h3m1%200h2m3%200h2m2%200h1m1%200h2m1%200h2m1%200h6M4%2034.5h1m1%200h1m1%200h1m1%200h2m2%200h1m1%200h1m1%200h1m2%200h2m1%200h1m1%200h8m1%200h1m1%200h2m3%200h1M4%2035.5h1m2%200h2m6%200h1m3%200h4m1%200h1m1%200h1m1%200h4m3%200h5m4%200h1M4%2036.5h1m1%200h1m1%200h4m1%200h2m1%200h1m2%200h1m1%200h2m2%200h1m3%200h12m1%200h1m1%200h1M12%2037.5h1m1%200h1m2%200h1m1%200h2m1%200h1m2%200h3m1%200h2m1%200h2m1%200h2m3%200h1m2%200h2M4%2038.5h7m2%200h1m3%200h1m3%200h8m1%200h4m1%200h2m1%200h1m1%200h3M4%2039.5h1m5%200h1m2%200h2m1%200h2m3%200h2m2%200h1m1%200h1m4%200h3m1%200h1m3%200h2M4%2040.5h1m1%200h3m1%200h1m1%200h1m1%200h1m1%200h2m1%200h3m4%200h1m1%200h1m7%200h5m1%200h2M4%2041.5h1m1%200h3m1%200h1m1%200h4m2%200h2m2%200h2m3%200h3m2%200h3m1%200h2m1%200h1m1%200h2m1%200h1M4%2042.5h1m1%200h3m1%200h1m1%200h4m1%200h2m1%200h1m3%200h6m1%200h1m5%200h4m1%200h2M4%2043.5h1m5%200h1m3%200h1m1%200h2m2%200h2m1%200h2m1%200h2m2%200h3m3%200h1m3%200h2m1%200h1M4%2044.5h7m6%200h1m3%200h1m1%200h1m2%200h4m1%200h1m1%200h1m4%200h5%22%2F%3E%3C%2Fsvg%3E%0A' class='qr-image'>
     <ul class="info">
         <li><i class="fa-brands fa-github"></i> <a href="https://github.com/SemBeacon/">https://github.com/SemBeacon/</a></li>
         <li><i class="fa-solid fa-book"></i> <a href="https://sembeacon.org/">https://sembeacon.org/</a></li>
