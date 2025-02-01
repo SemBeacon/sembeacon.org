@@ -27,6 +27,14 @@ export async function decktape(el) {
             widescreen: true,
             hash: hex
         });
+        queue.push({
+            title,
+            url: url + "&presenter",
+            slug: page.fileSlug,
+            widescreen: true,
+            images: path.join(page.outputPath, `../screenshots`),
+            hash: hex
+        });
 
         fs.writeFileSync('_presentations.json', JSON.stringify(queue, null, 4), {
             encoding: 'utf-8'
