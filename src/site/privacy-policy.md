@@ -4,7 +4,7 @@ layout: layouts/default.njk
 subtitle: Privacy policy for SemBeacon libraries and applications
 ---
 ## SemBeacon Application
-SemBeacon is an application maintained by [Maxim Van de Wynckel](https://maximvdw.be) and the [Vrije Universiteit Brussel](https://vub.be) for scanning and retrieving information about Bluetooth Low Energy SemBeacons and other related beacons such as iBeacon, AltBeacon or Eddystone.
+SemBeacon is an application maintained by [MVdW-Software](https://mvdw-software.com) and the [Vrije Universiteit Brussel](https://vub.be) for scanning and retrieving information about Bluetooth Low Energy SemBeacons and other related beacons such as iBeacon, AltBeacon or Eddystone.
 
 The application will scan for nearby beacons, which requires the use of the **location** permission. This information is not shared with SemBeacon or other parties and is only used to process the beacon information. This collection is necessary for the functioning of the application whose only functionality is the scanning of beacons.
 
@@ -25,4 +25,3 @@ The application collects error logs using [Sentry](https://sentry.io/). These lo
 
 ### Changes
 Changes to the privacy policy will be mentioned within app updates or as modification on this website.
-
