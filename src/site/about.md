@@ -14,14 +14,16 @@ For full details on the specification, check the [documentation]({{ '/docs/' | a
 ## Contact
 
 **Address**
-Dr. Maxim Van de Wynckel
-MVdW-Software
-Invalidenlaan 178,
-1160 Oudergem
-Belgium
+
+Dr. Maxim Van de Wynckel\
+MVdW-Software\
+Invalidenlaan 178,\
+1160 Oudergem\
+Belgium\
 +32 470 96 02 90
 
-Prof. Dr. Beat Signer
+
+Prof. Dr. Beat Signer\
 Vrije Universiteit Brussel, DINF\
 Maxim Van de Wynckel\
 Pleinlaan 2,\
