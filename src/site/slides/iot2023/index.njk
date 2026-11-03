@@ -25,8 +25,8 @@ height: 720
     {% endmarkdown %}
     <aside class="notes">
          To give a brief overview of where we situate physical things within the domain of internet of things. The world wide
-         web concortium describes a physical 'Thing' as an abstraction of a phsyical entity that provides interactions "to"
-         and participates "in" the web of things. The web of things as a concept on itself is situated within the domain of 
+         web consortium describes a physical 'Thing' as an abstraction of a physical entity that provides interactions "to"
+         and participates "in" the web of things. The web of things as a concept in itself is situated within the domain of 
          the internet of things and primarily communicates over HTTP.
     </aside>
 </section>
@@ -44,7 +44,7 @@ height: 720
         When we strictly talk about physical things that we can interact with and thus have a location within
         the physical world, we have two problems. Mainly, that we should somehow discover these physical devices and 
         track their location so we can also physically interact with them when needed. Discovering a physical device is
-        more than simply knowing that it exist. In order to do so we also need a way to provide context to places.
+        more than simply knowing that it exists. In order to do so we also need a way to provide context to places.
 
         In general this is an easy problem to solve, simply providing contextual location information to physical objects.
         But getting this context to the user often requires proprietary applications or services.
@@ -68,7 +68,7 @@ height: 720
     <aside class="notes">
         If we look at existing solutions to this problem in the scope of the Web of Things we often found solutions
         that rely on a predefined method of centralisation such as a web service or knowledge database. But even then,
-        tracking its location within an complex environment such as indoors is not fully discussed.
+        tracking its location within a complex environment such as indoors is not fully discussed.
 
         If we look back at the early 2000's, Hewelett Packard started the CoolTown project. Part of this project was the creation of
         URI beacons which were infrared transmitters of uniform resource identifiers. This URI would then lead to an XML description
@@ -129,7 +129,7 @@ height: 720
 
         On top of this, both versions also support active scanning where the receiver sends out a scan requests
         that will trigger the advertising transmitter to send out another advertising PDU. This scan response
-        can be different from the advertisement data, giving a total adveritsement size of 62 bytes for Bluetooth Low Energy v4.
+        can be different from the advertisement data, giving a total advertisement size of 62 bytes for Bluetooth Low Energy v4.
     </aside>
 </section>
 
@@ -159,9 +159,9 @@ height: 720
         The Physical Web project was backed by the UriBeacon Bluetooth Low Energy Specification which broadcasted
         useful data such as the URI itself, encoded to be as small as possible. The calibrated signal strength
         at 0 meters so we can approximate the distance to the beacon and finally a set of flags. However,
-        only one 'invisibility' flag was implemented in order to indicate if a Phsyical item should be visible to the user.
+        only one 'invisibility' flag was implemented in order to indicate if a Physical item should be visible to the user.
 
-        It was later discontinued in favor of and Eddystone-URL beacon.
+        It was later discontinued in favor of an Eddystone-URL beacon.
     </aside>
 </section>
 
@@ -178,7 +178,7 @@ height: 720
         Eddystone-URL was the Bluetooth specification behind the physical web. It was part of the Eddystone lineup
         of beacon specifications that included different variants based on the needs of the transmitter. The URL was
         short, only 17 bytes encoded, which often required a URL shortener. The reason for this is because a BLE advertisements
-        can only be 31 bytes long in total, which can optionally be doubled using a scan response that is send after receiving a
+        can only be 31 bytes long in total, which can optionally be doubled using a scan response that is sent after receiving a
         scan request.
     </aside>
 </section>
@@ -192,7 +192,7 @@ height: 720
     <aside class="notes">
         Other specifications used for proximity estimation, positioning and tracking include iBeacon
         and AltBeacon which are two popular specifications that are commonly used in indoor positioning systems. Instead of 
-        advertising a service, the use manufacturer specific data to include the required information. This includes the calibrated signal strength
+        advertising a service, they use manufacturer specific data to include the required information. This includes the calibrated signal strength
         at 1m distance that can be used to determine the distance, a 128 bit proximity unique identifier
         and major and minor classification.
 
@@ -225,7 +225,7 @@ height: 720
         | 3 | Presence of Altitude field in advertising packet |
         | 4 | Presence of Floor Number in advertising packet |
         | 5 | Presence of Uncertainty in advertising packet |
-        | 6 | Location Name avaiable in GATT database |
+        | 6 | Location Name available in GATT database |
     {% endmarkdown %}
     <aside class="notes">
         The Bluetooth Special interest group has created its own specification for broadcasting a position. It supports both the 
@@ -250,7 +250,7 @@ height: 720
         In our semantic data we can make use of existing and extended vocabularies such as the generic positioning system ontology,
         Geosparql, sensors and observations ontology and the IoT-lite ontology.
 
-        Our solution and contribution includes both the bluetooth adveritsement protocol, the semantic description and vocabulary and
+        Our solution and contribution includes both the bluetooth advertisement protocol, the semantic description and vocabulary and
         how the semantic data, identifiers and flags contribute to the usability of the SemBeacons for indoor positioning, device discovery
         and eventually the interaction with the device.
     </aside>
@@ -268,7 +268,7 @@ height: 720
         It is the combination of the advertisement data along with the eddystone-url scan response that makes up SemBeacon.
 
         Similar to Eddystone-URL we perform encoding of the short URI without further extensions in order to prevent
-        backwards compatibility with existing libraries that can scan for Eddstone.
+        backwards compatibility with existing libraries that can scan for Eddystone.
     </aside>
 </section>
 
@@ -319,7 +319,7 @@ height: 720
         With the increased payload size for BLE 5 advertisements we can include both the namespace and instance identifiers and uri
         within a single advertisement.
 
-        As we no longer have to ensure Eddystone-URL compatibility, we also extended the encoding for the the URI to enable
+        As we no longer have to ensure Eddystone-URL compatibility, we also extended the encoding for the URI to enable
         a smaller payload for common linked data URIs, versioning, and a larger URI in general which could negate the need for 
         URL shorteners.
 
@@ -629,7 +629,7 @@ height: 720
         compatible with other standards and also allows the description of other beacons and devices within
         the environment.
 
-        For future work we will definitely be expading the vocabulary to facilitate the modelling
+        For future work we will definitely be expanding the vocabulary to facilitate the modelling
         of device interactions.
     </aside>
 </section>   
