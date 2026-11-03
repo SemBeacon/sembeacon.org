@@ -36,8 +36,6 @@ body {
     font-size: 18px;
   };
 
-  overflow: none;
-
   &:not(.home) {
     background-color: variables.$page-color;
     background: variables.$page-color;
@@ -247,7 +245,24 @@ footer {
     &:hover {
       background-color: color.mix(variables.$text-color, variables.$accent-color, 80%);
     }
+
+    &.mvdw {
+      width: 160px;
+      -webkit-mask: url("/images/mvdw-software_alpha.svg") no-repeat center;
+      -webkit-mask-size: contain;
+      mask: url("/images/mvdw-software_alpha.svg") no-repeat center;
+      mask-size: contain;
+    }
   }
+}
+
+img.logo-mvdw {
+  display: block;
+  width: 240px;
+  max-width: 100%;
+  padding: 1em;
+  border-radius: 4px;
+  background-color: #1a1a1a;
 }
 
 div.background {

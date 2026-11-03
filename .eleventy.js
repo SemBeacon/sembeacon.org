@@ -2,7 +2,7 @@ import seo from "eleventy-plugin-seo";
 import sitemap from "@quasibit/eleventy-plugin-sitemap";
 
 import markdownIt from "markdown-it";
-import markdownItShiki from "markdown-it-shiki";
+import shiki from "@shikijs/markdown-it";
 import markdownItAnchor from "markdown-it-anchor";
 import markdownItAttrs from "markdown-it-attrs";
 
@@ -21,7 +21,7 @@ import dateDisplay from "./src/utils/filters/date.js";
 
 const baseUrl = new URL("https://sembeacon.org");
 
-export default function(config) {
+export default async function(config) {
   config.addPassthroughCopy({
     "./src/site/example.ttl": "example.ttl",
     "./src/site/examples": "examples",
@@ -30,13 +30,13 @@ export default function(config) {
   config.addPassthroughCopy({
     "node_modules/reveal.js/dist/reveal.css": "vendor/reveal.js/reveal.css",
     "node_modules/reveal.js/dist/reset.css": "vendor/reveal.js/reset.css",
-    "node_modules/reveal.js/dist/reveal.esm.js": "vendor/reveal.js/reveal.esm.js",
-    "node_modules/reveal.js/plugin/notes/notes.esm.js": "vendor/reveal.js/plugin/notes/notes.esm.js",
+    "node_modules/reveal.js/dist/reveal.mjs": "vendor/reveal.js/reveal.mjs",
+    "node_modules/reveal.js/dist/plugin/notes.mjs": "vendor/reveal.js/plugin/notes.mjs",
     "node_modules/reveal.js-pointer/dist/pointer.esm.js": "vendor/reveal.js/plugin/pointer/pointer.esm.js",
     "node_modules/reveal.js-pointer/dist/pointer.css": "vendor/reveal.js/plugin/pointer/pointer.css",
   });
   config.addPassthroughCopy({ "./src/site/CNAME": "CNAME" });
-  config.addPassthroughCopy("fonts");
+  config.addPassthroughCopy({ "./src/site/fonts": "fonts" });
   config.addPlugin(toc, {
     tags: ['h2'],
     ul: true
@@ -78,9 +78,9 @@ export default function(config) {
     rightDelimiter: '}',
     allowedAttributes: []
   });
-  md.use(markdownItShiki, { 
+  md.use(await shiki({
     theme: "dark-plus"
-  });
+  }));
   config.setLibrary("md", md);
 
   config.addPlugin(decktape);

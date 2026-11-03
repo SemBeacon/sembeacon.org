@@ -11,6 +11,12 @@ that includes an URI that describes the beacon.
 
 For full details on the specification, check the [documentation]({{ '/docs/' | absoluteUrl }}).
 
+## Maintainer
+
+SemBeacon is currently maintained by [MVdW-Software](https://mvdw-software.com), the software company founded by Dr. Maxim Van de Wynckel. MVdW-Software develops and maintains the SemBeacon specification, the SemBeacon application and its supporting tools.
+
+<a href="https://mvdw-software.com" target="_blank" rel="noopener"><img alt="MVdW-Software logo" src="{{ '/images/mvdw-software_alpha.svg' | absoluteUrl }}" class="logo-mvdw"></a>
+
 ## Contact
 
 **Address**
