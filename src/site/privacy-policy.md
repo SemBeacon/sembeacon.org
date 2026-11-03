@@ -23,5 +23,8 @@ a required permission to scan for beacons as these beacons can be used to determ
 ### Error Logs
 The application collects error logs using [Sentry](https://sentry.io/). These logs help us to identify and fix issues within the application. The collected data is anonymized and does not contain any personal information.
 
+### Version Control and Issue Tracking
+MVdW-Software uses a private, internally hosted GitLab instance (git.mvdw-software.com) for the version control of its projects and for issue tracking. Issues and related discussions (for example bug reports or support requests sent by e-mail or filed through the issue tracker) may contain personal information, such as your name, e-mail address or any other details you choose to include. This information is only used to handle your request, is not shared with third parties and is not publicly accessible. Contact us to request the correction or removal of your personal information.
+
 ### Changes
 Changes to the privacy policy will be mentioned within app updates or as modification on this website.
