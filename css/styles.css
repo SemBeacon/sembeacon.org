@@ -842,7 +842,6 @@ body {
   font-size: 16px;
   line-height: 1.8;
   min-height: 100vh;
-  overflow: none;
 }
 @media (min-width: 400px) {
   body {
@@ -1051,6 +1050,22 @@ footer div.logo {
 }
 footer div.logo:hover {
   background-color: rgb(219.6, 222.2, 242);
+}
+footer div.logo.mvdw {
+  width: 160px;
+  -webkit-mask: url("/images/mvdw-software_alpha.svg") no-repeat center;
+  -webkit-mask-size: contain;
+  mask: url("/images/mvdw-software_alpha.svg") no-repeat center;
+  mask-size: contain;
+}
+
+img.logo-mvdw {
+  display: block;
+  width: 240px;
+  max-width: 100%;
+  padding: 1em;
+  border-radius: 4px;
+  background-color: #1a1a1a;
 }
 
 div.background {
