@@ -13,7 +13,7 @@ For full details on the specification, check the [documentation]({{ '/docs/' | a
 
 ## Maintainer
 
-SemBeacon is currently maintained by [MVdW-Software](https://mvdw-software.com), the software company founded by Dr. Maxim Van de Wynckel. MVdW-Software develops and maintains the SemBeacon specification, the SemBeacon application and its supporting tools.
+SemBeacon is currently maintained by Maxim Van de Wynckel via [MVdW-Software](https://mvdw-software.com). MVdW-Software develops and maintains the SemBeacon specification, the SemBeacon application and its supporting tools.
 
 <a href="https://mvdw-software.com" target="_blank" rel="noopener"><img alt="MVdW-Software logo" src="{{ '/images/mvdw-software_alpha.svg' | absoluteUrl }}" class="logo-mvdw"></a>
 
@@ -23,15 +23,14 @@ SemBeacon is currently maintained by [MVdW-Software](https://mvdw-software.com),
 
 Dr. Maxim Van de Wynckel\
 MVdW-Software\
-Invalidenlaan 178,\
-1160 Oudergem\
+Draaiersstraat 33,\
+9300 Aalst\
 Belgium\
 +32 470 96 02 90
 
 
 Prof. Dr. Beat Signer\
 Vrije Universiteit Brussel, DINF\
-Maxim Van de Wynckel\
 Pleinlaan 2,\
 1050 Elsene\
 Belgium

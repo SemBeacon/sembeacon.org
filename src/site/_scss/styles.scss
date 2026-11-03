@@ -245,14 +245,6 @@ footer {
     &:hover {
       background-color: color.mix(variables.$text-color, variables.$accent-color, 80%);
     }
-
-    &.mvdw {
-      width: 160px;
-      -webkit-mask: url("/images/mvdw-software_alpha.svg") no-repeat center;
-      -webkit-mask-size: contain;
-      mask: url("/images/mvdw-software_alpha.svg") no-repeat center;
-      mask-size: contain;
-    }
   }
 }
 
@@ -260,9 +252,17 @@ img.logo-mvdw {
   display: block;
   width: 240px;
   max-width: 100%;
-  padding: 1em;
-  border-radius: 4px;
-  background-color: #1a1a1a;
+}
+
+footer img.logo-mvdw-footer {
+  display: block;
+  width: 160px;
+  margin-right: 1.5em;
+  opacity: 0.6;
+
+  &:hover {
+    opacity: 0.9;
+  }
 }
 
 div.background {

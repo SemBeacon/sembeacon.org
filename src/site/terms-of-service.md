@@ -23,7 +23,7 @@ For the purposes of these Terms and Conditions:
 - **Application Store** means the digital distribution service operated and developed by Apple Inc. (Apple App Store) or Google Inc. (Google Play Store) in which the Application has been downloaded.
 - **Affiliate** means an entity that controls, is controlled by or is under common control with a party, where "control" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.
 - **Country** refers to: Belgium.
-- **Company** (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to MVdW-Software, Invalidenlaan 178, 1160 Oudergem, Belgium (VAT BE0729544225).
+- **Company** (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to MVdW-Software, Draaiersstraat 33, 9300 Aalst, Belgium (VAT BE0729544225).
 - **Device** means any device that can access the Service such as a computer, a cellphone or a digital tablet.
 - **Service** refers to the Application.
 - **Terms and Conditions** (also referred as "Terms") mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service. This Terms and Conditions agreement has been created with the help of the [Terms and Conditions Generator](https://www.termsfeed.com/terms-conditions-generator/).
