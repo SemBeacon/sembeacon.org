@@ -4,7 +4,7 @@ layout: layouts/default.njk
 subtitle: About the SemBeacon specification and its maintainers
 ---
 
-SemBeacon was designed by [Dr. Maxim Van de Wynckel](https://maximvdw.be/about) of the [Web & Information Systems Engineering (WISE) Lab](https://wise.vub.ac.be) under the supervision of [Prof. Dr. Beat Signer](https://beatsigner.com). SemBeacon is a semantic beacon specification for Bluetooth Low Energy that broadcasts a resource URI containing a full semantic description of the beacon, its location and any other related information.
+SemBeacon was designed by [Dr. Maxim Van de Wynckel](https://maximvdw.be/about) as part of his PhD research at the [Web & Information Systems Engineering (WISE) Lab](https://wise.vub.ac.be) of the Vrije Universiteit Brussel, under the supervision of [Prof. Dr. Beat Signer](https://beatsigner.com). SemBeacon is a semantic beacon specification for Bluetooth Low Energy that broadcasts a resource URI containing a full semantic description of the beacon, its location and any other related information.
 
 The specification is built on top of [AltBeacon](https://altbeacon.org) and adds an [Eddystone-URL](https://github.com/google/eddystone) compatible scan response
 that includes an URI that describes the beacon.
@@ -13,7 +13,7 @@ For full details on the specification, check the [documentation]({{ '/docs/' | a
 
 ## Maintainer
 
-SemBeacon is currently maintained by Maxim Van de Wynckel via [MVdW-Software](https://mvdw-software.com). MVdW-Software develops and maintains the SemBeacon specification, the SemBeacon application and its supporting tools.
+SemBeacon is currently maintained by [MVdW-Software](https://mvdw-software.com), the software consultancy of Dr. Maxim Van de Wynckel. MVdW-Software develops and maintains the SemBeacon specification, the SemBeacon application and its supporting tools.
 
 <a href="https://mvdw-software.com" target="_blank" rel="noopener"><img alt="MVdW-Software logo" src="{{ '/images/mvdw-software_alpha.svg' | absoluteUrl }}" class="logo-mvdw"></a>
 
@@ -26,6 +26,7 @@ MVdW-Software\
 Draaiersstraat 33,\
 9300 Aalst\
 Belgium\
+VAT BE 0729.544.225\
 +32 470 96 02 90
 
 

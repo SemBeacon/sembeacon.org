@@ -1,11 +1,11 @@
 ---
 title: Terms of Service
 layout: layouts/default.njk
-subtitle: Terms of Service for the SemBeacon application
+subtitle: Terms of Service for the SemBeacon application and website
 ---
 # Terms and Conditions
 
-_Last updated: September 04, 2025_
+_Last updated: November 13, 2026_
 
 Please read these terms and conditions carefully before using Our Service.
 
@@ -23,7 +23,7 @@ For the purposes of these Terms and Conditions:
 - **Application Store** means the digital distribution service operated and developed by Apple Inc. (Apple App Store) or Google Inc. (Google Play Store) in which the Application has been downloaded.
 - **Affiliate** means an entity that controls, is controlled by or is under common control with a party, where "control" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.
 - **Country** refers to: Belgium.
-- **Company** (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to MVdW-Software, Draaiersstraat 33, 9300 Aalst, Belgium (VAT BE0729544225).
+- **Company** (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to **Van de Wynckel, Maxim**, a natural person registered in Belgium as a sole proprietor (enterprise number and VAT BE 0729.544.225; see the [Crossroads Bank for Enterprises (KBO) entry](https://kbopub.economie.fgov.be/kbopub/zoeknummerform.html?nummer=0729544225&actionLu=Zoek)), with registered address Draaiersstraat 33, 9300 Aalst, Belgium, trading under the trade name **MVdW-Software**. MVdW-Software is not a separate legal entity: it is a trade name of Van de Wynckel, Maxim, who is personally the contracting party.
 - **Device** means any device that can access the Service such as a computer, a cellphone or a digital tablet.
 - **Service** refers to the Application.
 - **Terms and Conditions** (also referred as "Terms") mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service. This Terms and Conditions agreement has been created with the help of the [Terms and Conditions Generator](https://www.termsfeed.com/terms-conditions-generator/).
@@ -126,5 +126,10 @@ By continuing to access or use Our Service after those revisions become effectiv
 
 If you have any questions about these Terms and Conditions, You can contact us:
 
-- By email: sembeacon@openhps.org
+- By email: [sembeacon@openhps.org](mailto:sembeacon@openhps.org)
+- By email: [info@mvdw-software.com](mailto:info@mvdw-software.com)
+
+**Van de Wynckel, Maxim**, trading as **MVdW-Software**\
+Draaiersstraat 33, 9300 Aalst, Belgium\
+VAT BE 0729.544.225
 

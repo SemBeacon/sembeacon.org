@@ -8,6 +8,8 @@ layout: layouts/home.njk
 A semantic Bluetooth Low Energy beacon specification that helps to describe the beacon itself, its deployment and the positioning system used within.
 </p>
 
+SemBeacon was created as part of the PhD research of [Dr. Maxim Van de Wynckel](https://maximvdw.be/about) at the Vrije Universiteit Brussel and is currently maintained by [MVdW-Software](https://mvdw-software.com). Read more [about SemBeacon and its maintainers]({{ '/about/' | absoluteUrl }}).
+
 ## Features
 - Interoperable and backwards compatible
 - Real-time processing in positioning systems

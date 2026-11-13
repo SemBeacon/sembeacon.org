@@ -1,7 +1,7 @@
 {
     "title": "SemBeacon",
     "url": "https://sembeacon.org",
-    "description": "",
+    "description": "A semantic Bluetooth Low Energy beacon specification that describes the beacon, its deployment and the positioning system used within. Created during Dr. Maxim Van de Wynckel's PhD research and maintained by MVdW-Software.",
     "author": "Maxim Van de Wynckel",
     "twitter": "SemBeacon",
     "image": "/images/social/summary-large.png",
